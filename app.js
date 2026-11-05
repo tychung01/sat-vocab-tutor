@@ -78,6 +78,10 @@ function isOfficial(w) {
   return w.sources.some((s) => s.includes("Practice Test"));
 }
 
+function isAcademic(w) {
+  return w.sources.some((s) => s.includes("Word List"));
+}
+
 function mainPos(w) {
   return w.part_of_speech.split("/")[0].trim();
 }
@@ -301,7 +305,8 @@ function renderWordList() {
   const query = $("search").value.trim().toLowerCase();
   const shown = words.filter((w) => {
     if (filter === "official" && !isOfficial(w)) return false;
-    if (filter === "curated" && isOfficial(w)) return false;
+    if (filter === "academic" && !isAcademic(w)) return false;
+    if (filter === "curated" && (isOfficial(w) || isAcademic(w))) return false;
     if ((filter === "learning" || filter === "mastered") && statusOf(w.word) !== filter) return false;
     return !query || w.word.toLowerCase().includes(query) || w.definition.toLowerCase().includes(query);
   });

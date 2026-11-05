@@ -2,11 +2,12 @@
 
 Each entry file is a JSON list of objects with keys:
   w (word), pos, def, use, ex (list of example sentences), and optional
-  seen (other forms of the word that appeared in tests, e.g. "exacerbating").
+  seen (other forms of the word that may appear in tests, e.g. "exacerbating")
+  and src (extra source labels, e.g. the word lists the word belongs to).
 
 Sources are attached automatically: any test in the candidates file whose
 vocabulary questions used the word (or one of its seen forms) is listed.
---source adds a label for words from somewhere else, such as a curated list.
+--source adds a label to every entry in the file, such as a curated list.
 Existing words keep their definition; only new sources are added to them.
 
 Usage: python scripts/add_words.py ENTRIES.json [--source LABEL]
@@ -86,6 +87,9 @@ def main():
     for item in json.loads(args.entries.read_text()):
         forms = {normalize(item["w"]), *(normalize(f) for f in item.get("seen", []))}
         sources = set().union(*(appearances.get(f, set()) for f in forms))
+        # Only forms that really appeared in a test question are recorded as seen.
+        tested_forms = {f for f in forms if f in appearances} - {item["w"]}
+        sources.update(item.get("src", []))
         if args.source:
             sources.add(args.source)
         if not sources:
@@ -95,7 +99,7 @@ def main():
         if item["w"] in words:
             entry = words[item["w"]]
             new_sources = sources - set(entry["sources"])
-            new_forms = forms - {item["w"]} - set(entry["forms_seen_on_tests"])
+            new_forms = tested_forms - set(entry["forms_seen_on_tests"])
             if new_sources or new_forms:
                 entry["sources"] = sorted(set(entry["sources"]) | new_sources, key=sort_key)
                 entry["forms_seen_on_tests"] = sorted(set(entry["forms_seen_on_tests"]) | new_forms)
@@ -108,7 +112,7 @@ def main():
             "definition": item["def"],
             "usage": item["use"],
             "examples": item["ex"],
-            "forms_seen_on_tests": sorted(forms - {item["w"]}),
+            "forms_seen_on_tests": sorted(tested_forms),
             "sources": sorted(sources, key=sort_key),
             "added": today,
         }

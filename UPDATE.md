@@ -52,6 +52,17 @@ Keep the PDFs' file names as College Board publishes them. `add_words.py`
 uses the name to label the source (for example `psat-8-9-practice-test-2`
 becomes "PSAT 8/9 Practice Test 2").
 
+## Adding words from the academic word lists (manual, not monthly)
+
+`scripts/tag_word_lists.py` labels entries with the lists they belong to. It
+needs two files in `sources/lists/`, which git ignores:
+- `nawl.csv`: NAWL 1.2 "lemmatized for teaching" from
+  https://www.newgeneralservicelist.com/new-academic-word-list (CC BY-SA 4.0)
+- `awl-sublists.txt`: the text of Coxhead's AWL sublists PDF from
+  https://www.wgtn.ac.nz/lals/resources/academicwordlist/publications/awlsublists1.pdf
+
+Run `tag_word_lists.py` on an entries file, then `add_words.py`.
+
 ## 4. Commit
 
 Commit `data/`, `entries/`, and `sources/candidates.json` with a message like
