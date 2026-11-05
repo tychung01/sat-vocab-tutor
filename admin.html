@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teacher Dashboard</title>
+  <meta name="description" content="See who is studying and how many words each student has learned.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap wide top-inner">
+      <h1 class="brand">Teacher Dashboard</h1>
+      <div class="account" id="account" hidden>
+        <span class="who" id="who"></span>
+        <a class="link" href="./">Study app</a>
+        <button class="link" id="sign-out">Sign out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap wide">
+    <p class="status" id="status">Loading…</p>
+
+    <section id="sign-in" class="sign-in" hidden>
+      <h2>Teacher sign-in</h2>
+      <button class="btn primary" id="sign-in-button">Sign in with Google</button>
+    </section>
+
+    <section id="dashboard" hidden>
+      <div class="stats" id="stats"></div>
+      <div class="filters">
+        <input type="search" id="search" placeholder="Search students" aria-label="Search students">
+      </div>
+      <div class="table-wrap">
+        <table class="students">
+          <thead>
+            <tr>
+              <th scope="col">Student</th>
+              <th scope="col">Last login</th>
+              <th scope="col" class="num">Logins</th>
+              <th scope="col" class="num">Learned</th>
+              <th scope="col" class="num">Practice</th>
+              <th scope="col">Progress</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <p class="note">Click a student to see their recent logins, learned words, and the practice words they're closest to learning. A word is learned after 3 correct quiz answers in a row.</p>
+    </section>
+  </main>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

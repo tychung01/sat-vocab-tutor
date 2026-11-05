@@ -11,22 +11,34 @@
   <header class="top">
     <div class="wrap top-inner">
       <h1 class="brand">SAT Word Study</h1>
-      <div class="progress" id="progress" aria-live="polite"></div>
+      <div class="account" id="account" hidden>
+        <span class="who" id="who"></span>
+        <a class="link" id="admin-link" href="admin.html" hidden>Teacher dashboard</a>
+        <button class="link" id="sign-out">Sign out</button>
+      </div>
     </div>
-    <nav class="wrap tabs" role="tablist">
+    <div class="wrap progress" id="progress" aria-live="polite"></div>
+    <nav class="wrap tabs" role="tablist" id="tabs" hidden>
       <button role="tab" data-view="study" aria-selected="true">Flashcards</button>
       <button role="tab" data-view="quiz" aria-selected="false">Quiz</button>
-      <button role="tab" data-view="words" aria-selected="false">All words</button>
+      <button role="tab" data-view="words" aria-selected="false">My words</button>
     </nav>
   </header>
 
   <main class="wrap">
-    <p class="status" id="status">Loading words…</p>
+    <p class="status" id="status">Loading…</p>
+
+    <section id="sign-in" class="sign-in" hidden>
+      <h2>Sign in to start studying</h2>
+      <p>Your progress is saved to your account, so you can pick up where you left off on any device.</p>
+      <button class="btn primary" id="sign-in-button">Sign in with Google</button>
+      <p class="error" id="sign-in-error" hidden></p>
+    </section>
 
     <section id="view-study" class="view" hidden>
       <div class="card-stage">
         <p class="counter" id="study-counter"></p>
-        <button class="flashcard" id="flashcard" aria-label="Flip card">
+        <button class="flashcard" id="flashcard" aria-label="Show meaning">
           <div class="face front">
             <span class="word" id="fc-word"></span>
             <span class="pos" id="fc-pos"></span>
@@ -39,15 +51,15 @@
             <ul class="examples" id="fc-ex"></ul>
           </div>
         </button>
-        <div class="actions" id="study-actions" hidden>
-          <button class="btn secondary" id="still-learning">Still learning</button>
-          <button class="btn primary" id="know-it">I know it</button>
+        <div class="actions">
+          <button class="btn primary" id="next-card">Next card</button>
         </div>
+        <p class="note">Flashcards are for studying. Words move to <strong>Learned</strong> after 3 correct quiz answers in a row.</p>
       </div>
       <div class="done" id="study-done" hidden>
-        <h2>Nice work!</h2>
-        <p id="study-summary"></p>
-        <button class="btn primary" id="study-again">Study another set</button>
+        <h2>Set complete</h2>
+        <p>Ready to test yourself? Take a quiz to move these words toward Learned.</p>
+        <button class="btn secondary" id="study-again">Study another set</button>
       </div>
     </section>
 
@@ -63,6 +75,7 @@
       </div>
       <div class="done" id="quiz-done" hidden>
         <h2 id="quiz-score"></h2>
+        <p id="quiz-learned"></p>
         <div id="quiz-missed"></div>
         <button class="btn primary" id="quiz-again">Take another quiz</button>
       </div>
@@ -72,12 +85,15 @@
       <div class="filters">
         <input type="search" id="search" placeholder="Search words or definitions" aria-label="Search words">
         <div class="chips" id="chips">
-          <button data-filter="all" aria-pressed="true">All</button>
-          <button data-filter="official" aria-pressed="false">From practice tests</button>
-          <button data-filter="academic" aria-pressed="false">Academic word lists</button>
-          <button data-filter="curated" aria-pressed="false">Common SAT words</button>
-          <button data-filter="learning" aria-pressed="false">Learning</button>
-          <button data-filter="mastered" aria-pressed="false">Mastered</button>
+          <button data-filter="practice" aria-pressed="true">Practice</button>
+          <button data-filter="learned" aria-pressed="false">Learned</button>
+          <button data-filter="all" aria-pressed="false">All</button>
+        </div>
+        <div class="chips" id="source-chips">
+          <button data-source="any" aria-pressed="true">Any source</button>
+          <button data-source="official" aria-pressed="false">From practice tests</button>
+          <button data-source="academic" aria-pressed="false">Academic word lists</button>
+          <button data-source="curated" aria-pressed="false">Common SAT words</button>
         </div>
       </div>
       <p class="counter" id="words-count"></p>
@@ -86,10 +102,11 @@
   </main>
 
   <footer class="wrap foot">
-    <p>Words come from the vocabulary questions in College Board's official SAT and PSAT practice tests and ACT's official practice tests, the <a href="https://www.newgeneralservicelist.com/new-academic-word-list">New Academic Word List</a> (Browne, Culligan &amp; Phillips, CC BY-SA 4.0), Coxhead's Academic Word List, and a list of common SAT words. Definitions and examples are original. Your progress is saved in this browser only.</p>
+    <p>Words come from the vocabulary questions in College Board's official SAT and PSAT practice tests and ACT's official practice tests, the <a href="https://www.newgeneralservicelist.com/new-academic-word-list">New Academic Word List</a> (Browne, Culligan &amp; Phillips, CC BY-SA 4.0), Coxhead's Academic Word List, and a list of common SAT words. Definitions and examples are original.</p>
+    <p>When you sign in, your name, email, visit times, and quiz progress are saved so your teacher can follow your progress.</p>
     <p id="updated"></p>
   </footer>
 
-  <script src="app.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>

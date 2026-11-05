@@ -137,8 +137,43 @@ main.wrap { padding-top: 24px; padding-bottom: 32px; min-height: 60vh; }
 .entry .body p { margin: 0 0 8px; }
 .entry .sources { font-size: 0.85rem; color: var(--muted); }
 .badge { font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; }
-.badge.learning { background: var(--bad-soft); color: var(--bad); }
-.badge.mastered { background: var(--good-soft); color: var(--good); }
 
 .foot { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--line); padding-top: 16px; padding-bottom: 32px; }
 .foot a { color: inherit; }
+
+/* Account and sign-in */
+.account { display: flex; gap: 12px; align-items: center; font-size: 0.88rem; color: var(--muted); flex-wrap: wrap; }
+.who { color: var(--text); font-weight: 600; }
+.link { background: none; border: 0; padding: 0; color: var(--accent); text-decoration: underline; font-size: inherit; }
+.progress { align-items: center; padding-top: 8px; }
+.bar { display: inline-block; width: 120px; height: 8px; border-radius: 999px; background: var(--line); overflow: hidden; vertical-align: middle; }
+.bar > span { display: block; height: 100%; background: var(--good); }
+.sign-in { text-align: center; padding: 48px 0; max-width: 460px; margin: 0 auto; }
+.sign-in p { color: var(--muted); }
+.error { color: var(--bad); }
+.note { color: var(--muted); font-size: 0.85rem; text-align: center; margin-top: 14px; }
+.badge.learned { background: var(--good-soft); color: var(--good); }
+.badge.practice { background: var(--accent-soft); color: var(--accent); }
+.feedback .win { color: var(--good); }
+.feedback .streak { color: var(--muted); font-size: 0.9rem; }
+#quiz-learned { color: var(--good); font-weight: 600; }
+
+/* Teacher dashboard */
+.wrap.wide { max-width: 1100px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 18px; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; display: grid; gap: 2px; }
+.stat-value { font-size: 1.6rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.stat-label { color: var(--muted); font-size: 0.85rem; }
+.table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+table.students { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+.students th, .students td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.students th { color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.students .num { text-align: right; font-variant-numeric: tabular-nums; }
+.students tr.student { cursor: pointer; }
+.students tr.student:hover { background: var(--accent-soft); }
+.students tr.detail td { background: var(--bg); }
+.muted { color: var(--muted); }
+.detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.detail-grid h3 { font-size: 0.9rem; margin: 0 0 6px; }
+.detail-grid ul { margin: 0 0 8px; padding-left: 18px; }
+.detail-grid p { margin: 0 0 10px; }
