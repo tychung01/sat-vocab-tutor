@@ -1,0 +1,3467 @@
+{
+  "updated": "2026-11-05",
+  "count": 241,
+  "words": [
+    {
+      "word": "abate",
+      "part_of_speech": "verb",
+      "definition": "To become less intense or widespread.",
+      "usage": "Used for storms, pain, noise, and conflicts that die down.",
+      "examples": [
+        "The winds abated by evening, and the ferry resumed service."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "aberration",
+      "part_of_speech": "noun",
+      "definition": "A departure from what is normal or expected.",
+      "usage": "Often describes a result that doesn't fit a pattern (a statistical aberration).",
+      "examples": [
+        "The cold summer was an aberration in an otherwise warming trend."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "advocate",
+      "part_of_speech": "verb / noun",
+      "definition": "(v.) To publicly support or recommend; (n.) a supporter.",
+      "usage": "Often 'advocate for' a cause.",
+      "examples": [
+        "She advocated for longer library hours."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "aesthetic",
+      "part_of_speech": "adjective / noun",
+      "definition": "Concerned with beauty or artistic taste.",
+      "usage": "Used in art and design passages.",
+      "examples": [
+        "The architect balanced aesthetic appeal with practical needs."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "affinity",
+      "part_of_speech": "noun",
+      "definition": "A natural liking for or attraction to something; a similarity.",
+      "usage": "Often 'an affinity for'.",
+      "examples": [
+        "He had an affinity for old maps."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "alleviate",
+      "part_of_speech": "verb",
+      "definition": "To make suffering or a problem less severe.",
+      "usage": "Close in meaning to 'ameliorate' and 'mitigate'.",
+      "examples": [
+        "The new bus line alleviated traffic downtown."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "ambiguous",
+      "part_of_speech": "adjective",
+      "definition": "Open to more than one interpretation; unclear.",
+      "usage": "Describes wording, results, and endings.",
+      "examples": [
+        "The poem's ambiguous ending has sparked many interpretations."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "ambivalent",
+      "part_of_speech": "adjective",
+      "definition": "Having mixed feelings about something.",
+      "usage": "Not the same as indifferent: ambivalent people care, but feel both ways.",
+      "examples": [
+        "She was ambivalent about moving: excited for the job but sad to leave friends."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "ameliorate",
+      "part_of_speech": "verb",
+      "definition": "To make a bad or unsatisfactory situation better.",
+      "usage": "Formal; used for problems, conditions, or suffering (ameliorate poverty, ameliorate symptoms). It implies improvement, not a complete fix.",
+      "examples": [
+        "The new drainage system helped ameliorate flooding in low-lying neighborhoods."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "analogous",
+      "part_of_speech": "adjective",
+      "definition": "Similar or comparable in some way, so that one thing can be used to explain another.",
+      "usage": "Usually followed by 'to'. Common in science and argument passages that compare two systems (a heart is analogous to a pump).",
+      "examples": [
+        "The way ants divide labor is analogous to the way workers specialize in a factory."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "annotate",
+      "part_of_speech": "verb",
+      "definition": "To add notes or comments to a text or diagram to explain it.",
+      "usage": "Neutral, academic. Used for documents, texts, maps, and data sets.",
+      "examples": [
+        "She annotated the poem with notes about each image the author used."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 4 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "anomaly",
+      "part_of_speech": "noun",
+      "definition": "Something that deviates from what is standard or expected.",
+      "usage": "Common in science passages about unexpected data.",
+      "examples": [
+        "The astronomers noticed an anomaly in the star's brightness."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "antagonistic",
+      "part_of_speech": "adjective",
+      "definition": "Actively hostile or opposed.",
+      "usage": "Often followed by 'toward' or 'to'. Describes people, attitudes, or (in science) forces and substances that work against each other.",
+      "examples": [
+        "The two rival scholars remained antagonistic toward each other for decades."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "antecedent",
+      "part_of_speech": "noun / adjective",
+      "definition": "Something that existed or happened before and often led to something else; (adj.) earlier.",
+      "usage": "Formal. Used for historical precursors and causes (the antecedents of modern jazz). In grammar, the word a pronoun refers to.",
+      "examples": [
+        "Early mechanical calculators were antecedents of the modern computer."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "anticipate",
+      "part_of_speech": "verb",
+      "definition": "To expect or predict something and often to prepare for it.",
+      "usage": "Common in passages about predictions and planning. Implies looking ahead, sometimes acting in advance.",
+      "examples": [
+        "Engineers anticipated heavy snowfall and reinforced the roof."
+      ],
+      "forms_seen_on_tests": [
+        "anticipated"
+      ],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "arbitrary",
+      "part_of_speech": "adjective",
+      "definition": "Based on random choice or personal whim rather than reason.",
+      "usage": "Often critical of rules or decisions with no clear basis.",
+      "examples": [
+        "The cutoff date seemed arbitrary to many applicants."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "arduous",
+      "part_of_speech": "adjective",
+      "definition": "Involving great effort; difficult and tiring.",
+      "usage": "Describes journeys, tasks, and processes.",
+      "examples": [
+        "The climb to the summit was long and arduous."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "articulate",
+      "part_of_speech": "verb / adjective",
+      "definition": "(v.) To express clearly; (adj.) able to speak fluently and clearly.",
+      "usage": "As a verb, used for ideas and arguments.",
+      "examples": [
+        "The essay articulates a clear vision for the city's future."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "assert",
+      "part_of_speech": "verb",
+      "definition": "To state a fact or belief confidently and forcefully.",
+      "usage": "Common in describing what an author or researcher claims.",
+      "examples": [
+        "The author asserts that the policy will reduce costs."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "atypical",
+      "part_of_speech": "adjective",
+      "definition": "Not typical; unusual for its kind.",
+      "usage": "Neutral and precise; common in science passages describing unexpected results or members of a group.",
+      "examples": [
+        "The bird's migration route was atypical for its species."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 4 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "beneficiary",
+      "part_of_speech": "noun",
+      "definition": "A person or thing that receives help or an advantage from something.",
+      "usage": "Often 'the beneficiary of'. Used for people helped by policies, organisms helped by relationships, or heirs in a will.",
+      "examples": [
+        "Local farmers were the main beneficiaries of the new irrigation program."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 4 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "benign",
+      "part_of_speech": "adjective",
+      "definition": "Gentle and kind; not harmful.",
+      "usage": "Used for people, climates, and medical conditions (a benign tumor).",
+      "examples": [
+        "The doctor assured him the growth was benign."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "blemish",
+      "part_of_speech": "noun / verb",
+      "definition": "A small mark or flaw that spoils the appearance or perfection of something.",
+      "usage": "Literal (a blemish on skin or fruit) or figurative (a blemish on someone's record).",
+      "examples": [
+        "One late payment was the only blemish on her credit history."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "burdensome",
+      "part_of_speech": "adjective",
+      "definition": "Difficult to carry out or bear; causing worry or effort.",
+      "usage": "Used for rules, costs, and duties that weigh on people (burdensome regulations).",
+      "examples": [
+        "Small businesses found the new paperwork requirements burdensome."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "buttress",
+      "part_of_speech": "verb / noun",
+      "definition": "(v.) To support or strengthen, especially an argument or claim; (n.) a structure that supports a wall.",
+      "usage": "On the SAT, usually the verb meaning 'support,' as in evidence that buttresses a theory.",
+      "examples": [
+        "New fossil discoveries buttress the theory that the species migrated north."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 4 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "candid",
+      "part_of_speech": "adjective",
+      "definition": "Truthful and straightforward; frank.",
+      "usage": "Describes honest remarks or unposed photos.",
+      "examples": [
+        "In a candid interview, the athlete discussed her struggles."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "catalyst",
+      "part_of_speech": "noun",
+      "definition": "Something that causes or speeds up a change.",
+      "usage": "Literal in chemistry; figurative for events that trigger change.",
+      "examples": [
+        "The protest was a catalyst for new labor laws."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "chaotic",
+      "part_of_speech": "adjective",
+      "definition": "In a state of complete confusion and disorder.",
+      "usage": "Describes scenes, systems, or periods with no clear order.",
+      "examples": [
+        "The market was chaotic in the hour after the announcement."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "characterization",
+      "part_of_speech": "noun",
+      "definition": "A description of the qualities of someone or something; how an author portrays a character.",
+      "usage": "Common in literature questions and when describing how something is portrayed.",
+      "examples": [
+        "The reviewer objected to the article's characterization of the town as dull."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "circumvent",
+      "part_of_speech": "verb",
+      "definition": "To find a way around an obstacle, rule, or difficulty.",
+      "usage": "Often implies cleverness and sometimes avoiding a rule in a questionable way.",
+      "examples": [
+        "The researchers circumvented the equipment shortage by building their own sensors."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "coherent",
+      "part_of_speech": "adjective",
+      "definition": "Logical and consistent; clear.",
+      "usage": "Describes arguments, plans, and writing.",
+      "examples": [
+        "She presented a coherent plan for the project."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "coincidence",
+      "part_of_speech": "noun",
+      "definition": "A surprising occurrence of events at the same time that appear connected but have no causal link.",
+      "usage": "Contrasts with planned or caused outcomes; science passages ask whether a pattern is real or a coincidence.",
+      "examples": [
+        "It was no coincidence that sales rose right after the advertising campaign."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "collaboration",
+      "part_of_speech": "noun",
+      "definition": "The act of working together with others to produce something.",
+      "usage": "Neutral to positive; common in passages about research teams and artistic partnerships.",
+      "examples": [
+        "The mural was a collaboration between local students and professional artists."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "commercialization",
+      "part_of_speech": "noun",
+      "definition": "The process of managing or running something mainly for financial gain.",
+      "usage": "Often critical, implying a loss of other values.",
+      "examples": [
+        "Some fans dislike the commercialization of the holiday."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "comparable",
+      "part_of_speech": "adjective",
+      "definition": "Similar enough to be compared; roughly equivalent.",
+      "usage": "Usually 'comparable to' or 'comparable with'. Signals that two things are of similar size, quality, or kind.",
+      "examples": [
+        "The new battery stores an amount of energy comparable to the older model's."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 4 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "compelling",
+      "part_of_speech": "adjective",
+      "definition": "Evoking interest or attention in a powerful way; (of evidence or arguments) convincing.",
+      "usage": "In SAT passages, often describes strong evidence or a persuasive case.",
+      "examples": [
+        "The data provide compelling evidence that the drug reduces inflammation."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 9 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "complacent",
+      "part_of_speech": "adjective",
+      "definition": "Too satisfied with oneself, without awareness of dangers or deficiencies.",
+      "usage": "Negative; implies a dangerous lack of effort.",
+      "examples": [
+        "The champions grew complacent and lost to an underdog."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "compound",
+      "part_of_speech": "verb",
+      "definition": "To make a problem or difficulty worse; also, to combine.",
+      "usage": "The SAT often tests the 'make worse' meaning (the drought was compounded by high winds).",
+      "examples": [
+        "A shortage of nurses compounded the hospital's difficulties during flu season."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "comprehend",
+      "part_of_speech": "verb",
+      "definition": "To grasp mentally; to understand fully.",
+      "usage": "Slightly more formal than 'understand'; often about difficult ideas.",
+      "examples": [
+        "Early readers struggled to comprehend the novel's shifting timeline."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "conceal",
+      "part_of_speech": "verb",
+      "definition": "To hide or keep from being seen or known.",
+      "usage": "Used for objects, feelings, and information. Implies deliberate hiding.",
+      "examples": [
+        "The moth's coloring conceals it against tree bark."
+      ],
+      "forms_seen_on_tests": [
+        "concealed"
+      ],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "concede",
+      "part_of_speech": "verb",
+      "definition": "To admit something is true, often reluctantly; to give up.",
+      "usage": "Common in argument passages: an author concedes a point before rebutting.",
+      "examples": [
+        "The author concedes that the data are limited but argues they are still useful."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "conceptualize",
+      "part_of_speech": "verb",
+      "definition": "To form an idea or mental picture of something.",
+      "usage": "Academic; used for how people think about or frame abstract ideas.",
+      "examples": [
+        "Physicists once conceptualized light as a stream of tiny particles."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 4 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "conducive",
+      "part_of_speech": "adjective",
+      "definition": "Making a certain outcome likely or possible.",
+      "usage": "Usually 'conducive to'.",
+      "examples": [
+        "The quiet library is conducive to studying."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "conflate",
+      "part_of_speech": "verb",
+      "definition": "To combine two or more different ideas or things into one, often by mistake.",
+      "usage": "Frequently 'conflated with'. Usually implies a confusion that should be corrected.",
+      "examples": [
+        "Critics argue that the article conflates correlation with causation."
+      ],
+      "forms_seen_on_tests": [
+        "conflated"
+      ],
+      "sources": [
+        "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "conspicuous",
+      "part_of_speech": "adjective",
+      "definition": "Clearly visible; attracting notice or attention.",
+      "usage": "Used for things that stand out (a conspicuous absence, conspicuous colors).",
+      "examples": [
+        "The bright red flower is conspicuous against the green forest floor."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "constrain",
+      "part_of_speech": "verb",
+      "definition": "To restrict or limit.",
+      "usage": "Used for budgets, physical limits, and rules.",
+      "examples": [
+        "The team's research was constrained by a small budget."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "contentious",
+      "part_of_speech": "adjective",
+      "definition": "Causing or likely to cause disagreement or argument.",
+      "usage": "Describes issues, debates, or claims that people dispute.",
+      "examples": [
+        "Whether the painting is authentic remains a contentious question among historians."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "contradict",
+      "part_of_speech": "verb",
+      "definition": "To deny the truth of a statement by asserting the opposite; to be in conflict with.",
+      "usage": "Common with evidence: findings that contradict a hypothesis.",
+      "examples": [
+        "The new measurements contradicted earlier estimates of the glacier's speed."
+      ],
+      "forms_seen_on_tests": [
+        "contradicted"
+      ],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "controversial",
+      "part_of_speech": "adjective",
+      "definition": "Giving rise to public disagreement.",
+      "usage": "Often 'controversial among' a group; describes ideas, decisions, and figures that people argue about.",
+      "examples": [
+        "The proposal to close the library was controversial among residents."
+      ],
+      "forms_seen_on_tests": [
+        "controversy"
+      ],
+      "sources": [
+        "SAT Practice Test 6 (College Board)",
+        "SAT Practice Test 7 (College Board)",
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "convey",
+      "part_of_speech": "verb",
+      "definition": "To communicate or express; to transport.",
+      "usage": "Often about what a text or image conveys.",
+      "examples": [
+        "The painting conveys a sense of loneliness."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "cordial",
+      "part_of_speech": "adjective",
+      "definition": "Warm and friendly, but often polite or formal.",
+      "usage": "Describes greetings, relations, and behavior; adverb form 'cordially'.",
+      "examples": [
+        "The two delegations exchanged cordial greetings before negotiations began."
+      ],
+      "forms_seen_on_tests": [
+        "cordially"
+      ],
+      "sources": [
+        "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "corroborate",
+      "part_of_speech": "verb",
+      "definition": "To confirm or support a statement, theory, or finding with additional evidence.",
+      "usage": "Key SAT word for evidence: a second study corroborates the first.",
+      "examples": [
+        "Satellite images corroborated the scientists' estimate of forest loss."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "credible",
+      "part_of_speech": "adjective",
+      "definition": "Able to be believed; convincing.",
+      "usage": "Describes sources, witnesses, and evidence.",
+      "examples": [
+        "The report relies on credible sources."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "critique",
+      "part_of_speech": "noun / verb",
+      "definition": "A detailed analysis and judgment of something; (v.) to evaluate critically.",
+      "usage": "Not necessarily negative; a critique weighs strengths and weaknesses.",
+      "examples": [
+        "Her critique of the novel praised its characters but questioned its ending."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "curtail",
+      "part_of_speech": "verb",
+      "definition": "To reduce or limit something.",
+      "usage": "Used for spending, activities, and freedoms.",
+      "examples": [
+        "The drought forced farmers to curtail water use."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "deference",
+      "part_of_speech": "noun",
+      "definition": "Polite submission and respect.",
+      "usage": "Often 'in deference to'.",
+      "examples": [
+        "In deference to her grandfather, she spoke softly."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "delegate",
+      "part_of_speech": "verb / noun",
+      "definition": "(v.) To give a task or responsibility to someone else; (n.) a representative.",
+      "usage": "As a verb, used for managers and leaders handing off work.",
+      "examples": [
+        "The director delegated budget decisions to her assistant."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 9 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "deleterious",
+      "part_of_speech": "adjective",
+      "definition": "Causing harm or damage.",
+      "usage": "Formal; common in science and health passages.",
+      "examples": [
+        "Pollution has a deleterious effect on river life."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "demarcate",
+      "part_of_speech": "verb",
+      "definition": "To set or mark the boundaries or limits of something; to separate clearly.",
+      "usage": "Often 'demarcated from'. Used for physical boundaries and conceptual distinctions.",
+      "examples": [
+        "Stone walls demarcated each family's fields."
+      ],
+      "forms_seen_on_tests": [
+        "demarcated"
+      ],
+      "sources": [
+        "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "derive",
+      "part_of_speech": "verb",
+      "definition": "To obtain something from a source; to originate from.",
+      "usage": "Usually 'derived from'. Common for words, chemicals, and ideas traced to their origins.",
+      "examples": [
+        "Many medicines are derived from plants."
+      ],
+      "forms_seen_on_tests": [
+        "derived"
+      ],
+      "sources": [
+        "SAT Practice Test 7 (College Board)",
+        "SAT Practice Test 9 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "diligent",
+      "part_of_speech": "adjective",
+      "definition": "Showing care and steady effort in one's work.",
+      "usage": "Describes hardworking people and careful work.",
+      "examples": [
+        "The diligent student reviewed her notes every night."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "diminish",
+      "part_of_speech": "verb",
+      "definition": "To make or become less.",
+      "usage": "Used for size, importance, and intensity.",
+      "examples": [
+        "The medicine's effect diminished over time."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "discern",
+      "part_of_speech": "verb",
+      "definition": "To perceive or recognize something, often with difficulty.",
+      "usage": "Used for detecting patterns, differences, or meaning.",
+      "examples": [
+        "It was hard to discern the path in the fog."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "disconcerting",
+      "part_of_speech": "adjective",
+      "definition": "Causing one to feel unsettled or uneasy.",
+      "usage": "Describes surprising or troubling facts or experiences.",
+      "examples": [
+        "It was disconcerting to find the front door already open."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "discount",
+      "part_of_speech": "verb",
+      "definition": "To regard as unimportant or unlikely; to dismiss.",
+      "usage": "On the SAT, usually 'discount a possibility or theory,' not the shopping meaning.",
+      "examples": [
+        "Scientists initially discounted the theory, but new data revived it."
+      ],
+      "forms_seen_on_tests": [
+        "discounted"
+      ],
+      "sources": [
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "disengage",
+      "part_of_speech": "verb",
+      "definition": "To separate or release from something; to withdraw from involvement.",
+      "usage": "Used for mechanical parts, troops, and people who stop participating.",
+      "examples": [
+        "Students tend to disengage when lessons lack clear goals."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 4 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "disparage",
+      "part_of_speech": "verb",
+      "definition": "To speak of something as having little value; to belittle.",
+      "usage": "Negative; describes criticism that is dismissive or disrespectful.",
+      "examples": [
+        "Some critics disparaged the film as shallow, but audiences loved it."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "disparate",
+      "part_of_speech": "adjective",
+      "definition": "Essentially different in kind; not able to be compared.",
+      "usage": "Describes groups or data that are very unlike each other.",
+      "examples": [
+        "The book brings together disparate fields like biology and art."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "dispute",
+      "part_of_speech": "verb / noun",
+      "definition": "To argue about or question the truth of something; also to resist or contest.",
+      "usage": "The SAT has tested the meaning 'resist or fight for' (disputing every inch of the road) as well as 'question'.",
+      "examples": [
+        "The villagers disputed the company's claim to the land."
+      ],
+      "forms_seen_on_tests": [
+        "disputing"
+      ],
+      "sources": [
+        "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "disseminate",
+      "part_of_speech": "verb",
+      "definition": "To spread information, ideas, or knowledge widely.",
+      "usage": "Common for research findings, news, and public health information.",
+      "examples": [
+        "The agency disseminated safety guidelines to every school in the state."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "distort",
+      "part_of_speech": "verb",
+      "definition": "To pull out of shape; to give a misleading account of.",
+      "usage": "Used literally (sound, images) and figuratively (facts, history).",
+      "examples": [
+        "Selective quotations can distort a speaker's meaning."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "dwindle",
+      "part_of_speech": "verb",
+      "definition": "To become gradually smaller in size, amount, or strength.",
+      "usage": "Used for populations, resources, and support that slowly shrink.",
+      "examples": [
+        "The fish population dwindled after the river was dammed."
+      ],
+      "forms_seen_on_tests": [
+        "dwindling"
+      ],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "dynamic",
+      "part_of_speech": "adjective",
+      "definition": "Constantly changing or active; energetic.",
+      "usage": "Describes systems, relationships, and personalities; opposite of static.",
+      "examples": [
+        "Coastlines are dynamic environments shaped by tides and storms."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "earnest",
+      "part_of_speech": "adjective",
+      "definition": "Showing sincere and serious intention.",
+      "usage": "Describes people, efforts, or tones that are genuine and serious.",
+      "examples": [
+        "He made an earnest effort to understand his grandmother's stories."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "elicit",
+      "part_of_speech": "verb",
+      "definition": "To draw out a response, answer, or reaction.",
+      "usage": "Often about questions eliciting answers or stimuli eliciting responses.",
+      "examples": [
+        "The joke elicited laughter from the audience."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "elusive",
+      "part_of_speech": "adjective",
+      "definition": "Difficult to find, catch, or achieve.",
+      "usage": "Describes animals, answers, and goals.",
+      "examples": [
+        "The snow leopard is one of the most elusive animals in the world."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "empirical",
+      "part_of_speech": "adjective",
+      "definition": "Based on observation or experiment rather than theory.",
+      "usage": "Key science word; empirical evidence comes from data.",
+      "examples": [
+        "The claim lacks empirical support."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "enact",
+      "part_of_speech": "verb",
+      "definition": "To make a bill into law; to put into practice; to act out.",
+      "usage": "Most often for laws and policies.",
+      "examples": [
+        "The city enacted a ban on single-use plastic bags."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "endorse",
+      "part_of_speech": "verb",
+      "definition": "To declare public approval or support of.",
+      "usage": "Used for candidates, products, and ideas.",
+      "examples": [
+        "Several scientists endorsed the new guidelines."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "enduring",
+      "part_of_speech": "adjective",
+      "definition": "Continuing or long-lasting.",
+      "usage": "Describes legacies, influence, popularity, and friendships.",
+      "examples": [
+        "The novel's enduring popularity surprised even its publisher."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "ephemeral",
+      "part_of_speech": "adjective",
+      "definition": "Lasting for a very short time.",
+      "usage": "Describes trends, flowers, and moments.",
+      "examples": [
+        "The beauty of the cherry blossoms is ephemeral."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "epitomize",
+      "part_of_speech": "verb",
+      "definition": "To be a perfect example of something.",
+      "usage": "Used when one person or thing represents a quality or type completely.",
+      "examples": [
+        "Her careful, patient research epitomizes the scientific method."
+      ],
+      "forms_seen_on_tests": [
+        "epitomizing"
+      ],
+      "sources": [
+        "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "esteem",
+      "part_of_speech": "noun / verb",
+      "definition": "Respect and admiration; (v.) to respect and admire.",
+      "usage": "Often 'held in high esteem'.",
+      "examples": [
+        "The architect was held in high esteem by her peers."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "evaluate",
+      "part_of_speech": "verb",
+      "definition": "To judge or assess the value, quality, or importance of something.",
+      "usage": "Neutral academic verb for assessing evidence or work.",
+      "examples": [
+        "Researchers evaluated the effectiveness of three teaching methods."
+      ],
+      "forms_seen_on_tests": [
+        "evaluated"
+      ],
+      "sources": [
+        "SAT Practice Test 4 (College Board)",
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "exacerbate",
+      "part_of_speech": "verb",
+      "definition": "To make a problem, situation, or feeling worse.",
+      "usage": "Negative; used for conditions, conflicts, and symptoms.",
+      "examples": [
+        "Rising temperatures exacerbated the water shortage."
+      ],
+      "forms_seen_on_tests": [
+        "exacerbating"
+      ],
+      "sources": [
+        "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "exemplify",
+      "part_of_speech": "verb",
+      "definition": "To be a typical example of.",
+      "usage": "Similar to 'epitomize' but less absolute.",
+      "examples": [
+        "The building exemplifies the city's early modern architecture."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "exhaustive",
+      "part_of_speech": "adjective",
+      "definition": "Including or considering all elements or aspects; thorough.",
+      "usage": "Describes searches, studies, and lists that leave nothing out.",
+      "examples": [
+        "After an exhaustive search of the archives, she found the missing letter."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "exploit",
+      "part_of_speech": "verb",
+      "definition": "To make full use of a resource or opportunity; to use unfairly for one's own advantage.",
+      "usage": "Can be neutral (exploit a weakness in a design) or negative (exploit workers).",
+      "examples": [
+        "The vine exploits gaps in the forest canopy to reach sunlight."
+      ],
+      "forms_seen_on_tests": [
+        "exploited"
+      ],
+      "sources": [
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "extensive",
+      "part_of_speech": "adjective",
+      "definition": "Covering a large area or including a great deal.",
+      "usage": "Used for research, damage, knowledge, and collections.",
+      "examples": [
+        "The museum's collection of maps is extensive."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "feasible",
+      "part_of_speech": "adjective",
+      "definition": "Possible and practical to do.",
+      "usage": "Describes plans and solutions.",
+      "examples": [
+        "Building the bridge was not feasible without federal funds."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "foster",
+      "part_of_speech": "verb",
+      "definition": "To encourage the development of.",
+      "usage": "Used for growth, ideas, cooperation, and talent.",
+      "examples": [
+        "The program fosters creativity in young students."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "fragile",
+      "part_of_speech": "adjective",
+      "definition": "Easily broken or damaged; delicate.",
+      "usage": "Used for objects, ecosystems, and situations.",
+      "examples": [
+        "Coral reefs are fragile ecosystems sensitive to warming water."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "futile",
+      "part_of_speech": "adjective",
+      "definition": "Incapable of producing any useful result; pointless.",
+      "usage": "Describes efforts that are bound to fail.",
+      "examples": [
+        "Trying to argue with the storm's timing was futile."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "hinder",
+      "part_of_speech": "verb",
+      "definition": "To create difficulties that slow or delay.",
+      "usage": "Synonym of hamper and impede.",
+      "examples": [
+        "Heavy rain hindered the rescue efforts."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "hoard",
+      "part_of_speech": "verb / noun",
+      "definition": "To gather and store away a large supply, often secretly.",
+      "usage": "Used for animals storing food and people stockpiling goods.",
+      "examples": [
+        "Squirrels hoard acorns to survive the winter."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "hypothesize",
+      "part_of_speech": "verb",
+      "definition": "To propose an explanation that can be tested.",
+      "usage": "Science term; often 'researchers hypothesize that…'.",
+      "examples": [
+        "The team hypothesized that the birds navigate using Earth's magnetic field."
+      ],
+      "forms_seen_on_tests": [
+        "hypothesized"
+      ],
+      "sources": [
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "illustrate",
+      "part_of_speech": "verb",
+      "definition": "To explain or make clear by using examples; to provide pictures for.",
+      "usage": "Common in questions about what an example demonstrates.",
+      "examples": [
+        "The author uses the story of the lost dog to illustrate the town's kindness."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 4 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "imitate",
+      "part_of_speech": "verb",
+      "definition": "To copy the behavior or style of another.",
+      "usage": "Often 'imitated by'.",
+      "examples": [
+        "Young birds imitate the songs of adult birds."
+      ],
+      "forms_seen_on_tests": [
+        "imitated"
+      ],
+      "sources": [
+        "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "impartial",
+      "part_of_speech": "adjective",
+      "definition": "Treating all sides equally; not biased.",
+      "usage": "Describes judges, observers, and reports.",
+      "examples": [
+        "An impartial panel reviewed the competing proposals."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 9 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "impede",
+      "part_of_speech": "verb",
+      "definition": "To delay or prevent by obstructing.",
+      "usage": "Formal synonym of hinder.",
+      "examples": [
+        "Fallen trees impeded traffic on the highway."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "impending",
+      "part_of_speech": "adjective",
+      "definition": "About to happen, often something unpleasant.",
+      "usage": "Often with storms, deadlines, or crises.",
+      "examples": [
+        "Birds fell silent before the impending storm."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "impenetrable",
+      "part_of_speech": "adjective",
+      "definition": "Impossible to pass through or enter; impossible to understand.",
+      "usage": "Literal (impenetrable jungle) or figurative (impenetrable jargon).",
+      "examples": [
+        "The legal document was written in nearly impenetrable language."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 9 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "imperceptible",
+      "part_of_speech": "adjective",
+      "definition": "So slight or gradual that it cannot be noticed.",
+      "usage": "Describes very small or slow changes.",
+      "examples": [
+        "The continents move at an imperceptible rate."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "implement",
+      "part_of_speech": "verb / noun",
+      "definition": "(v.) To put a plan or decision into effect; (n.) a tool.",
+      "usage": "As a verb, used for policies, programs, and systems.",
+      "examples": [
+        "The school implemented a new recycling program in the fall."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "implicit",
+      "part_of_speech": "adjective",
+      "definition": "Implied though not directly expressed.",
+      "usage": "Opposite of explicit.",
+      "examples": [
+        "There was an implicit criticism in her polite reply."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "import",
+      "part_of_speech": "noun",
+      "definition": "Importance or significance; also, a good brought in from another country.",
+      "usage": "The SAT tests the meaning 'significance' (a discovery of great import).",
+      "examples": [
+        "Few realized the import of the letter until decades later."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "inadequate",
+      "part_of_speech": "adjective",
+      "definition": "Lacking the quality or quantity required; insufficient.",
+      "usage": "Describes resources, explanations, and responses.",
+      "examples": [
+        "The shelter's supplies were inadequate for the number of visitors."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "inadvertent",
+      "part_of_speech": "adjective",
+      "definition": "Not resulting from deliberate planning; unintentional.",
+      "usage": "Usually describes mistakes or side effects; adverb 'inadvertently' is common.",
+      "examples": [
+        "The researchers inadvertently discovered a new species while studying soil samples."
+      ],
+      "forms_seen_on_tests": [
+        "inadvertently"
+      ],
+      "sources": [
+        "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "incentive",
+      "part_of_speech": "noun",
+      "definition": "Something that motivates or encourages action.",
+      "usage": "Common in economics passages.",
+      "examples": [
+        "Tax credits gave homeowners an incentive to install solar panels."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "incident",
+      "part_of_speech": "noun",
+      "definition": "An event or occurrence, often an unusual or unpleasant one.",
+      "usage": "Neutral word for a specific happening.",
+      "examples": [
+        "The incident led to new safety rules at the factory."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "incongruous",
+      "part_of_speech": "adjective",
+      "definition": "Not in harmony with its surroundings; out of place.",
+      "usage": "Describes details, objects, or behavior that seem strangely mismatched.",
+      "examples": [
+        "A modern glass building looked incongruous among the old stone cottages."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "inconsequential",
+      "part_of_speech": "adjective",
+      "definition": "Not important or significant.",
+      "usage": "Often 'inconsequential to'. Used to dismiss minor details or effects.",
+      "examples": [
+        "The error turned out to be inconsequential to the final results."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "indecipherable",
+      "part_of_speech": "adjective",
+      "definition": "Impossible to read or understand.",
+      "usage": "Used for handwriting, codes, and ancient scripts.",
+      "examples": [
+        "The scribe's faded notes were nearly indecipherable."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)",
+        "SAT Practice Test 9 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "indifference",
+      "part_of_speech": "noun",
+      "definition": "Lack of interest, concern, or sympathy.",
+      "usage": "Often 'indifference to'. Suggests not caring either way.",
+      "examples": [
+        "The cat watched the commotion with complete indifference."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 9 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "inevitable",
+      "part_of_speech": "adjective",
+      "definition": "Certain to happen; unavoidable.",
+      "usage": "Describes outcomes that can't be prevented.",
+      "examples": [
+        "With so much rain, flooding was inevitable."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "infallible",
+      "part_of_speech": "adjective",
+      "definition": "Incapable of making mistakes or being wrong.",
+      "usage": "Often used to deny something is perfect (no test is infallible).",
+      "examples": [
+        "Even experienced doctors are not infallible."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 4 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "infrequent",
+      "part_of_speech": "adjective",
+      "definition": "Not occurring often; rare.",
+      "usage": "Describes events, visits, and occurrences.",
+      "examples": [
+        "Rainfall in the desert is infrequent but intense."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "inherent",
+      "part_of_speech": "adjective",
+      "definition": "Existing as a permanent, essential part.",
+      "usage": "Often 'inherent in' or 'inherent to'.",
+      "examples": [
+        "There are risks inherent in any surgery."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "innocuous",
+      "part_of_speech": "adjective",
+      "definition": "Not harmful or offensive.",
+      "usage": "Describes substances, remarks, or actions that seem harmless (sometimes misleadingly so).",
+      "examples": [
+        "The question seemed innocuous, but it upset several guests."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "insensible",
+      "part_of_speech": "adjective",
+      "definition": "Unaware of or not responding to something; unconscious.",
+      "usage": "Often 'insensible to' (insensible to pain or criticism). Not the same as 'not sensible.'",
+      "examples": [
+        "Lost in thought, he was insensible to the noise around him."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "inspect",
+      "part_of_speech": "verb",
+      "definition": "To look at closely to assess condition or find flaws.",
+      "usage": "Used for buildings, products, and documents.",
+      "examples": [
+        "Officials inspected the bridge after the earthquake."
+      ],
+      "forms_seen_on_tests": [
+        "inspecting"
+      ],
+      "sources": [
+        "SAT Practice Test 4 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "integral",
+      "part_of_speech": "adjective",
+      "definition": "Necessary to make a whole complete; essential.",
+      "usage": "Often 'integral to'. Signals that a part is central, not optional.",
+      "examples": [
+        "Bees are integral to the pollination of many crops."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "interconnected",
+      "part_of_speech": "adjective",
+      "definition": "Mutually joined or related.",
+      "usage": "Describes systems, ideas, and networks whose parts affect one another.",
+      "examples": [
+        "Climate, oceans, and ecosystems are deeply interconnected."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "interpret",
+      "part_of_speech": "verb",
+      "definition": "To explain the meaning of; to understand in a particular way.",
+      "usage": "Used for data, texts, and behavior.",
+      "examples": [
+        "Scientists interpret the rock layers as evidence of ancient floods."
+      ],
+      "forms_seen_on_tests": [
+        "interpretation",
+        "misinterpreted"
+      ],
+      "sources": [
+        "SAT Practice Test 8 (College Board)",
+        "SAT Practice Test 9 (College Board)",
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "intricate",
+      "part_of_speech": "adjective",
+      "definition": "Very complicated or detailed.",
+      "usage": "Used for patterns, designs, plots, and systems.",
+      "examples": [
+        "The quilt featured an intricate pattern of interlocking stars."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "intriguing",
+      "part_of_speech": "adjective",
+      "definition": "Arousing curiosity or interest; fascinating.",
+      "usage": "Describes puzzles, findings, and possibilities worth exploring.",
+      "examples": [
+        "The scientists found an intriguing link between sleep and memory."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 4 (College Board)",
+        "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "investigate",
+      "part_of_speech": "verb",
+      "definition": "To carry out a systematic inquiry to discover facts.",
+      "usage": "Used for crimes, scientific questions, and causes.",
+      "examples": [
+        "The team investigated why the frogs were disappearing."
+      ],
+      "forms_seen_on_tests": [
+        "investigated"
+      ],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "involuntary",
+      "part_of_speech": "adjective",
+      "definition": "Done without will or conscious control.",
+      "usage": "Describes reflexes and actions one can't help; adverb 'involuntarily'.",
+      "examples": [
+        "Shivering is an involuntary response to cold."
+      ],
+      "forms_seen_on_tests": [
+        "involuntarily"
+      ],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "isolate",
+      "part_of_speech": "verb",
+      "definition": "To set apart or separate from others; to identify a single factor.",
+      "usage": "In science, means separating a substance or variable for study.",
+      "examples": [
+        "The chemists isolated the compound responsible for the plant's scent."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "latent",
+      "part_of_speech": "adjective",
+      "definition": "Existing but not yet developed, visible, or active.",
+      "usage": "Describes hidden talents, potential, or dormant infections.",
+      "examples": [
+        "The virus can remain latent in the body for years."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "legitimate",
+      "part_of_speech": "adjective",
+      "definition": "Conforming to the law or rules; able to be defended with logic; valid.",
+      "usage": "Describes claims, concerns, and authorities that are reasonable or lawful.",
+      "examples": [
+        "Residents raised legitimate concerns about traffic near the school."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 9 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "lucrative",
+      "part_of_speech": "adjective",
+      "definition": "Producing a great deal of profit.",
+      "usage": "Describes businesses, jobs, and deals.",
+      "examples": [
+        "The spice trade was extremely lucrative for medieval merchants."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 4 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "mandatory",
+      "part_of_speech": "adjective",
+      "definition": "Required by law or rules; compulsory.",
+      "usage": "Opposite of optional.",
+      "examples": [
+        "Attendance at the safety training is mandatory for all staff."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 9 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "manifest",
+      "part_of_speech": "verb / adjective",
+      "definition": "(v.) To show or display clearly; (adj.) clear or obvious to the eye or mind.",
+      "usage": "Often 'manifest in' or 'manifest itself'. The SAT has tested 'manifest' meaning 'visible/evident'.",
+      "examples": [
+        "Her talent for music manifested itself at an early age."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 6 (College Board)",
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "meticulous",
+      "part_of_speech": "adjective",
+      "definition": "Showing great attention to detail; very careful.",
+      "usage": "Describes people and their work.",
+      "examples": [
+        "Her meticulous notes made the experiment easy to repeat."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "mimic",
+      "part_of_speech": "verb",
+      "definition": "To imitate the appearance, sound, or behavior of something.",
+      "usage": "Common in biology (mimicry) and descriptions of copying.",
+      "examples": [
+        "Some harmless snakes mimic the colors of venomous ones."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 4 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "misanthropic",
+      "part_of_speech": "adjective",
+      "definition": "Disliking or distrusting people in general.",
+      "usage": "Describes characters or attitudes that avoid or scorn humanity.",
+      "examples": [
+        "The misanthropic old man rarely left his cabin."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "mitigate",
+      "part_of_speech": "verb",
+      "definition": "To make less severe or painful.",
+      "usage": "Common in environmental and policy passages.",
+      "examples": [
+        "Planting trees can mitigate the effects of urban heat."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "moderation",
+      "part_of_speech": "noun",
+      "definition": "The avoidance of extremes; restraint.",
+      "usage": "Often 'in moderation'. Also the act of making something less extreme.",
+      "examples": [
+        "The doctor said coffee is fine in moderation."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "neglect",
+      "part_of_speech": "verb / noun",
+      "definition": "To fail to care for or pay attention to.",
+      "usage": "Used for duties, buildings, and people left without care.",
+      "examples": [
+        "Years of neglect left the historic theater in ruins."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 4 (College Board)",
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "negligible",
+      "part_of_speech": "adjective",
+      "definition": "So small or unimportant as to be not worth considering.",
+      "usage": "Describes amounts and effects.",
+      "examples": [
+        "The difference in price was negligible."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "novel",
+      "part_of_speech": "adjective",
+      "definition": "New or unusual in an interesting way.",
+      "usage": "The SAT often tests this adjective meaning, not 'a book'.",
+      "examples": [
+        "The team proposed a novel method for cleaning oil spills."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "nuanced",
+      "part_of_speech": "adjective",
+      "definition": "Characterized by subtle shades of meaning or expression.",
+      "usage": "Describes arguments and portrayals that avoid oversimplifying.",
+      "examples": [
+        "The documentary offers a nuanced view of the conflict."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "obscure",
+      "part_of_speech": "adjective / verb",
+      "definition": "(adj.) Not well known or hard to understand; (v.) to hide or make unclear.",
+      "usage": "Both meanings are tested: an obscure poet; clouds obscure the moon.",
+      "examples": [
+        "The scholar rescued an obscure poet's work from neglect.",
+        "Fog obscured the view of the bridge."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "observable",
+      "part_of_speech": "adjective",
+      "definition": "Able to be noticed or perceived.",
+      "usage": "Science term for things that can be measured or seen.",
+      "examples": [
+        "The effect is observable only under a microscope."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "observant",
+      "part_of_speech": "adjective",
+      "definition": "Quick to notice things; also, following rules or customs closely.",
+      "usage": "Usually describes people who notice details.",
+      "examples": [
+        "An observant hiker spotted the rare orchid beside the trail."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "obsolete",
+      "part_of_speech": "adjective",
+      "definition": "No longer produced or used; out of date.",
+      "usage": "Close to 'outmoded'.",
+      "examples": [
+        "Typewriters became obsolete with the rise of computers."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "oddity",
+      "part_of_speech": "noun",
+      "definition": "A strange or peculiar thing or trait.",
+      "usage": "Describes something unusual, sometimes a curiosity.",
+      "examples": [
+        "The two-headed turtle was treated as an oddity at the aquarium."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "offhand",
+      "part_of_speech": "adjective / adverb",
+      "definition": "Casual or careless; done without preparation.",
+      "usage": "Describes remarks or manners that seem unplanned or indifferent.",
+      "examples": [
+        "His offhand comment about the budget caused an uproar."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 9 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "operative",
+      "part_of_speech": "adjective",
+      "definition": "Functioning; in effect; most relevant.",
+      "usage": "Phrase 'the operative word' means the key word; also describes laws or systems in effect.",
+      "examples": [
+        "The old rules remain operative until the new policy is approved."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "optional",
+      "part_of_speech": "adjective",
+      "definition": "Available to be chosen but not required.",
+      "usage": "Opposite of mandatory.",
+      "examples": [
+        "The second essay on the application is optional."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "ornamental",
+      "part_of_speech": "adjective",
+      "definition": "Serving to decorate rather than to be useful.",
+      "usage": "Describes plants, details, and features that are decorative.",
+      "examples": [
+        "The ornamental columns support nothing; they are purely decorative."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "outmoded",
+      "part_of_speech": "adjective",
+      "definition": "Old-fashioned; no longer in use or accepted.",
+      "usage": "Describes ideas, technologies, and methods replaced by newer ones.",
+      "examples": [
+        "Researchers abandoned the outmoded theory once better data appeared."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "outstrip",
+      "part_of_speech": "verb",
+      "definition": "To exceed or move faster than; to surpass.",
+      "usage": "Often about demand outstripping supply.",
+      "examples": [
+        "Demand for the vaccine quickly outstripped supply."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "overt",
+      "part_of_speech": "adjective",
+      "definition": "Done or shown openly; not hidden.",
+      "usage": "Opposite of covert; adverb 'overtly'.",
+      "examples": [
+        "The letter contained no overt threat, but its tone was menacing."
+      ],
+      "forms_seen_on_tests": [
+        "overtly"
+      ],
+      "sources": [
+        "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "paradox",
+      "part_of_speech": "noun",
+      "definition": "A seemingly contradictory statement or situation that may be true.",
+      "usage": "Common in literary and scientific discussions.",
+      "examples": [
+        "It's a paradox that the more choices we have, the harder it is to decide."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "perceptible",
+      "part_of_speech": "adjective",
+      "definition": "Able to be seen, noticed, or felt.",
+      "usage": "Often about small but noticeable changes; opposite of imperceptible.",
+      "examples": [
+        "There was a perceptible drop in temperature after sunset."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "peripheral",
+      "part_of_speech": "adjective",
+      "definition": "On the edge; of secondary importance.",
+      "usage": "Describes locations (peripheral vision) and minor issues.",
+      "examples": [
+        "The budget debate was peripheral to the main purpose of the meeting."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "permanent",
+      "part_of_speech": "adjective",
+      "definition": "Lasting or intended to last indefinitely.",
+      "usage": "Opposite of temporary.",
+      "examples": [
+        "The museum added the sculpture to its permanent collection."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "perpetual",
+      "part_of_speech": "adjective",
+      "definition": "Never ending or changing; continuing indefinitely.",
+      "usage": "Describes cycles, states, and complaints that seem endless.",
+      "examples": [
+        "The polar region lives in perpetual darkness for part of the winter."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "persistent",
+      "part_of_speech": "adjective",
+      "definition": "Continuing firmly despite difficulty; lasting a long time.",
+      "usage": "Describes people (determined) or problems (ongoing).",
+      "examples": [
+        "A persistent cough sent her to the doctor."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 9 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "plausible",
+      "part_of_speech": "adjective",
+      "definition": "Seeming reasonable or probable.",
+      "usage": "Describes explanations and hypotheses.",
+      "examples": [
+        "The detective's theory was plausible but unproven."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "popularize",
+      "part_of_speech": "verb",
+      "definition": "To make something widely known or liked.",
+      "usage": "Used for ideas, styles, and scientific concepts brought to the public.",
+      "examples": [
+        "Her television series popularized astronomy for a generation of viewers."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "postulate",
+      "part_of_speech": "verb / noun",
+      "definition": "To suggest or assume something as a basis for reasoning.",
+      "usage": "Academic; used for theories and assumptions.",
+      "examples": [
+        "Einstein postulated that the speed of light is constant."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "pragmatic",
+      "part_of_speech": "adjective",
+      "definition": "Dealing with things sensibly and realistically; practical.",
+      "usage": "Contrasts with idealistic or theoretical approaches.",
+      "examples": [
+        "The mayor took a pragmatic approach, focusing on what could be done this year."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "precarious",
+      "part_of_speech": "adjective",
+      "definition": "Not securely held; dangerously likely to fall or collapse.",
+      "usage": "Describes positions, situations, and finances.",
+      "examples": [
+        "The vase sat in a precarious spot on the shelf's edge."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "preclude",
+      "part_of_speech": "verb",
+      "definition": "To prevent something from happening; to make impossible.",
+      "usage": "Formal; used for conditions that rule out possibilities.",
+      "examples": [
+        "The injury precluded her from competing in the finals."
+      ],
+      "forms_seen_on_tests": [
+        "precluding"
+      ],
+      "sources": [
+        "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "predetermined",
+      "part_of_speech": "adjective",
+      "definition": "Established or decided in advance.",
+      "usage": "Describes outcomes, routes, or criteria set beforehand.",
+      "examples": [
+        "The robots follow a predetermined path through the warehouse."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "pretentious",
+      "part_of_speech": "adjective",
+      "definition": "Trying to seem more important or cultured than one is.",
+      "usage": "Negative; describes people, writing, or style.",
+      "examples": [
+        "Critics called the restaurant's menu pretentious."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "prevalent",
+      "part_of_speech": "adjective",
+      "definition": "Widespread in a particular area or time.",
+      "usage": "Describes diseases, beliefs, and practices.",
+      "examples": [
+        "Malaria is prevalent in some tropical regions."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "preventable",
+      "part_of_speech": "adjective",
+      "definition": "Able to be stopped from happening.",
+      "usage": "Common in health and safety contexts.",
+      "examples": [
+        "Many of the injuries were preventable with proper equipment."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "profound",
+      "part_of_speech": "adjective",
+      "definition": "Very great or intense; showing deep insight.",
+      "usage": "Describes effects, changes, and thoughts.",
+      "examples": [
+        "The invention of the printing press had a profound effect on society."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "prolong",
+      "part_of_speech": "verb",
+      "definition": "To extend the duration of.",
+      "usage": "Used for lives, meetings, and conflicts.",
+      "examples": [
+        "Proper storage can prolong the shelf life of vegetables."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "prominent",
+      "part_of_speech": "adjective",
+      "definition": "Important or famous; projecting or easily seen.",
+      "usage": "Describes leading figures and noticeable features.",
+      "examples": [
+        "She became a prominent voice in the environmental movement."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "proponent",
+      "part_of_speech": "noun",
+      "definition": "A person who supports or advocates for an idea or cause.",
+      "usage": "Often 'a proponent of'. Opposite of opponent or critic.",
+      "examples": [
+        "He was a leading proponent of public parks in the city."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 4 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "provisional",
+      "part_of_speech": "adjective",
+      "definition": "Arranged for the present, possibly to be changed later.",
+      "usage": "Similar to 'tentative'.",
+      "examples": [
+        "The results are provisional until the full data are reviewed."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "prudent",
+      "part_of_speech": "adjective",
+      "definition": "Acting with or showing care and thought for the future.",
+      "usage": "Describes careful decisions, especially about money or risk; adverb 'prudently'.",
+      "examples": [
+        "It would be prudent to save part of every paycheck."
+      ],
+      "forms_seen_on_tests": [
+        "prudently"
+      ],
+      "sources": [
+        "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "questionable",
+      "part_of_speech": "adjective",
+      "definition": "Doubtful as to truth, quality, or honesty.",
+      "usage": "Describes claims, motives, and methods that invite doubt.",
+      "examples": [
+        "The study's conclusions are questionable because its sample was so small."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "rationalize",
+      "part_of_speech": "verb",
+      "definition": "To try to justify behavior with logical-sounding reasons that may not be the true ones; also, to make more efficient.",
+      "usage": "Often implies self-justification (rationalize a bad decision).",
+      "examples": [
+        "He rationalized skipping practice by saying he needed rest."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "recalcitrant",
+      "part_of_speech": "adjective",
+      "definition": "Stubbornly uncooperative toward authority or control.",
+      "usage": "Describes people, animals, or problems that resist being managed.",
+      "examples": [
+        "The recalcitrant mule refused to cross the bridge."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "reciprocate",
+      "part_of_speech": "verb",
+      "definition": "To respond to an action or feeling with a corresponding one.",
+      "usage": "Used for returning favors, kindness, or affection.",
+      "examples": [
+        "When neighbors helped her move, she reciprocated by cooking them dinner."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 4 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "recognizable",
+      "part_of_speech": "adjective",
+      "definition": "Able to be identified from previous knowledge or features.",
+      "usage": "Describes features or patterns that are easy to identify.",
+      "examples": [
+        "The singer's voice is instantly recognizable."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 4 (College Board)",
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "reconstitute",
+      "part_of_speech": "verb",
+      "definition": "To build up again or reorganize in a different form; to restore dried food by adding water.",
+      "usage": "Often 'reconstituted as' a new organization or form.",
+      "examples": [
+        "After the war, the orchestra was reconstituted as a national ensemble."
+      ],
+      "forms_seen_on_tests": [
+        "reconstituted"
+      ],
+      "sources": [
+        "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "rectify",
+      "part_of_speech": "verb",
+      "definition": "To put right; to correct.",
+      "usage": "Used for errors, injustices, and problems.",
+      "examples": [
+        "The company promised to rectify the billing error."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "redefine",
+      "part_of_speech": "verb",
+      "definition": "To define again or differently; to change the nature of.",
+      "usage": "Used for terms, roles, and fields that change.",
+      "examples": [
+        "Smartphones redefined how people access information."
+      ],
+      "forms_seen_on_tests": [
+        "redefined"
+      ],
+      "sources": [
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "redress",
+      "part_of_speech": "verb / noun",
+      "definition": "To remedy or set right an unfair situation; (n.) compensation for a wrong.",
+      "usage": "Formal; used for injustices and grievances.",
+      "examples": [
+        "The law was designed to redress decades of unequal pay."
+      ],
+      "forms_seen_on_tests": [
+        "redressing"
+      ],
+      "sources": [
+        "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "refute",
+      "part_of_speech": "verb",
+      "definition": "To prove a statement or theory wrong.",
+      "usage": "Stronger than 'dispute'; refuting requires evidence.",
+      "examples": [
+        "The experiment refuted the old assumption."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "reinforce",
+      "part_of_speech": "verb",
+      "definition": "To strengthen or support.",
+      "usage": "Used for structures, ideas, and behaviors.",
+      "examples": [
+        "The new data reinforce the researchers' conclusion."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "replicate",
+      "part_of_speech": "verb",
+      "definition": "To make an exact copy of; to reproduce results.",
+      "usage": "Key science word: other labs replicate an experiment to confirm it. 'Replicable' means able to be reproduced.",
+      "examples": [
+        "Other teams were unable to replicate the original findings."
+      ],
+      "forms_seen_on_tests": [
+        "replicable"
+      ],
+      "sources": [
+        "SAT Practice Test 8 (College Board)",
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "repress",
+      "part_of_speech": "verb",
+      "definition": "To subdue by force; to restrain or hold back feelings.",
+      "usage": "Used for governments controlling people and for suppressing emotions.",
+      "examples": [
+        "She repressed a laugh during the serious ceremony."
+      ],
+      "forms_seen_on_tests": [
+        "repressed"
+      ],
+      "sources": [
+        "SAT Practice Test 9 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "reprieve",
+      "part_of_speech": "noun / verb",
+      "definition": "A temporary relief or cancellation of a punishment or hardship.",
+      "usage": "Often 'a brief reprieve from' something unpleasant.",
+      "examples": [
+        "The rain offered a brief reprieve from the heat wave."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "resilient",
+      "part_of_speech": "adjective",
+      "definition": "Able to recover quickly from difficulty; able to spring back into shape.",
+      "usage": "Describes people, communities, ecosystems, and materials.",
+      "examples": [
+        "The resilient forest regrew within a decade of the fire."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "retain",
+      "part_of_speech": "verb",
+      "definition": "To keep possession of; to continue to have.",
+      "usage": "Used for information, heat, water, and employees.",
+      "examples": [
+        "Clay soil retains water longer than sandy soil."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "rival",
+      "part_of_speech": "verb / noun",
+      "definition": "(v.) To be equal or comparable to; (n.) a competitor.",
+      "usage": "As a verb, means 'match in quality' (few cities rival Paris).",
+      "examples": [
+        "The small bakery's bread rivals that of the city's best restaurants."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "robust",
+      "part_of_speech": "adjective",
+      "definition": "Strong and healthy; able to withstand challenges.",
+      "usage": "Common in science: a robust finding holds up under testing.",
+      "examples": [
+        "The results were robust across different age groups."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "sanction",
+      "part_of_speech": "verb / noun",
+      "definition": "(v.) To give official permission or approval; also, to penalize; (n.) a penalty or an approval.",
+      "usage": "Contradictory meanings; read context carefully.",
+      "examples": [
+        "The league sanctioned the new tournament.",
+        "The country faced trade sanctions."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "sanguine",
+      "part_of_speech": "adjective",
+      "definition": "Optimistic or positive, especially in a difficult situation.",
+      "usage": "Often in negative constructions (not sanguine about the outcome).",
+      "examples": [
+        "Despite the setbacks, the coach remained sanguine about the season."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "satisfactory",
+      "part_of_speech": "adjective",
+      "definition": "Fulfilling expectations or needs; acceptable though not outstanding.",
+      "usage": "Implies adequate rather than excellent.",
+      "examples": [
+        "The repairs were satisfactory, though not perfect."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "scrupulous",
+      "part_of_speech": "adjective",
+      "definition": "Diligent, thorough, and very concerned with doing right.",
+      "usage": "Describes careful and honest work.",
+      "examples": [
+        "The accountant was scrupulous about every receipt."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "scrutinize",
+      "part_of_speech": "verb",
+      "definition": "To examine closely and thoroughly.",
+      "usage": "Often 'scrutinized by' experts or the public.",
+      "examples": [
+        "The contract was scrutinized by lawyers before signing."
+      ],
+      "forms_seen_on_tests": [
+        "scrutinized"
+      ],
+      "sources": [
+        "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "secretive",
+      "part_of_speech": "adjective",
+      "definition": "Inclined to hide feelings or information.",
+      "usage": "Describes people, animals, or organizations that conceal things.",
+      "examples": [
+        "The secretive owl is rarely seen during the day."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "shrewd",
+      "part_of_speech": "adjective",
+      "definition": "Having sharp judgment; clever in a practical way.",
+      "usage": "Describes businesspeople, decisions, and observations.",
+      "examples": [
+        "A shrewd investor, she bought the land before prices rose."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "sincerity",
+      "part_of_speech": "noun",
+      "definition": "The quality of being honest and genuine.",
+      "usage": "Describes feelings, apologies, and speech that are truly meant.",
+      "examples": [
+        "No one doubted the sincerity of his apology."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "situated",
+      "part_of_speech": "adjective",
+      "definition": "Located in a particular place or position.",
+      "usage": "Describes where something is placed or how someone is positioned.",
+      "examples": [
+        "The village is situated at the foot of the mountain."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "skeptical",
+      "part_of_speech": "adjective",
+      "definition": "Not easily convinced; having doubts.",
+      "usage": "Often 'skeptical of' or 'skeptical about' claims.",
+      "examples": [
+        "Many scientists were skeptical of the claim until more data appeared."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "sophisticated",
+      "part_of_speech": "adjective",
+      "definition": "Highly developed and complex; worldly and refined.",
+      "usage": "Describes technology, methods, and people with refined tastes.",
+      "examples": [
+        "The ancient city had a sophisticated system of canals."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "speculate",
+      "part_of_speech": "verb",
+      "definition": "To form a theory without firm evidence.",
+      "usage": "Signals uncertainty; researchers speculate when data are incomplete.",
+      "examples": [
+        "Historians speculate that the letter was never sent."
+      ],
+      "forms_seen_on_tests": [
+        "speculates"
+      ],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "strenuous",
+      "part_of_speech": "adjective",
+      "definition": "Requiring or using great effort or energy.",
+      "usage": "Describes exercise, work, and objections (strenuously object).",
+      "examples": [
+        "The senator strenuously objected to the proposal."
+      ],
+      "forms_seen_on_tests": [
+        "strenuously"
+      ],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "stymie",
+      "part_of_speech": "verb",
+      "definition": "To prevent or hinder the progress of.",
+      "usage": "Informal-sounding but common in writing; used for obstacles blocking efforts.",
+      "examples": [
+        "A lack of funding stymied the research project."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "subsequent",
+      "part_of_speech": "adjective",
+      "definition": "Coming after something in time; following.",
+      "usage": "Often 'subsequent to' or 'in subsequent years'.",
+      "examples": [
+        "The first trial failed, but subsequent experiments succeeded."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "substantial",
+      "part_of_speech": "adjective",
+      "definition": "Of considerable importance, size, or worth.",
+      "usage": "Describes amounts, evidence, and changes.",
+      "examples": [
+        "The program led to a substantial increase in graduation rates."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 4 (College Board)",
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "subtle",
+      "part_of_speech": "adjective",
+      "definition": "So delicate or precise as to be hard to notice or analyze.",
+      "usage": "Describes differences, flavors, and hints.",
+      "examples": [
+        "There was a subtle change in her tone."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "succinct",
+      "part_of_speech": "adjective",
+      "definition": "Briefly and clearly expressed.",
+      "usage": "Describes writing and speech.",
+      "examples": [
+        "His succinct summary saved everyone time."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "superficial",
+      "part_of_speech": "adjective",
+      "definition": "Existing or occurring at the surface; not thorough or deep.",
+      "usage": "Describes wounds, similarities, and analyses that lack depth.",
+      "examples": [
+        "The two languages share only a superficial resemblance."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "supplement",
+      "part_of_speech": "noun / verb",
+      "definition": "Something added to complete or enhance something else; (v.) to add to.",
+      "usage": "Often 'a supplement to'. Implies addition, not replacement.",
+      "examples": [
+        "Field notes supplement the data collected by the sensors."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 4 (College Board)",
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "suppress",
+      "part_of_speech": "verb",
+      "definition": "To forcibly put an end to; to prevent from developing or being expressed.",
+      "usage": "Used for rebellions, information, emotions, and biological processes.",
+      "examples": [
+        "The medicine suppresses the immune response."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "surpass",
+      "part_of_speech": "verb",
+      "definition": "To exceed; to be greater or better than.",
+      "usage": "Often 'surpassed by'.",
+      "examples": [
+        "The student's skill soon surpassed her teacher's."
+      ],
+      "forms_seen_on_tests": [
+        "surpassed"
+      ],
+      "sources": [
+        "SAT Practice Test 4 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "synchronization",
+      "part_of_speech": "noun",
+      "definition": "The operation of things at the same time or rate.",
+      "usage": "Used for clocks, signals, behaviors (fireflies flashing together).",
+      "examples": [
+        "The synchronization of the fireflies' flashes amazed the visitors."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "tangential",
+      "part_of_speech": "adjective",
+      "definition": "Only slightly connected to the main topic; diverging.",
+      "usage": "Describes remarks or issues that drift away from the point.",
+      "examples": [
+        "His speech included several tangential stories about his childhood."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "tedious",
+      "part_of_speech": "adjective",
+      "definition": "Too long, slow, or dull; tiresome.",
+      "usage": "Describes tasks and processes that are boring and repetitive.",
+      "examples": [
+        "Counting every seed by hand was tedious work."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 4 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "tentative",
+      "part_of_speech": "adjective",
+      "definition": "Not certain or fixed; hesitant.",
+      "usage": "Describes plans, conclusions, and steps that may change.",
+      "examples": [
+        "The researchers reached a tentative conclusion pending further tests."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "tenuous",
+      "part_of_speech": "adjective",
+      "definition": "Very weak or slight; thin.",
+      "usage": "Describes connections, arguments, or holds that could easily fail.",
+      "examples": [
+        "The link between the two events is tenuous at best."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "thoughtfulness",
+      "part_of_speech": "noun",
+      "definition": "Consideration for others; careful thinking.",
+      "usage": "Describes kind behavior or reflective judgment.",
+      "examples": [
+        "Her thoughtfulness showed in the handwritten notes she sent."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "trace",
+      "part_of_speech": "noun / verb",
+      "definition": "(n.) A mark or very small amount left behind; (v.) to find the origin of.",
+      "usage": "The SAT has tested 'trace' meaning 'a mark or sign left behind'.",
+      "examples": [
+        "The hikers found no trace of the trail under the snow."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "tranquil",
+      "part_of_speech": "adjective",
+      "definition": "Free from disturbance; calm.",
+      "usage": "Describes places, moods, and waters.",
+      "examples": [
+        "The lake was tranquil in the early morning."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "transparent",
+      "part_of_speech": "adjective",
+      "definition": "Allowing light through so objects can be seen clearly; open and honest; easily understood.",
+      "usage": "The SAT has tested the literal 'clear/see-through' meaning in a literary passage.",
+      "examples": [
+        "The water was so transparent that we could see fish far below."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "unassuming",
+      "part_of_speech": "adjective",
+      "definition": "Not pretentious or arrogant; modest.",
+      "usage": "Describes people and places that are humble or plain.",
+      "examples": [
+        "The unassuming café served the best soup in town."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "undeniable",
+      "part_of_speech": "adjective",
+      "definition": "Unable to be denied or disputed.",
+      "usage": "Describes facts, talent, and evidence that are clearly true.",
+      "examples": [
+        "Her influence on modern dance is undeniable."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "undermine",
+      "part_of_speech": "verb",
+      "definition": "To weaken or damage something, especially gradually or secretly.",
+      "usage": "Often about undermining an argument, authority, or confidence.",
+      "examples": [
+        "The new evidence undermines the original theory."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "uniform",
+      "part_of_speech": "adjective",
+      "definition": "Remaining the same in all cases and at all times; consistent.",
+      "usage": "Describes size, color, rules, and distribution.",
+      "examples": [
+        "The tiles are uniform in size and color."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "universal",
+      "part_of_speech": "adjective",
+      "definition": "Applicable to all cases or people.",
+      "usage": "Describes truths, rights, and experiences shared by everyone.",
+      "examples": [
+        "Music is sometimes called a universal language."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "unobtrusive",
+      "part_of_speech": "adjective",
+      "definition": "Not conspicuous or attracting attention.",
+      "usage": "Describes design, behavior, and presence that blend in.",
+      "examples": [
+        "The security cameras were small and unobtrusive."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "unprecedented",
+      "part_of_speech": "adjective",
+      "definition": "Never done or known before.",
+      "usage": "Describes events and levels beyond anything recorded.",
+      "examples": [
+        "The city saw unprecedented rainfall last spring."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "unpredictable",
+      "part_of_speech": "adjective",
+      "definition": "Not able to be predicted; changeable.",
+      "usage": "Describes weather, behavior, and outcomes.",
+      "examples": [
+        "Mountain weather can be unpredictable."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "validate",
+      "part_of_speech": "verb",
+      "definition": "To check or prove the accuracy of; to confirm.",
+      "usage": "Common in science: results validated by later studies.",
+      "examples": [
+        "The model's predictions were validated by real-world measurements."
+      ],
+      "forms_seen_on_tests": [
+        "validated"
+      ],
+      "sources": [
+        "SAT Practice Test 4 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "vindicate",
+      "part_of_speech": "verb",
+      "definition": "To clear of blame or show to be right.",
+      "usage": "Often when later evidence proves someone right.",
+      "examples": [
+        "The new fossil vindicated the scientist's controversial theory."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "volatile",
+      "part_of_speech": "adjective",
+      "definition": "Liable to change rapidly and unpredictably.",
+      "usage": "Describes markets, tempers, and chemicals.",
+      "examples": [
+        "Oil prices have been volatile this year."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "warranted",
+      "part_of_speech": "adjective",
+      "definition": "Justified or necessary.",
+      "usage": "Describes concerns, actions, and conclusions that are reasonable given the evidence.",
+      "examples": [
+        "Given the storm forecast, closing the schools was warranted."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "wary",
+      "part_of_speech": "adjective",
+      "definition": "Feeling or showing caution about possible dangers or problems.",
+      "usage": "Often 'wary of'.",
+      "examples": [
+        "Deer are wary of humans."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "widespread",
+      "part_of_speech": "adjective",
+      "definition": "Found or distributed over a large area or number of people.",
+      "usage": "Describes beliefs, damage, and species distributions.",
+      "examples": [
+        "The belief that bats are blind is widespread but false."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "zealous",
+      "part_of_speech": "adjective",
+      "definition": "Having great energy or enthusiasm for a cause.",
+      "usage": "Can be positive or suggest excess.",
+      "examples": [
+        "The zealous volunteers worked through the night."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    }
+  ]
+}
