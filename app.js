@@ -7,6 +7,7 @@ import {
   configured, isAdmin, watchUser, signIn, signOutUser, recordLogin,
   loadProgress, saveWordProgress, LEARNED_STREAK,
 } from "./firebase.js";
+import { loadWords } from "./words.js";
 
 const SET_SIZE = 10;
 const REVIEW_PER_QUIZ = 2;
@@ -382,8 +383,12 @@ async function showSignedIn(signedInUser) {
 $("sign-in-button").addEventListener("click", () => {
   $("sign-in-error").hidden = true;
   signIn().catch((err) => {
-    if (err.code === "auth/popup-closed-by-user") return;
-    $("sign-in-error").textContent = "Sign-in didn't work. If a pop-up was blocked, allow pop-ups for this site and try again.";
+    console.error("Sign-in failed", err);
+    if (err.code === "auth/popup-closed-by-user" || err.code === "auth/cancelled-popup-request") return;
+    const hint = err.code === "auth/popup-blocked"
+      ? "Your browser blocked the sign-in pop-up. Allow pop-ups for this site and try again."
+      : "Sign-in didn't work. Please try again.";
+    $("sign-in-error").textContent = `${hint} (${err.code || err.message})`;
     $("sign-in-error").hidden = false;
   });
 });
@@ -392,9 +397,7 @@ $("sign-out").addEventListener("click", () => signOutUser());
 
 async function start() {
   try {
-    const r = await fetch("data/words.json", { cache: "no-cache" });
-    if (!r.ok) throw new Error(r.status);
-    const db = await r.json();
+    const db = await loadWords();
     words = db.words;
     $("updated").textContent = `${words.length} words · last updated ${db.updated}`;
   } catch {

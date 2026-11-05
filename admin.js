@@ -4,6 +4,7 @@
 import {
   configured, isAdmin, watchUser, signIn, signOutUser, listStudents, recentLogins, LEARNED_STREAK,
 } from "./firebase.js";
+import { loadWords } from "./words.js";
 
 const $ = (id) => document.getElementById(id);
 let totalWords = 0;
@@ -109,7 +110,7 @@ async function showDashboard(user) {
   $("status").hidden = false;
   try {
     const [wordsDb, list] = await Promise.all([
-      fetch("data/words.json", { cache: "no-cache" }).then((r) => r.json()),
+      loadWords(),
       listStudents(),
     ]);
     totalWords = wordsDb.words.length;
@@ -125,7 +126,12 @@ async function showDashboard(user) {
 }
 
 $("search").addEventListener("input", renderRows);
-$("sign-in-button").addEventListener("click", () => signIn().catch(() => {}));
+$("sign-in-button").addEventListener("click", () => signIn().catch((err) => {
+  console.error("Sign-in failed", err);
+  if (err.code === "auth/popup-closed-by-user" || err.code === "auth/cancelled-popup-request") return;
+  $("status").textContent = `Sign-in didn't work (${err.code || err.message}).`;
+  $("status").hidden = false;
+}));
 $("sign-out").addEventListener("click", () => signOutUser());
 
 if (!configured) {

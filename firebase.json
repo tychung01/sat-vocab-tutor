@@ -1,0 +1,30 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      ".git/**",
+      ".firebase/**",
+      "**/node_modules/**",
+      ".venv/**",
+      "sources/**",
+      "entries/**",
+      "scripts/**",
+      "docs/**",
+      "**/*.md",
+      "firestore.rules",
+      "requirements.txt",
+      "system_prompt.txt"
+    ],
+    "headers": [
+      {
+        "source": "data/words.json",
+        "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+      }
+    ]
+  },
+  "firestore": {
+    "rules": "firestore.rules"
+  }
+}

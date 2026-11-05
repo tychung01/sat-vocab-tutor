@@ -6,6 +6,10 @@
   <title>SAT Word Study</title>
   <meta name="description" content="Study vocabulary from official SAT practice tests with flashcards and quizzes.">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    // Google sign-in only works on the firebaseapp.com address (same site as the sign-in handler).
+    if (location.hostname.endsWith(".web.app")) location.replace(location.href.replace(".web.app", ".firebaseapp.com"));
+  </script>
 </head>
 <body>
   <header class="top">
