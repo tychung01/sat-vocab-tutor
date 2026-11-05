@@ -24,7 +24,11 @@ them too.
 ## 2. Extract words from each new test
 
 1. Download each new PDF into `sources/pdfs/`. That folder is ignored by git,
-   because the PDFs are College Board's copyrighted material.
+   because the PDFs are copyrighted test material. A fresh checkout (like the
+   monthly cloud run) has none, so also download every test already listed in
+   `data/sources.json` from its `url`, keeping the file name from the URL (ACT
+   files get an `act-` prefix). Otherwise the next step would drop the
+   earlier tests from `sources/candidates.json`.
 2. Run `.venv/bin/python scripts/extract_vocab.py sources/pdfs/*.pdf > sources/candidates.json`.
    This writes the answer choices from every "most logical and precise word or
    phrase" and "most nearly mean" question.
