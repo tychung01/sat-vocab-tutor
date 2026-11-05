@@ -12,6 +12,7 @@
       "entries/**",
       "scripts/**",
       "docs/**",
+      "lists/**",
       "**/*.md",
       "firestore.rules",
       "requirements.txt",

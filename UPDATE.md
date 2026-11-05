@@ -106,8 +106,9 @@ source). Add more new words until this month's total is 50.
 ## Word list files
 
 `scripts/tag_word_lists.py` and `scripts/candidate_words.py` use two files in
-`sources/lists/`, which git ignores (`candidate_words.py` downloads them):
+`sources/lists/`, which git ignores (`candidate_words.py` puts them there):
 - `nawl.csv`: NAWL 1.2 "lemmatized for teaching" from
-  https://www.newgeneralservicelist.com/new-academic-word-list (CC BY-SA 4.0)
+  https://www.newgeneralservicelist.com/new-academic-word-list (CC BY-SA 4.0).
+  A copy is kept in `lists/nawl.csv`, so no download is needed.
 - `awl-sublists.txt`: the text of Coxhead's AWL sublists PDF from
   https://www.wgtn.ac.nz/lals/resources/academicwordlist/publications/awlsublists1.pdf

@@ -1,7 +1,7 @@
 """List academic word list words that aren't in the database yet.
 
-Downloads the New Academic Word List and Coxhead's Academic Word List into
-sources/lists/ if they aren't there, then prints the headwords from either list
+Puts the New Academic Word List (copied from lists/) and Coxhead's Academic
+Word List (downloaded) into sources/lists/ if they aren't there, then prints the headwords from either list
 that aren't already a database word or a form seen on a test. Use it to choose
 the monthly new words; most of NAWL is technical, so pick only SAT-level ones.
 
@@ -10,6 +10,7 @@ Usage: python scripts/candidate_words.py
 
 import json
 import re
+import shutil
 import subprocess
 from pathlib import Path
 
@@ -17,7 +18,9 @@ from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parent.parent
 LISTS = ROOT / "sources" / "lists"
-NAWL_URL = "https://www.newgeneralservicelist.com/s/NAWL_12_lemmatized_for_teaching.csv"
+# NAWL is CC BY-SA, so a copy is kept in the repo (its download link redirects to a
+# host the cloud sandbox can't reach). The AWL is downloaded when needed.
+NAWL_COPY = ROOT / "lists" / "nawl.csv"
 AWL_URL = "https://www.wgtn.ac.nz/lals/resources/academicwordlist/publications/awlsublists1.pdf"
 
 
@@ -29,8 +32,8 @@ def download(url, path):
 def ensure_lists():
     LISTS.mkdir(parents=True, exist_ok=True)
     nawl = LISTS / "nawl.csv"
-    if not nawl.exists():
-        download(NAWL_URL, nawl)
+    if not nawl.exists() or nawl.stat().st_size == 0:
+        shutil.copyfile(NAWL_COPY, nawl)
     awl_text = LISTS / "awl-sublists.txt"
     if not awl_text.exists():
         pdf = LISTS / "awl-sublists.pdf"
