@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-05",
-  "count": 1017,
+  "count": 1067,
   "words": [
     {
       "word": "abandon",
@@ -145,6 +145,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "acquire",
+      "part_of_speech": "verb",
+      "definition": "To gain or come to possess something, such as a skill, object, or knowledge.",
+      "usage": "Often paired with skills, knowledge, or assets.",
+      "examples": [
+        "She acquired fluency in Spanish during a year abroad."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "acumen",
       "part_of_speech": "noun",
       "definition": "The ability to make good judgments and quick decisions.",
@@ -256,6 +270,21 @@
       "sources": [
         "Academic Word List (Coxhead, 2000)",
         "New Academic Word List (Browne, Culligan & Phillips, CC BY-SA 4.0)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "adjust",
+      "part_of_speech": "verb",
+      "definition": "To change something slightly to fit new conditions or work better.",
+      "usage": "'Adjust to' means adapt to a new situation.",
+      "examples": [
+        "The farmers adjusted their planting schedule after the unusually cold spring."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 5 (College Board)",
+        "Academic Word List (Coxhead, 2000)"
       ],
       "added": "2026-11-05"
     },
@@ -452,6 +481,20 @@
       "usage": "Common in history passages.",
       "examples": [
         "The region remained largely agrarian until the 1900s."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "akin",
+      "part_of_speech": "adjective",
+      "definition": "Similar in nature or closely related.",
+      "usage": "Used with 'to'.",
+      "examples": [
+        "Her calm approach to teaching was akin to that of a coach."
       ],
       "forms_seen_on_tests": [],
       "sources": [
@@ -983,6 +1026,21 @@
       "added": "2026-11-05"
     },
     {
+      "word": "approximate",
+      "part_of_speech": "adjective",
+      "definition": "Close to exact but not perfectly precise.",
+      "usage": "The verb form (uh-PROK-si-mate) means to come close to.",
+      "examples": [
+        "The approximate age of the fossil is ten million years."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 10 (College Board)",
+        "Academic Word List (Coxhead, 2000)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "arbitrary",
       "part_of_speech": "adjective",
       "definition": "Based on random choice or personal whim rather than reason.",
@@ -1095,6 +1153,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "ascertain",
+      "part_of_speech": "verb",
+      "definition": "To find out for certain by checking or investigating.",
+      "usage": "Formal; suggests careful verification.",
+      "examples": [
+        "Investigators tried to ascertain the cause of the fire."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "aspiration",
       "part_of_speech": "noun",
       "definition": "A hope or ambition.",
@@ -1147,6 +1219,34 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "assume",
+      "part_of_speech": "verb",
+      "definition": "To accept as true without proof; to take on a role or responsibility.",
+      "usage": "Context decides between 'suppose' and 'take on'.",
+      "examples": [
+        "The author assumes that readers already know the history of the war."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "assure",
+      "part_of_speech": "verb",
+      "definition": "To tell someone confidently so as to remove doubt; to make certain.",
+      "usage": "Assure a person; ensure an outcome.",
+      "examples": [
+        "The mayor assured residents that the bridge would reopen by June."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
       ],
       "added": "2026-11-05"
     },
@@ -1517,6 +1617,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "bulk",
+      "part_of_speech": "noun",
+      "definition": "The main or largest part of something; great size.",
+      "usage": "'The bulk of' means most of.",
+      "examples": [
+        "The bulk of the museum's collection was donated by a single family."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "burdensome",
       "part_of_speech": "adjective",
       "definition": "Difficult to carry out or bear; causing worry or effort.",
@@ -1643,6 +1757,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "capable",
+      "part_of_speech": "adjective",
+      "definition": "Having the ability or quality needed to do something.",
+      "usage": "Usually followed by 'of' plus an -ing verb.",
+      "examples": [
+        "The new battery is capable of powering the device for three days."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
       ],
       "added": "2026-11-05"
     },
@@ -1825,6 +1953,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "circumstance",
+      "part_of_speech": "noun",
+      "definition": "A condition or fact connected with an event or situation.",
+      "usage": "Often plural: 'under the circumstances'.",
+      "examples": [
+        "Under the circumstances, the committee's cautious response was reasonable."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
       ],
       "added": "2026-11-05"
     },
@@ -2824,6 +2966,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "contention",
+      "part_of_speech": "noun",
+      "definition": "A claim or assertion; a dispute or disagreement.",
+      "usage": "Context decides between 'claim' and 'conflict'.",
+      "examples": [
+        "The historian's contention is that the treaty was never fully enforced."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "contentious",
       "part_of_speech": "adjective",
       "definition": "Causing or likely to cause disagreement or argument.",
@@ -3312,6 +3468,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "decipher",
+      "part_of_speech": "verb",
+      "definition": "To work out the meaning of something unclear or coded.",
+      "usage": "Used for handwriting, codes, and ancient scripts.",
+      "examples": [
+        "Linguists finally deciphered the inscription after years of study."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "decline",
       "part_of_speech": "verb / noun",
       "definition": "To decrease; to refuse politely.",
@@ -3596,6 +3766,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "denounce",
+      "part_of_speech": "verb",
+      "definition": "To publicly condemn as wrong or evil.",
+      "usage": "Stronger than 'criticize'.",
+      "examples": [
+        "The senator denounced the proposal as reckless."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "dense",
       "part_of_speech": "adjective",
       "definition": "Closely packed; difficult to understand.",
@@ -3685,6 +3869,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "detached",
+      "part_of_speech": "adjective",
+      "definition": "Emotionally uninvolved; objective, or physically separate.",
+      "usage": "Can describe tone as impersonal.",
+      "examples": [
+        "The narrator describes the disaster in a detached, almost clinical tone."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "detect",
       "part_of_speech": "verb",
       "definition": "To discover or notice the presence of.",
@@ -3723,6 +3921,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "deviate",
+      "part_of_speech": "verb",
+      "definition": "To depart from an established course, standard, or norm.",
+      "usage": "Often 'deviate from'.",
+      "examples": [
+        "The results deviated from what the researchers had predicted."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
       ],
       "added": "2026-11-05"
     },
@@ -4012,6 +4224,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "discriminate",
+      "part_of_speech": "verb",
+      "definition": "To recognize a difference between things; to treat people unfairly based on group.",
+      "usage": "Meaning depends on context: neutral 'tell apart' or negative 'treat unfairly'.",
+      "examples": [
+        "Trained tasters can discriminate between very similar blends of tea."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "discrimination",
       "part_of_speech": "noun",
       "definition": "Unjust treatment of different groups; the ability to tell differences.",
@@ -4161,6 +4387,20 @@
       "usage": "Used for people, species, and water.",
       "examples": [
         "The flood displaced thousands of residents."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "dispose",
+      "part_of_speech": "verb",
+      "definition": "To get rid of; to arrange or incline someone toward something.",
+      "usage": "'Dispose of' means discard; 'be disposed to' means inclined to.",
+      "examples": [
+        "The factory was fined for disposing of chemical waste in the river."
       ],
       "forms_seen_on_tests": [],
       "sources": [
@@ -4384,6 +4624,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "dominate",
+      "part_of_speech": "verb",
+      "definition": "To have a commanding influence over or to be the most prominent in.",
+      "usage": "Can describe power, size, or attention.",
+      "examples": [
+        "Tall pines dominate the forest canopy on the northern slope."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "dormant",
       "part_of_speech": "adjective",
       "definition": "Temporarily inactive.",
@@ -4422,6 +4676,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "duration",
+      "part_of_speech": "noun",
+      "definition": "The length of time something lasts.",
+      "usage": "Often 'for the duration of'.",
+      "examples": [
+        "The duration of the experiment was extended to six months."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
       ],
       "added": "2026-11-05"
     },
@@ -4613,6 +4881,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "eliminate",
+      "part_of_speech": "verb",
+      "definition": "To remove completely or rule out.",
+      "usage": "Common in problem-solving and elimination of answer choices.",
+      "examples": [
+        "The new process eliminated the need for manual data entry."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "elite",
       "part_of_speech": "noun / adjective",
       "definition": "A select group superior in ability or status.",
@@ -4723,6 +5005,34 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "embody",
+      "part_of_speech": "verb",
+      "definition": "To give physical or clear form to an idea or quality.",
+      "usage": "The noun is 'embodiment'.",
+      "examples": [
+        "The monument embodies the nation's hope for peace."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "emerge",
+      "part_of_speech": "verb",
+      "definition": "To come out of hiding or into view; to become known as a result.",
+      "usage": "Often used for ideas, patterns, and leaders.",
+      "examples": [
+        "A clear pattern emerged once the scientists compared the two data sets."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
       ],
       "added": "2026-11-05"
     },
@@ -5012,6 +5322,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "envision",
+      "part_of_speech": "verb",
+      "definition": "To picture something in the mind as a future possibility.",
+      "usage": "Close to 'imagine' but forward-looking.",
+      "examples": [
+        "The architect envisioned a park where the parking lot once stood."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "ephemeral",
       "part_of_speech": "adjective",
       "definition": "Lasting for a very short time.",
@@ -5066,6 +5390,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "equate",
+      "part_of_speech": "verb",
+      "definition": "To consider or treat as the same or equal.",
+      "usage": "Usually 'equate A with B'.",
+      "examples": [
+        "Critics warned against equating wealth with happiness."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
       ],
       "added": "2026-11-05"
     },
@@ -5154,6 +5492,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "erroneous",
+      "part_of_speech": "adjective",
+      "definition": "Wrong or based on a mistake.",
+      "usage": "Describes beliefs, assumptions, or data.",
+      "examples": [
+        "The erroneous report caused a brief panic in the markets."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
       ],
       "added": "2026-11-05"
     },
@@ -5834,6 +6186,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "forge",
+      "part_of_speech": "verb",
+      "definition": "To create or shape with effort; to make a fake copy.",
+      "usage": "Context decides: 'forge a bond' versus 'forge a signature'.",
+      "examples": [
+        "The two nations forged a lasting alliance after the war."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "formidable",
       "part_of_speech": "adjective",
       "definition": "Inspiring fear or respect through size, power, or skill.",
@@ -5872,6 +6238,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Academic Word List (Coxhead, 2000)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "fortify",
+      "part_of_speech": "verb",
+      "definition": "To strengthen against attack or weakness.",
+      "usage": "Used literally and figuratively.",
+      "examples": [
+        "Settlers fortified the village with a tall wooden wall."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
       ],
       "added": "2026-11-05"
     },
@@ -6045,6 +6425,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "gauge",
+      "part_of_speech": "verb",
+      "definition": "To estimate or judge, often by measuring.",
+      "usage": "The noun is a measuring instrument.",
+      "examples": [
+        "Teachers use short quizzes to gauge how well students understand the unit."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "generalize",
       "part_of_speech": "verb",
       "definition": "To make a broad statement based on specific cases.",
@@ -6083,6 +6477,34 @@
       "forms_seen_on_tests": [],
       "sources": [
         "PSAT 8/9 Practice Test 2 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "glean",
+      "part_of_speech": "verb",
+      "definition": "To gather information or facts bit by bit.",
+      "usage": "Suggests collecting from scattered sources.",
+      "examples": [
+        "Historians gleaned details about daily life from old account books."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "grapple",
+      "part_of_speech": "verb",
+      "definition": "To struggle to deal with a difficult problem or to wrestle.",
+      "usage": "Usually 'grapple with'.",
+      "examples": [
+        "Scientists continue to grapple with the question of how life began."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
       ],
       "added": "2026-11-05"
     },
@@ -6546,6 +6968,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "imminent",
+      "part_of_speech": "adjective",
+      "definition": "About to happen very soon.",
+      "usage": "Often describes danger or change.",
+      "examples": [
+        "Dark clouds warned of an imminent storm."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "immune",
       "part_of_speech": "adjective",
       "definition": "Protected from a disease; not affected by something.",
@@ -6933,6 +7369,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "incidental",
+      "part_of_speech": "adjective",
+      "definition": "Happening as a minor side effect; secondary.",
+      "usage": "Often 'incidental to' something larger.",
+      "examples": [
+        "The discovery of the new species was incidental to a study of soil."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "incisive",
       "part_of_speech": "adjective",
       "definition": "Intelligently sharp and direct.",
@@ -7089,6 +7539,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "indifferent",
+      "part_of_speech": "adjective",
+      "definition": "Showing no interest or concern; neither good nor bad.",
+      "usage": "Describes attitude, not fairness.",
+      "examples": [
+        "The crowd seemed indifferent to the speaker's passionate appeal."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "indigenous",
       "part_of_speech": "adjective",
       "definition": "Originating or occurring naturally in a particular place; native.",
@@ -7240,6 +7704,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "SAT Practice Test 4 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "infer",
+      "part_of_speech": "verb",
+      "definition": "To reach a conclusion from evidence and reasoning rather than direct statement.",
+      "usage": "Readers infer; authors imply.",
+      "examples": [
+        "From the faded handwriting, historians inferred that the letter was very old."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
       ],
       "added": "2026-11-05"
     },
@@ -7473,6 +7951,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "insidious",
+      "part_of_speech": "adjective",
+      "definition": "Spreading harmfully in a subtle, gradual way.",
+      "usage": "Often describes dangers that go unnoticed.",
+      "examples": [
+        "The insidious effects of erosion went unnoticed for decades."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "insight",
       "part_of_speech": "noun",
       "definition": "A deep understanding of a person or thing.",
@@ -7619,6 +8111,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "intense",
+      "part_of_speech": "adjective",
+      "definition": "Extreme in degree or strength; deeply felt.",
+      "usage": "Describes heat, emotion, effort, or focus.",
+      "examples": [
+        "The two teams shared an intense rivalry that lasted decades."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "intensity",
       "part_of_speech": "noun",
       "definition": "The quality of being strong, extreme, or concentrated.",
@@ -7721,6 +8227,20 @@
         "SAT Practice Test 9 (College Board)",
         "SAT Practice Test 11 (College Board)",
         "PSAT/NMSQT Practice Test 3 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "interval",
+      "part_of_speech": "noun",
+      "definition": "A stretch of time or space between two events or points.",
+      "usage": "Regular intervals means evenly spaced in time.",
+      "examples": [
+        "Readings were recorded at ten-minute intervals throughout the night."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
       ],
       "added": "2026-11-05"
     },
@@ -8391,6 +8911,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "mechanism",
+      "part_of_speech": "noun",
+      "definition": "A system of parts working together; a process by which something happens.",
+      "usage": "Used for machines and for natural or social processes.",
+      "examples": [
+        "Scientists are studying the mechanism by which birds sense magnetic fields."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
       ],
       "added": "2026-11-05"
     },
@@ -9223,6 +9757,21 @@
       "added": "2026-11-05"
     },
     {
+      "word": "obtain",
+      "part_of_speech": "verb",
+      "definition": "To get or acquire, often through effort.",
+      "usage": "More formal than 'get'.",
+      "examples": [
+        "Researchers obtained permission to study the artifacts."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "SAT Practice Test 5 (College Board)",
+        "Academic Word List (Coxhead, 2000)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "occurrence",
       "part_of_speech": "noun",
       "definition": "An incident or event; the fact of something happening.",
@@ -9960,6 +10509,20 @@
       "sources": [
         "Academic Word List (Coxhead, 2000)",
         "New Academic Word List (Browne, Culligan & Phillips, CC BY-SA 4.0)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "phenomenon",
+      "part_of_speech": "noun",
+      "definition": "An observable fact or event, especially one that is notable or unusual.",
+      "usage": "Plural is 'phenomena'.",
+      "examples": [
+        "The aurora is a natural phenomenon caused by solar particles."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
       ],
       "added": "2026-11-05"
     },
@@ -10812,6 +11375,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "provoke",
+      "part_of_speech": "verb",
+      "definition": "To stir up a reaction, especially an angry or strong one.",
+      "usage": "Can be neutral: 'provoke thought'.",
+      "examples": [
+        "The article provoked a heated debate among readers."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "prudent",
       "part_of_speech": "adjective",
       "definition": "Acting with or showing care and thought for the future.",
@@ -11461,6 +12038,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "remnant",
+      "part_of_speech": "noun",
+      "definition": "A small remaining part of something larger.",
+      "usage": "Often a leftover from the past.",
+      "examples": [
+        "Only a remnant of the ancient wall still stands."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "remorse",
       "part_of_speech": "noun",
       "definition": "Deep regret for a wrong committed.",
@@ -11776,6 +12367,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "restrain",
+      "part_of_speech": "verb",
+      "definition": "To hold back or keep under control.",
+      "usage": "Can be physical or emotional.",
+      "examples": [
+        "She restrained her excitement until the results were officially announced."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "restraint",
       "part_of_speech": "noun",
       "definition": "Self-control; a measure that limits or restricts.",
@@ -11786,6 +12391,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "PSAT 8/9 Practice Test 1 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "restrict",
+      "part_of_speech": "verb",
+      "definition": "To limit the size, amount, or range of something.",
+      "usage": "Often 'restrict access' or 'restricted to'.",
+      "examples": [
+        "The city restricted parking on the street to residents only."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
       ],
       "added": "2026-11-05"
     },
@@ -11884,6 +12503,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "New Academic Word List (Browne, Culligan & Phillips, CC BY-SA 4.0)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "revere",
+      "part_of_speech": "verb",
+      "definition": "To regard with deep respect and admiration.",
+      "usage": "The adjective is 'revered'.",
+      "examples": [
+        "Villagers revered the old teacher for her wisdom."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
       ],
       "added": "2026-11-05"
     },
@@ -12703,6 +13336,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "stifle",
+      "part_of_speech": "verb",
+      "definition": "To suppress or hold back; to smother.",
+      "usage": "Applies to feelings, ideas, and growth.",
+      "examples": [
+        "Rigid rules can stifle creativity in the classroom."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "stimulus",
       "part_of_speech": "noun",
       "definition": "Something that causes a reaction or activity.",
@@ -13151,6 +13798,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "sustain",
+      "part_of_speech": "verb",
+      "definition": "To keep going over time; to endure or support.",
+      "usage": "Can mean maintain, or suffer (sustain an injury).",
+      "examples": [
+        "The small town could not sustain a large factory for long."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "sustainable",
       "part_of_speech": "adjective",
       "definition": "Able to be maintained over time without depleting resources.",
@@ -13261,6 +13922,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "tangible",
+      "part_of_speech": "adjective",
+      "definition": "Able to be touched or clearly perceived; real rather than abstract.",
+      "usage": "Often 'tangible results/benefits'.",
+      "examples": [
+        "The new program produced tangible improvements in reading scores."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Curated high-frequency SAT words"
       ],
       "added": "2026-11-05"
     },
@@ -13444,6 +14119,20 @@
       "sources": [
         "Academic Word List (Coxhead, 2000)",
         "New Academic Word List (Browne, Culligan & Phillips, CC BY-SA 4.0)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "thesis",
+      "part_of_speech": "noun",
+      "definition": "A main claim that a writer sets out to support; a long academic paper.",
+      "usage": "Plural is 'theses'.",
+      "examples": [
+        "The essay's thesis is that trade shaped the region's culture."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
       ],
       "added": "2026-11-05"
     },
@@ -14395,6 +15084,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "welfare",
+      "part_of_speech": "noun",
+      "definition": "The health, happiness, and well-being of a person or group.",
+      "usage": "Often 'public welfare' or 'animal welfare'.",
+      "examples": [
+        "The inspector checked that the welfare of the workers was protected."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "Academic Word List (Coxhead, 2000)"
       ],
       "added": "2026-11-05"
     },
