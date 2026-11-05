@@ -21,7 +21,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DB = ROOT / "data" / "words.json"
 CANDIDATES = ROOT / "sources" / "candidates.json"
-PREPOSITIONS = {"of", "to", "by", "with", "from", "in", "about", "for", "at", "toward", "among", "as"}
+PREPOSITIONS = {"of", "to", "by", "with", "from", "in", "about", "for", "at", "toward", "among", "as", "between", "on", "into", "over"}
 
 
 def normalize(word):
@@ -32,14 +32,30 @@ def normalize(word):
     return " ".join(parts)
 
 
+TEST_NAMES = [
+    ("psat-8-9-", "PSAT 8/9"),
+    ("psat-10-", "PSAT 10"),
+    ("psat-nmsqt-", "PSAT/NMSQT"),
+    ("sat-", "SAT"),
+]
+
+
+def test_label(stem):
+    """Turn a PDF name like 'psat-8-9-practice-test-2' into 'PSAT 8/9 Practice Test 2 (College Board)'."""
+    number = re.search(r"test-(\d+)", stem)
+    for prefix, name in TEST_NAMES:
+        if stem.startswith(prefix) and number:
+            return f"{name} Practice Test {number[1]} (College Board)"
+    return stem
+
+
 def test_sources():
     """Map each normalized word to the practice tests it appeared in."""
     if not CANDIDATES.exists():
         return {}
     found = {}
     for test, questions in json.loads(CANDIDATES.read_text()).items():
-        number = re.search(r"test-(\d+)", test)
-        label = f"SAT Practice Test {number[1]} (College Board)" if number else test
+        label = test_label(test)
         for question in questions:
             for word in question["words"]:
                 found.setdefault(normalize(word), set()).add(label)
@@ -47,8 +63,12 @@ def test_sources():
 
 
 def sort_key(label):
-    number = re.search(r"Test (\d+)", label)
-    return (0, int(number[1])) if number else (1, label)
+    """Order sources SAT first, then PSAT/NMSQT, PSAT 10, PSAT 8/9, then anything else."""
+    number = re.search(r"Practice Test (\d+)", label)
+    if not number:
+        return (len(TEST_NAMES), 0, label)
+    rank = next(i for i, (_, name) in enumerate(reversed(TEST_NAMES)) if label.startswith(name + " "))
+    return (rank, int(number[1]), label)
 
 
 def main():
@@ -74,9 +94,11 @@ def main():
 
         if item["w"] in words:
             entry = words[item["w"]]
-            new = sources - set(entry["sources"])
-            if new:
-                entry["sources"] = sorted(set(entry["sources"]) | new, key=sort_key)
+            new_sources = sources - set(entry["sources"])
+            new_forms = forms - {item["w"]} - set(entry["forms_seen_on_tests"])
+            if new_sources or new_forms:
+                entry["sources"] = sorted(set(entry["sources"]) | new_sources, key=sort_key)
+                entry["forms_seen_on_tests"] = sorted(set(entry["forms_seen_on_tests"]) | new_forms)
                 updated += 1
             continue
 

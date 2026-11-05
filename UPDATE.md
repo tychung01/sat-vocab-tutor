@@ -6,10 +6,12 @@ them too.
 ## 1. Look for new official practice tests
 
 1. Set up: `python3 -m venv .venv && .venv/bin/pip install -r requirements.txt`
-2. Read `data/sources.json` to see which practice tests are already processed.
+2. Read `data/sources.json` to see which SAT and PSAT practice tests are
+   already processed.
 3. Check https://satsuite.collegeboard.org/practice/practice-tests/paper for
-   digital SAT practice tests with numbers that aren't in `data/sources.json`.
-   Also try the next few test numbers directly:
+   SAT, PSAT/NMSQT, and PSAT 8/9 practice test PDFs that aren't in
+   `data/sources.json`. (PSAT 10 tests repeat the PSAT/NMSQT ones, so skip them
+   unless they're new.) Also try the next few SAT test numbers directly:
    `https://satsuite.collegeboard.org/media/pdf/sat-practice-test-<N>-digital.pdf`
    A real test returns HTTP 200 with content type `application/pdf`. A missing
    one returns an HTML page.
@@ -43,8 +45,12 @@ them too.
 2. Run `.venv/bin/python scripts/add_words.py entries/test-<N>.json`. Any
    warning about a missing source means `w`/`seen` doesn't match what the test
    used, so fix that before going on.
-3. Add the test to `practice_tests` in `data/sources.json` and set `"checked"`
-   to today's date.
+3. Add the test to `practice_tests` (SAT) or `psat_practice_tests` (PSAT) in
+   `data/sources.json` and set `"checked"` to today's date.
+
+Keep the PDFs' file names as College Board publishes them. `add_words.py`
+uses the name to label the source (for example `psat-8-9-practice-test-2`
+becomes "PSAT 8/9 Practice Test 2").
 
 ## 4. Commit
 

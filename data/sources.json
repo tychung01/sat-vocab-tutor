@@ -1,13 +1,78 @@
 {
   "checked": "2026-11-05",
   "practice_tests": [
-    {"test": 4, "url": "https://satsuite.collegeboard.org/media/pdf/sat-practice-test-4-digital.pdf", "processed": "2026-11-05"},
-    {"test": 5, "url": "https://satsuite.collegeboard.org/media/pdf/sat-practice-test-5-digital.pdf", "processed": "2026-11-05"},
-    {"test": 6, "url": "https://satsuite.collegeboard.org/media/pdf/sat-practice-test-6-digital.pdf", "processed": "2026-11-05"},
-    {"test": 7, "url": "https://satsuite.collegeboard.org/media/pdf/sat-practice-test-7-digital.pdf", "processed": "2026-11-05"},
-    {"test": 8, "url": "https://satsuite.collegeboard.org/media/pdf/sat-practice-test-8-digital.pdf", "processed": "2026-11-05"},
-    {"test": 9, "url": "https://satsuite.collegeboard.org/media/pdf/sat-practice-test-9-digital.pdf", "processed": "2026-11-05"},
-    {"test": 10, "url": "https://satsuite.collegeboard.org/media/pdf/sat-practice-test-10-digital.pdf", "processed": "2026-11-05"},
-    {"test": 11, "url": "https://satsuite.collegeboard.org/media/pdf/sat-practice-test-11-digital.pdf", "processed": "2026-11-05"}
-  ]
+    {
+      "test": 4,
+      "url": "https://satsuite.collegeboard.org/media/pdf/sat-practice-test-4-digital.pdf",
+      "processed": "2026-11-05"
+    },
+    {
+      "test": 5,
+      "url": "https://satsuite.collegeboard.org/media/pdf/sat-practice-test-5-digital.pdf",
+      "processed": "2026-11-05"
+    },
+    {
+      "test": 6,
+      "url": "https://satsuite.collegeboard.org/media/pdf/sat-practice-test-6-digital.pdf",
+      "processed": "2026-11-05"
+    },
+    {
+      "test": 7,
+      "url": "https://satsuite.collegeboard.org/media/pdf/sat-practice-test-7-digital.pdf",
+      "processed": "2026-11-05"
+    },
+    {
+      "test": 8,
+      "url": "https://satsuite.collegeboard.org/media/pdf/sat-practice-test-8-digital.pdf",
+      "processed": "2026-11-05"
+    },
+    {
+      "test": 9,
+      "url": "https://satsuite.collegeboard.org/media/pdf/sat-practice-test-9-digital.pdf",
+      "processed": "2026-11-05"
+    },
+    {
+      "test": 10,
+      "url": "https://satsuite.collegeboard.org/media/pdf/sat-practice-test-10-digital.pdf",
+      "processed": "2026-11-05"
+    },
+    {
+      "test": 11,
+      "url": "https://satsuite.collegeboard.org/media/pdf/sat-practice-test-11-digital.pdf",
+      "processed": "2026-11-05"
+    }
+  ],
+  "psat_practice_tests": [
+    {
+      "test": "PSAT/NMSQT 1",
+      "url": "https://satsuite.collegeboard.org/media/pdf/psat-nmsqt-practice-test-1.pdf",
+      "processed": "2026-11-05"
+    },
+    {
+      "test": "PSAT/NMSQT 2",
+      "url": "https://satsuite.collegeboard.org/media/pdf/psat-nmsqt-practice-test-2.pdf",
+      "processed": "2026-11-05"
+    },
+    {
+      "test": "PSAT/NMSQT 3",
+      "url": "https://satsuite.collegeboard.org/media/pdf/psat-nmsqt-psat-10-practice-test-3.pdf",
+      "processed": "2026-11-05"
+    },
+    {
+      "test": "PSAT 8/9 1",
+      "url": "https://satsuite.collegeboard.org/media/pdf/psat-8-9-practice-test-1.pdf",
+      "processed": "2026-11-05"
+    },
+    {
+      "test": "PSAT 8/9 2",
+      "url": "https://satsuite.collegeboard.org/media/pdf/psat-8-9-practice-test-2.pdf",
+      "processed": "2026-11-05"
+    },
+    {
+      "test": "PSAT 8/9 3",
+      "url": "https://satsuite.collegeboard.org/media/pdf/psat-8-9-practice-test-3.pdf",
+      "processed": "2026-11-05"
+    }
+  ],
+  "notes": "PSAT 10 Practice Tests 1-2 are the same as PSAT/NMSQT Practice Tests 1-2, so they are skipped. Older pre-2024 SAT practice test PDFs are no longer offered by College Board."
 }

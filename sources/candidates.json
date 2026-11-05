@@ -1,4 +1,557 @@
 {
+  "psat-8-9-practice-test-1": [
+    {
+      "type": "word-in-context",
+      "words": [
+        "quantities",
+        "decorations",
+        "patterns",
+        "agreements"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "creative",
+        "bold",
+        "traditional",
+        "understandable"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "rebellion",
+        "partnership",
+        "discovery",
+        "disagreement"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "accuracy",
+        "inactivity",
+        "complexity",
+        "restraint"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "transformed",
+        "introduced",
+        "inherited",
+        "overlooked"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "foundational",
+        "supplementary",
+        "repetitive",
+        "ineffective"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "borrows",
+        "spans",
+        "judges",
+        "neglects"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "anticipate",
+        "inspect",
+        "reveal",
+        "justify"
+      ]
+    },
+    {
+      "type": "most-nearly-means",
+      "words": [
+        "beckoning",
+        "demanding",
+        "signaling",
+        "inviting",
+        "shifting "
+      ]
+    },
+    {
+      "type": "most-nearly-means",
+      "words": [
+        "drew",
+        "pulled",
+        "drained",
+        "inspired",
+        "sketched"
+      ]
+    }
+  ],
+  "psat-8-9-practice-test-2": [
+    {
+      "type": "word-in-context",
+      "words": [
+        "complicate",
+        "amplify",
+        "overlook",
+        "assemble"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "inspire",
+        "ignore",
+        "promote"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "genuine",
+        "intentional",
+        "independent",
+        "original"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "responsive",
+        "inactive",
+        "liked",
+        "distressed "
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "full of",
+        "drawn to",
+        "responsible for"
+      ]
+    },
+    {
+      "type": "most-nearly-means",
+      "words": [
+        "soft",
+        "gentle",
+        "sensitive",
+        "shapeless",
+        "bland "
+      ]
+    },
+    {
+      "type": "most-nearly-means",
+      "words": [
+        "determine",
+        "choose",
+        "influence",
+        "demonstrate",
+        "measure"
+      ]
+    },
+    {
+      "type": "most-nearly-means",
+      "words": [
+        "featured",
+        "displayed",
+        "questioned",
+        "approved",
+        "ignored"
+      ]
+    },
+    {
+      "type": "most-nearly-means",
+      "words": [
+        "specific",
+        "imaginary",
+        "energetic",
+        "correct",
+        "particular"
+      ]
+    },
+    {
+      "type": "most-nearly-means",
+      "words": [
+        "sheltering",
+        "protective",
+        "restrictive",
+        "affectionate",
+        "suspicious"
+      ]
+    }
+  ],
+  "psat-8-9-practice-test-3": [
+    {
+      "type": "word-in-context",
+      "words": [
+        "copied",
+        "believed",
+        "influenced",
+        "debated"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "kindness",
+        "capacity",
+        "weakness",
+        "job"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "evaluated",
+        "reenacted",
+        "satisfied",
+        "inspired"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "skepticism toward",
+        "distrust among",
+        "collaboration between",
+        "exaggeration of"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "interchangeable",
+        "reciprocal",
+        "inefficient",
+        "unequal"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "developing",
+        "repeating",
+        "correcting",
+        "remembering"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "aesthetics",
+        "popularity",
+        "efficacy",
+        "originality"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "reveal",
+        "remember",
+        "ignore",
+        "identify"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "intention for",
+        "acceptance of",
+        "admiration for",
+        "imitation of"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "extent",
+        "complexity",
+        "reliability",
+        "significance"
+      ]
+    }
+  ],
+  "psat-nmsqt-practice-test-1": [
+    {
+      "type": "word-in-context",
+      "words": [
+        "predicting",
+        "refusing",
+        "hiding",
+        "creating"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "secretive",
+        "efficient",
+        "outgoing",
+        "unsympathetic"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "dismiss",
+        "provide",
+        "regulate",
+        "refuse"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "verifying",
+        "multiplying",
+        "comforting",
+        "ensuring"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "sturdily",
+        "carelessly",
+        "rarely",
+        "simply"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "susceptible to",
+        "contingent on",
+        "saturated with",
+        "depleted of"
+      ]
+    },
+    {
+      "type": "most-nearly-means",
+      "words": [
+        "a void",
+        "a useless",
+        "an empty",
+        "a forgotten",
+        "an incomplete"
+      ]
+    },
+    {
+      "type": "most-nearly-means",
+      "words": [
+        "disturbed",
+        "disorganized",
+        "alarmed",
+        "offended",
+        "interrupted"
+      ]
+    },
+    {
+      "type": "most-nearly-means",
+      "words": [
+        "suggestion",
+        "trace",
+        "opinion",
+        "dispute",
+        "command"
+      ]
+    },
+    {
+      "type": "most-nearly-means",
+      "words": [
+        "simply",
+        "faintly",
+        "hastily",
+        "easily",
+        "foolishly"
+      ]
+    }
+  ],
+  "psat-nmsqt-practice-test-2": [
+    {
+      "type": "word-in-context",
+      "words": [
+        "forgetting",
+        "rejection",
+        "imitation",
+        "opinion"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "instituting",
+        "occupying",
+        "underestimating",
+        "encountering "
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "developments of",
+        "fluctuations in",
+        "calibrations with",
+        "incentives for"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "defunct",
+        "arcane",
+        "ubiquitous",
+        "extraneous"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "traced",
+        "surrendered",
+        "announced",
+        "offered "
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "immune",
+        "sensitive",
+        "limited",
+        "receptive"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "overwhelmed",
+        "bypassed",
+        "obstructed",
+        "transformed"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "investigations",
+        "expansions",
+        "reforms"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "nullify",
+        "denigrate",
+        "underestimate",
+        "misconstrue"
+      ]
+    },
+    {
+      "type": "most-nearly-means",
+      "words": [
+        "determine",
+        "conclude",
+        "dictate",
+        "evaluate",
+        "select "
+      ]
+    }
+  ],
+  "psat-nmsqt-psat-10-practice-test-3": [
+    {
+      "type": "word-in-context",
+      "words": [
+        "returned",
+        "rotated",
+        "occurred",
+        "offended"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "differ from",
+        "respond to",
+        "think of",
+        "agree with"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "withhold",
+        "celebrate",
+        "combine",
+        "invent"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "repair",
+        "build",
+        "command",
+        "identify"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "prevent",
+        "neglect",
+        "perform",
+        "value"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "recollect",
+        "introduce",
+        "revise",
+        "interpret"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "a convergence",
+        "a division",
+        "a succession",
+        "an expiration"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "implausible",
+        "unflattering",
+        "superficial",
+        "imprecise"
+      ]
+    },
+    {
+      "type": "most-nearly-means",
+      "words": [
+        "appeared",
+        "developed",
+        "responded",
+        "arrived",
+        "pretended"
+      ]
+    }
+  ],
   "sat-practice-test-10-digital": [
     {
       "type": "word-in-context",
@@ -375,6 +928,16 @@
         "blemish",
         "amount",
         "sketch "
+      ]
+    },
+    {
+      "type": "most-nearly-means",
+      "words": [
+        "reaching across to",
+        "joining with",
+        "gaining on",
+        "stretching toward",
+        "arriving at "
       ]
     }
   ],

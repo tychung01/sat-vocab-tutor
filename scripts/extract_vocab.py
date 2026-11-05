@@ -2,7 +2,7 @@
 
 Finds the two Reading & Writing question types that test vocabulary directly:
   - "Which choice completes the text with the most logical and precise word or phrase?"
-  - "As used in the text, what does the word "X" most nearly mean?"
+  - "As used in the text, what does the word (or phrase) "X" most nearly mean?"
 and collects the answer choices (and the quoted word) for each one.
 
 Usage: python scripts/extract_vocab.py PDF [PDF ...] > candidates.json
@@ -16,7 +16,7 @@ from pathlib import Path
 from pypdf import PdfReader
 
 WORD_IN_CONTEXT = re.compile(r"most\s+logical\s+and\s+precise\s+word\s+or\s+phrase\s*\?", re.I)
-MOST_NEARLY = re.compile(r"what\s+does\s+the\s+word\s+[“\"](?P<word>[^”\"]+)[”\"]\s+most\s+nearly\s+mean\s*\?", re.I)
+MOST_NEARLY = re.compile(r"what\s+does\s+the\s+(?:word|phrase)\s+[“\"](?P<word>[^”\"]+)[”\"]\s+most\s+nearly\s+mean\s*\?", re.I)
 CHOICES = re.compile(
     r"A\)\s*(?P<a>.+?)\s+B\)\s*(?P<b>.+?)\s+C\)\s*(?P<c>.+?)\s+D\)\s*(?P<d>.+?)(?=\s+(?:\d+\s|Unauthorized|Module|CONTINUE|STOP)|$)",
     re.S,

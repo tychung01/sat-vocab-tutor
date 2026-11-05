@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-05",
-  "count": 241,
+  "count": 318,
   "words": [
     {
       "word": "abate",
@@ -31,6 +31,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "admiration",
+      "part_of_speech": "noun",
+      "definition": "Respect and warm approval.",
+      "usage": "Often 'admiration for' a person or achievement.",
+      "examples": [
+        "She spoke with admiration for her mentor's courage."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 3 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "advocate",
       "part_of_speech": "verb / noun",
       "definition": "(v.) To publicly support or recommend; (n.) a supporter.",
@@ -52,9 +66,26 @@
       "examples": [
         "The architect balanced aesthetic appeal with practical needs."
       ],
+      "forms_seen_on_tests": [
+        "aesthetics"
+      ],
+      "sources": [
+        "PSAT 8/9 Practice Test 3 (College Board)",
+        "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "affectionate",
+      "part_of_speech": "adjective",
+      "definition": "Readily showing fondness or tenderness.",
+      "usage": "Describes people, gestures, and tones that show warmth and love.",
+      "examples": [
+        "The letters reveal an affectionate bond between the two sisters."
+      ],
       "forms_seen_on_tests": [],
       "sources": [
-        "Curated high-frequency SAT words"
+        "PSAT 8/9 Practice Test 2 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -69,6 +100,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "alarmed",
+      "part_of_speech": "adjective",
+      "definition": "Worried or frightened by a sudden danger or problem.",
+      "usage": "Describes reactions to unexpected bad news.",
+      "examples": [
+        "Scientists were alarmed by the rapid loss of sea ice."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 1 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -125,6 +170,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "amplify",
+      "part_of_speech": "verb",
+      "definition": "To make larger, louder, or more intense.",
+      "usage": "Used literally for sound and figuratively for effects, concerns, or voices.",
+      "examples": [
+        "Social media can amplify a small rumor into a national story."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 2 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -210,7 +269,8 @@
         "anticipated"
       ],
       "sources": [
-        "SAT Practice Test 11 (College Board)"
+        "SAT Practice Test 11 (College Board)",
+        "PSAT 8/9 Practice Test 1 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -225,6 +285,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "arcane",
+      "part_of_speech": "adjective",
+      "definition": "Understood by only a few; mysterious or secret.",
+      "usage": "Describes specialized knowledge, rules, or jargon that outsiders find obscure.",
+      "examples": [
+        "The tax code is full of arcane rules that confuse most citizens."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -285,6 +359,22 @@
       "added": "2026-11-05"
     },
     {
+      "word": "beckon",
+      "part_of_speech": "verb",
+      "definition": "To signal someone to come closer; to seem appealing or inviting.",
+      "usage": "Literal (a wave of the hand) or figurative (opportunity beckons).",
+      "examples": [
+        "The warm lights of the cabin beckoned the tired hikers."
+      ],
+      "forms_seen_on_tests": [
+        "beckoning"
+      ],
+      "sources": [
+        "PSAT 8/9 Practice Test 1 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "beneficiary",
       "part_of_speech": "noun",
       "definition": "A person or thing that receives help or an advantage from something.",
@@ -309,6 +399,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "bland",
+      "part_of_speech": "adjective",
+      "definition": "Lacking strong features or flavor; dull.",
+      "usage": "Describes food, writing, and personalities without interest or character.",
+      "examples": [
+        "Critics found the sequel bland compared to the original film."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 2 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -355,6 +459,38 @@
       "added": "2026-11-05"
     },
     {
+      "word": "bypass",
+      "part_of_speech": "verb",
+      "definition": "To go around something or avoid it.",
+      "usage": "Used for roads, procedures, and obstacles; similar to 'circumvent'.",
+      "examples": [
+        "The new highway bypasses the crowded town center."
+      ],
+      "forms_seen_on_tests": [
+        "bypassed"
+      ],
+      "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "calibration",
+      "part_of_speech": "noun",
+      "definition": "The process of adjusting an instrument so its measurements are accurate.",
+      "usage": "Science and engineering term; also figurative for fine-tuning.",
+      "examples": [
+        "Regular calibration keeps the lab's scales accurate."
+      ],
+      "forms_seen_on_tests": [
+        "calibrations"
+      ],
+      "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "candid",
       "part_of_speech": "adjective",
       "definition": "Truthful and straightforward; frank.",
@@ -365,6 +501,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "capacity",
+      "part_of_speech": "noun",
+      "definition": "The maximum amount something can hold; the ability to do something.",
+      "usage": "Both meanings are common (a stadium's capacity; a capacity for empathy).",
+      "examples": [
+        "Some birds have a remarkable capacity for memory."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 3 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -462,7 +612,8 @@
       ],
       "forms_seen_on_tests": [],
       "sources": [
-        "SAT Practice Test 8 (College Board)"
+        "SAT Practice Test 8 (College Board)",
+        "PSAT 8/9 Practice Test 3 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -519,6 +670,35 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "complexity",
+      "part_of_speech": "noun",
+      "definition": "The state of having many interrelated parts; intricacy.",
+      "usage": "Describes systems, problems, and characters with many layers.",
+      "examples": [
+        "The complexity of the human brain still puzzles scientists."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 1 (College Board)",
+        "PSAT 8/9 Practice Test 3 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "complicate",
+      "part_of_speech": "verb",
+      "definition": "To make more difficult or confusing.",
+      "usage": "Common in argument passages: new findings complicate a simple explanation.",
+      "examples": [
+        "The discovery of a second species complicates the theory."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 2 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -667,6 +847,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "contingent",
+      "part_of_speech": "adjective",
+      "definition": "Dependent on something else happening.",
+      "usage": "Usually 'contingent on' or 'contingent upon'.",
+      "examples": [
+        "The picnic is contingent on good weather."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 1 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "contradict",
       "part_of_speech": "verb",
       "definition": "To deny the truth of a statement by asserting the opposite; to be in conflict with.",
@@ -697,6 +891,20 @@
         "SAT Practice Test 6 (College Board)",
         "SAT Practice Test 7 (College Board)",
         "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "convergence",
+      "part_of_speech": "noun",
+      "definition": "The process of coming together from different directions toward one point.",
+      "usage": "Used for ideas, paths, and evolutionary traits that become similar.",
+      "examples": [
+        "The city grew at the convergence of two rivers."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 3 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -801,6 +1009,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "defunct",
+      "part_of_speech": "adjective",
+      "definition": "No longer existing or functioning.",
+      "usage": "Describes companies, laws, and machines that have stopped working.",
+      "examples": [
+        "The defunct factory has been turned into apartments."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "delegate",
       "part_of_speech": "verb / noun",
       "definition": "(v.) To give a task or responsibility to someone else; (n.) a representative.",
@@ -845,6 +1067,36 @@
       "added": "2026-11-05"
     },
     {
+      "word": "denigrate",
+      "part_of_speech": "verb",
+      "definition": "To criticize unfairly; to belittle.",
+      "usage": "Close to 'disparage'; implies unjust criticism.",
+      "examples": [
+        "Some critics denigrated her work simply because it was popular."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "deplete",
+      "part_of_speech": "verb",
+      "definition": "To use up the supply of something.",
+      "usage": "Used for resources, energy, and populations.",
+      "examples": [
+        "Overfishing has depleted cod stocks in the North Atlantic."
+      ],
+      "forms_seen_on_tests": [
+        "depleted"
+      ],
+      "sources": [
+        "PSAT/NMSQT Practice Test 1 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "derive",
       "part_of_speech": "verb",
       "definition": "To obtain something from a source; to originate from.",
@@ -858,6 +1110,20 @@
       "sources": [
         "SAT Practice Test 7 (College Board)",
         "SAT Practice Test 9 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "dictate",
+      "part_of_speech": "verb",
+      "definition": "To control or determine; to say words aloud to be written down.",
+      "usage": "Often 'dictate' an outcome or terms (the climate dictates what crops can grow).",
+      "examples": [
+        "Soil quality often dictates which plants will thrive."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -948,6 +1214,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "dismiss",
+      "part_of_speech": "verb",
+      "definition": "To treat as unworthy of consideration; to send away.",
+      "usage": "Common in argument passages: scientists dismiss a claim.",
+      "examples": [
+        "Researchers once dismissed the idea that birds descended from dinosaurs."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 1 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "disparage",
       "part_of_speech": "verb",
       "definition": "To speak of something as having little value; to belittle.",
@@ -987,7 +1267,8 @@
         "disputing"
       ],
       "sources": [
-        "SAT Practice Test 6 (College Board)"
+        "SAT Practice Test 6 (College Board)",
+        "PSAT/NMSQT Practice Test 1 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -1016,6 +1297,34 @@
       "forms_seen_on_tests": [],
       "sources": [
         "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "distressed",
+      "part_of_speech": "adjective",
+      "definition": "Suffering from anxiety, sorrow, or pain; damaged.",
+      "usage": "Describes people in trouble or objects deliberately worn.",
+      "examples": [
+        "The distressed swimmer was pulled from the water."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 2 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "distrust",
+      "part_of_speech": "noun / verb",
+      "definition": "A lack of trust; (v.) to doubt the honesty or reliability of.",
+      "usage": "Describes suspicion toward people, institutions, or information.",
+      "examples": [
+        "Years of broken promises led to deep distrust of the company."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 3 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -1060,6 +1369,37 @@
       "forms_seen_on_tests": [],
       "sources": [
         "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "efficacy",
+      "part_of_speech": "noun",
+      "definition": "The ability to produce the intended result; effectiveness.",
+      "usage": "Common in medicine and policy passages (the efficacy of a vaccine).",
+      "examples": [
+        "The trial tested the efficacy of the new treatment."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 3 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "efficient",
+      "part_of_speech": "adjective",
+      "definition": "Achieving maximum results with minimum wasted effort or resources.",
+      "usage": "Opposite: inefficient.",
+      "examples": [
+        "LED bulbs are far more efficient than older light bulbs."
+      ],
+      "forms_seen_on_tests": [
+        "inefficient"
+      ],
+      "sources": [
+        "PSAT/NMSQT Practice Test 1 (College Board)",
+        "PSAT 8/9 Practice Test 3 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -1204,7 +1544,9 @@
       ],
       "sources": [
         "SAT Practice Test 4 (College Board)",
-        "SAT Practice Test 5 (College Board)"
+        "SAT Practice Test 5 (College Board)",
+        "PSAT/NMSQT Practice Test 2 (College Board)",
+        "PSAT 8/9 Practice Test 3 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -1221,6 +1563,20 @@
       ],
       "sources": [
         "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "exaggeration",
+      "part_of_speech": "noun",
+      "definition": "A statement that represents something as better, worse, or larger than it really is.",
+      "usage": "Used for overstatements; often signals a claim is not literally true.",
+      "examples": [
+        "Calling the hill a mountain is an exaggeration."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 3 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -1249,6 +1605,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "expiration",
+      "part_of_speech": "noun",
+      "definition": "The end of the period during which something is valid.",
+      "usage": "Used for contracts, licenses, and food dates.",
+      "examples": [
+        "The lease's expiration forced the store to move."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 3 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -1283,6 +1653,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "extraneous",
+      "part_of_speech": "adjective",
+      "definition": "Irrelevant or unrelated to the subject at hand.",
+      "usage": "Describes details or information that should be removed.",
+      "examples": [
+        "The editor cut extraneous details to keep the article short."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "feasible",
       "part_of_speech": "adjective",
       "definition": "Possible and practical to do.",
@@ -1297,6 +1681,22 @@
       "added": "2026-11-05"
     },
     {
+      "word": "fluctuation",
+      "part_of_speech": "noun",
+      "definition": "An irregular rising and falling in number or amount.",
+      "usage": "Used for prices, temperatures, and populations.",
+      "examples": [
+        "Small fluctuations in temperature can affect seed germination."
+      ],
+      "forms_seen_on_tests": [
+        "fluctuations"
+      ],
+      "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "foster",
       "part_of_speech": "verb",
       "definition": "To encourage the development of.",
@@ -1307,6 +1707,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "foundational",
+      "part_of_speech": "adjective",
+      "definition": "Forming the necessary base or core of something.",
+      "usage": "Describes ideas, texts, or skills that others build on.",
+      "examples": [
+        "Her research was foundational to the field of genetics."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 1 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -1335,6 +1749,36 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "genuine",
+      "part_of_speech": "adjective",
+      "definition": "Truly what something is said to be; sincere.",
+      "usage": "Describes objects (authentic) and feelings (heartfelt).",
+      "examples": [
+        "Experts confirmed that the signature was genuine."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 2 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "hasty",
+      "part_of_speech": "adjective",
+      "definition": "Done with excessive speed or urgency; hurried.",
+      "usage": "Often implies carelessness (a hasty decision); adverb 'hastily'.",
+      "examples": [
+        "The hasty repairs failed within a week."
+      ],
+      "forms_seen_on_tests": [
+        "hastily"
+      ],
+      "sources": [
+        "PSAT/NMSQT Practice Test 1 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -1405,10 +1849,27 @@
         "Young birds imitate the songs of adult birds."
       ],
       "forms_seen_on_tests": [
-        "imitated"
+        "imitated",
+        "imitation"
       ],
       "sources": [
-        "SAT Practice Test 6 (College Board)"
+        "SAT Practice Test 6 (College Board)",
+        "PSAT/NMSQT Practice Test 2 (College Board)",
+        "PSAT 8/9 Practice Test 3 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "immune",
+      "part_of_speech": "adjective",
+      "definition": "Protected from a disease; not affected by something.",
+      "usage": "Often 'immune to' (criticism, disease).",
+      "examples": [
+        "No one is immune to the effects of stress."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -1483,6 +1944,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "implausible",
+      "part_of_speech": "adjective",
+      "definition": "Not seeming reasonable or probable; hard to believe.",
+      "usage": "Opposite of plausible; describes explanations and claims.",
+      "examples": [
+        "The suspect's story seemed implausible to the detectives."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 3 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "implement",
       "part_of_speech": "verb / noun",
       "definition": "(v.) To put a plan or decision into effect; (n.) a tool.",
@@ -1525,6 +2000,37 @@
       "added": "2026-11-05"
     },
     {
+      "word": "imprecise",
+      "part_of_speech": "adjective",
+      "definition": "Lacking exactness or accuracy.",
+      "usage": "Describes measurements, language, and estimates.",
+      "examples": [
+        "Early maps of the coastline were imprecise."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 3 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "inactive",
+      "part_of_speech": "adjective",
+      "definition": "Not engaging in activity; not working.",
+      "usage": "Describes volcanoes, accounts, and organisms in dormancy.",
+      "examples": [
+        "The volcano has been inactive for centuries."
+      ],
+      "forms_seen_on_tests": [
+        "inactivity"
+      ],
+      "sources": [
+        "PSAT 8/9 Practice Test 1 (College Board)",
+        "PSAT 8/9 Practice Test 2 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "inadequate",
       "part_of_speech": "adjective",
       "definition": "Lacking the quality or quantity required; insufficient.",
@@ -1562,8 +2068,11 @@
       "examples": [
         "Tax credits gave homeowners an incentive to install solar panels."
       ],
-      "forms_seen_on_tests": [],
+      "forms_seen_on_tests": [
+        "incentives"
+      ],
       "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)",
         "Curated high-frequency SAT words"
       ],
       "added": "2026-11-05"
@@ -1640,6 +2149,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "ineffective",
+      "part_of_speech": "adjective",
+      "definition": "Not producing any significant or desired effect.",
+      "usage": "Describes methods, treatments, and leaders.",
+      "examples": [
+        "The old pesticide became ineffective as insects developed resistance."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 1 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "inevitable",
       "part_of_speech": "adjective",
       "definition": "Certain to happen; unavoidable.",
@@ -1696,6 +2219,22 @@
       "added": "2026-11-05"
     },
     {
+      "word": "inherit",
+      "part_of_speech": "verb",
+      "definition": "To receive money, property, or traits from a predecessor.",
+      "usage": "Used for genetics, family property, and problems left by others.",
+      "examples": [
+        "Children inherit many physical traits from their parents."
+      ],
+      "forms_seen_on_tests": [
+        "inherited"
+      ],
+      "sources": [
+        "PSAT 8/9 Practice Test 1 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "innocuous",
       "part_of_speech": "adjective",
       "definition": "Not harmful or offensive.",
@@ -1735,7 +2274,24 @@
         "inspecting"
       ],
       "sources": [
-        "SAT Practice Test 4 (College Board)"
+        "SAT Practice Test 4 (College Board)",
+        "PSAT 8/9 Practice Test 1 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "institute",
+      "part_of_speech": "verb / noun",
+      "definition": "(v.) To set up or start a policy or system; (n.) an organization.",
+      "usage": "As a verb, used for rules, programs, and reforms.",
+      "examples": [
+        "The school instituted a new dress code."
+      ],
+      "forms_seen_on_tests": [
+        "instituting"
+      ],
+      "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -1750,6 +2306,34 @@
       "forms_seen_on_tests": [],
       "sources": [
         "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "intentional",
+      "part_of_speech": "adjective",
+      "definition": "Done on purpose; deliberate.",
+      "usage": "Opposite of inadvertent or accidental.",
+      "examples": [
+        "The author's repetition of the phrase is intentional."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 2 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "interchangeable",
+      "part_of_speech": "adjective",
+      "definition": "Able to be exchanged for each other without making a difference.",
+      "usage": "Describes parts, terms, or roles that can substitute for one another.",
+      "examples": [
+        "The two words are not interchangeable, despite their similar meanings."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 3 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -1782,7 +2366,8 @@
       "sources": [
         "SAT Practice Test 8 (College Board)",
         "SAT Practice Test 9 (College Board)",
-        "SAT Practice Test 11 (College Board)"
+        "SAT Practice Test 11 (College Board)",
+        "PSAT/NMSQT Practice Test 3 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -1858,6 +2443,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "justify",
+      "part_of_speech": "verb",
+      "definition": "To show or prove to be right or reasonable.",
+      "usage": "Used for decisions, costs, and claims.",
+      "examples": [
+        "The results justified the high cost of the study."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 1 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -1975,6 +2574,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "misconstrue",
+      "part_of_speech": "verb",
+      "definition": "To interpret wrongly.",
+      "usage": "Used for words, intentions, and actions that are misunderstood.",
+      "examples": [
+        "Readers misconstrued the satire as a serious proposal."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "mitigate",
       "part_of_speech": "verb",
       "definition": "To make less severe or painful.",
@@ -2010,10 +2623,14 @@
       "examples": [
         "Years of neglect left the historic theater in ruins."
       ],
-      "forms_seen_on_tests": [],
+      "forms_seen_on_tests": [
+        "neglects"
+      ],
       "sources": [
         "SAT Practice Test 4 (College Board)",
-        "SAT Practice Test 11 (College Board)"
+        "SAT Practice Test 11 (College Board)",
+        "PSAT/NMSQT Practice Test 3 (College Board)",
+        "PSAT 8/9 Practice Test 1 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -2056,6 +2673,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "nullify",
+      "part_of_speech": "verb",
+      "definition": "To make legally void; to cancel out the effect of.",
+      "usage": "Used for laws, contracts, and effects that are canceled.",
+      "examples": [
+        "A single error can nullify the results of the experiment."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -2117,6 +2748,22 @@
       "added": "2026-11-05"
     },
     {
+      "word": "obstruct",
+      "part_of_speech": "verb",
+      "definition": "To block or get in the way of.",
+      "usage": "Used for paths, views, and processes.",
+      "examples": [
+        "A fallen tree obstructed the road."
+      ],
+      "forms_seen_on_tests": [
+        "obstructed"
+      ],
+      "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "oddity",
       "part_of_speech": "noun",
       "definition": "A strange or peculiar thing or trait.",
@@ -2173,6 +2820,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "originality",
+      "part_of_speech": "noun",
+      "definition": "The ability to think independently and creatively; being new.",
+      "usage": "Describes artistic and intellectual work.",
+      "examples": [
+        "Judges praised the originality of her design."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 3 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "ornamental",
       "part_of_speech": "adjective",
       "definition": "Serving to decorate rather than to be useful.",
@@ -2183,6 +2844,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "outgoing",
+      "part_of_speech": "adjective",
+      "definition": "Friendly and socially confident; leaving a position.",
+      "usage": "Describes personalities, or officials about to leave office.",
+      "examples": [
+        "The outgoing mayor gave a farewell speech."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 1 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -2215,6 +2890,24 @@
       "added": "2026-11-05"
     },
     {
+      "word": "overlook",
+      "part_of_speech": "verb",
+      "definition": "To fail to notice; to ignore; to have a view from above.",
+      "usage": "Several meanings are tested: overlook a mistake; a house overlooks the sea.",
+      "examples": [
+        "Early researchers overlooked the role of fungi in forest health."
+      ],
+      "forms_seen_on_tests": [
+        "overlooked"
+      ],
+      "sources": [
+        "SAT Practice Test 11 (College Board)",
+        "PSAT 8/9 Practice Test 1 (College Board)",
+        "PSAT 8/9 Practice Test 2 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "overt",
       "part_of_speech": "adjective",
       "definition": "Done or shown openly; not hidden.",
@@ -2227,6 +2920,22 @@
       ],
       "sources": [
         "SAT Practice Test 6 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "overwhelm",
+      "part_of_speech": "verb",
+      "definition": "To overpower with emotion, force, or quantity.",
+      "usage": "Used for feelings, systems, and defenses.",
+      "examples": [
+        "The sudden flood of orders overwhelmed the small bakery."
+      ],
+      "forms_seen_on_tests": [
+        "overwhelmed"
+      ],
+      "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -2571,6 +3280,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "rebellion",
+      "part_of_speech": "noun",
+      "definition": "An act of resistance against authority or convention.",
+      "usage": "Used for political uprisings and personal defiance.",
+      "examples": [
+        "Her bright clothes were a small rebellion against the school's dull uniforms."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 1 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "recalcitrant",
       "part_of_speech": "adjective",
       "definition": "Stubbornly uncooperative toward authority or control.",
@@ -2581,6 +3304,34 @@
       "forms_seen_on_tests": [],
       "sources": [
         "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "receptive",
+      "part_of_speech": "adjective",
+      "definition": "Willing to consider or accept new ideas.",
+      "usage": "Often 'receptive to' suggestions or change.",
+      "examples": [
+        "The manager was receptive to the team's suggestions."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "reciprocal",
+      "part_of_speech": "adjective",
+      "definition": "Given or felt by each toward the other; mutual.",
+      "usage": "Describes relationships, agreements, and effects that go both ways.",
+      "examples": [
+        "The two countries signed a reciprocal trade agreement."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 3 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -2610,6 +3361,20 @@
       "sources": [
         "SAT Practice Test 4 (College Board)",
         "SAT Practice Test 5 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "recollect",
+      "part_of_speech": "verb",
+      "definition": "To remember something.",
+      "usage": "Slightly formal; often used for memories from long ago.",
+      "examples": [
+        "She could barely recollect the house she lived in as a child."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 3 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -2676,6 +3441,38 @@
       "added": "2026-11-05"
     },
     {
+      "word": "reenact",
+      "part_of_speech": "verb",
+      "definition": "To act out a past event again.",
+      "usage": "Used for historical events and scenes.",
+      "examples": [
+        "Volunteers reenacted the famous battle on its anniversary."
+      ],
+      "forms_seen_on_tests": [
+        "reenacted"
+      ],
+      "sources": [
+        "PSAT 8/9 Practice Test 3 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "reform",
+      "part_of_speech": "noun / verb",
+      "definition": "A change made to improve something; (v.) to make such changes.",
+      "usage": "Common in history and civics passages.",
+      "examples": [
+        "The reforms gave more citizens the right to vote."
+      ],
+      "forms_seen_on_tests": [
+        "reforms"
+      ],
+      "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "refute",
       "part_of_speech": "verb",
       "definition": "To prove a statement or theory wrong.",
@@ -2690,6 +3487,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "regulate",
+      "part_of_speech": "verb",
+      "definition": "To control or maintain the rate, amount, or behavior of something by rules or adjustment.",
+      "usage": "Used for laws governing industries and for body processes (regulate temperature).",
+      "examples": [
+        "Sweating helps the body regulate its temperature."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 1 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "reinforce",
       "part_of_speech": "verb",
       "definition": "To strengthen or support.",
@@ -2700,6 +3511,48 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "rejection",
+      "part_of_speech": "noun",
+      "definition": "The act of refusing to accept or consider something.",
+      "usage": "Used for ideas, proposals, and people.",
+      "examples": [
+        "The scientist's rejection of the old model surprised her colleagues."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "reliability",
+      "part_of_speech": "noun",
+      "definition": "The quality of being trustworthy or performing consistently well.",
+      "usage": "Common in science for data and measurements.",
+      "examples": [
+        "Researchers questioned the reliability of the self-reported data."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 3 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "repetitive",
+      "part_of_speech": "adjective",
+      "definition": "Containing or characterized by repetition, often dully.",
+      "usage": "Describes tasks, music, and writing.",
+      "examples": [
+        "The work was repetitive, so the factory added machines."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 1 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -2765,6 +3618,48 @@
       "added": "2026-11-05"
     },
     {
+      "word": "responsive",
+      "part_of_speech": "adjective",
+      "definition": "Reacting quickly and positively.",
+      "usage": "Often 'responsive to' needs, changes, or stimuli.",
+      "examples": [
+        "Plants are responsive to changes in light."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 2 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "restraint",
+      "part_of_speech": "noun",
+      "definition": "Self-control; a measure that limits or restricts.",
+      "usage": "Often praise for holding back (showed restraint).",
+      "examples": [
+        "The judge showed restraint in her response to the outburst."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 1 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "restrictive",
+      "part_of_speech": "adjective",
+      "definition": "Imposing limits on someone's freedom or activity.",
+      "usage": "Describes rules, diets, and policies.",
+      "examples": [
+        "Residents complained that the parking rules were too restrictive."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 2 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "retain",
       "part_of_speech": "verb",
       "definition": "To keep possession of; to continue to have.",
@@ -2775,6 +3670,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "revise",
+      "part_of_speech": "verb",
+      "definition": "To reconsider and change, often to improve.",
+      "usage": "Used for writing, estimates, and theories.",
+      "examples": [
+        "Astronomers revised their estimate of the galaxy's age."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 3 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -2850,6 +3759,22 @@
       "added": "2026-11-05"
     },
     {
+      "word": "saturate",
+      "part_of_speech": "verb",
+      "definition": "To soak thoroughly; to fill completely so no more can be added.",
+      "usage": "Used for liquids, markets, and colors.",
+      "examples": [
+        "Heavy rain saturated the soil."
+      ],
+      "forms_seen_on_tests": [
+        "saturated"
+      ],
+      "sources": [
+        "PSAT/NMSQT Practice Test 1 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "scrupulous",
       "part_of_speech": "adjective",
       "definition": "Diligent, thorough, and very concerned with doing right.",
@@ -2889,7 +3814,23 @@
       ],
       "forms_seen_on_tests": [],
       "sources": [
-        "SAT Practice Test 8 (College Board)"
+        "SAT Practice Test 8 (College Board)",
+        "PSAT/NMSQT Practice Test 1 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "sensitive",
+      "part_of_speech": "adjective",
+      "definition": "Quick to detect or respond to slight changes; easily upset; requiring care.",
+      "usage": "Several meanings: sensitive instruments, sensitive skin, a sensitive topic.",
+      "examples": [
+        "The sensor is sensitive enough to detect tiny vibrations."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)",
+        "PSAT 8/9 Practice Test 2 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -2904,6 +3845,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "SAT Practice Test 11 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "significance",
+      "part_of_speech": "noun",
+      "definition": "The quality of being important; meaning.",
+      "usage": "Similar to 'import' (the significance of a discovery).",
+      "examples": [
+        "Historians debate the significance of the treaty."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 3 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -2950,6 +3905,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "skepticism",
+      "part_of_speech": "noun",
+      "definition": "A doubting attitude toward claims or ideas.",
+      "usage": "Often 'skepticism about' a claim; noun form of 'skeptical'.",
+      "examples": [
+        "The announcement was met with skepticism by other researchers."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 3 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "sophisticated",
       "part_of_speech": "adjective",
       "definition": "Highly developed and complex; worldly and refined.",
@@ -2992,6 +3961,22 @@
       ],
       "sources": [
         "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "sturdy",
+      "part_of_speech": "adjective",
+      "definition": "Strongly and solidly built.",
+      "usage": "Describes objects, bodies, and structures; adverb 'sturdily'.",
+      "examples": [
+        "The sturdy table survived three moves."
+      ],
+      "forms_seen_on_tests": [
+        "sturdily"
+      ],
+      "sources": [
+        "PSAT/NMSQT Practice Test 1 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -3053,6 +4038,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "succession",
+      "part_of_speech": "noun",
+      "definition": "A number of things following one after another; the act of inheriting a position.",
+      "usage": "Often 'in quick succession'; also used in ecology for changes in a community.",
+      "examples": [
+        "Three storms hit the coast in quick succession."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 3 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "succinct",
       "part_of_speech": "adjective",
       "definition": "Briefly and clearly expressed.",
@@ -3076,7 +4075,8 @@
       ],
       "forms_seen_on_tests": [],
       "sources": [
-        "SAT Practice Test 10 (College Board)"
+        "SAT Practice Test 10 (College Board)",
+        "PSAT/NMSQT Practice Test 3 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -3088,10 +4088,13 @@
       "examples": [
         "Field notes supplement the data collected by the sensors."
       ],
-      "forms_seen_on_tests": [],
+      "forms_seen_on_tests": [
+        "supplementary"
+      ],
       "sources": [
         "SAT Practice Test 4 (College Board)",
-        "SAT Practice Test 11 (College Board)"
+        "SAT Practice Test 11 (College Board)",
+        "PSAT 8/9 Practice Test 1 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -3122,6 +4125,34 @@
       ],
       "sources": [
         "SAT Practice Test 4 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "susceptible",
+      "part_of_speech": "adjective",
+      "definition": "Likely to be influenced or harmed by something.",
+      "usage": "Usually 'susceptible to' (disease, pressure, damage).",
+      "examples": [
+        "Young plants are especially susceptible to frost."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 1 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "suspicious",
+      "part_of_speech": "adjective",
+      "definition": "Having or showing a feeling that something is wrong; causing such a feeling.",
+      "usage": "Describes people who doubt and things that seem questionable.",
+      "examples": [
+        "The guard grew suspicious of the unfamiliar truck."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 2 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -3217,9 +4248,13 @@
       "examples": [
         "The hikers found no trace of the trail under the snow."
       ],
-      "forms_seen_on_tests": [],
+      "forms_seen_on_tests": [
+        "traced"
+      ],
       "sources": [
-        "SAT Practice Test 5 (College Board)"
+        "SAT Practice Test 5 (College Board)",
+        "PSAT/NMSQT Practice Test 1 (College Board)",
+        "PSAT/NMSQT Practice Test 2 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -3238,6 +4273,23 @@
       "added": "2026-11-05"
     },
     {
+      "word": "transform",
+      "part_of_speech": "verb",
+      "definition": "To make a thorough or dramatic change in form or character.",
+      "usage": "Used for landscapes, industries, and people.",
+      "examples": [
+        "The railroad transformed the small town into a busy city."
+      ],
+      "forms_seen_on_tests": [
+        "transformed"
+      ],
+      "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)",
+        "PSAT 8/9 Practice Test 1 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "transparent",
       "part_of_speech": "adjective",
       "definition": "Allowing light through so objects can be seen clearly; open and honest; easily understood.",
@@ -3248,6 +4300,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "SAT Practice Test 7 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "ubiquitous",
+      "part_of_speech": "adjective",
+      "definition": "Present, appearing, or found everywhere.",
+      "usage": "Describes technologies, species, and trends that are everywhere.",
+      "examples": [
+        "Smartphones have become ubiquitous in modern life."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -3280,6 +4346,22 @@
       "added": "2026-11-05"
     },
     {
+      "word": "underestimate",
+      "part_of_speech": "verb",
+      "definition": "To judge something to be smaller or less important than it really is.",
+      "usage": "Used for costs, abilities, and risks.",
+      "examples": [
+        "Many people underestimate how long a project will take."
+      ],
+      "forms_seen_on_tests": [
+        "underestimating"
+      ],
+      "sources": [
+        "PSAT/NMSQT Practice Test 2 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "undermine",
       "part_of_speech": "verb",
       "definition": "To weaken or damage something, especially gradually or secretly.",
@@ -3290,6 +4372,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "unflattering",
+      "part_of_speech": "adjective",
+      "definition": "Not showing someone or something in a favorable way.",
+      "usage": "Describes portraits, descriptions, and comparisons.",
+      "examples": [
+        "The biography offers an unflattering portrait of the inventor."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 3 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -3364,6 +4460,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "unsympathetic",
+      "part_of_speech": "adjective",
+      "definition": "Not feeling or showing concern for others; not likable.",
+      "usage": "Describes people, responses, and fictional characters.",
+      "examples": [
+        "The novel's narrator is intentionally unsympathetic."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 1 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "validate",
       "part_of_speech": "verb",
       "definition": "To check or prove the accuracy of; to confirm.",
@@ -3380,6 +4490,22 @@
       "added": "2026-11-05"
     },
     {
+      "word": "verify",
+      "part_of_speech": "verb",
+      "definition": "To make sure something is true or accurate.",
+      "usage": "Used for facts, identities, and results.",
+      "examples": [
+        "Journalists must verify their sources before publishing."
+      ],
+      "forms_seen_on_tests": [
+        "verifying"
+      ],
+      "sources": [
+        "PSAT/NMSQT Practice Test 1 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "vindicate",
       "part_of_speech": "verb",
       "definition": "To clear of blame or show to be right.",
@@ -3390,6 +4516,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "void",
+      "part_of_speech": "noun / adjective",
+      "definition": "(n.) A completely empty space; (adj.) not valid or legally binding.",
+      "usage": "Literal (the void of space) or legal (the contract is void).",
+      "examples": [
+        "Her departure left a void in the team."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 1 (College Board)"
       ],
       "added": "2026-11-05"
     },
@@ -3446,6 +4586,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "withhold",
+      "part_of_speech": "verb",
+      "definition": "To refuse to give something that is due or wanted.",
+      "usage": "Used for information, payment, and approval.",
+      "examples": [
+        "The company withheld the test results from the public."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT/NMSQT Practice Test 3 (College Board)"
       ],
       "added": "2026-11-05"
     },
