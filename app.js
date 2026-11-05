@@ -1,11 +1,12 @@
 // SAT Word Study: flashcards, quizzes, and a word list built from data/words.json.
-// Students sign in with Google. Each word is either Learned (answered correctly
-// in LEARNED_STREAK quizzes in a row) or Practice (everything else). Progress is
-// saved to Firestore so the teacher dashboard can see it.
+// Students sign in with Google. Each word is Learned (answered correctly in
+// LEARNED_STREAK quizzes in a row), Practice (the student's current list, at most
+// PRACTICE_LIMIT words), or Upcoming (waiting for room in the practice list).
+// Progress is saved to Firestore so the teacher dashboard can see it.
 
 import {
   configured, isAdmin, watchUser, signIn, signOutUser, recordLogin,
-  loadProgress, saveWordProgress, LEARNED_STREAK,
+  loadProgress, saveWordProgress, LEARNED_STREAK, PRACTICE_LIMIT,
 } from "./firebase.js";
 import { loadWords } from "./words.js";
 
@@ -15,14 +16,43 @@ const REVIEW_PER_QUIZ = 2;
 let words = [];
 let user = null;
 let progress = {};
+let practiceSet = new Set();
 
 const $ = (id) => document.getElementById(id);
 
 // ---------- progress ----------
 
-function categoryOf(word) {
+function isLearned(word) {
   const p = progress[word];
-  return p && p.streak >= LEARNED_STREAK ? "learned" : "practice";
+  return Boolean(p && p.streak >= LEARNED_STREAK);
+}
+
+function categoryOf(word) {
+  if (isLearned(word)) return "learned";
+  return practiceSet.has(word) ? "practice" : "upcoming";
+}
+
+// Small stable hash so words added on the same day aren't introduced alphabetically.
+function hashWord(word) {
+  let h = 0;
+  for (const c of word) h = (h * 31 + c.charCodeAt(0)) | 0;
+  return h;
+}
+
+// Order in which untried words join a practice list: oldest additions first,
+// practice-test words before word-list words before curated words.
+function introOrder(a, b) {
+  const rank = (w) => (isOfficial(w) ? 0 : isAcademic(w) ? 1 : 2);
+  return a.added.localeCompare(b.added) || rank(a) - rank(b) || hashWord(a.word) - hashWord(b.word);
+}
+
+// The practice list: every word the student has tried but not learned, then
+// untried words in introduction order, up to PRACTICE_LIMIT.
+function rebuildPracticeSet() {
+  const notLearned = words.filter((w) => !isLearned(w.word));
+  const tried = notLearned.filter((w) => progress[w.word]);
+  const untried = notLearned.filter((w) => !progress[w.word]).sort(introOrder);
+  practiceSet = new Set([...tried, ...untried].slice(0, PRACTICE_LIMIT).map((w) => w.word));
 }
 
 function record(word, correct) {
@@ -33,21 +63,24 @@ function record(word, correct) {
     wrong: p.wrong + (correct ? 0 : 1),
     last: Date.now(),
   };
-  const wasLearned = categoryOf(word) === "learned";
+  const wasLearned = isLearned(word);
   progress[word] = next;
+  if (wasLearned !== isLearned(word)) rebuildPracticeSet();
   renderProgress();
   saveWordProgress(user.uid, word, next).catch(() => {
     $("status").textContent = "Couldn't save your progress. Check your connection; your answers will save when it's back.";
     $("status").hidden = false;
   });
-  return { becameLearned: !wasLearned && categoryOf(word) === "learned", lostLearned: wasLearned && !correct };
+  return { becameLearned: !wasLearned && isLearned(word), lostLearned: wasLearned && !correct };
 }
 
 function renderProgress() {
-  const learned = words.filter((w) => categoryOf(w.word) === "learned").length;
+  const learned = words.filter((w) => isLearned(w.word)).length;
+  const upcoming = words.length - learned - practiceSet.size;
   $("progress").innerHTML =
     `<span><b>${learned}</b> learned</span>` +
-    `<span><b>${words.length - learned}</b> practice</span>` +
+    `<span><b>${practiceSet.size}</b> practice</span>` +
+    (upcoming > 0 ? `<span><b>${upcoming}</b> more unlock as you learn</span>` : "") +
     `<span class="bar" aria-hidden="true"><span style="width:${(learned / words.length) * 100}%"></span></span>`;
 }
 
@@ -302,6 +335,7 @@ function entryHtml(w) {
   const category = categoryOf(w.word);
   const badge = category === "learned"
     ? `<span class="badge learned">Learned</span>`
+    : category === "upcoming" ? `<span class="badge upcoming">Later</span>`
     : progress[w.word] ? `<span class="badge practice">${progress[w.word].streak}/${LEARNED_STREAK}</span>` : "";
   return `<details class="entry">
     <summary><span class="w">${escapeHtml(w.word)}</span>${badge}<span class="d">${escapeHtml(w.definition)}</span></summary>
@@ -370,6 +404,7 @@ async function showSignedIn(signedInUser) {
     $("status").textContent = "Couldn't load your progress. Please refresh the page.";
     return;
   }
+  rebuildPracticeSet();
   $("status").hidden = true;
   $("tabs").hidden = false;
   renderProgress();

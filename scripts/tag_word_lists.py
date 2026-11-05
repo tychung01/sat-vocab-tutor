@@ -5,7 +5,7 @@ Adds source labels to each entry's "src" field when the word (or one of its
 With --curated, entries in neither list get the curated label instead; leave
 it off for words that come from a practice test.
 
-Needs the list files in sources/lists/ (not committed; see UPDATE.md):
+Uses these files in sources/lists/ (not committed; downloaded if missing):
   nawl.csv              NAWL 1.2 lemmatized for teaching, from newgeneralservicelist.com
   awl-sublists.txt      text of Coxhead's AWL sublists PDF
 
@@ -17,6 +17,9 @@ import json
 import re
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from candidate_words import ensure_lists  # noqa: E402
 
 LISTS = Path(__file__).resolve().parent.parent / "sources" / "lists"
 NAWL = "New Academic Word List (Browne, Culligan & Phillips, CC BY-SA 4.0)"
@@ -37,6 +40,7 @@ def awl_forms():
 def main():
     args = sys.argv[1:]
     curated = "--curated" in args
+    ensure_lists()
     lists = [(NAWL, nawl_forms()), (AWL, awl_forms())]
     for path in (Path(a) for a in args if a != "--curated"):
         entries = json.loads(path.read_text())

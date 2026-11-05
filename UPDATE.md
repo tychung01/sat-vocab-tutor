@@ -3,11 +3,20 @@
 These are the instructions for the scheduled monthly update. A person can follow
 them too.
 
+Each month the database gains **50 new words**: first any words from new
+official practice tests, then SAT-level words from the academic word lists or
+curated SAT vocabulary to make up the rest. The database keeps growing; the app
+limits each student's practice list to 1,200 words at a time (`PRACTICE_LIMIT`
+in `firebase.js`), and newer words join a student's list as they learn older
+ones. Words join in the order they were added, so new words never jump ahead of
+words a student hasn't reached yet.
+
 ## 1. Look for new official practice tests
 
 1. Set up: `python3 -m venv .venv && .venv/bin/pip install -r requirements.txt`
-2. Read `data/sources.json` to see which SAT and PSAT practice tests are
-   already processed.
+2. Read `data/sources.json` to see which practice tests are already processed
+   (`practice_tests` = SAT, `psat_practice_tests` = PSAT,
+   `act_practice_tests` = ACT).
 3. Check https://satsuite.collegeboard.org/practice/practice-tests/paper for
    SAT, PSAT/NMSQT, and PSAT 8/9 practice test PDFs that aren't in
    `data/sources.json`. (PSAT 10 tests repeat the PSAT/NMSQT ones, so skip them
@@ -18,8 +27,7 @@ them too.
    as `act-<original file name>.pdf`.
    A real test returns HTTP 200 with content type `application/pdf`. A missing
    one returns an HTML page.
-4. If you find no new tests, update `"checked"` in `data/sources.json` to
-   today's date, commit, push, and stop.
+4. If you find no new tests, skip to section 4.
 
 ## 2. Extract words from each new test
 
@@ -30,14 +38,15 @@ them too.
    files get an `act-` prefix). Otherwise the next step would drop the
    earlier tests from `sources/candidates.json`.
 2. Run `.venv/bin/python scripts/extract_vocab.py sources/pdfs/*.pdf > sources/candidates.json`.
-   This writes the answer choices from every "most logical and precise word or
-   phrase" and "most nearly mean" question.
+   This writes the answer choices from every SAT/PSAT "most logical and precise
+   word or phrase" and "most nearly mean" question, and the ACT "most nearly
+   means" and "clearest and most precise" questions.
 3. Compare the new test's words to `data/words.json`. Words already in the
-   database still need step 3, so the new test gets added to their sources.
+   database still need section 3, so the new test gets added to their sources.
 
-## 3. Write entries and merge them
+## 3. Write entries for test words and merge them
 
-1. Create `entries/test-<N>.json`, with one object for each word to add:
+1. Create `entries/test-<name>.json`, with one object for each word:
    `{"w", "pos", "def", "use", "ex", "seen"}`. Follow the existing files in
    `entries/` for the format.
    - Use the base form for `w` ("exacerbate"). Put the form that appeared on
@@ -49,30 +58,56 @@ them too.
      passages or dictionary text.
    - Add entries for words already in the database too. The merge only adds
      the new test to their sources.
-2. Run `.venv/bin/python scripts/add_words.py entries/test-<N>.json`. Any
+2. Run `.venv/bin/python scripts/tag_word_lists.py entries/test-<name>.json`
+   (no `--curated`: test words aren't curated), then
+   `.venv/bin/python scripts/add_words.py entries/test-<name>.json`. Any
    warning about a missing source means `w`/`seen` doesn't match what the test
    used, so fix that before going on.
-3. Add the test to `practice_tests` (SAT) or `psat_practice_tests` (PSAT) in
-   `data/sources.json` and set `"checked"` to today's date.
+3. Add the test to the matching list in `data/sources.json`.
 
-Keep the PDFs' file names as College Board publishes them. `add_words.py`
+Keep the PDFs' file names as the test makers publish them. `add_words.py`
 uses the name to label the source (for example `psat-8-9-practice-test-2`
 becomes "PSAT 8/9 Practice Test 2").
 
-## Adding words from the academic word lists (manual, not monthly)
+## 4. Fill the month's 50 new words
 
-`scripts/tag_word_lists.py` labels entries with the lists they belong to. It
-needs two files in `sources/lists/`, which git ignores:
+Count the words that section 3 added as **new** (not ones that only gained a
+source). Add more new words until this month's total is 50.
+
+1. Run `.venv/bin/python scripts/candidate_words.py`. It downloads the New
+   Academic Word List and Coxhead's Academic Word List into `sources/lists/`
+   (git-ignored) and prints the words from each that aren't in the database.
+2. Choose words in this order:
+   - SAT-level words from those lists. Most of the New Academic Word List is
+     technical (*abdominal*, *chromosome*); skip those and plain everyday words.
+     Prefer words that appear in SAT/ACT reading passages: academic verbs and
+     adjectives, words about argument and evidence.
+   - Curated SAT vocabulary once the lists run out of good words: words common
+     in SAT literature, history, and science passages. Skip rare GRE-style
+     words (*querulous*, *sycophant*); the digital SAT favors academic words.
+   - Never add a word that's already in the database or an inflected form of
+     one (check `forms_seen_on_tests` too).
+3. Write them to `entries/monthly-YYYY-MM.json` in the same format. Every
+   example sentence must contain the word or a regular form of it, so the quiz
+   can blank it out (avoid irregular forms like "withheld" or "undertook").
+4. Run `.venv/bin/python scripts/tag_word_lists.py --curated entries/monthly-YYYY-MM.json`,
+   then `.venv/bin/python scripts/add_words.py entries/monthly-YYYY-MM.json`.
+   It should report `added` equal to the number you needed.
+
+## 5. Check and commit
+
+1. Run `.venv/bin/python scripts/validate_db.py`. Fix anything it reports.
+2. Set `"checked"` in `data/sources.json` to today's date.
+3. Commit `data/`, `entries/`, and (if it changed) `sources/candidates.json`
+   with a message like "Monthly update: 50 new words (3 from SAT Practice
+   Test 12)", then push to main. The study app reads `data/words.json` from
+   GitHub, so students see the new words right away.
+
+## Word list files
+
+`scripts/tag_word_lists.py` and `scripts/candidate_words.py` use two files in
+`sources/lists/`, which git ignores (`candidate_words.py` downloads them):
 - `nawl.csv`: NAWL 1.2 "lemmatized for teaching" from
   https://www.newgeneralservicelist.com/new-academic-word-list (CC BY-SA 4.0)
 - `awl-sublists.txt`: the text of Coxhead's AWL sublists PDF from
   https://www.wgtn.ac.nz/lals/resources/academicwordlist/publications/awlsublists1.pdf
-
-Run `tag_word_lists.py` on an entries file, then `add_words.py`. Pass
-`--curated` only for words that don't come from a test, so test words aren't
-mislabeled as curated.
-
-## 4. Commit
-
-Commit `data/`, `entries/`, and `sources/candidates.json` with a message like
-"Add words from SAT Practice Test 12", then push.

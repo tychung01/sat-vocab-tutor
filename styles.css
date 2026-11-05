@@ -154,6 +154,7 @@ main.wrap { padding-top: 24px; padding-bottom: 32px; min-height: 60vh; }
 .note { color: var(--muted); font-size: 0.85rem; text-align: center; margin-top: 14px; }
 .badge.learned { background: var(--good-soft); color: var(--good); }
 .badge.practice { background: var(--accent-soft); color: var(--accent); }
+.badge.upcoming { background: var(--line); color: var(--muted); }
 .feedback .win { color: var(--good); }
 .feedback .streak { color: var(--muted); font-size: 0.9rem; }
 #quiz-learned { color: var(--good); font-weight: 600; }

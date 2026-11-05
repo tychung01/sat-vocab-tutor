@@ -18,6 +18,10 @@ export const db = app && getFirestore(app);
 // A word is learned after this many correct quiz answers in a row.
 export const LEARNED_STREAK = 3;
 
+// Each student practices at most this many words at a time. The database keeps
+// growing; newer words join a student's practice list as they learn older ones.
+export const PRACTICE_LIMIT = 1200;
+
 export function isAdmin(user) {
   return Boolean(user && user.emailVerified && ADMIN_EMAILS.includes(user.email));
 }

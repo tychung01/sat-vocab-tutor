@@ -2,7 +2,7 @@
 // and learned/practice counts. Firestore rules only let admin accounts read this.
 
 import {
-  configured, isAdmin, watchUser, signIn, signOutUser, listStudents, recentLogins, LEARNED_STREAK,
+  configured, isAdmin, watchUser, signIn, signOutUser, listStudents, recentLogins, LEARNED_STREAK, PRACTICE_LIMIT,
 } from "./firebase.js";
 import { loadWords } from "./words.js";
 
@@ -28,7 +28,9 @@ function summarize(student) {
     .sort((a, b) => b[1].streak - a[1].streak)
     .map(([w, p]) => `${w} (${p.streak}/${LEARNED_STREAK})`);
   const missed = entries.filter(([, p]) => p.streak === 0 && p.wrong > 0).map(([w]) => w).sort();
-  return { learned, close, missed, practice: totalWords - learned.length };
+  // Learned words may include words since removed from the database, so cap at the total.
+  const notLearned = Math.max(0, totalWords - learned.length);
+  return { learned, close, missed, practice: Math.min(PRACTICE_LIMIT, notLearned), upcoming: Math.max(0, notLearned - PRACTICE_LIMIT) };
 }
 
 function renderStats() {
