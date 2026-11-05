@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-05",
-  "count": 1000,
+  "count": 1017,
   "words": [
     {
       "word": "abandon",
@@ -12,6 +12,7 @@
       ],
       "forms_seen_on_tests": [],
       "sources": [
+        "ACT Practice Test (Preparing for the ACT booklet)",
         "Academic Word List (Coxhead, 2000)"
       ],
       "added": "2026-11-05"
@@ -211,6 +212,21 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "adequate",
+      "part_of_speech": "adjective",
+      "definition": "Satisfactory or acceptable in quantity or quality.",
+      "usage": "Enough, but not necessarily excellent.",
+      "examples": [
+        "The shelter had adequate food for the winter."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "ACT Practice Test 3 (ACT)",
+        "Academic Word List (Coxhead, 2000)"
       ],
       "added": "2026-11-05"
     },
@@ -2850,6 +2866,22 @@
       "added": "2026-11-05"
     },
     {
+      "word": "contort",
+      "part_of_speech": "verb",
+      "definition": "To twist or bend out of normal shape.",
+      "usage": "Used for bodies, faces, and meanings.",
+      "examples": [
+        "Her face contorted in pain."
+      ],
+      "forms_seen_on_tests": [
+        "contorting"
+      ],
+      "sources": [
+        "ACT Practice Test (Preparing for the ACT booklet)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "contour",
       "part_of_speech": "noun",
       "definition": "An outline, especially of a curving shape.",
@@ -3290,6 +3322,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Academic Word List (Coxhead, 2000)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "decorous",
+      "part_of_speech": "adjective",
+      "definition": "Polite and appropriate for a formal situation.",
+      "usage": "Related to 'decorum'; describes dignified behavior.",
+      "examples": [
+        "The guests behaved in a decorous manner at the ceremony."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "ACT Practice Test 3 (ACT)"
       ],
       "added": "2026-11-05"
     },
@@ -4023,6 +4069,22 @@
       "added": "2026-11-05"
     },
     {
+      "word": "dislocate",
+      "part_of_speech": "verb",
+      "definition": "To disturb the normal position or arrangement of; to put a joint out of place.",
+      "usage": "Used for bones and for disrupted lives or systems.",
+      "examples": [
+        "The war dislocated thousands of families."
+      ],
+      "forms_seen_on_tests": [
+        "dislocating"
+      ],
+      "sources": [
+        "ACT Practice Test (Preparing for the ACT booklet)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "dismay",
       "part_of_speech": "noun / verb",
       "definition": "Distress caused by something unexpected.",
@@ -4593,6 +4655,22 @@
       "added": "2026-11-05"
     },
     {
+      "word": "emanate",
+      "part_of_speech": "verb",
+      "definition": "To come out from a source.",
+      "usage": "Used for light, sound, smells, and feelings.",
+      "examples": [
+        "A warm glow emanated from the cabin windows."
+      ],
+      "forms_seen_on_tests": [
+        "emanated"
+      ],
+      "sources": [
+        "ACT Practice Test 2 (ACT)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "emancipate",
       "part_of_speech": "verb",
       "definition": "To set free from legal, social, or political restrictions.",
@@ -4727,8 +4805,11 @@
       "examples": [
         "Young players emulate their heroes."
       ],
-      "forms_seen_on_tests": [],
+      "forms_seen_on_tests": [
+        "emulated"
+      ],
       "sources": [
+        "ACT Practice Test 2 (ACT)",
         "Curated high-frequency SAT words"
       ],
       "added": "2026-11-05"
@@ -4999,6 +5080,23 @@
       "forms_seen_on_tests": [],
       "sources": [
         "New Academic Word List (Browne, Culligan & Phillips, CC BY-SA 4.0)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "equip",
+      "part_of_speech": "verb",
+      "definition": "To supply with the necessary items or skills.",
+      "usage": "'Well equipped to' means well prepared.",
+      "examples": [
+        "The course equips students to manage their own money."
+      ],
+      "forms_seen_on_tests": [
+        "equipped"
+      ],
+      "sources": [
+        "ACT Practice Test 4 (ACT)",
+        "Academic Word List (Coxhead, 2000)"
       ],
       "added": "2026-11-05"
     },
@@ -5475,6 +5573,21 @@
       "forms_seen_on_tests": [],
       "sources": [
         "SAT Practice Test 8 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "extent",
+      "part_of_speech": "noun",
+      "definition": "The degree to which something is true; the area covered.",
+      "usage": "'To some extent'; 'the full extent of the damage.'",
+      "examples": [
+        "Scientists are still measuring the extent of the oil spill."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "PSAT 8/9 Practice Test 3 (College Board)",
+        "ACT Practice Test 3 (ACT)"
       ],
       "added": "2026-11-05"
     },
@@ -6197,6 +6310,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "Curated high-frequency SAT words"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "honorable",
+      "part_of_speech": "adjective",
+      "definition": "Bringing or deserving honor; morally upright.",
+      "usage": "Describes people, intentions, and actions.",
+      "examples": [
+        "Returning the lost wallet was the honorable thing to do."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "ACT Practice Test 3 (ACT)"
       ],
       "added": "2026-11-05"
     },
@@ -7698,6 +7825,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "invalid",
+      "part_of_speech": "adjective",
+      "definition": "Not legally or logically acceptable; not true or correct.",
+      "usage": "Invalid arguments, tickets, or results (pronounced in-VAL-id).",
+      "examples": [
+        "The ticket was invalid because it had expired."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "ACT Practice Test 2 (ACT)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "investigate",
       "part_of_speech": "verb",
       "definition": "To carry out a systematic inquiry to discover facts.",
@@ -8692,6 +8833,7 @@
       ],
       "forms_seen_on_tests": [],
       "sources": [
+        "ACT Practice Test 2 (ACT)",
         "Curated high-frequency SAT words"
       ],
       "added": "2026-11-05"
@@ -11281,8 +11423,11 @@
       "examples": [
         "The founder relinquished control of the company."
       ],
-      "forms_seen_on_tests": [],
+      "forms_seen_on_tests": [
+        "relinquishment"
+      ],
       "sources": [
+        "ACT Practice Test (Preparing for the ACT booklet)",
         "Curated high-frequency SAT words"
       ],
       "added": "2026-11-05"
@@ -11302,6 +11447,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "remiss",
+      "part_of_speech": "adjective",
+      "definition": "Careless in performing one's duty.",
+      "usage": "Often 'remiss in' doing something.",
+      "examples": [
+        "I would be remiss not to thank the volunteers."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "ACT Practice Test 4 (ACT)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "remorse",
       "part_of_speech": "noun",
       "definition": "Deep regret for a wrong committed.",
@@ -11316,6 +11475,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "remote",
+      "part_of_speech": "adjective",
+      "definition": "Far away in distance or time; slight.",
+      "usage": "Remote places; a remote chance means a very small one.",
+      "examples": [
+        "The chance of finding the ring in the sand was remote."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "ACT Practice Test 2 (ACT)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "render",
       "part_of_speech": "verb",
       "definition": "To cause to become; to provide; to represent artistically.",
@@ -11326,6 +11499,22 @@
       "forms_seen_on_tests": [],
       "sources": [
         "New Academic Word List (Browne, Culligan & Phillips, CC BY-SA 4.0)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "renovate",
+      "part_of_speech": "verb",
+      "definition": "To restore something old to good condition.",
+      "usage": "Used for buildings and rooms.",
+      "examples": [
+        "Volunteers renovated the old theater."
+      ],
+      "forms_seen_on_tests": [
+        "renovated"
+      ],
+      "sources": [
+        "ACT Practice Test 3 (ACT)"
       ],
       "added": "2026-11-05"
     },
@@ -11671,6 +11860,20 @@
       "added": "2026-11-05"
     },
     {
+      "word": "retreat",
+      "part_of_speech": "verb / noun",
+      "definition": "To withdraw or move back; (n.) a quiet place to rest.",
+      "usage": "Military retreat; a mountain retreat.",
+      "examples": [
+        "Glaciers have retreated dramatically over the last century."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "ACT Practice Test (Preparing for the ACT booklet)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "retrieve",
       "part_of_speech": "verb",
       "definition": "To get back; to bring back.",
@@ -11951,6 +12154,7 @@
       ],
       "forms_seen_on_tests": [],
       "sources": [
+        "ACT Practice Test 3 (ACT)",
         "Academic Word List (Coxhead, 2000)"
       ],
       "added": "2026-11-05"
@@ -12040,6 +12244,22 @@
       "forms_seen_on_tests": [],
       "sources": [
         "New Academic Word List (Browne, Culligan & Phillips, CC BY-SA 4.0)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "sensibility",
+      "part_of_speech": "noun",
+      "definition": "The ability to appreciate and respond to complex feelings or art; (plural) a person's feelings and tastes.",
+      "usage": "'Offend someone's sensibilities'; 'artistic sensibility.'",
+      "examples": [
+        "The film's violence offended some viewers' sensibilities."
+      ],
+      "forms_seen_on_tests": [
+        "sensibilities"
+      ],
+      "sources": [
+        "ACT Practice Test (Preparing for the ACT booklet)"
       ],
       "added": "2026-11-05"
     },
@@ -13352,11 +13572,14 @@
         "The railroad transformed the small town into a busy city."
       ],
       "forms_seen_on_tests": [
-        "transformed"
+        "transformed",
+        "transforming"
       ],
       "sources": [
         "PSAT/NMSQT Practice Test 2 (College Board)",
-        "PSAT 8/9 Practice Test 1 (College Board)"
+        "PSAT 8/9 Practice Test 1 (College Board)",
+        "ACT Practice Test (Preparing for the ACT booklet)",
+        "Academic Word List (Coxhead, 2000)"
       ],
       "added": "2026-11-05"
     },
@@ -13688,6 +13911,22 @@
       "added": "2026-11-05"
     },
     {
+      "word": "uninhibited",
+      "part_of_speech": "adjective",
+      "definition": "Expressing oneself freely, without self-consciousness.",
+      "usage": "Noun 'uninhibitedness' or 'abandon' (as in 'danced with abandon').",
+      "examples": [
+        "The children danced in uninhibited joy."
+      ],
+      "forms_seen_on_tests": [
+        "uninhibitedness"
+      ],
+      "sources": [
+        "ACT Practice Test (Preparing for the ACT booklet)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
       "word": "unintelligible",
       "part_of_speech": "adjective",
       "definition": "Impossible to understand.",
@@ -13797,6 +14036,20 @@
       "forms_seen_on_tests": [],
       "sources": [
         "PSAT/NMSQT Practice Test 1 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "upstanding",
+      "part_of_speech": "adjective",
+      "definition": "Honest and respectable.",
+      "usage": "Usually 'an upstanding citizen.'",
+      "examples": [
+        "The mayor was known as an upstanding member of the community."
+      ],
+      "forms_seen_on_tests": [],
+      "sources": [
+        "ACT Practice Test 3 (ACT)"
       ],
       "added": "2026-11-05"
     },
@@ -14199,6 +14452,22 @@
       "forms_seen_on_tests": [],
       "sources": [
         "SAT Practice Test 10 (College Board)"
+      ],
+      "added": "2026-11-05"
+    },
+    {
+      "word": "wield",
+      "part_of_speech": "verb",
+      "definition": "To hold and use a weapon or tool; to have and use power.",
+      "usage": "Figurative use is common: wield influence or power.",
+      "examples": [
+        "The committee wields great influence over the budget."
+      ],
+      "forms_seen_on_tests": [
+        "wielded"
+      ],
+      "sources": [
+        "ACT Practice Test 2 (ACT)"
       ],
       "added": "2026-11-05"
     },

@@ -13,6 +13,9 @@ them too.
    `data/sources.json`. (PSAT 10 tests repeat the PSAT/NMSQT ones, so skip them
    unless they're new.) Also try the next few SAT test numbers directly:
    `https://satsuite.collegeboard.org/media/pdf/sat-practice-test-<N>-digital.pdf`
+   Then check https://www.act.org/content/act/en/students-and-parents/high-school-success/testing-advice-for-the-act/free-act-practice-test.html
+   for ACT practice test PDFs not listed under `act_practice_tests`. Save them
+   as `act-<original file name>.pdf`.
    A real test returns HTTP 200 with content type `application/pdf`. A missing
    one returns an HTML page.
 4. If you find no new tests, update `"checked"` in `data/sources.json` to
@@ -61,7 +64,9 @@ needs two files in `sources/lists/`, which git ignores:
 - `awl-sublists.txt`: the text of Coxhead's AWL sublists PDF from
   https://www.wgtn.ac.nz/lals/resources/academicwordlist/publications/awlsublists1.pdf
 
-Run `tag_word_lists.py` on an entries file, then `add_words.py`.
+Run `tag_word_lists.py` on an entries file, then `add_words.py`. Pass
+`--curated` only for words that don't come from a test, so test words aren't
+mislabeled as curated.
 
 ## 4. Commit
 

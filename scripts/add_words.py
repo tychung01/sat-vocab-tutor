@@ -34,6 +34,7 @@ def normalize(word):
 
 
 TEST_NAMES = [
+    ("act-", "ACT"),
     ("psat-8-9-", "PSAT 8/9"),
     ("psat-10-", "PSAT 10"),
     ("psat-nmsqt-", "PSAT/NMSQT"),
@@ -43,7 +44,10 @@ TEST_NAMES = [
 
 def test_label(stem):
     """Turn a PDF name like 'psat-8-9-practice-test-2' into 'PSAT 8/9 Practice Test 2 (College Board)'."""
-    number = re.search(r"test-(\d+)", stem)
+    number = re.search(r"test-(\d+)", stem, re.I)
+    if stem.startswith("act-"):
+        # ACT's "Preparing for the ACT" booklet has its own unnumbered practice test.
+        return f"ACT Practice Test {number[1]} (ACT)" if number else "ACT Practice Test (Preparing for the ACT booklet)"
     for prefix, name in TEST_NAMES:
         if stem.startswith(prefix) and number:
             return f"{name} Practice Test {number[1]} (College Board)"
@@ -64,12 +68,11 @@ def test_sources():
 
 
 def sort_key(label):
-    """Order sources SAT first, then PSAT/NMSQT, PSAT 10, PSAT 8/9, then anything else."""
+    """Order sources SAT first, then PSAT/NMSQT, PSAT 10, PSAT 8/9, ACT, then anything else."""
+    names = [name for _, name in reversed(TEST_NAMES)]
+    rank = next((i for i, name in enumerate(names) if label.startswith(name + " Practice Test")), len(names))
     number = re.search(r"Practice Test (\d+)", label)
-    if not number:
-        return (len(TEST_NAMES), 0, label)
-    rank = next(i for i, (_, name) in enumerate(reversed(TEST_NAMES)) if label.startswith(name + " "))
-    return (rank, int(number[1]), label)
+    return (rank, int(number[1]) if number else 0, label)
 
 
 def main():

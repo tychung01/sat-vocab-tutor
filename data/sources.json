@@ -74,5 +74,27 @@
       "processed": "2026-11-05"
     }
   ],
-  "notes": "PSAT 10 Practice Tests 1-2 are the same as PSAT/NMSQT Practice Tests 1-2, so they are skipped. Older pre-2024 SAT practice test PDFs are no longer offered by College Board."
+  "notes": "PSAT 10 Practice Tests 1-2 are the same as PSAT/NMSQT Practice Tests 1-2, so they are skipped. Older pre-2024 SAT practice test PDFs are no longer offered by College Board.",
+  "act_practice_tests": [
+    {
+      "test": "Preparing for the ACT (2025-26)",
+      "url": "https://www.act.org/content/dam/act/unsecured/documents/Preparing-for-the-ACT.pdf",
+      "processed": "2026-11-05"
+    },
+    {
+      "test": "ACT Practice Test 2",
+      "url": "https://www.act.org/content/dam/act/unsecured/documents/ACT-Test-Prep-ACT-Practice-Test-2-Form.pdf",
+      "processed": "2026-11-05"
+    },
+    {
+      "test": "ACT Practice Test 3",
+      "url": "https://www.act.org/content/dam/act/secured/documents/ACT-Test-Prep-ACT-Practice-Test-3-Form.pdf",
+      "processed": "2026-11-05"
+    },
+    {
+      "test": "ACT Practice Test 4",
+      "url": "https://www.act.org/content/dam/act/secured/documents/ACT-Test-Prep-ACT-Practice-Test-4-Form.pdf",
+      "processed": "2026-11-05"
+    }
+  ]
 }

@@ -2,13 +2,14 @@
 
 Adds source labels to each entry's "src" field when the word (or one of its
 "seen" forms) is in the New Academic Word List or the Academic Word List.
-Entries in neither list get the curated label instead.
+With --curated, entries in neither list get the curated label instead; leave
+it off for words that come from a practice test.
 
 Needs the list files in sources/lists/ (not committed; see UPDATE.md):
   nawl.csv              NAWL 1.2 lemmatized for teaching, from newgeneralservicelist.com
   awl-sublists.txt      text of Coxhead's AWL sublists PDF
 
-Usage: python scripts/tag_word_lists.py ENTRIES.json [ENTRIES.json ...]
+Usage: python scripts/tag_word_lists.py [--curated] ENTRIES.json [ENTRIES.json ...]
 """
 
 import csv
@@ -34,13 +35,20 @@ def awl_forms():
 
 
 def main():
+    args = sys.argv[1:]
+    curated = "--curated" in args
     lists = [(NAWL, nawl_forms()), (AWL, awl_forms())]
-    for path in map(Path, sys.argv[1:]):
+    for path in (Path(a) for a in args if a != "--curated"):
         entries = json.loads(path.read_text())
         counts = {}
         for item in entries:
             forms = {item["w"], *item.get("seen", [])}
-            labels = [label for label, members in lists if forms & members] or [CURATED]
+            labels = [label for label, members in lists if forms & members]
+            if not labels and curated:
+                labels = [CURATED]
+            if not labels:
+                item.pop("src", None)
+                continue
             item["src"] = labels
             for label in labels:
                 counts[label] = counts.get(label, 0) + 1

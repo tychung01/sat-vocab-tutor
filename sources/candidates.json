@@ -1,4 +1,160 @@
 {
+  "act-ACT-Test-Prep-ACT-Practice-Test-2-Form": [
+    {
+      "type": "most-nearly-means",
+      "words": [
+        "held by",
+        "wielded by",
+        "within reach of",
+        "perceived of",
+        "supported by"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": []
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "negligible",
+        "remote",
+        "invalid"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "emanated",
+        "emulated",
+        "eliminated"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": []
+    }
+  ],
+  "act-ACT-Test-Prep-ACT-Practice-Test-3-Form": [
+    {
+      "type": "most-nearly-means",
+      "words": [
+        "decent",
+        "honorable",
+        "adequate",
+        "decorous",
+        "upstanding"
+      ]
+    },
+    {
+      "type": "most-nearly-means",
+      "words": [
+        "extent",
+        "distance",
+        "reach",
+        "scope",
+        "degree"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "reshaped",
+        "renovated",
+        "redrafted"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": []
+    },
+    {
+      "type": "word-in-context",
+      "words": []
+    }
+  ],
+  "act-ACT-Test-Prep-ACT-Practice-Test-4-Form": [
+    {
+      "type": "most-nearly-means",
+      "words": [
+        "fitted",
+        "matched",
+        "qualified",
+        "equipped",
+        "assembled"
+      ]
+    },
+    {
+      "type": "most-nearly-means",
+      "words": [
+        "caught up in",
+        "recovering from",
+        "dreaming of",
+        "remiss in",
+        "lost in"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": []
+    },
+    {
+      "type": "word-in-context",
+      "words": []
+    },
+    {
+      "type": "word-in-context",
+      "words": []
+    }
+  ],
+  "act-Preparing-for-the-ACT": [
+    {
+      "type": "most-nearly-means",
+      "words": [
+        "abandon",
+        "uninhibitedness",
+        "relinquishment",
+        "retreat",
+        "denial"
+      ]
+    },
+    {
+      "type": "most-nearly-means",
+      "words": [
+        "sensibilities",
+        "emotions",
+        "sensitivities",
+        "perspectives",
+        "feelings of gratitude"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "keep doling out"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "transforming",
+        "dislocating",
+        "contorting"
+      ]
+    },
+    {
+      "type": "word-in-context",
+      "words": []
+    },
+    {
+      "type": "word-in-context",
+      "words": [
+        "although",
+        "when",
+        "since"
+      ]
+    }
+  ],
   "psat-8-9-practice-test-1": [
     {
       "type": "word-in-context",
