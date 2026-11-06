@@ -77,8 +77,7 @@ export async function recordLogin(user) {
   const data = existing.exists() ? existing.data() : {};
   const key = `satvocab.session.${user.uid}`;
   try {
-    if (sessionStorage.getItem(key)) return data.loginStreak || 1;
-    sessionStorage.setItem(key, "1");
+    if (existing.exists() && sessionStorage.getItem(key)) return data.loginStreak || 1;
   } catch {
     // Without sessionStorage every page load counts as a visit.
   }
@@ -102,7 +101,28 @@ export async function recordLogin(user) {
     at: serverTimestamp(),
     device: navigator.userAgent.slice(0, 200),
   });
+  try {
+    sessionStorage.setItem(key, "1");
+  } catch {
+    // Counted again on the next page load.
+  }
   return loginStreak;
+}
+
+// Students a teacher invited, one document per email (lowercased). Only invited
+// students (and students who signed in before invites) can use the study app.
+export async function listInvites() {
+  const snap = await getDocs(collection(db, "invites"));
+  return snap.docs.map((d) => d.data());
+}
+
+export function addInvite(email, invitedBy) {
+  const id = email.trim().toLowerCase();
+  return setDoc(doc(db, "invites", id), { email: id, invitedBy, invitedAt: serverTimestamp() });
+}
+
+export function removeInvite(email) {
+  return deleteDoc(doc(db, "invites", email));
 }
 
 // Progress is one document per student: { words: { [word]: { streak, correct, wrong, last } },

@@ -2,7 +2,9 @@ rules_version = '2';
 
 // Students can read and write only their own records, except their word list
 // (/wordlists/{uid}) and the words added for all students (/classwords/{word}),
-// which only teachers can change.
+// which only teachers can change. A student can start using the app only after a
+// teacher invites their email (/invites/{email}); students who signed in before
+// invites existed keep access.
 // Teachers can read everyone's records. The owner (listed in isAppOwner) is
 // always a teacher and is the only one who can add or remove other teachers,
 // who are stored in /teachers/{email}.
@@ -27,19 +29,39 @@ service cloud.firestore {
       return request.auth != null && request.auth.uid == uid;
     }
 
+    function isInvited() {
+      return signedInEmail()
+        && exists(/databases/$(database)/documents/invites/$(request.auth.token.email.lower()));
+    }
+
+    // A student's user record exists once they've signed in with access.
+    function hasSignedIn(uid) {
+      return exists(/databases/$(database)/documents/users/$(uid));
+    }
+
     match /users/{uid} {
       allow read: if isSelf(uid) || isTeacher();
-      allow create, update: if isSelf(uid);
+      allow create: if isSelf(uid) && (isInvited() || isTeacher());
+      allow update: if isSelf(uid);
 
       match /logins/{loginId} {
         allow read: if isSelf(uid) || isTeacher();
-        allow create: if isSelf(uid);
+        allow create: if isSelf(uid) && hasSignedIn(uid);
       }
     }
 
     match /progress/{uid} {
       allow read: if isSelf(uid) || isTeacher();
-      allow create, update: if isSelf(uid);
+      allow create, update: if isSelf(uid) && hasSignedIn(uid);
+    }
+
+    // Students a teacher invited. The document ID is the student's email, lowercased.
+    match /invites/{email} {
+      allow read, delete: if isTeacher();
+      allow create: if isTeacher()
+        && email == email.lower()
+        && request.resource.data.email == email
+        && request.resource.data.keys().hasOnly(['email', 'invitedBy', 'invitedAt']);
     }
 
     // Words a teacher added or removed for one student. Only teachers change it.

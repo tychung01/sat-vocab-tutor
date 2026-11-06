@@ -561,17 +561,21 @@ async function showSignedIn(signedInUser) {
   isTeacher(user).then((teacher) => { $("admin-link").hidden = !teacher; });
   $("account").hidden = false;
 
-  recordLogin(user).then((streak) => {
-    loginStreak = streak;
-    if (words.length && !$("tabs").hidden) renderProgress();
-  }).catch(() => {});
+  // Recording the login is also the access check: a student who hasn't been invited can't.
+  const login = recordLogin(user).then((streak) => ({ streak }), (error) => ({ error }));
   try {
     // Without the teacher's changes the student still gets the full database.
-    const [saved, list, classWords] = await Promise.all([
+    const [saved, list, classWords, { streak, error }] = await Promise.all([
       loadProgress(user.uid),
       loadWordList(user.uid).catch(() => ({})),
       loadClassWords().catch(() => []),
+      login,
     ]);
+    if (error?.code === "permission-denied") {
+      $("status").textContent = `${user.email} hasn't been invited yet. Ask your teacher to invite this email address, then sign in again. If your teacher invited a different address, sign out and sign in with that one.`;
+      return;
+    }
+    loginStreak = streak || 0;
     progress = saved.words;
     studied = saved.studied;
     required = saved.required;

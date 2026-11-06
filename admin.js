@@ -6,7 +6,7 @@
 import {
   configured, isOwner, isTeacher, watchUser, signIn, signOutUser, listStudents, recentLogins,
   listTeachers, addTeacher, removeTeacher, addStudentWord, removeStudentWord, restoreStudentWord,
-  loadClassWords, addClassWord, removeClassWord, writeWordContent,
+  loadClassWords, addClassWord, removeClassWord, writeWordContent, listInvites, addInvite, removeInvite,
   LEARNED_STREAK, PRACTICE_LIMIT,
 } from "./firebase.js";
 import { OWNER_EMAILS } from "./firebase-config.js";
@@ -558,6 +558,97 @@ $("class-word-form").addEventListener("submit", (e) => {
   });
 });
 
+// ---------- invites ----------
+
+let invites = [];
+
+// The study app's address, next to this dashboard.
+const APP_URL = new URL("./", location.href).href;
+
+function inviteMessage(email) {
+  const teacher = currentUser.displayName || currentUser.email;
+  return {
+    subject: "You're invited to SAT Word Study",
+    body: `Hi,\n\nI've invited you to SAT Word Study, a vocabulary app for the SAT. You'll study flashcards and take short quizzes in the SAT's Words in Context format.\n\nTo start:\n1. Open ${APP_URL}\n2. Click "Sign in with Google" and sign in with this email address: ${email}\n\n${teacher}`,
+  };
+}
+
+// Open the teacher's email app with the invitation written.
+function sendInvite(email) {
+  const { subject, body } = inviteMessage(email);
+  location.href = `mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  $("invite-sent").innerHTML = `Your email app should open with the invitation to ${escapeHtml(email)}. If it doesn't, <button class="link copy-invite" type="button">copy the invitation</button> and send it yourself.`;
+  $("invite-sent").hidden = false;
+  $("invite-sent").querySelector(".copy-invite").addEventListener("click", async (e) => {
+    try {
+      await navigator.clipboard.writeText(`${subject}\n\n${body}`);
+      e.target.textContent = "copied";
+    } catch {
+      e.target.textContent = "couldn't copy";
+    }
+  });
+}
+
+// Invites from students who haven't signed in yet.
+function renderInvites() {
+  const signedIn = new Set(students.map((s) => (s.email || "").toLowerCase()));
+  const pending = invites.filter((i) => !signedIn.has(i.email)).sort((a, b) => a.email.localeCompare(b.email));
+  $("invite-list").innerHTML = pending.length
+    ? pending.map((i) => `<li><span>${escapeHtml(i.email)}</span>
+      <span class="muted">invited ${formatTime(i.invitedAt)} by ${escapeHtml(i.invitedBy)}, hasn't signed in yet</span>
+      <button class="link resend-invite" data-email="${escapeHtml(i.email)}">Send again</button>
+      <button class="link remove-teacher" data-email="${escapeHtml(i.email)}">Remove</button></li>`).join("")
+    : `<li class="muted">No invitations waiting. Invited students move to the table above once they sign in.</li>`;
+  document.querySelectorAll("#invite-list .resend-invite").forEach((b) => b.addEventListener("click", () => sendInvite(b.dataset.email)));
+  document.querySelectorAll("#invite-list .remove-teacher").forEach((b) => {
+    b.addEventListener("click", async () => {
+      if (!confirm(`Remove the invitation for ${b.dataset.email}? They won't be able to sign in to the study app.`)) return;
+      showInviteError("");
+      try {
+        await removeInvite(b.dataset.email);
+      } catch {
+        showInviteError("Couldn't remove that invitation. Please try again.");
+        return;
+      }
+      invites = invites.filter((i) => i.email !== b.dataset.email);
+      renderInvites();
+    });
+  });
+}
+
+function showInviteError(message) {
+  $("invite-error").textContent = message;
+  $("invite-error").hidden = !message;
+}
+
+$("invite-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  showInviteError("");
+  $("invite-sent").hidden = true;
+  const email = $("invite-email").value.trim().toLowerCase();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    showInviteError("Enter a full email address, like name@school.org.");
+    return;
+  }
+  if (students.some((s) => (s.email || "").toLowerCase() === email)) {
+    showInviteError("That student has already signed in, so they can use the app.");
+    return;
+  }
+  // Invites can only be created, so sending again doesn't save a new one.
+  if (!invites.some((i) => i.email === email)) {
+    try {
+      await addInvite(email, currentUser.email);
+    } catch {
+      showInviteError("Couldn't save that invitation. Please try again.");
+      return;
+    }
+    invites = [...invites, { email, invitedBy: currentUser.email, invitedAt: new Date() }];
+  }
+  $("invite-email").value = "";
+  renderInvites();
+  sendInvite(email);
+});
+
 // ---------- teachers ----------
 
 let currentUser = null;
@@ -643,13 +734,15 @@ async function showDashboard(user) {
   $("status").textContent = "Loading students…";
   $("status").hidden = false;
   try {
-    const [wordsDb, list, shared] = await Promise.all([
+    const [wordsDb, list, shared, invited] = await Promise.all([
       loadWords(),
       listStudents(),
       loadClassWords(),
+      listInvites(),
     ]);
     dbWords = wordsDb.words;
     classWords = shared;
+    invites = invited;
     students = list.sort((a, b) => (b.lastLogin?.toMillis() || 0) - (a.lastLogin?.toMillis() || 0));
   } catch {
     $("status").textContent = "Couldn't load student data. Check that the Firestore rules are published (see FIREBASE-SETUP.md).";
@@ -658,6 +751,7 @@ async function showDashboard(user) {
   $("status").hidden = true;
   $("dashboard").hidden = false;
   refreshCounts();
+  renderInvites();
   renderTeachers();
 }
 

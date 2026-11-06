@@ -16,12 +16,14 @@ const as = (uid, email, verified = true) =>
 const owner = as("owner", "tychung01@gmail.com");
 const teacher = as("t1", "teacher@example.com");
 const student = as("s1", "student@example.com");
+const stranger = as("s3", "stranger@example.com");
 const unverifiedOwner = as("owner2", "tychung01@gmail.com", false);
 const anon = env.unauthenticatedContext().firestore();
 
 await env.withSecurityRulesDisabled(async (c) => {
   const db = c.firestore();
   await setDoc(doc(db, "teachers/teacher@example.com"), { email: "teacher@example.com", addedBy: "tychung01@gmail.com" });
+  await setDoc(doc(db, "invites/student@example.com"), { email: "student@example.com", invitedBy: "teacher@example.com" });
   await setDoc(doc(db, "users/s2"), { name: "Other" });
   await setDoc(doc(db, "progress/s2"), { learned: 1 });
   await setDoc(doc(db, "users/s2/logins/a"), { at: 1 });
@@ -53,8 +55,13 @@ const cases = [
   ["teacher reads another student's logins", () => assertSucceeds(getDocs(collection(teacher, "users/s2/logins")))],
   ["owner reads another student's progress", () => assertSucceeds(getDoc(doc(owner, "progress/s2")))],
   ["teacher can't write a student's progress", () => assertFails(setDoc(doc(teacher, "progress/s2"), { learned: 99 }))],
+  ["student can't save progress before signing in", () => assertFails(setDoc(doc(student, "progress/s1"), { learned: 2 }))],
+  ["invited student writes own user doc + login", () => assertSucceeds(setDoc(doc(student, "users/s1"), { name: "S" }).then(() => setDoc(doc(student, "users/s1/logins/x"), { at: 1 })))],
   ["student reads/writes own progress", () => assertSucceeds(setDoc(doc(student, "progress/s1"), { learned: 2 }).then(() => getDoc(doc(student, "progress/s1"))))],
-  ["student writes own user doc + login", () => assertSucceeds(setDoc(doc(student, "users/s1"), { name: "S" }).then(() => setDoc(doc(student, "users/s1/logins/x"), { at: 1 })))],
+  ["uninvited student can't create a user doc", () => assertFails(setDoc(doc(stranger, "users/s3"), { name: "X" }))],
+  ["uninvited student can't add a login", () => assertFails(setDoc(doc(stranger, "users/s3/logins/x"), { at: 1 }))],
+  ["uninvited student can't save progress", () => assertFails(setDoc(doc(stranger, "progress/s3"), { learned: 1 }))],
+  ["student who signed in before keeps access", () => assertSucceeds(setDoc(doc(as("s2", "other@example.com"), "progress/s2"), { learned: 3 }))],
   ["student can't read another student", () => assertFails(getDoc(doc(student, "progress/s2")))],
   ["anonymous can't read anything", () => assertFails(getDoc(doc(anon, "progress/s2")))],
   // Teacher docs can only be created, so the dashboard checks the list before adding.
@@ -81,6 +88,14 @@ const cases = [
   ["student can't remove a word for all students", () => assertFails(deleteDoc(doc(student, "classwords/zephyr")))],
   ["teacher removes a word for all students", () => assertSucceeds(deleteDoc(doc(teacher, "classwords/zephyr")))],
   ["anonymous can't read words for all students", () => assertFails(getDocs(collection(anon, "classwords")))],
+  ["teacher invites a student", () => assertSucceeds(setDoc(doc(teacher, "invites/new@example.com"), { email: "new@example.com", invitedBy: "teacher@example.com", invitedAt: serverTimestamp() }))],
+  ["teacher can't invite under a mismatched ID", () => assertFails(setDoc(doc(teacher, "invites/a@example.com"), { email: "b@example.com", invitedBy: "x" }))],
+  ["teacher can't invite an uppercase ID", () => assertFails(setDoc(doc(teacher, "invites/New@Example.com"), { email: "New@Example.com", invitedBy: "x" }))],
+  ["teacher lists invites", () => assertSucceeds(getDocs(collection(teacher, "invites")))],
+  ["student can't list invites", () => assertFails(getDocs(collection(student, "invites")))],
+  ["student can't invite themselves", () => assertFails(setDoc(doc(stranger, "invites/stranger@example.com"), { email: "stranger@example.com", invitedBy: "x" }))],
+  ["teacher removes an invite", () => assertSucceeds(deleteDoc(doc(teacher, "invites/new@example.com")))],
+  ["teacher can use the study app without an invite", () => assertSucceeds(setDoc(doc(teacher, "users/t1"), { name: "T" }))],
 ];
 
 let failed = 0;

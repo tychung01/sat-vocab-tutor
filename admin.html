@@ -53,6 +53,19 @@
       </div>
       <p class="note">Click a student to see their recent logins, learned words, and the practice words they're closest to learning, and to add or remove words for just that student. A word is learned after 3 correct quiz answers in a row. Each student practices at most 1,200 words at a time; newer words join their list as they learn.</p>
 
+      <section class="teachers" aria-labelledby="invites-heading">
+        <h2 id="invites-heading">Invite students</h2>
+        <p class="muted">Only invited students can use the study app. Enter the Google email the student will sign in with. Your email app opens with an invitation to send them.</p>
+        <form class="add-teacher" id="invite-form">
+          <label for="invite-email" class="visually-hidden">Student's Google email</label>
+          <input type="email" id="invite-email" placeholder="Student's Google email" required autocomplete="off">
+          <button class="btn primary" type="submit">Invite student</button>
+        </form>
+        <p class="error" id="invite-error" hidden></p>
+        <p class="muted" id="invite-sent" hidden></p>
+        <ul class="teacher-list" id="invite-list"></ul>
+      </section>
+
       <section class="teachers" aria-labelledby="class-words-heading">
         <h2 id="class-words-heading">Words for all students</h2>
         <p class="muted">Add a word to every student's list, including students who sign up later. Added words are looked up online and come up first in their flashcards and quizzes. To add or remove a word for one student, click their row above.</p>

@@ -67,6 +67,18 @@ Only the owner can add or remove teachers. The owner is set in two places:
 `firestore.rules`. Changing the owner means editing both and running the
 deploy command.
 
+## Inviting students
+Only invited students can use the study app. In the teacher dashboard, use
+**Invite students**: enter the Google email the student will sign in with and
+click **Invite student**. Your email app opens with an invitation (a link to
+the app and how to sign in); click Send. If your email app doesn't open, use
+**copy the invitation** and send it from anywhere. The student shows under the
+invite form until they first sign in, with **Send again** and **Remove**.
+
+Students who signed in before invites were added keep access. Teachers can
+use the study app without an invite. Anyone else who signs in sees a message
+asking them to get an invite from their teacher.
+
 ## Adding words for all students
 In the teacher dashboard, use **Words for all students** below the student
 table. Type a word and click **Add word for all students**. You check and
@@ -123,6 +135,7 @@ request, the function retries it on Anthropic's default fallback model.
   how many days in a row they've visited
 - `users/{uid}/logins`: one entry per visit (time and browser)
 - `teachers/{email}`: teachers the owner has added, with who added them and when
+- `invites/{email}`: students a teacher invited, with who invited them and when
 - `classwords/{word}`: words a teacher added for all students (with definitions)
 - `wordlists/{uid}`: words a teacher added for that student (with definitions)
   and shared words a teacher removed for them
