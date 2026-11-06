@@ -13,6 +13,7 @@ import {
 } from "./firebase.js";
 import { loadWords, wordsForStudent, TEACHER_SOURCE } from "./words.js";
 import { buildQuestion, shuffle, escapeHtml } from "./questions.js";
+import { fireworks } from "./fireworks.js";
 
 const SET_SIZE = 10;
 const REVIEW_PER_QUIZ = 2;
@@ -138,7 +139,7 @@ function streakText(word) {
   const p = progress[word];
   if (!p) return "";
   if (p.streak >= LEARNED_STREAK) return "Learned";
-  return `${p.streak} of ${LEARNED_STREAK} correct in a row`;
+  return `This word: ${p.streak} of ${LEARNED_STREAK} correct in a row`;
 }
 
 // ---------- tabs ----------
@@ -315,10 +316,17 @@ function makeQuiz(root, onDone) {
   let missed = [];
   let newlyLearned = [];
   let title = "";
+  // Questions answered correctly in a row in this quiz.
+  let run = 0;
+
+  function showCounter() {
+    el("counter").textContent = `${title}Question ${index + 1} of ${questions.length}`
+      + (run > 0 ? ` · 🔥 ${run} correct in a row` : "");
+  }
 
   function show() {
     const q = questions[index];
-    el("counter").textContent = `${title}Question ${index + 1} of ${questions.length}`;
+    showCounter();
     el("prompt").innerHTML = q.prompt;
     el("q").textContent = q.question;
     el("feedback").hidden = true;
@@ -344,6 +352,8 @@ function makeQuiz(root, onDone) {
       button.classList.add("wrong");
       missed.push(q.target);
     }
+    run = right ? run + 1 : 0;
+    showCounter();
     const { becameLearned, lostLearned } = record(q.target.word, right);
     if (becameLearned) newlyLearned.push(q.target.word);
 
@@ -381,6 +391,7 @@ function makeQuiz(root, onDone) {
     el("missed").innerHTML = missed.length
       ? `<h3>Review these words</h3>` + missed.map(entryHtml).join("")
       : "<p>Perfect score!</p>";
+    if (score === total) fireworks();
     onDone({ total, score, percent, perfect: score === total, targets: questions.map((q) => q.target), cheer: el("cheer") });
   });
 
@@ -390,6 +401,7 @@ function makeQuiz(root, onDone) {
       title = quizTitle;
       questions = shuffle(targets).map(questionFor);
       index = 0;
+      run = 0;
       missed = [];
       newlyLearned = [];
       el("done").hidden = true;

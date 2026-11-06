@@ -224,3 +224,5 @@ table.students { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
 .teacher-list li > span:first-child { font-weight: 600; }
 .teacher-list .remove-teacher { margin-left: auto; color: var(--bad); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.fireworks { position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1000; }
