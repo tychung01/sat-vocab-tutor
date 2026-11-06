@@ -51,7 +51,20 @@
           <tbody id="rows"></tbody>
         </table>
       </div>
-      <p class="note">Click a student to see their recent logins, learned words, and the practice words they're closest to learning, and to add or remove words for them. A word is learned after 3 correct quiz answers in a row. Each student practices at most 1,200 words at a time; newer words join their list as they learn.</p>
+      <p class="note">Click a student to see their recent logins, learned words, and the practice words they're closest to learning, and to add or remove words for just that student. A word is learned after 3 correct quiz answers in a row. Each student practices at most 1,200 words at a time; newer words join their list as they learn.</p>
+
+      <section class="teachers" aria-labelledby="class-words-heading">
+        <h2 id="class-words-heading">Words for all students</h2>
+        <p class="muted">Add a word to every student's list, including students who sign up later. Added words are looked up online and come up first in their flashcards and quizzes. To add or remove a word for one student, click their row above.</p>
+        <form class="word-form" id="class-word-form">
+          <label for="class-word" class="visually-hidden">Word</label>
+          <input type="text" id="class-word" placeholder="Word" autocomplete="off" required>
+          <button class="btn primary" type="submit">Add word for all students</button>
+        </form>
+        <p class="error" id="class-word-error" hidden></p>
+        <form class="word-preview" id="class-word-preview" hidden></form>
+        <ul class="teacher-list word-changes" id="class-word-list"></ul>
+      </section>
 
       <section class="teachers" aria-labelledby="teachers-heading">
         <h2 id="teachers-heading">Teachers</h2>

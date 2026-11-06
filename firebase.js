@@ -154,6 +154,21 @@ export function restoreStudentWord(uid, word) {
   return saveWordList(uid, { removed: { [word]: deleteField() } });
 }
 
+// Words a teacher added for every student: one document per word, whose ID is the word.
+// Every signed-in user can read them; only teachers can change them.
+export async function loadClassWords() {
+  const snap = await getDocs(collection(db, "classwords"));
+  return snap.docs.map((d) => d.data());
+}
+
+export function addClassWord(entry) {
+  return setDoc(doc(db, "classwords", entry.word), entry);
+}
+
+export function removeClassWord(word) {
+  return deleteDoc(doc(db, "classwords", word));
+}
+
 // Teacher dashboard reads.
 export async function listStudents() {
   const [users, progress, wordLists] = await Promise.all([

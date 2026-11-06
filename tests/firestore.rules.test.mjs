@@ -73,6 +73,14 @@ const cases = [
   ["student can't read another student's word list", () => assertFails(getDoc(doc(student, "wordlists/s2")))],
   ["teacher lists word lists", () => assertSucceeds(getDocs(collection(teacher, "wordlists")))],
   ["anonymous can't read a word list", () => assertFails(getDoc(doc(anon, "wordlists/s1")))],
+  ["teacher adds a word for all students", () => assertSucceeds(setDoc(doc(teacher, "classwords/zephyr"), entry("zephyr")))],
+  ["owner adds a word for all students", () => assertSucceeds(setDoc(doc(owner, "classwords/quixotic"), entry("quixotic")))],
+  ["teacher can't add a class word under another ID", () => assertFails(setDoc(doc(teacher, "classwords/other"), entry("zephyr")))],
+  ["student reads words for all students", () => assertSucceeds(getDocs(collection(student, "classwords")))],
+  ["student can't add a word for all students", () => assertFails(setDoc(doc(student, "classwords/easy"), entry("easy")))],
+  ["student can't remove a word for all students", () => assertFails(deleteDoc(doc(student, "classwords/zephyr")))],
+  ["teacher removes a word for all students", () => assertSucceeds(deleteDoc(doc(teacher, "classwords/zephyr")))],
+  ["anonymous can't read words for all students", () => assertFails(getDocs(collection(anon, "classwords")))],
 ];
 
 let failed = 0;

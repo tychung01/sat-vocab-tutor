@@ -1,11 +1,12 @@
 // Teacher dashboard: lists every student who has signed in, with login history
-// and learned/practice counts, lets teachers add or remove words for each
-// student, and shows the list of teachers. Firestore rules only let teachers
+// and learned/practice counts, lets teachers add words for all students or add
+// or remove words for each student, and shows the list of teachers. Firestore rules only let teachers
 // read this, and only the owner can add or remove teachers.
 
 import {
   configured, isOwner, isTeacher, watchUser, signIn, signOutUser, listStudents, recentLogins,
   listTeachers, addTeacher, removeTeacher, addStudentWord, removeStudentWord, restoreStudentWord,
+  loadClassWords, addClassWord, removeClassWord,
   LEARNED_STREAK, PRACTICE_LIMIT,
 } from "./firebase.js";
 import { OWNER_EMAILS } from "./firebase-config.js";
@@ -14,6 +15,8 @@ import { usableExample, suggestChoices } from "./questions.js";
 
 const $ = (id) => document.getElementById(id);
 let dbWords = [];
+// Words a teacher added for every student.
+let classWords = [];
 let students = [];
 
 function escapeHtml(text) {
@@ -27,7 +30,7 @@ function formatTime(ts) {
 }
 
 function studentWordNames(student) {
-  return new Set(wordsForStudent(dbWords, student.wordList).map((w) => w.word));
+  return new Set(wordsForStudent(dbWords, student.wordList, classWords).map((w) => w.word));
 }
 
 function summarize(student) {
@@ -165,6 +168,31 @@ async function lookUpWord(word) {
   return found && { ...found, definition: asSentence(found.definition), example: asSentence(found.example) };
 }
 
+// A word as stored: lowercase, single spaces, letters only. Returns "" if it isn't one.
+function normalizeWord(text) {
+  const word = text.trim().toLowerCase().replace(/\s+/g, " ");
+  return /^[a-z]([a-z' -]*[a-z])?$/.test(word) ? word : "";
+}
+
+// Look a word up online, then show it in the preview form for the teacher to check.
+async function lookUpAndPreview(word, button, preview, options) {
+  const label = button.textContent;
+  button.disabled = true;
+  button.textContent = "Looking up…";
+  let found = null;
+  let note = "Found online. Check it and edit if needed.";
+  try {
+    found = await lookUpWord(word);
+    if (!found) note = "Couldn't find this word online. Type a definition and example below.";
+    else if (!found.example) note = "Found online, but without an example. Check the definition and write an example sentence.";
+  } catch {
+    note = "Couldn't reach the online dictionary. Type a definition and example below.";
+  }
+  button.disabled = false;
+  button.textContent = label;
+  showPreview(preview, word, found || { part_of_speech: "", definition: "", example: "" }, note, options);
+}
+
 function renderWordTools(container, student, row) {
   const { added, removed } = student.wordList;
   const addedWords = Object.values(added).sort((a, b) => a.word.localeCompare(b.word));
@@ -212,7 +240,8 @@ function renderWordTools(container, student, row) {
 
   const remove = (word) => {
     if (!confirm(`Remove "${word}" from ${student.name || student.email}'s word list?`)) return;
-    const inDatabase = dbWords.some((w) => w.word === word);
+    // A word every student gets is hidden for this one; a word added just for them is deleted.
+    const inDatabase = dbWords.some((w) => w.word === word) || classWords.some((w) => w.word === word);
     change(async () => {
       await removeStudentWord(student.uid, word, inDatabase);
       delete added[word];
@@ -232,8 +261,8 @@ function renderWordTools(container, student, row) {
     e.preventDefault();
     showError("");
     preview.hidden = true;
-    const word = form.word.value.trim().toLowerCase().replace(/\s+/g, " ");
-    if (!/^[a-z]([a-z' -]*[a-z])?$/.test(word)) {
+    const word = normalizeWord(form.word.value);
+    if (!word) {
       showError("Enter a single word or phrase using letters only.");
       return;
     }
@@ -247,154 +276,220 @@ function renderWordTools(container, student, row) {
       showError(`"${word}" is already on this student's word list.`);
       return;
     }
-    // A database word the teacher removed earlier just comes back.
+    // A shared word the teacher removed earlier just comes back.
     if (removed[word]) {
       restore(word);
       return;
     }
-    const button = e.submitter;
-    button.disabled = true;
-    button.textContent = "Looking up…";
-    let found = null;
-    let note = "Found online. Check it and edit if needed.";
-    try {
-      found = await lookUpWord(word);
-      if (!found) note = "Couldn't find this word online. Type a definition and example below.";
-      else if (!found.example) note = "Found online, but without an example. Check the definition and write an example sentence.";
-    } catch {
-      note = "Couldn't reach the online dictionary. Type a definition and example below.";
-    }
-    button.disabled = false;
-    button.textContent = "Add word";
-    showPreview(word, found || { part_of_speech: "", definition: "", example: "" }, note);
-  });
-
-  function showPreview(word, entry, note) {
-    preview.innerHTML = `<p><strong>${escapeHtml(word)}</strong> <span class="muted">${escapeHtml(note)}</span></p>
-      <label>Part of speech <input name="pos" value="${escapeHtml(entry.part_of_speech)}" placeholder="noun, verb, adjective…"></label>
-      <label>Definition <textarea name="definition" rows="2" required>${escapeHtml(entry.definition)}</textarea></label>
-      <label>Example sentence, using the word <textarea name="example" rows="2" required>${escapeHtml(entry.example)}</textarea></label>
-      <p class="muted">Quiz questions are built from this sentence in the SAT's Words in Context format, so it needs to use the word (or a form like "-ed" or "-ing").</p>
-      <fieldset class="choice-fields">
-        <legend>Quiz answer choices (optional)</legend>
-        <p class="muted choice-help"></p>
-        <div class="choice-group">
-          <span class="group-label">Wrong choices for the fill-in-the-blank question</span>
-          <div class="choice-inputs">
-            ${[1, 2, 3].map((n) => `<input name="wrong${n}" aria-label="Wrong choice ${n}" autocomplete="off">`).join("")}
-          </div>
-        </div>
-        <div class="choice-group">
-          <label class="group-label" for="meaning-${escapeHtml(student.uid)}">Meaning as used in the sentence (the correct answer)</label>
-          <input name="meaning" id="meaning-${escapeHtml(student.uid)}" autocomplete="off">
-          <span class="group-label">Wrong meanings</span>
-          <div class="choice-inputs stacked">
-            ${[1, 2, 3].map((n) => `<input name="wrongMeaning${n}" aria-label="Wrong meaning ${n}" autocomplete="off">`).join("")}
-          </div>
-        </div>
-        <button class="link suggest" type="button">Suggest new choices</button>
-      </fieldset>
-      <p class="error" hidden></p>
-      <div class="preview-actions">
-        <button class="btn primary" type="submit">Save word</button>
-        <button class="btn cancel" type="button">Cancel</button>
-      </div>`;
-    preview.hidden = false;
-    (entry.definition ? preview.example : preview.definition).focus();
-    preview.querySelector(".cancel").addEventListener("click", () => { preview.hidden = true; });
-
-    const blankInputs = [1, 2, 3].map((n) => preview[`wrong${n}`]);
-    const meaningInputs = [1, 2, 3].map((n) => preview[`wrongMeaning${n}`]);
-    const help = preview.querySelector(".choice-help");
-    const showError = (message, field) => {
-      preview.querySelector(".error").textContent = message;
-      preview.querySelector(".error").hidden = false;
-      field?.focus();
-    };
-    const draft = () => ({
-      word,
-      part_of_speech: preview.pos.value.trim().toLowerCase() || "word",
-      definition: preview.definition.value.trim(),
-      examples: [asSentence(preview.example.value)],
-    });
-    // Choices the teacher has typed aren't replaced by new suggestions unless they ask.
-    let edited = false;
-    function suggest() {
-      const s = suggestChoices(draft(), dbWords);
-      if (!s) {
-        help.textContent = "Write an example sentence that uses the word to get suggested choices.";
-        return;
-      }
-      blankInputs.forEach((input, i) => { input.value = s.wrongWords[i] || ""; input.disabled = s.blankAtStart; });
-      preview.meaning.value = s.meaning;
-      meaningInputs.forEach((input, i) => { input.value = s.wrongMeanings[i] || ""; });
-      help.textContent = s.blankAtStart
-        ? `The sentence starts with "${s.form}", so the quiz can't blank it out and will only ask what it means. Move the word later in the sentence to use both questions.`
-        : "Suggested from other words, in the form the sentence uses. Edit any of them, or clear a group to have the quiz pick new choices each time.";
-      edited = false;
-    }
-    [...blankInputs, preview.meaning, ...meaningInputs].forEach((input) => input.addEventListener("input", () => { edited = true; }));
-    [preview.example, preview.definition, preview.pos].forEach((input) => input.addEventListener("change", () => { if (!edited) suggest(); }));
-    preview.querySelector(".suggest").addEventListener("click", suggest);
-    suggest();
-
-    preview.onsubmit = (e) => {
-      e.preventDefault();
-      const example = preview.example.value.trim();
-      if (!usableExample(example, word)) {
-        showError(word.includes(" ")
-          ? `The example sentence needs to use "${word}".`
-          : `The example sentence needs to use "${word}" or a form of it ending in -s, -ed, -ing, or -ly.`, preview.example);
-        return;
-      }
-      // Each group of choices is all or nothing; an empty group is picked by the quiz.
-      const info = suggestChoices(draft(), []);
-      const filled = (inputs) => inputs.filter((input) => !input.disabled).map((input) => input.value.trim()).filter(Boolean);
-      const distinct = (list) => new Set(list.map((t) => t.toLowerCase())).size === list.length;
-      const wrongWords = filled(blankInputs);
-      if (wrongWords.length && wrongWords.length < 3) {
-        showError("Fill in all three wrong choices for the fill-in-the-blank question, or clear them to let the quiz pick.", blankInputs.find((i) => !i.value.trim()));
-        return;
-      }
-      if (wrongWords.length && !distinct([info.form, ...wrongWords])) {
-        showError(`The wrong choices for the fill-in-the-blank question must differ from each other and from "${info.form}".`, blankInputs[0]);
-        return;
-      }
-      const meaningGroup = filled([preview.meaning, ...meaningInputs]);
-      if (meaningGroup.length && meaningGroup.length < 4) {
-        showError("Fill in the meaning and all three wrong meanings, or clear them to let the quiz pick.", [preview.meaning, ...meaningInputs].find((i) => !i.value.trim()));
-        return;
-      }
-      if (meaningGroup.length && !distinct(meaningGroup)) {
-        showError("The meaning and the wrong meanings must all be different.", meaningInputs[0]);
-        return;
-      }
-      const capitalize = (t) => t.charAt(0).toUpperCase() + t.slice(1);
-      const sat = { passage: asSentence(example), form: info.form };
-      if (wrongWords.length) sat.wrong_words = wrongWords;
-      if (meaningGroup.length) {
-        sat.meaning = capitalize(meaningGroup[0]);
-        sat.wrong_meanings = meaningGroup.slice(1).map(capitalize);
-      }
-      const saved = {
-        word,
-        part_of_speech: preview.pos.value.trim().toLowerCase() || "word",
-        definition: asSentence(preview.definition.value),
-        usage: "",
-        examples: [asSentence(example)],
-        forms_seen_on_tests: [],
-        sources: [TEACHER_SOURCE],
-        added: new Date().toISOString().slice(0, 10),
-        addedBy: currentUser.email,
-        ...(sat.wrong_words || sat.meaning ? { sat } : {}),
-      };
-      change(async () => {
+    lookUpAndPreview(word, e.submitter, preview, {
+      id: student.uid,
+      save: (saved) => change(async () => {
         await addStudentWord(student.uid, saved);
         added[word] = saved;
-      }, "Couldn't save that word. Please try again.");
-    };
-  }
+      }, "Couldn't save that word. Please try again."),
+    });
+  });
 }
+
+// Let the teacher check and edit a looked-up word and write its quiz choices in
+// the preview form. id makes the form's element IDs unique; save(entry) stores it.
+function showPreview(preview, word, entry, note, { id, save }) {
+  preview.innerHTML = `<p><strong>${escapeHtml(word)}</strong> <span class="muted">${escapeHtml(note)}</span></p>
+    <label>Part of speech <input name="pos" value="${escapeHtml(entry.part_of_speech)}" placeholder="noun, verb, adjective…"></label>
+    <label>Definition <textarea name="definition" rows="2" required>${escapeHtml(entry.definition)}</textarea></label>
+    <label>Example sentence, using the word <textarea name="example" rows="2" required>${escapeHtml(entry.example)}</textarea></label>
+    <p class="muted">Quiz questions are built from this sentence in the SAT's Words in Context format, so it needs to use the word (or a form like "-ed" or "-ing").</p>
+    <fieldset class="choice-fields">
+      <legend>Quiz answer choices (optional)</legend>
+      <p class="muted choice-help"></p>
+      <div class="choice-group">
+        <span class="group-label">Wrong choices for the fill-in-the-blank question</span>
+        <div class="choice-inputs">
+          ${[1, 2, 3].map((n) => `<input name="wrong${n}" aria-label="Wrong choice ${n}" autocomplete="off">`).join("")}
+        </div>
+      </div>
+      <div class="choice-group">
+        <label class="group-label" for="meaning-${escapeHtml(id)}">Meaning as used in the sentence (the correct answer)</label>
+        <input name="meaning" id="meaning-${escapeHtml(id)}" autocomplete="off">
+        <span class="group-label">Wrong meanings</span>
+        <div class="choice-inputs stacked">
+          ${[1, 2, 3].map((n) => `<input name="wrongMeaning${n}" aria-label="Wrong meaning ${n}" autocomplete="off">`).join("")}
+        </div>
+      </div>
+      <button class="link suggest" type="button">Suggest new choices</button>
+    </fieldset>
+    <p class="error" hidden></p>
+    <div class="preview-actions">
+      <button class="btn primary" type="submit">Save word</button>
+      <button class="btn cancel" type="button">Cancel</button>
+    </div>`;
+  preview.hidden = false;
+  (entry.definition ? preview.example : preview.definition).focus();
+  preview.querySelector(".cancel").addEventListener("click", () => { preview.hidden = true; });
+
+  const blankInputs = [1, 2, 3].map((n) => preview[`wrong${n}`]);
+  const meaningInputs = [1, 2, 3].map((n) => preview[`wrongMeaning${n}`]);
+  const help = preview.querySelector(".choice-help");
+  const showError = (message, field) => {
+    preview.querySelector(".error").textContent = message;
+    preview.querySelector(".error").hidden = false;
+    field?.focus();
+  };
+  const draft = () => ({
+    word,
+    part_of_speech: preview.pos.value.trim().toLowerCase() || "word",
+    definition: preview.definition.value.trim(),
+    examples: [asSentence(preview.example.value)],
+  });
+  // Choices the teacher has typed aren't replaced by new suggestions unless they ask.
+  let edited = false;
+  function suggest() {
+    const s = suggestChoices(draft(), dbWords);
+    if (!s) {
+      help.textContent = "Write an example sentence that uses the word to get suggested choices.";
+      return;
+    }
+    blankInputs.forEach((input, i) => { input.value = s.wrongWords[i] || ""; input.disabled = s.blankAtStart; });
+    preview.meaning.value = s.meaning;
+    meaningInputs.forEach((input, i) => { input.value = s.wrongMeanings[i] || ""; });
+    help.textContent = s.blankAtStart
+      ? `The sentence starts with "${s.form}", so the quiz can't blank it out and will only ask what it means. Move the word later in the sentence to use both questions.`
+      : "Suggested from other words, in the form the sentence uses. Edit any of them, or clear a group to have the quiz pick new choices each time.";
+    edited = false;
+  }
+  [...blankInputs, preview.meaning, ...meaningInputs].forEach((input) => input.addEventListener("input", () => { edited = true; }));
+  [preview.example, preview.definition, preview.pos].forEach((input) => input.addEventListener("change", () => { if (!edited) suggest(); }));
+  preview.querySelector(".suggest").addEventListener("click", suggest);
+  suggest();
+
+  preview.onsubmit = (e) => {
+    e.preventDefault();
+    const example = preview.example.value.trim();
+    if (!usableExample(example, word)) {
+      showError(word.includes(" ")
+        ? `The example sentence needs to use "${word}".`
+        : `The example sentence needs to use "${word}" or a form of it ending in -s, -ed, -ing, or -ly.`, preview.example);
+      return;
+    }
+    // Each group of choices is all or nothing; an empty group is picked by the quiz.
+    const info = suggestChoices(draft(), []);
+    const filled = (inputs) => inputs.filter((input) => !input.disabled).map((input) => input.value.trim()).filter(Boolean);
+    const distinct = (list) => new Set(list.map((t) => t.toLowerCase())).size === list.length;
+    const wrongWords = filled(blankInputs);
+    if (wrongWords.length && wrongWords.length < 3) {
+      showError("Fill in all three wrong choices for the fill-in-the-blank question, or clear them to let the quiz pick.", blankInputs.find((i) => !i.value.trim()));
+      return;
+    }
+    if (wrongWords.length && !distinct([info.form, ...wrongWords])) {
+      showError(`The wrong choices for the fill-in-the-blank question must differ from each other and from "${info.form}".`, blankInputs[0]);
+      return;
+    }
+    const meaningGroup = filled([preview.meaning, ...meaningInputs]);
+    if (meaningGroup.length && meaningGroup.length < 4) {
+      showError("Fill in the meaning and all three wrong meanings, or clear them to let the quiz pick.", [preview.meaning, ...meaningInputs].find((i) => !i.value.trim()));
+      return;
+    }
+    if (meaningGroup.length && !distinct(meaningGroup)) {
+      showError("The meaning and the wrong meanings must all be different.", meaningInputs[0]);
+      return;
+    }
+    const capitalize = (t) => t.charAt(0).toUpperCase() + t.slice(1);
+    const sat = { passage: asSentence(example), form: info.form };
+    if (wrongWords.length) sat.wrong_words = wrongWords;
+    if (meaningGroup.length) {
+      sat.meaning = capitalize(meaningGroup[0]);
+      sat.wrong_meanings = meaningGroup.slice(1).map(capitalize);
+    }
+    const saved = {
+      word,
+      part_of_speech: preview.pos.value.trim().toLowerCase() || "word",
+      definition: asSentence(preview.definition.value),
+      usage: "",
+      examples: [asSentence(example)],
+      forms_seen_on_tests: [],
+      sources: [TEACHER_SOURCE],
+      added: new Date().toISOString().slice(0, 10),
+      addedBy: currentUser.email,
+      ...(sat.wrong_words || sat.meaning ? { sat } : {}),
+    };
+    save(saved);
+  };
+}
+
+// ---------- words for all students ----------
+
+function renderClassWords() {
+  const sorted = [...classWords].sort((a, b) => a.word.localeCompare(b.word));
+  $("class-word-list").innerHTML = sorted.length
+    ? sorted.map((w) => `<li><span><strong>${escapeHtml(w.word)}</strong>: ${escapeHtml(w.definition)}</span>
+      <button class="link remove-word" data-word="${escapeHtml(w.word)}">Remove</button></li>`).join("")
+    : `<li class="muted">None yet.</li>`;
+  document.querySelectorAll("#class-word-list .remove-word").forEach((b) => {
+    b.addEventListener("click", async () => {
+      const word = b.dataset.word;
+      if (!confirm(`Remove "${word}" for all students? Their progress on it is kept in case you add it again.`)) return;
+      showClassWordError("");
+      try {
+        await removeClassWord(word);
+      } catch {
+        showClassWordError("Couldn't remove that word. Please try again.");
+        return;
+      }
+      classWords = classWords.filter((w) => w.word !== word);
+      refreshCounts();
+    });
+  });
+}
+
+function showClassWordError(message) {
+  $("class-word-error").textContent = message;
+  $("class-word-error").hidden = !message;
+}
+
+// Redraw everything that depends on which words the students have.
+function refreshCounts() {
+  renderClassWords();
+  renderStats();
+  renderRows();
+}
+
+$("class-word-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  showClassWordError("");
+  $("class-word-preview").hidden = true;
+  const word = normalizeWord($("class-word").value);
+  if (!word) {
+    showClassWordError("Enter a single word or phrase using letters only.");
+    return;
+  }
+  if (classWords.some((w) => w.word === word)) {
+    showClassWordError(`"${word}" is already added for all students.`);
+    return;
+  }
+  if (dbWords.some((w) => w.word === word)) {
+    showClassWordError(`"${word}" is already in the word database, so every student has it.`);
+    return;
+  }
+  lookUpAndPreview(word, e.submitter, $("class-word-preview"), {
+    id: "class",
+    save: async (saved) => {
+      const buttons = $("class-word-preview").querySelectorAll("button");
+      buttons.forEach((b) => { b.disabled = true; });
+      try {
+        await addClassWord(saved);
+      } catch (err) {
+        console.error(err);
+        buttons.forEach((b) => { b.disabled = false; });
+        showClassWordError("Couldn't save that word. Please try again.");
+        return;
+      }
+      classWords = [...classWords, saved];
+      $("class-word").value = "";
+      $("class-word-preview").hidden = true;
+      refreshCounts();
+    },
+  });
+});
 
 // ---------- teachers ----------
 
@@ -481,11 +576,13 @@ async function showDashboard(user) {
   $("status").textContent = "Loading students…";
   $("status").hidden = false;
   try {
-    const [wordsDb, list] = await Promise.all([
+    const [wordsDb, list, shared] = await Promise.all([
       loadWords(),
       listStudents(),
+      loadClassWords(),
     ]);
     dbWords = wordsDb.words;
+    classWords = shared;
     students = list.sort((a, b) => (b.lastLogin?.toMillis() || 0) - (a.lastLogin?.toMillis() || 0));
   } catch {
     $("status").textContent = "Couldn't load student data. Check that the Firestore rules are published (see FIREBASE-SETUP.md).";
@@ -493,8 +590,7 @@ async function showDashboard(user) {
   }
   $("status").hidden = true;
   $("dashboard").hidden = false;
-  renderStats();
-  renderRows();
+  refreshCounts();
   renderTeachers();
 }
 

@@ -19,14 +19,21 @@ export async function loadWords() {
   throw new Error("Couldn't load the word list");
 }
 
-// Words a teacher added for one student carry this source.
+// Words a teacher added, for one student or for all of them, carry this source.
 export const TEACHER_SOURCE = "Added by your teacher";
 
-// One student's words: the database minus words a teacher removed for them,
-// plus words a teacher added (which replace a database entry of the same name).
-export function wordsForStudent(dbWords, list) {
+// The words every student gets: the database plus words a teacher added for all
+// students (which replace a database entry of the same name).
+export function sharedWords(dbWords, classWords = []) {
+  const classNames = new Set(classWords.map((w) => w.word));
+  return [...dbWords.filter((w) => !classNames.has(w.word)), ...classWords];
+}
+
+// One student's words: the shared words minus words a teacher removed for them,
+// plus words a teacher added just for them (which replace a shared word of the same name).
+export function wordsForStudent(dbWords, list, classWords = []) {
   const added = Object.values(list.added || {});
   const addedNames = new Set(added.map((w) => w.word));
   const removed = list.removed || {};
-  return [...dbWords.filter((w) => !removed[w.word] && !addedNames.has(w.word)), ...added];
+  return [...sharedWords(dbWords, classWords).filter((w) => !removed[w.word] && !addedNames.has(w.word)), ...added];
 }

@@ -67,6 +67,15 @@ Only the owner can add or remove teachers. The owner is set in two places:
 `firestore.rules`. Changing the owner means editing both and running the
 deploy command.
 
+## Adding words for all students
+In the teacher dashboard, use **Words for all students** below the student
+table. Type a word and click **Add word for all students**. You check and
+save it the same way as a word for one student (below). The word goes to
+every student, including students who sign up later, and comes up first in
+their flashcards and quizzes. **Remove** takes it off everyone's list; their
+progress on it is kept. Words already in the shared database can't be added
+again. To take a word off just one student's list, use their **Word list**.
+
 ## Changing one student's words
 In the teacher dashboard, click a student and use **Word list**. Type a word
 and click **Add word**. The dashboard looks it up online (the Free Dictionary
@@ -92,6 +101,7 @@ can do this, and students can't change their own list.
   how many days in a row they've visited
 - `users/{uid}/logins`: one entry per visit (time and browser)
 - `teachers/{email}`: teachers the owner has added, with who added them and when
+- `classwords/{word}`: words a teacher added for all students (with definitions)
 - `wordlists/{uid}`: words a teacher added for that student (with definitions)
   and shared words a teacher removed for them
 - `progress/{uid}`: for each word tried, the current streak of correct
@@ -100,6 +110,7 @@ can do this, and students can't change their own list.
   with a perfect score before the next set (each 10-card set, and a review
   quiz every 50 words)
 
-Students can read and write only their own records, except their word list,
-which they can read but only teachers can change. The owner and the teachers
+Students can read and write only their own records, except their word list
+and the words for all students, which they can read but only teachers can
+change. The owner and the teachers
 in `teachers/` can read everyone's.

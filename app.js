@@ -9,7 +9,8 @@
 
 import {
   configured, isTeacher, watchUser, signIn, signOutUser, recordLogin,
-  loadProgress, saveWordProgress, saveStudyState, loadWordList, LEARNED_STREAK, PRACTICE_LIMIT,
+  loadProgress, saveWordProgress, saveStudyState, loadWordList, loadClassWords,
+  LEARNED_STREAK, PRACTICE_LIMIT,
 } from "./firebase.js";
 import { loadWords, wordsForStudent, TEACHER_SOURCE } from "./words.js";
 import { buildQuestion, shuffle, escapeHtml } from "./questions.js";
@@ -566,14 +567,15 @@ async function showSignedIn(signedInUser) {
   }).catch(() => {});
   try {
     // Without the teacher's changes the student still gets the full database.
-    const [saved, list] = await Promise.all([
+    const [saved, list, classWords] = await Promise.all([
       loadProgress(user.uid),
       loadWordList(user.uid).catch(() => ({})),
+      loadClassWords().catch(() => []),
     ]);
     progress = saved.words;
     studied = saved.studied;
     required = saved.required;
-    words = wordsForStudent(dbWords, list);
+    words = wordsForStudent(dbWords, list, classWords);
   } catch {
     $("status").textContent = "Couldn't load your progress. Please refresh the page.";
     return;
