@@ -94,7 +94,29 @@ source). Add more new words until this month's total is 50.
    then `.venv/bin/python scripts/add_words.py entries/monthly-YYYY-MM.json`.
    It should report `added` equal to the number you needed.
 
-## 5. Check and commit
+## 5. Write SAT quiz content for the new words
+
+The quiz asks about each word with an original SAT-style passage. Every new
+word needs one, or `validate_db.py` fails.
+
+1. Write `entries/sat/monthly-YYYY-MM.json`: one object per new word,
+   `{"w", "passage", "form", "wrong_words", "meaning", "wrong_meanings"}`.
+   The rules are at the top of `scripts/add_sat_questions.py`, and the files
+   already in `entries/sat/` show the style. In short:
+   - `passage`: 2–4 original sentences (about 40–90 words) on an SAT-like
+     topic (science, history, social science, the arts, literature) that use
+     the word once, in the meaning the SAT tests, with context clues. The word
+     can't start a sentence. Don't credit invented findings to real people.
+   - `form`: the word as it appears in the passage.
+   - `wrong_words`: 3 tempting words in the same form that fit the grammar but
+     not the meaning. None may be a synonym of the answer.
+   - `meaning` and `wrong_meanings`: short choices (1–6 words, capitalized) in
+     the same form, for "what does the word most nearly mean?" Good traps
+     are other senses of the word.
+2. Run `.venv/bin/python scripts/add_sat_questions.py entries/sat/monthly-YYYY-MM.json`.
+   It merges nothing until every entry passes, so fix what it reports.
+
+## 6. Check and commit
 
 1. Run `.venv/bin/python scripts/validate_db.py`. Fix anything it reports.
 2. Set `"checked"` in `data/sources.json` to today's date.

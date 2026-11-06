@@ -1,0 +1,1714 @@
+[
+  {
+    "w": "contour",
+    "passage": "Using laser scanners mounted on aircraft, archaeologists mapped a forested hillside in Central America without clearing a single tree. The resulting images revealed the faint contours of terraces and walls beneath the canopy, faint lines that traced the shapes of ancient farm fields along the slope.",
+    "form": "contours",
+    "wrong_words": [
+      "purposes",
+      "owners",
+      "harvests"
+    ],
+    "meaning": "Outlines",
+    "wrong_meanings": [
+      "Heights",
+      "Materials",
+      "Ages"
+    ]
+  },
+  {
+    "w": "contradict",
+    "passage": "For decades, textbooks described the giant squid as a sluggish drifter that rarely hunted. Footage recorded by a deep-sea camera contradicted that view: the squid in the video attacked the bait aggressively and wrapped its long tentacles around the line with surprising speed.",
+    "form": "contradicted",
+    "wrong_words": [
+      "supported",
+      "inspired",
+      "summarized"
+    ],
+    "meaning": "Conflicted with",
+    "wrong_meanings": [
+      "Agreed with",
+      "Exaggerated",
+      "Explained"
+    ]
+  },
+  {
+    "w": "contradiction",
+    "passage": "The narrator of the story insists that she has forgotten her childhood home entirely. Yet in the next paragraph she describes the creak of its third stair and the smell of its kitchen in vivid detail. This contradiction leads readers to suspect that her claims of forgetfulness hide feelings she is unwilling to face.",
+    "form": "contradiction",
+    "wrong_words": [
+      "confession",
+      "coincidence",
+      "repetition"
+    ],
+    "meaning": "Inconsistency",
+    "wrong_meanings": [
+      "Dispute",
+      "Admission",
+      "Coincidence"
+    ]
+  },
+  {
+    "w": "contrary",
+    "passage": "Many people assume that bats are nearly blind and find their way only by listening to echoes. Researchers have found, contrary to this popular belief, that all bat species can see, and some fruit bats depend more on vision than on sound when searching for food.",
+    "form": "contrary",
+    "wrong_words": [
+      "similar",
+      "central",
+      "prior"
+    ],
+    "meaning": "Opposite",
+    "wrong_meanings": [
+      "Stubborn",
+      "Unfavorable",
+      "Related"
+    ]
+  },
+  {
+    "w": "controversial",
+    "passage": "Plans to reintroduce wolves to the valley proved controversial among local residents. Wildlife groups argued that the predators would restore balance to the ecosystem, while many ranchers warned that wolves would attack their cattle and packed public meetings to protest the proposal.",
+    "form": "controversial",
+    "wrong_words": [
+      "popular",
+      "affordable",
+      "familiar"
+    ],
+    "meaning": "Disputed",
+    "wrong_meanings": [
+      "Well-known",
+      "Illegal",
+      "Expensive"
+    ]
+  },
+  {
+    "w": "conventional",
+    "passage": "Most early aircraft designers tried to copy birds, building machines with flapping wings. Breaking with this conventional approach, a few inventors instead studied fixed wings and focused on controlling a craft's balance in the air, an idea that eventually made sustained flight possible.",
+    "form": "conventional",
+    "wrong_words": [
+      "experimental",
+      "unusual",
+      "dangerous"
+    ],
+    "meaning": "Customary",
+    "wrong_meanings": [
+      "Formal",
+      "Theoretical",
+      "Relating to an assembly"
+    ]
+  },
+  {
+    "w": "converge",
+    "passage": "Many early trading cities grew up at sites where rivers converge. In such places, boats arriving from several directions could meet and exchange goods, and merchants could reach a wide region without the expense of traveling over land.",
+    "form": "converge",
+    "wrong_words": [
+      "flood",
+      "narrow",
+      "freeze"
+    ],
+    "meaning": "Come together",
+    "wrong_meanings": [
+      "Overflow",
+      "Change course",
+      "Run dry"
+    ]
+  },
+  {
+    "w": "convergence",
+    "passage": "Dolphins and the extinct marine reptiles called ichthyosaurs evolved separately, yet both developed streamlined bodies, dorsal fins, and long snouts. Biologists cite this as an example of convergence: unrelated animals facing the same demands of fast swimming arrived independently at nearly the same body plan.",
+    "form": "convergence",
+    "wrong_words": [
+      "extinction",
+      "migration",
+      "inheritance"
+    ],
+    "meaning": "Becoming alike",
+    "wrong_meanings": [
+      "Shared ancestry",
+      "Rapid change",
+      "Competition"
+    ]
+  },
+  {
+    "w": "converse",
+    "passage": "Students sometimes reason that because all squares are rectangles, all rectangles must be squares. But the converse of a true statement is not necessarily true; a rectangle with two long sides and two short sides, for instance, is not a square.",
+    "form": "converse",
+    "wrong_words": [
+      "result",
+      "subject",
+      "source"
+    ],
+    "meaning": "Reversal",
+    "wrong_meanings": [
+      "Conversation",
+      "Explanation",
+      "Shortened form"
+    ]
+  },
+  {
+    "w": "convey",
+    "passage": "In the painting, a lone figure stands at the edge of a vast gray sea, its back turned to the viewer. The muted colors and empty horizon convey a powerful sense of isolation, even though the artist shows no facial expression to reveal the figure's mood.",
+    "form": "convey",
+    "wrong_words": [
+      "conceal",
+      "reduce",
+      "require"
+    ],
+    "meaning": "Communicate",
+    "wrong_meanings": [
+      "Transport",
+      "Transfer ownership of",
+      "Hide"
+    ]
+  },
+  {
+    "w": "conviction",
+    "passage": "Although other scientists mocked her theory that the continents slowly drift, the geologist in the novel defended it with unshakable conviction. Year after year she returned to the same rocky coastline, gathering more fossil evidence and refusing to abandon the idea.",
+    "form": "conviction",
+    "wrong_words": [
+      "reluctance",
+      "uncertainty",
+      "humor"
+    ],
+    "meaning": "Firm belief",
+    "wrong_meanings": [
+      "Guilty verdict",
+      "Persuasion",
+      "Criminal record"
+    ]
+  },
+  {
+    "w": "copious",
+    "passage": "During the long voyage, the young naturalist filled dozens of notebooks with copious observations, recording everything from the color of seabirds' eggs to the daily temperature of the water. Historians still mine these detailed pages for information about the islands he visited.",
+    "form": "copious",
+    "wrong_words": [
+      "scant",
+      "hasty",
+      "secret"
+    ],
+    "meaning": "Abundant",
+    "wrong_meanings": [
+      "Accurate",
+      "Copied",
+      "Brief"
+    ]
+  },
+  {
+    "w": "cordial",
+    "passage": "Although the two rival shipping companies competed fiercely for business, their owners maintained cordial relations. They exchanged polite letters each holiday season and occasionally dined together in the city, taking care never to let commercial competition become personal.",
+    "form": "cordial",
+    "wrong_words": [
+      "hostile",
+      "secretive",
+      "profitable"
+    ],
+    "meaning": "Friendly",
+    "wrong_meanings": [
+      "Distant",
+      "Legal",
+      "Family"
+    ]
+  },
+  {
+    "w": "correlate",
+    "passage": "In a survey of two hundred lakes, researchers found that the number of fish species correlates with lake size: larger lakes generally contain more species. The team cautioned, however, that this relationship alone does not show that size itself causes greater diversity.",
+    "form": "correlates",
+    "wrong_words": [
+      "conflicts",
+      "interferes",
+      "competes"
+    ],
+    "meaning": "Is linked",
+    "wrong_meanings": [
+      "Is identical",
+      "Is unrelated",
+      "Is caused"
+    ]
+  },
+  {
+    "w": "corroborate",
+    "passage": "An elderly resident's account described a great flood that swept through the valley in the 1800s, but historians were unsure whether to trust a single memory. Then tree-ring data from the riverbank corroborated her story, showing damaged growth rings in many trees dating to the same year.",
+    "form": "corroborated",
+    "wrong_words": [
+      "contradicted",
+      "inspired",
+      "replaced"
+    ],
+    "meaning": "Confirmed",
+    "wrong_meanings": [
+      "Disproved",
+      "Exaggerated",
+      "Recorded"
+    ]
+  },
+  {
+    "w": "cosmopolitan",
+    "passage": "By the fourteenth century, the port had become remarkably cosmopolitan. Merchants from Persia, India, China, and East Africa lived side by side in its neighborhoods, and a visitor could hear a dozen languages spoken along a single market street.",
+    "form": "cosmopolitan",
+    "wrong_words": [
+      "isolated",
+      "prosperous",
+      "fortified"
+    ],
+    "meaning": "Internationally diverse",
+    "wrong_meanings": [
+      "Crowded",
+      "Wealthy",
+      "Well defended"
+    ]
+  },
+  {
+    "w": "credibility",
+    "passage": "The museum's claim that the painting was the work of a Renaissance master lost credibility when chemists found that one of its blue pigments was not invented until the 1800s. Experts soon agreed that the canvas must be a much later imitation.",
+    "form": "credibility",
+    "wrong_words": [
+      "popularity",
+      "funding",
+      "urgency"
+    ],
+    "meaning": "Believability",
+    "wrong_meanings": [
+      "Popularity",
+      "Fame",
+      "Clarity"
+    ]
+  },
+  {
+    "w": "credible",
+    "passage": "Investigators initially doubted the sailor's story of a giant wave that rose out of a calm sea. His account became credible, however, when instruments on an offshore platform recorded a single wave nearly twenty-six meters high on the same night.",
+    "form": "credible",
+    "wrong_words": [
+      "obsolete",
+      "confusing",
+      "famous"
+    ],
+    "meaning": "Believable",
+    "wrong_meanings": [
+      "Popular",
+      "Exciting",
+      "Legal"
+    ]
+  },
+  {
+    "w": "critique",
+    "passage": "In her critique of the new concert hall, the architect praised its warm wooden interior and excellent acoustics. She argued, however, that its entrance was difficult to find and poorly lit, a flaw she believed would frustrate visitors on winter evenings.",
+    "form": "critique",
+    "wrong_words": [
+      "celebration",
+      "defense",
+      "advertisement"
+    ],
+    "meaning": "Evaluation",
+    "wrong_meanings": [
+      "Attack",
+      "Summary",
+      "Advertisement"
+    ]
+  },
+  {
+    "w": "crucial",
+    "passage": "Mangrove forests play a crucial role in protecting tropical coastlines. Their dense, tangled roots absorb the energy of storm waves, and studies show that villages behind healthy mangroves suffer far less flood damage than villages without them.",
+    "form": "crucial",
+    "wrong_words": [
+      "minor",
+      "decorative",
+      "temporary"
+    ],
+    "meaning": "Vital",
+    "wrong_meanings": [
+      "Harsh",
+      "Puzzling",
+      "Minor"
+    ]
+  },
+  {
+    "w": "crude",
+    "passage": "The earliest known stone tools look crude by modern standards: simple flakes struck from river cobbles, with rough edges and no careful shaping. Yet even these basic implements allowed their makers to cut meat and crack bones for marrow.",
+    "form": "crude",
+    "wrong_words": [
+      "elaborate",
+      "valuable",
+      "delicate"
+    ],
+    "meaning": "Simple and rough",
+    "wrong_meanings": [
+      "Vulgar",
+      "Approximate",
+      "Fragile"
+    ]
+  },
+  {
+    "w": "culminate",
+    "passage": "The campaign to protect the canyon began with a few hikers writing letters to newspapers. Over the next two decades it grew into a movement of thousands of volunteers, petitions, and public hearings, and it finally culminated in a law preserving the canyon permanently.",
+    "form": "culminated",
+    "wrong_words": [
+      "originated",
+      "faltered",
+      "stalled"
+    ],
+    "meaning": "Reached its high point",
+    "wrong_meanings": [
+      "Began",
+      "Weakened",
+      "Divided"
+    ]
+  },
+  {
+    "w": "cultivate",
+    "passage": "The violin teacher believed that talent alone was not enough. She worked to cultivate patience in her young students, asking them to practice a single difficult passage slowly every day for weeks until they could play it without hurrying.",
+    "form": "cultivate",
+    "wrong_words": [
+      "discourage",
+      "imitate",
+      "forbid"
+    ],
+    "meaning": "Develop",
+    "wrong_meanings": [
+      "Plant",
+      "Harvest",
+      "Demand"
+    ]
+  },
+  {
+    "w": "cursory",
+    "passage": "After the storm, inspectors gave the bridge only a cursory inspection and reopened it within an hour. A week later, when engineers examined the supports closely with underwater cameras, they discovered deep cracks that the quick first look had missed.",
+    "form": "cursory",
+    "wrong_words": [
+      "thorough",
+      "lengthy",
+      "scientific"
+    ],
+    "meaning": "Hasty",
+    "wrong_meanings": [
+      "Thorough",
+      "Official",
+      "Expensive"
+    ]
+  },
+  {
+    "w": "curtail",
+    "passage": "As the reservoir dropped to its lowest level in fifty years, the city council voted to curtail water use. Residents were permitted to water their lawns only once a week, and car washes were ordered to close on weekends.",
+    "form": "curtail",
+    "wrong_words": [
+      "encourage",
+      "measure",
+      "subsidize"
+    ],
+    "meaning": "Restrict",
+    "wrong_meanings": [
+      "Monitor",
+      "Increase",
+      "Price"
+    ]
+  },
+  {
+    "w": "daunting",
+    "passage": "For the small group of volunteers, restoring the abandoned railway seemed daunting at first: more than forty kilometers of track lay buried under brush, and many of its bridges had collapsed. Working on weekends for ten years, however, they reopened the entire line.",
+    "form": "daunting",
+    "wrong_words": [
+      "trivial",
+      "effortless",
+      "profitable"
+    ],
+    "meaning": "Intimidating",
+    "wrong_meanings": [
+      "Exciting",
+      "Simple",
+      "Unnecessary"
+    ]
+  },
+  {
+    "w": "dearth",
+    "passage": "Historians of medieval village life face a dearth of written records, since few peasants could read or write and many of the documents that did exist were lost to fire. As a result, scholars rely heavily on archaeology, such as the remains of houses and tools, to reconstruct daily life.",
+    "form": "dearth",
+    "wrong_words": [
+      "wealth",
+      "surplus",
+      "series"
+    ],
+    "meaning": "Scarcity",
+    "wrong_meanings": [
+      "Abundance",
+      "Collection",
+      "Loss"
+    ]
+  },
+  {
+    "w": "debilitate",
+    "passage": "In the eighteenth century, scurvy debilitated sailors on long voyages, leaving many so weak that they could barely climb the rigging. The illness, caused by a lack of vitamin C, was eventually prevented by adding citrus fruit to ships' rations.",
+    "form": "debilitated",
+    "wrong_words": [
+      "isolated",
+      "infected",
+      "stranded"
+    ],
+    "meaning": "Weakened",
+    "wrong_meanings": [
+      "Killed",
+      "Frightened",
+      "Infected"
+    ]
+  },
+  {
+    "w": "decay",
+    "passage": "As fallen logs decay on the forest floor, fungi and insects break the wood into softer and softer pieces. Over decades, the crumbling material releases nutrients that seedlings use to grow, which is why young trees often sprout directly from old trunks.",
+    "form": "decay",
+    "wrong_words": [
+      "accumulate",
+      "harden",
+      "petrify"
+    ],
+    "meaning": "Rot",
+    "wrong_meanings": [
+      "Fall",
+      "Dry out",
+      "Grow"
+    ]
+  },
+  {
+    "w": "deceive",
+    "passage": "The anglerfish lives in the dark depths of the ocean, where food is scarce. To catch prey, it relies on a glowing lure that dangles in front of its mouth; small fish, deceived into thinking the light is something edible, swim close enough to be swallowed.",
+    "form": "deceived",
+    "wrong_words": [
+      "warned",
+      "frightened",
+      "forced"
+    ],
+    "meaning": "Tricked",
+    "wrong_meanings": [
+      "Warned",
+      "Taught",
+      "Scared"
+    ]
+  },
+  {
+    "w": "decipher",
+    "passage": "For centuries, the symbols carved on the clay tablets remained a mystery. Then a young linguist noticed that certain signs appeared in the same positions as place names in a known neighboring language, and using this clue she gradually deciphered the script, allowing scholars to read the tablets for the first time.",
+    "form": "deciphered",
+    "wrong_words": [
+      "carved",
+      "discovered",
+      "preserved"
+    ],
+    "meaning": "Decoded",
+    "wrong_meanings": [
+      "Copied",
+      "Dated",
+      "Displayed"
+    ]
+  },
+  {
+    "w": "decline",
+    "passage": "When the university offered the young poet a prestigious teaching position, she declined, explaining in a gracious letter that she needed solitude to finish her book. She spent the next two years in a remote cabin, writing every day.",
+    "form": "declined",
+    "wrong_words": [
+      "accepted",
+      "hesitated",
+      "celebrated"
+    ],
+    "meaning": "Politely refused",
+    "wrong_meanings": [
+      "Decreased",
+      "Grew weaker",
+      "Agreed"
+    ]
+  },
+  {
+    "w": "decorous",
+    "passage": "At the funeral of the elderly statesman, the crowd of thousands remained decorous throughout the ceremony. People stood in silence as the procession passed, and many removed their hats as a sign of respect.",
+    "form": "decorous",
+    "wrong_words": [
+      "rowdy",
+      "curious",
+      "impatient"
+    ],
+    "meaning": "Dignified",
+    "wrong_meanings": [
+      "Decorated",
+      "Fashionable",
+      "Restless"
+    ]
+  },
+  {
+    "w": "decree",
+    "passage": "After a series of poor harvests, the emperor issued a decree requiring every province to store a portion of its grain in public granaries. Officials who failed to obey the order could be removed from their posts.",
+    "form": "decree",
+    "wrong_words": [
+      "poem",
+      "complaint",
+      "forecast"
+    ],
+    "meaning": "Official order",
+    "wrong_meanings": [
+      "Formal request",
+      "Prediction",
+      "Diploma"
+    ]
+  },
+  {
+    "w": "deduce",
+    "passage": "Studying the skull of an ancient horse, a paleontologist noticed that its teeth were worn flat and covered with fine scratches like those produced by chewing tough grasses. From this evidence, she deduced that the animal had grazed on open plains rather than browsing on soft forest leaves.",
+    "form": "deduced",
+    "wrong_words": [
+      "doubted",
+      "forgot",
+      "announced"
+    ],
+    "meaning": "Concluded",
+    "wrong_meanings": [
+      "Subtracted",
+      "Assumed",
+      "Wished"
+    ]
+  },
+  {
+    "w": "defect",
+    "passage": "Engineers traced the satellite's failure to a tiny defect in a single solder joint. The crack, thinner than a human hair, widened each time the spacecraft heated and cooled in orbit until the circuit finally broke.",
+    "form": "defect",
+    "wrong_words": [
+      "repair",
+      "upgrade",
+      "measurement"
+    ],
+    "meaning": "Flaw",
+    "wrong_meanings": [
+      "Desertion",
+      "Feature",
+      "Shortage"
+    ]
+  },
+  {
+    "w": "defer",
+    "passage": "On questions of law, the young senator usually deferred to her more experienced colleagues, accepting their judgment even when she privately had doubts. Only on environmental issues, her area of expertise, did she regularly push her own views.",
+    "form": "deferred",
+    "wrong_words": [
+      "objected",
+      "wrote",
+      "replied"
+    ],
+    "meaning": "Yielded",
+    "wrong_meanings": [
+      "Postponed",
+      "Spoke",
+      "Objected"
+    ]
+  },
+  {
+    "w": "deference",
+    "passage": "The village elders asked for more time to consult with families whose land would be affected by the new highway. In deference to their wishes, the town council postponed its vote for a month, even though several members were eager to approve the project.",
+    "form": "deference",
+    "wrong_words": [
+      "opposition",
+      "indifference",
+      "ignorance"
+    ],
+    "meaning": "Respect",
+    "wrong_meanings": [
+      "Defiance",
+      "Delay",
+      "Difference"
+    ]
+  },
+  {
+    "w": "deferential",
+    "passage": "The young apprentice was deferential toward the master carpenter. He always addressed the older man formally, waited for his approval before starting each task, and never questioned his instructions in front of customers.",
+    "form": "deferential",
+    "wrong_words": [
+      "rebellious",
+      "indifferent",
+      "sarcastic"
+    ],
+    "meaning": "Respectful",
+    "wrong_meanings": [
+      "Delaying",
+      "Rude",
+      "Distant"
+    ]
+  },
+  {
+    "w": "deficiency",
+    "passage": "Doctors on the island noticed that many children had swollen necks, a condition known as goiter. Tests showed that the cause was a deficiency of iodine in the local diet; once the government began adding iodine to table salt, the condition almost disappeared.",
+    "form": "deficiency",
+    "wrong_words": [
+      "surplus",
+      "balance",
+      "mixture"
+    ],
+    "meaning": "Shortage",
+    "wrong_meanings": [
+      "Defect",
+      "Excess",
+      "Test"
+    ]
+  },
+  {
+    "w": "deft",
+    "passage": "With a few deft strokes of her brush, the calligrapher produced a character that looked both effortless and perfectly balanced. Observers noted that she never paused or corrected a single line.",
+    "form": "deft",
+    "wrong_words": [
+      "clumsy",
+      "hesitant",
+      "heavy"
+    ],
+    "meaning": "Skillful",
+    "wrong_meanings": [
+      "Slow",
+      "Gentle",
+      "Careless"
+    ]
+  },
+  {
+    "w": "defunct",
+    "passage": "The old canal is now defunct; its locks rusted shut decades ago after railroads took over the region's freight, and no boat has passed through them since. Today its towpath serves as a popular trail for cyclists.",
+    "form": "defunct",
+    "wrong_words": [
+      "renovated",
+      "busy",
+      "profitable"
+    ],
+    "meaning": "No longer operating",
+    "wrong_meanings": [
+      "Polluted",
+      "Recently built",
+      "Dangerous"
+    ]
+  },
+  {
+    "w": "degrade",
+    "passage": "Most plastic bags take hundreds of years to degrade in a landfill, where sunlight and oxygen are scarce. Some newer bags, made from plant starches, break down into harmless compounds within a few months.",
+    "form": "degrade",
+    "wrong_words": [
+      "accumulate",
+      "harden",
+      "melt"
+    ],
+    "meaning": "Decompose",
+    "wrong_meanings": [
+      "Insult",
+      "Demote",
+      "Spread"
+    ]
+  },
+  {
+    "w": "delegate",
+    "passage": "As the expedition grew to more than forty members, its leader realized she could not manage every detail herself. She delegated responsibility for food supplies and equipment to two trusted assistants, freeing herself to focus on planning the route.",
+    "form": "delegated",
+    "wrong_words": [
+      "withheld",
+      "denied",
+      "refused"
+    ],
+    "meaning": "Assigned",
+    "wrong_meanings": [
+      "Elected",
+      "Represented",
+      "Kept"
+    ]
+  },
+  {
+    "w": "deleterious",
+    "passage": "Researchers studying a coastal wetland found that runoff from nearby farms had a deleterious effect on the marsh. The excess fertilizer fueled algae blooms that blocked sunlight and killed the seagrass on which young fish depended.",
+    "form": "deleterious",
+    "wrong_words": [
+      "beneficial",
+      "negligible",
+      "calming"
+    ],
+    "meaning": "Harmful",
+    "wrong_meanings": [
+      "Helpful",
+      "Delayed",
+      "Minor"
+    ]
+  },
+  {
+    "w": "deliberate",
+    "passage": "Unlike her rivals, who rushed to publish, the chemist was deliberate in her work. She repeated each experiment many times and waited months before announcing any result, unwilling to share findings until she was certain they were correct.",
+    "form": "deliberate",
+    "wrong_words": [
+      "careless",
+      "impulsive",
+      "secretive"
+    ],
+    "meaning": "Careful and unhurried",
+    "wrong_meanings": [
+      "Done on purpose",
+      "Reckless",
+      "Debating aloud"
+    ]
+  },
+  {
+    "w": "delineate",
+    "passage": "The treaty carefully delineates the border between the two nations. It lists every river bend and mountain peak through which the line passes, so that no stretch of land can be claimed by both sides.",
+    "form": "delineates",
+    "wrong_words": [
+      "erases",
+      "ignores",
+      "disputes"
+    ],
+    "meaning": "Precisely describes",
+    "wrong_meanings": [
+      "Removes",
+      "Questions",
+      "Decorates"
+    ]
+  },
+  {
+    "w": "demarcate",
+    "passage": "In the old farming village, low stone walls demarcated each family's fields. Anyone walking across the hillside could tell exactly where one household's land ended and the next began.",
+    "form": "demarcated",
+    "wrong_words": [
+      "connected",
+      "shaded",
+      "flooded"
+    ],
+    "meaning": "Marked the boundaries of",
+    "wrong_meanings": [
+      "Protected",
+      "Joined",
+      "Fertilized"
+    ]
+  },
+  {
+    "w": "demeanor",
+    "passage": "When the airplane suddenly dropped in a pocket of turbulence, the flight attendant's calm demeanor reassured the passengers. She smiled, spoke slowly, and continued pouring coffee as though nothing unusual had happened.",
+    "form": "demeanor",
+    "wrong_words": [
+      "uniform",
+      "schedule",
+      "announcement"
+    ],
+    "meaning": "Manner",
+    "wrong_meanings": [
+      "Voice",
+      "Clothing",
+      "Reputation"
+    ]
+  },
+  {
+    "w": "denigrate",
+    "passage": "When the first impressionist paintings were exhibited, many critics denigrated them as unfinished sketches, mocking the visible brushstrokes and claiming the artists lacked basic skill. Today the same works are among the most admired paintings in the world.",
+    "form": "denigrated",
+    "wrong_words": [
+      "praised",
+      "collected",
+      "exhibited"
+    ],
+    "meaning": "Belittled",
+    "wrong_meanings": [
+      "Darkened",
+      "Described",
+      "Celebrated"
+    ]
+  },
+  {
+    "w": "denote",
+    "passage": "On the hiking map, a solid green line denotes a maintained trail, while a dashed line indicates a rough path that may be overgrown. Hikers who learn the symbols can plan routes suited to their experience.",
+    "form": "denotes",
+    "wrong_words": [
+      "conceals",
+      "replaces",
+      "resembles"
+    ],
+    "meaning": "Represents",
+    "wrong_meanings": [
+      "Suggests indirectly",
+      "Hides",
+      "Decorates"
+    ]
+  },
+  {
+    "w": "denounce",
+    "passage": "In a fiery speech to the assembly, the delegate denounced the proposed law as a betrayal of the nation's founding principles. She warned that it would strip ordinary citizens of their freedom to speak and urged her colleagues to vote against it.",
+    "form": "denounced",
+    "wrong_words": [
+      "endorsed",
+      "introduced",
+      "summarized"
+    ],
+    "meaning": "Condemned",
+    "wrong_meanings": [
+      "Announced",
+      "Supported",
+      "Explained"
+    ]
+  },
+  {
+    "w": "dense",
+    "passage": "The philosopher's most famous book is notoriously dense. Nearly every sentence contains several technical terms, and readers often need to reread a single paragraph many times before they grasp its argument.",
+    "form": "dense",
+    "wrong_words": [
+      "brief",
+      "popular",
+      "lighthearted"
+    ],
+    "meaning": "Difficult to understand",
+    "wrong_meanings": [
+      "Closely packed",
+      "Heavy",
+      "Foolish"
+    ]
+  },
+  {
+    "w": "depict",
+    "passage": "The medieval tapestry, more than seventy meters long, depicts the events of a famous invasion in a series of embroidered scenes. Viewers can follow the story from panel to panel, watching ships being built, soldiers crossing the sea, and horsemen charging into battle.",
+    "form": "depicts",
+    "wrong_words": [
+      "conceals",
+      "predicts",
+      "protects"
+    ],
+    "meaning": "Portrays",
+    "wrong_meanings": [
+      "Predicts",
+      "Covers",
+      "Criticizes"
+    ]
+  },
+  {
+    "w": "deplete",
+    "passage": "By the early 1990s, decades of intensive fishing had depleted cod stocks off the coast so severely that the government closed the fishery entirely. Even after years of restrictions, the population has recovered only slowly.",
+    "form": "depleted",
+    "wrong_words": [
+      "restored",
+      "counted",
+      "relocated"
+    ],
+    "meaning": "Greatly reduced",
+    "wrong_meanings": [
+      "Replenished",
+      "Polluted",
+      "Measured"
+    ]
+  },
+  {
+    "w": "deplore",
+    "passage": "The newspaper's editorial deplored the city's decision to demolish the historic theater. Calling the plan a shameful loss for the community, the editors urged readers to protest at the next council meeting.",
+    "form": "deplored",
+    "wrong_words": [
+      "praised",
+      "predicted",
+      "welcomed"
+    ],
+    "meaning": "Strongly condemned",
+    "wrong_meanings": [
+      "Mourned privately",
+      "Supported",
+      "Described"
+    ]
+  },
+  {
+    "w": "derive",
+    "passage": "The active ingredient in aspirin is closely related to a compound derived from the bark of willow trees. People in many cultures chewed this bark for centuries to relieve pain and fever long before chemists learned to make the drug in a laboratory.",
+    "form": "derived",
+    "wrong_words": [
+      "hidden",
+      "missing",
+      "excluded"
+    ],
+    "meaning": "Obtained",
+    "wrong_meanings": [
+      "Inferred",
+      "Protected",
+      "Hidden"
+    ]
+  },
+  {
+    "w": "despondent",
+    "passage": "After the third failed launch in a single year, the rocket team grew despondent. Several engineers spoke of quitting, and the lead designer admitted that she no longer believed the project could ever succeed.",
+    "form": "despondent",
+    "wrong_words": [
+      "triumphant",
+      "confident",
+      "curious"
+    ],
+    "meaning": "Hopeless",
+    "wrong_meanings": [
+      "Angry",
+      "Determined",
+      "Puzzled"
+    ]
+  },
+  {
+    "w": "detached",
+    "passage": "The narrator describes the shipwreck in a detached, almost clinical tone. She lists the number of lifeboats and the temperature of the water without once mentioning her own fear or grief.",
+    "form": "detached",
+    "wrong_words": [
+      "passionate",
+      "mournful",
+      "playful"
+    ],
+    "meaning": "Emotionally distant",
+    "wrong_meanings": [
+      "Physically separated",
+      "Confused",
+      "Heartbroken"
+    ]
+  },
+  {
+    "w": "detect",
+    "passage": "The new seismometers are so sensitive that they can detect tremors far too faint for any person to feel. This allows scientists to notice the earliest signs that magma is moving beneath a volcano, sometimes weeks before an eruption.",
+    "form": "detect",
+    "wrong_words": [
+      "prevent",
+      "cause",
+      "withstand"
+    ],
+    "meaning": "Sense",
+    "wrong_meanings": [
+      "Stop",
+      "Create",
+      "Survive"
+    ]
+  },
+  {
+    "w": "deter",
+    "passage": "To deter elephants from raiding their crops, farmers in some regions hang beehives along their fence lines. The elephants, which avoid bee stings, tend to turn back when they hear buzzing, and crop losses have dropped sharply.",
+    "form": "deter",
+    "wrong_words": [
+      "attract",
+      "protect",
+      "feed"
+    ],
+    "meaning": "Discourage",
+    "wrong_meanings": [
+      "Hunt",
+      "Invite",
+      "Hide"
+    ]
+  },
+  {
+    "w": "detrimental",
+    "passage": "Studies of teenagers have found that regularly sleeping less than seven hours a night is detrimental to memory. Students deprived of rest recall less of what they studied and make more errors on tests than their well-rested classmates.",
+    "form": "detrimental",
+    "wrong_words": [
+      "beneficial",
+      "irrelevant",
+      "essential"
+    ],
+    "meaning": "Harmful",
+    "wrong_meanings": [
+      "Helpful",
+      "Unrelated",
+      "Necessary"
+    ]
+  },
+  {
+    "w": "deviate",
+    "passage": "The ship's captain had been ordered to follow the charted route exactly. When lookouts spotted a field of icebergs ahead, however, she deviated from the course, steering many kilometers south before returning to the planned path.",
+    "form": "deviated",
+    "wrong_words": [
+      "benefited",
+      "retreated",
+      "recovered"
+    ],
+    "meaning": "Departed",
+    "wrong_meanings": [
+      "Returned",
+      "Benefited",
+      "Escaped"
+    ]
+  },
+  {
+    "w": "deviation",
+    "passage": "Weather records from the past century show that the town's average July temperature rarely varied by more than one degree. One recent summer, however, was a striking deviation from this pattern, with temperatures averaging nearly four degrees above normal.",
+    "form": "deviation",
+    "wrong_words": [
+      "continuation",
+      "example",
+      "confirmation"
+    ],
+    "meaning": "Departure",
+    "wrong_meanings": [
+      "Return",
+      "Example",
+      "Measurement"
+    ]
+  },
+  {
+    "w": "devious",
+    "passage": "In the novel, the steward appears loyal and helpful. Behind his master's back, however, he forges letters and turns the family members against one another in a devious scheme to inherit the estate himself.",
+    "form": "devious",
+    "wrong_words": [
+      "generous",
+      "desperate",
+      "foolish"
+    ],
+    "meaning": "Underhanded",
+    "wrong_meanings": [
+      "Winding",
+      "Kindly",
+      "Hopeless"
+    ]
+  },
+  {
+    "w": "devote",
+    "passage": "The marine biologist devoted more than thirty years to studying humpback whales. She spent each winter on a small boat recording their songs and returned summer after summer to the same feeding grounds to photograph individual animals.",
+    "form": "devoted",
+    "wrong_words": [
+      "lost",
+      "owed",
+      "denied"
+    ],
+    "meaning": "Dedicated",
+    "wrong_meanings": [
+      "Wasted",
+      "Borrowed",
+      "Lent"
+    ]
+  },
+  {
+    "w": "diaspora",
+    "passage": "After famine struck Ireland in the 1840s, more than a million people emigrated, settling in cities from North America to Australia. Today the Irish diaspora is many times larger than the population of Ireland itself, and many of its members maintain strong ties to their ancestral homeland.",
+    "form": "diaspora",
+    "wrong_words": [
+      "government",
+      "language",
+      "economy"
+    ],
+    "meaning": "Scattered population",
+    "wrong_meanings": [
+      "Homeland",
+      "Leadership",
+      "Folklore"
+    ]
+  },
+  {
+    "w": "dictate",
+    "passage": "In the high Andes, altitude largely dictates which crops farmers can grow. Maize thrives in the warmer valleys, while only hardy potatoes and quinoa survive on the cold slopes above them.",
+    "form": "dictates",
+    "wrong_words": [
+      "obscures",
+      "follows",
+      "celebrates"
+    ],
+    "meaning": "Determines",
+    "wrong_meanings": [
+      "Reads aloud",
+      "Reflects",
+      "Records"
+    ]
+  },
+  {
+    "w": "didactic",
+    "passage": "Many children's books of the nineteenth century were openly didactic. Each story ended with a clearly stated moral, and characters who disobeyed their parents or told lies met with swift and unpleasant consequences.",
+    "form": "didactic",
+    "wrong_words": [
+      "humorous",
+      "experimental",
+      "unpopular"
+    ],
+    "meaning": "Intended to instruct",
+    "wrong_meanings": [
+      "Entertaining",
+      "Unclear",
+      "Illustrated"
+    ]
+  },
+  {
+    "w": "differentiate",
+    "passage": "Honeybees can differentiate between flowers by color and scent. In experiments, bees trained to find sugar water on blue disks quickly learned to ignore yellow ones, even when the disks were moved to new positions.",
+    "form": "differentiate",
+    "wrong_words": [
+      "hover",
+      "travel",
+      "alternate"
+    ],
+    "meaning": "Distinguish",
+    "wrong_meanings": [
+      "Move",
+      "Choose randomly",
+      "Divide"
+    ]
+  },
+  {
+    "w": "diffusion",
+    "passage": "The diffusion of the printing press across Europe was remarkably rapid. Within fifty years of its invention, presses were operating in more than two hundred cities, and millions of books had been produced.",
+    "form": "diffusion",
+    "wrong_words": [
+      "invention",
+      "decline",
+      "prohibition"
+    ],
+    "meaning": "Spread",
+    "wrong_meanings": [
+      "Creation",
+      "Weakening",
+      "Repair"
+    ]
+  },
+  {
+    "w": "digress",
+    "passage": "Although the lecture was supposed to cover the chemistry of soil, the professor frequently digressed, telling long stories about his childhood on a farm. Only after twenty minutes or so would he return to the topic at hand.",
+    "form": "digressed",
+    "wrong_words": [
+      "concluded",
+      "summarized",
+      "paused"
+    ],
+    "meaning": "Strayed from the topic",
+    "wrong_meanings": [
+      "Argued",
+      "Lectured",
+      "Retreated"
+    ]
+  },
+  {
+    "w": "dilemma",
+    "passage": "The ship's doctor faced a terrible dilemma. She had enough medicine to treat only one of two seriously ill sailors, and whichever patient she chose, the other was unlikely to survive the voyage.",
+    "form": "dilemma",
+    "wrong_words": [
+      "reward",
+      "routine",
+      "coincidence"
+    ],
+    "meaning": "Difficult choice",
+    "wrong_meanings": [
+      "Riddle",
+      "Mistake",
+      "Debate"
+    ]
+  },
+  {
+    "w": "diligent",
+    "passage": "Over four years, the diligent archivist checked every entry in the county's birth and death records by hand. Her steady, careful work uncovered hundreds of copying errors that earlier scholars had overlooked.",
+    "form": "diligent",
+    "wrong_words": [
+      "careless",
+      "famous",
+      "reluctant"
+    ],
+    "meaning": "Hardworking",
+    "wrong_meanings": [
+      "Intelligent",
+      "Lazy",
+      "Lucky"
+    ]
+  },
+  {
+    "w": "dilute",
+    "passage": "The original bill would have banned all logging in the old-growth forest. Lawmakers, however, diluted it with so many exceptions that environmental groups complained the final version protected almost nothing.",
+    "form": "diluted",
+    "wrong_words": [
+      "strengthened",
+      "passed",
+      "introduced"
+    ],
+    "meaning": "Weakened",
+    "wrong_meanings": [
+      "Thinned with water",
+      "Strengthened",
+      "Delayed"
+    ]
+  },
+  {
+    "w": "diminish",
+    "passage": "As the storm moved out to sea, the roar of the waves against the cliffs gradually diminished. By midnight, only a faint hiss of water on the rocks could be heard, and the villagers finally slept.",
+    "form": "diminished",
+    "wrong_words": [
+      "intensified",
+      "echoed",
+      "returned"
+    ],
+    "meaning": "Lessened",
+    "wrong_meanings": [
+      "Increased",
+      "Belittled",
+      "Changed pitch"
+    ]
+  },
+  {
+    "w": "discern",
+    "passage": "In the thick fog, the sailors could barely discern the outline of the lighthouse. The shape was so faint that at first some of them thought it was only a darker patch of cloud.",
+    "form": "discern",
+    "wrong_words": [
+      "ignore",
+      "reach",
+      "avoid"
+    ],
+    "meaning": "Make out",
+    "wrong_meanings": [
+      "Judge",
+      "Avoid",
+      "Remember"
+    ]
+  },
+  {
+    "w": "disconcerting",
+    "passage": "For the astronauts, the silence of the space station at night was at first disconcerting. Accustomed to the constant background noise of life on Earth, several reported feeling uneasy and sleeping poorly during their first week in orbit.",
+    "form": "disconcerting",
+    "wrong_words": [
+      "soothing",
+      "deafening",
+      "amusing"
+    ],
+    "meaning": "Unsettling",
+    "wrong_meanings": [
+      "Calming",
+      "Delightful",
+      "Disorganized"
+    ]
+  },
+  {
+    "w": "discord",
+    "passage": "Disagreements over how to divide the inheritance caused years of discord within the family. The siblings stopped speaking to one another, and holiday gatherings were canceled entirely.",
+    "form": "discord",
+    "wrong_words": [
+      "harmony",
+      "prosperity",
+      "nostalgia"
+    ],
+    "meaning": "Conflict",
+    "wrong_meanings": [
+      "Unity",
+      "Wealth",
+      "Musical clash"
+    ]
+  },
+  {
+    "w": "discount",
+    "passage": "When a young geologist proposed in the 1920s that an enormous flood had carved the strange landscape of eastern Washington, most scientists discounted the idea as far-fetched. Decades later, aerial photographs revealed giant ripple marks, and the theory gained wide acceptance.",
+    "form": "discounted",
+    "wrong_words": [
+      "accepted",
+      "tested",
+      "published"
+    ],
+    "meaning": "Dismissed",
+    "wrong_meanings": [
+      "Reduced in price",
+      "Embraced",
+      "Studied"
+    ]
+  },
+  {
+    "w": "discourse",
+    "passage": "In the eighteenth century, coffeehouses became centers of political discourse in many European cities. For the price of a cup, patrons could read the latest newspapers and debate government decisions with strangers late into the night.",
+    "form": "discourse",
+    "wrong_words": [
+      "rivalry",
+      "architecture",
+      "corruption"
+    ],
+    "meaning": "Discussion",
+    "wrong_meanings": [
+      "Power",
+      "Scandal",
+      "Fashion"
+    ]
+  },
+  {
+    "w": "discrepancy",
+    "passage": "Auditors noticed a discrepancy between the museum's inventory and the objects actually in storage. The records listed 412 bronze coins, but only 389 could be found on the shelves.",
+    "form": "discrepancy",
+    "wrong_words": [
+      "connection",
+      "similarity",
+      "partnership"
+    ],
+    "meaning": "Mismatch",
+    "wrong_meanings": [
+      "Agreement",
+      "Theft",
+      "Delay"
+    ]
+  },
+  {
+    "w": "discrete",
+    "passage": "Butterflies develop in discrete stages: egg, caterpillar, pupa, and adult. Each stage has its own body form and way of life, and the insect moves abruptly from one to the next rather than changing gradually and continuously.",
+    "form": "discrete",
+    "wrong_words": [
+      "gradual",
+      "identical",
+      "invisible"
+    ],
+    "meaning": "Separate",
+    "wrong_meanings": [
+      "Tactful",
+      "Overlapping",
+      "Secret"
+    ]
+  },
+  {
+    "w": "discriminate",
+    "passage": "Some species of bats can discriminate between the echoes of a moth and those of a falling leaf. This ability allows them to ignore drifting debris in the night air and pursue only edible targets.",
+    "form": "discriminate",
+    "wrong_words": [
+      "fluctuate",
+      "alternate",
+      "pause"
+    ],
+    "meaning": "Distinguish",
+    "wrong_meanings": [
+      "Treat unfairly",
+      "Ignore",
+      "Produce"
+    ]
+  },
+  {
+    "w": "discrimination",
+    "passage": "Newborns show surprising powers of auditory discrimination. Within days of birth, they can tell their mother's voice from a stranger's, and they react differently to the sounds of their parents' native language than to those of other languages.",
+    "form": "discrimination",
+    "wrong_words": [
+      "imitation",
+      "memory",
+      "damage"
+    ],
+    "meaning": "Distinguishing",
+    "wrong_meanings": [
+      "Unfair treatment",
+      "Repetition",
+      "Loss"
+    ]
+  },
+  {
+    "w": "disdain",
+    "passage": "The aristocratic heroine regards her new neighbors with disdain. She refuses their dinner invitations and remarks to her sister that people who earned their fortunes in trade could hardly be considered respectable.",
+    "form": "disdain",
+    "wrong_words": [
+      "affection",
+      "curiosity",
+      "envy"
+    ],
+    "meaning": "Contempt",
+    "wrong_meanings": [
+      "Fear",
+      "Admiration",
+      "Jealousy"
+    ]
+  },
+  {
+    "w": "disenfranchise",
+    "passage": "In the late nineteenth century, several states adopted literacy tests and poll taxes that disenfranchised many Black citizens. These measures prevented them from voting even though the Constitution guaranteed that right.",
+    "form": "disenfranchised",
+    "wrong_words": [
+      "employed",
+      "educated",
+      "registered"
+    ],
+    "meaning": "Denied voting rights to",
+    "wrong_meanings": [
+      "Freed",
+      "Taxed",
+      "Taught"
+    ]
+  },
+  {
+    "w": "disengage",
+    "passage": "Teachers have long observed that students tend to disengage when lessons seem to lack purpose. They stop asking questions, drift into side conversations, and complete assignments with as little effort as possible.",
+    "form": "disengage",
+    "wrong_words": [
+      "excel",
+      "collaborate",
+      "participate"
+    ],
+    "meaning": "Withdraw",
+    "wrong_meanings": [
+      "Unhook",
+      "Graduate",
+      "Compete"
+    ]
+  },
+  {
+    "w": "dislocate",
+    "passage": "The construction of the dam dislocated more than ten thousand villagers. As the reservoir slowly flooded the valley, families were forced to leave homes they had occupied for generations and resettle in unfamiliar towns.",
+    "form": "dislocated",
+    "wrong_words": [
+      "employed",
+      "welcomed",
+      "inspired"
+    ],
+    "meaning": "Uprooted",
+    "wrong_meanings": [
+      "Put out of joint",
+      "Hired",
+      "Injured"
+    ]
+  },
+  {
+    "w": "dismay",
+    "passage": "After weeks of hiking across the ice, the explorers reached the harbor only to discover, to their dismay, that the supply ship had already departed. They were left with just a week's worth of food.",
+    "form": "dismay",
+    "wrong_words": [
+      "relief",
+      "delight",
+      "credit"
+    ],
+    "meaning": "Distress",
+    "wrong_meanings": [
+      "Relief",
+      "Amusement",
+      "Confusion"
+    ]
+  },
+  {
+    "w": "dismiss",
+    "passage": "For decades, many paleontologists dismissed the idea that some dinosaurs had feathers, regarding it as unsupported speculation. The discovery of fossils with clear feather impressions in the 1990s forced them to reconsider.",
+    "form": "dismissed",
+    "wrong_words": [
+      "proposed",
+      "proved",
+      "celebrated"
+    ],
+    "meaning": "Rejected",
+    "wrong_meanings": [
+      "Fired",
+      "Sent away",
+      "Supported"
+    ]
+  },
+  {
+    "w": "disparage",
+    "passage": "Although some reviewers disparaged the novel as sentimental and clumsily written, it became a bestseller. Readers wrote thousands of letters to the author thanking her for its honest portrayal of family life.",
+    "form": "disparaged",
+    "wrong_words": [
+      "recommended",
+      "translated",
+      "adapted"
+    ],
+    "meaning": "Belittled",
+    "wrong_meanings": [
+      "Recommended",
+      "Summarized",
+      "Compared"
+    ]
+  },
+  {
+    "w": "disparate",
+    "passage": "The museum's new exhibit brings together seemingly disparate objects: a Viking sword, a Japanese tea bowl, and a West African bronze mask. By placing them side by side, the curators reveal unexpected similarities in how distant cultures worked metal and clay.",
+    "form": "disparate",
+    "wrong_words": [
+      "identical",
+      "matching",
+      "related"
+    ],
+    "meaning": "Very different",
+    "wrong_meanings": [
+      "Damaged",
+      "Similar",
+      "Desperate"
+    ]
+  },
+  {
+    "w": "disparity",
+    "passage": "The study found a wide disparity in life expectancy between neighborhoods only a few kilometers apart. Residents of the wealthiest district lived, on average, eleven years longer than residents of the poorest.",
+    "form": "disparity",
+    "wrong_words": [
+      "agreement",
+      "consistency",
+      "improvement"
+    ],
+    "meaning": "Gap",
+    "wrong_meanings": [
+      "Similarity",
+      "Increase",
+      "Debate"
+    ]
+  },
+  {
+    "w": "displace",
+    "passage": "After gray squirrels were introduced to Britain in the nineteenth century, they gradually displaced the native red squirrels across most of the country. The newcomers outcompeted the reds for food and spread a virus that is deadly to them.",
+    "form": "displaced",
+    "wrong_words": [
+      "joined",
+      "protected",
+      "fed"
+    ],
+    "meaning": "Replaced",
+    "wrong_meanings": [
+      "Misplaced",
+      "Rescued",
+      "Joined"
+    ]
+  },
+  {
+    "w": "dispose",
+    "passage": "Before stricter regulations were passed, many hospitals disposed of used needles in ordinary trash bins. The practice put sanitation workers at serious risk of injury and infection.",
+    "form": "disposed",
+    "wrong_words": [
+      "approved",
+      "spoke",
+      "thought"
+    ],
+    "meaning": "Got rid",
+    "wrong_meanings": [
+      "Arranged",
+      "Inclined",
+      "Approved"
+    ]
+  },
+  {
+    "w": "disposition",
+    "passage": "Despite years of hardship, the old ferryman had a cheerful disposition. He greeted every passenger with a joke and hummed while rowing, even on the coldest and wettest mornings.",
+    "form": "disposition",
+    "wrong_words": [
+      "appearance",
+      "voice",
+      "route"
+    ],
+    "meaning": "Temperament",
+    "wrong_meanings": [
+      "Arrangement",
+      "Disposal",
+      "Appearance"
+    ]
+  },
+  {
+    "w": "dispute",
+    "passage": "Though vastly outnumbered, the defenders disputed every hill and river crossing as the invading army advanced. Their stubborn resistance slowed the march so much that reinforcements arrived before the capital could be taken.",
+    "form": "disputed",
+    "wrong_words": [
+      "abandoned",
+      "surrendered",
+      "mapped"
+    ],
+    "meaning": "Fought for",
+    "wrong_meanings": [
+      "Argued about",
+      "Questioned",
+      "Gave up"
+    ]
+  },
+  {
+    "w": "disseminate",
+    "passage": "During the outbreak, health officials disseminated instructions on handwashing through radio broadcasts, posters in markets, and text messages. Within days, the information had reached nearly every household in the region.",
+    "form": "disseminated",
+    "wrong_words": [
+      "withheld",
+      "drafted",
+      "revised"
+    ],
+    "meaning": "Spread",
+    "wrong_meanings": [
+      "Wrote",
+      "Concealed",
+      "Tested"
+    ]
+  },
+  {
+    "w": "dissent",
+    "passage": "Although the court ruled seven to two in favor of the company, the two judges in the minority wrote a forceful dissent. They argued that the decision would leave workers with no protection against unsafe conditions.",
+    "form": "dissent",
+    "wrong_words": [
+      "endorsement",
+      "apology",
+      "summary"
+    ],
+    "meaning": "Disagreement",
+    "wrong_meanings": [
+      "Agreement",
+      "Apology",
+      "Verdict"
+    ]
+  },
+  {
+    "w": "dissipate",
+    "passage": "By late morning, the fog that had blanketed the harbor since dawn had dissipated. The fishing boats that had waited at the docks all morning finally set out under clear skies.",
+    "form": "dissipated",
+    "wrong_words": [
+      "thickened",
+      "returned",
+      "lingered"
+    ],
+    "meaning": "Cleared away",
+    "wrong_meanings": [
+      "Wasted",
+      "Thickened",
+      "Settled"
+    ]
+  },
+  {
+    "w": "dissonance",
+    "passage": "Critics noted a jarring dissonance between the film's cheerful soundtrack and its grim images of war. Some viewers found this clash powerful, while others found it merely confusing.",
+    "form": "dissonance",
+    "wrong_words": [
+      "harmony",
+      "similarity",
+      "balance"
+    ],
+    "meaning": "Clash",
+    "wrong_meanings": [
+      "Harmony",
+      "Silence",
+      "Loudness"
+    ]
+  },
+  {
+    "w": "distinct",
+    "passage": "Linguists have identified three distinct dialects on the small island, each with its own vocabulary and pronunciation. Remarkably, the communities that speak them live only a few kilometers apart.",
+    "form": "distinct",
+    "wrong_words": [
+      "identical",
+      "extinct",
+      "written"
+    ],
+    "meaning": "Separate",
+    "wrong_meanings": [
+      "Easily heard",
+      "Similar",
+      "Ancient"
+    ]
+  },
+  {
+    "w": "distort",
+    "passage": "Historians warn that quoting only fragments of a speech can distort a leader's meaning. A sentence lifted from its context may appear to say the opposite of what the speaker actually intended.",
+    "form": "distort",
+    "wrong_words": [
+      "clarify",
+      "preserve",
+      "honor"
+    ],
+    "meaning": "Misrepresent",
+    "wrong_meanings": [
+      "Twist out of shape",
+      "Clarify",
+      "Shorten"
+    ]
+  },
+  {
+    "w": "distressed",
+    "passage": "Lifeguards spotted a distressed swimmer struggling against the current far from shore. She was waving her arms and calling for help, and two guards paddled out on rescue boards to bring her back to the beach.",
+    "form": "distressed",
+    "wrong_words": [
+      "relaxed",
+      "skilled",
+      "confident"
+    ],
+    "meaning": "In trouble",
+    "wrong_meanings": [
+      "Artificially worn",
+      "Calm",
+      "Talented"
+    ]
+  },
+  {
+    "w": "distrust",
+    "passage": "After the company repeatedly broke its promises to clean up the polluted creek, residents came to regard its announcements with deep distrust. They assumed that any new pledge would be abandoned just like the earlier ones.",
+    "form": "distrust",
+    "wrong_words": [
+      "gratitude",
+      "enthusiasm",
+      "patience"
+    ],
+    "meaning": "Suspicion",
+    "wrong_meanings": [
+      "Thankfulness",
+      "Excitement",
+      "Confusion"
+    ]
+  },
+  {
+    "w": "divergent",
+    "passage": "Although the two finch populations descended from a single ancestor, they evolved divergent beak shapes. Birds on the northern island developed thick beaks for cracking seeds, while those on the southern island developed thin beaks for probing flowers.",
+    "form": "divergent",
+    "wrong_words": [
+      "identical",
+      "similar",
+      "fragile"
+    ],
+    "meaning": "Differing",
+    "wrong_meanings": [
+      "Matching",
+      "Weak",
+      "Unusual"
+    ]
+  }
+]

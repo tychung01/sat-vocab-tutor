@@ -1,0 +1,1714 @@
+[
+  {
+    "w": "portray",
+    "passage": "Earlier novels about the mill towns of New England had treated factory workers as a faceless crowd. In her 1932 novel, the fictional author Ada Linwood portrayed them instead as distinct individuals, giving each chapter to a different worker's hopes, quarrels, and private jokes.",
+    "form": "portrayed",
+    "wrong_words": [
+      "employed",
+      "dismissed",
+      "organized"
+    ],
+    "meaning": "Depicted",
+    "wrong_meanings": [
+      "Hired",
+      "Posed for",
+      "Argued for"
+    ]
+  },
+  {
+    "w": "pose",
+    "passage": "Since arriving in the Great Lakes in the 1980s, invasive zebra mussels have spread rapidly. By filtering huge amounts of plankton from the water, they leave little food for native fish and mussels, and ecologists warn that they pose a serious threat to the lakes' food webs.",
+    "form": "pose",
+    "wrong_words": [
+      "reduce",
+      "survive",
+      "detect"
+    ],
+    "meaning": "Present",
+    "wrong_meanings": [
+      "Sit for",
+      "Pretend to be",
+      "Take away"
+    ]
+  },
+  {
+    "w": "posterity",
+    "passage": "When the town's oldest bakery closed, a local historian spent months recording interviews with its retired bakers. She hoped to preserve their recipes and stories for posterity, so that residents born decades later could still learn how the bakery had shaped the neighborhood.",
+    "form": "posterity",
+    "wrong_words": [
+      "profit",
+      "publicity",
+      "competition"
+    ],
+    "meaning": "Future generations",
+    "wrong_meanings": [
+      "Later publication",
+      "Current customers",
+      "Personal memory"
+    ]
+  },
+  {
+    "w": "postulate",
+    "passage": "In the nineteenth century, the orbit of Uranus did not match astronomers' predictions. To explain the mismatch, some astronomers postulated that an unseen planet was tugging on it, and they used that assumption as the starting point for new calculations, which eventually led to the discovery of Neptune.",
+    "form": "postulated",
+    "wrong_words": [
+      "observed",
+      "denied",
+      "concealed"
+    ],
+    "meaning": "Assumed as a basis",
+    "wrong_meanings": [
+      "Saw directly",
+      "Ruled out",
+      "Demanded as a condition"
+    ]
+  },
+  {
+    "w": "pragmatic",
+    "passage": "Faced with a small budget and a crumbling bridge, the city council took a pragmatic approach. Instead of commissioning an elaborate new design that might take a decade to fund, it repaired the existing structure so that traffic could keep moving.",
+    "form": "pragmatic",
+    "wrong_words": [
+      "theoretical",
+      "lavish",
+      "nostalgic"
+    ],
+    "meaning": "Practical",
+    "wrong_meanings": [
+      "Idealistic",
+      "Hasty",
+      "Experimental"
+    ]
+  },
+  {
+    "w": "precarious",
+    "passage": "Built on a narrow ledge high above the river, the osprey nest looked precarious; a single strong gust seemed likely to send it tumbling into the water below. Even so, the birds returned to it every spring and raised their chicks there.",
+    "form": "precarious",
+    "wrong_words": [
+      "sturdy",
+      "crowded",
+      "abandoned"
+    ],
+    "meaning": "Unstable",
+    "wrong_meanings": [
+      "Securely anchored",
+      "Well hidden",
+      "Neglected"
+    ]
+  },
+  {
+    "w": "precede",
+    "passage": "Large earthquakes do not always strike without warning. In many cases, smaller tremors known as foreshocks precede the main shock by hours or even days, and seismologists study these earlier tremors in hopes of one day forecasting major quakes.",
+    "form": "precede",
+    "wrong_words": [
+      "follow",
+      "outlast",
+      "amplify"
+    ],
+    "meaning": "Come before",
+    "wrong_meanings": [
+      "Come after",
+      "Bring about",
+      "Outrank"
+    ]
+  },
+  {
+    "w": "precedent",
+    "passage": "The judge's decision was the first in the state to grant a river legal protection as if it were a person. Since then, lawyers in several similar cases have cited the ruling as a precedent, urging other judges to follow its example.",
+    "form": "precedent",
+    "wrong_words": [
+      "punishment",
+      "compromise",
+      "rumor"
+    ],
+    "meaning": "Guiding example",
+    "wrong_meanings": [
+      "Formal complaint",
+      "Temporary exception",
+      "Public apology"
+    ]
+  },
+  {
+    "w": "precipitate",
+    "passage": "For decades the textile mill had employed nearly half the town. Its sudden closure in 1974 precipitated a wave of departures: within two years, almost a third of the residents had packed up and moved to larger cities in search of work.",
+    "form": "precipitated",
+    "wrong_words": [
+      "prevented",
+      "delayed",
+      "concealed"
+    ],
+    "meaning": "Brought about suddenly",
+    "wrong_meanings": [
+      "Formed a solid",
+      "Rained down on",
+      "Slowed down"
+    ]
+  },
+  {
+    "w": "precise",
+    "passage": "Earlier maps of the coast showed its outline only roughly, often misplacing harbors by several kilometers. The new satellite survey, by contrast, was remarkably precise: its measurements located each lighthouse to within a single meter of its true position.",
+    "form": "precise",
+    "wrong_words": [
+      "vague",
+      "colorful",
+      "outdated"
+    ],
+    "meaning": "Exact",
+    "wrong_meanings": [
+      "Fussy",
+      "Brief",
+      "Up to date"
+    ]
+  },
+  {
+    "w": "preclude",
+    "passage": "The research team had hoped to study the glacier year-round. However, the violent winter storms in the region precluded any fieldwork between November and March, so the scientists installed automated sensors that could collect data while they were away.",
+    "form": "precluded",
+    "wrong_words": [
+      "required",
+      "encouraged",
+      "followed"
+    ],
+    "meaning": "Ruled out",
+    "wrong_meanings": [
+      "Delayed slightly",
+      "Shut in",
+      "Made necessary"
+    ]
+  },
+  {
+    "w": "precocious",
+    "passage": "Clara Venn, the young heroine of the novel, is remarkably precocious. By age six she is composing short pieces for piano, and by twelve she is correcting the mistakes of the adult musicians in her village orchestra.",
+    "form": "precocious",
+    "wrong_words": [
+      "reluctant",
+      "modest",
+      "mediocre"
+    ],
+    "meaning": "Advanced for her age",
+    "wrong_meanings": [
+      "Rudely bold",
+      "Unusually small",
+      "Slow to develop"
+    ]
+  },
+  {
+    "w": "predator",
+    "passage": "On remote islands without foxes or cats, ground-nesting seabirds often have no instinct to flee danger. When rats arrived on one such island aboard a ship, they raided nests and ate eggs and chicks, and the birds had no defense against the new predator.",
+    "form": "predator",
+    "wrong_words": [
+      "competitor",
+      "pollinator",
+      "companion"
+    ],
+    "meaning": "Hunter",
+    "wrong_meanings": [
+      "Rival",
+      "Disease",
+      "Visitor"
+    ]
+  },
+  {
+    "w": "predetermined",
+    "passage": "In the experiment, the robot did not choose its own route through the warehouse. Instead, it followed a predetermined path that engineers had programmed the night before, which allowed researchers to compare its speed with that of human workers on the same route.",
+    "form": "predetermined",
+    "wrong_words": [
+      "randomized",
+      "shortened",
+      "cluttered"
+    ],
+    "meaning": "Set in advance",
+    "wrong_meanings": [
+      "Chosen at random",
+      "Clearly marked",
+      "Extremely difficult"
+    ]
+  },
+  {
+    "w": "predicament",
+    "passage": "When a rockslide blocked the only trail off the ridge, the hikers faced a serious predicament. Their water was running low, their phones had no signal, and the sun was already setting behind the mountains.",
+    "form": "predicament",
+    "wrong_words": [
+      "opportunity",
+      "victory",
+      "bargain"
+    ],
+    "meaning": "Difficult situation",
+    "wrong_meanings": [
+      "Prediction",
+      "Lucky break",
+      "Steep climb"
+    ]
+  },
+  {
+    "w": "predominant",
+    "passage": "The forest contains more than forty species of trees, but oaks are by far the predominant type. They make up nearly 70 percent of all trunks in the survey plots, and their acorns feed most of the forest's deer and squirrels.",
+    "form": "predominant",
+    "wrong_words": [
+      "rarest",
+      "youngest",
+      "newest"
+    ],
+    "meaning": "Main",
+    "wrong_meanings": [
+      "Most powerful",
+      "Least common",
+      "Most recent"
+    ]
+  },
+  {
+    "w": "prejudice",
+    "passage": "In the novel, newcomers to the fishing village are treated with suspicion before anyone has even spoken to them. The villagers' prejudice against outsiders, based on old rumors rather than experience, fades only after a stranger risks his life to rescue a stranded boat.",
+    "form": "prejudice",
+    "wrong_words": [
+      "affection",
+      "gratitude",
+      "indifference"
+    ],
+    "meaning": "Unfounded bias",
+    "wrong_meanings": [
+      "Legal harm",
+      "Fond loyalty",
+      "Careful judgment"
+    ]
+  },
+  {
+    "w": "preliminary",
+    "passage": "Before committing money to a full excavation, the archaeologists sent a small underwater drone to examine the shipwreck. This preliminary survey revealed enough intact cargo to justify a larger expedition the following summer.",
+    "form": "preliminary",
+    "wrong_words": [
+      "final",
+      "concluding",
+      "exhaustive"
+    ],
+    "meaning": "Initial",
+    "wrong_meanings": [
+      "Thorough",
+      "Official",
+      "Last"
+    ]
+  },
+  {
+    "w": "premise",
+    "passage": "The novel's central premise is simple: a lighthouse keeper discovers that the ships passing her island are arriving from the future. Every later twist in the plot follows from this starting idea.",
+    "form": "premise",
+    "wrong_words": [
+      "setting",
+      "audience",
+      "conclusion"
+    ],
+    "meaning": "Basic idea",
+    "wrong_meanings": [
+      "Building and grounds",
+      "Final twist",
+      "Main character"
+    ]
+  },
+  {
+    "w": "presume",
+    "passage": "Because the letter was found among the general's papers and bore his seal, archivists had long presumed that he wrote it himself. Only recently did handwriting analysis suggest that one of his aides had actually drafted it.",
+    "form": "presumed",
+    "wrong_words": [
+      "proved",
+      "denied",
+      "forgotten"
+    ],
+    "meaning": "Assumed",
+    "wrong_meanings": [
+      "Dared",
+      "Demonstrated",
+      "Wished"
+    ]
+  },
+  {
+    "w": "presumptuous",
+    "passage": "Ellen had met the gallery owner only once, at a crowded reception. Her friends therefore thought it presumptuous of her to ask him to hang her paintings in his front window, a spot usually reserved for the city's best-known artists.",
+    "form": "presumptuous",
+    "wrong_words": [
+      "modest",
+      "generous",
+      "sensible"
+    ],
+    "meaning": "Overly bold",
+    "wrong_meanings": [
+      "Humble",
+      "Reasonable",
+      "Likely to succeed"
+    ]
+  },
+  {
+    "w": "pretentious",
+    "passage": "Critics praised the restaurant's simple, hearty food but mocked its menu, which described a plain bowl of soup in elaborate French phrases. To many diners, the language seemed pretentious, an attempt to make the meal sound far more refined than it actually was.",
+    "form": "pretentious",
+    "wrong_words": [
+      "accurate",
+      "humble",
+      "confusing"
+    ],
+    "meaning": "Showily self-important",
+    "wrong_meanings": [
+      "Plain and simple",
+      "Hard to understand",
+      "Truly elegant"
+    ]
+  },
+  {
+    "w": "prevalence",
+    "passage": "Public health researchers examined the eyes of 4,000 schoolchildren to determine the prevalence of nearsightedness. They found that the condition affected about one in three students, a much larger share than in their parents' generation.",
+    "form": "prevalence",
+    "wrong_words": [
+      "cause",
+      "cure",
+      "severity"
+    ],
+    "meaning": "How widespread",
+    "wrong_meanings": [
+      "Underlying cause",
+      "Degree of seriousness",
+      "Early warning signs"
+    ]
+  },
+  {
+    "w": "prevalent",
+    "passage": "In the early nineteenth century, the belief that disease spread through foul-smelling air was prevalent among doctors in Europe. Because nearly everyone in the profession accepted the idea, few thought to look for other causes, such as contaminated water.",
+    "form": "prevalent",
+    "wrong_words": [
+      "unknown",
+      "unpopular",
+      "forbidden"
+    ],
+    "meaning": "Widespread",
+    "wrong_meanings": [
+      "Proven",
+      "Rare",
+      "Dangerous"
+    ]
+  },
+  {
+    "w": "preventable",
+    "passage": "A review of the factory's accident records found that most injuries had been preventable. Workers who wore the required gloves and goggles were almost never hurt, while nearly every serious injury involved someone who had skipped that equipment.",
+    "form": "preventable",
+    "wrong_words": [
+      "inevitable",
+      "minor",
+      "unreported"
+    ],
+    "meaning": "Avoidable",
+    "wrong_meanings": [
+      "Unavoidable",
+      "Slight",
+      "Officially recorded"
+    ]
+  },
+  {
+    "w": "primitive",
+    "passage": "Compared with modern computers, the earliest mechanical calculators were primitive machines. Built from hand-cranked gears and levers, they could add and subtract slowly but could do little else.",
+    "form": "primitive",
+    "wrong_words": [
+      "sophisticated",
+      "expensive",
+      "portable"
+    ],
+    "meaning": "Simple and crude",
+    "wrong_meanings": [
+      "Ancient and sacred",
+      "Highly advanced",
+      "Wild and untamed"
+    ]
+  },
+  {
+    "w": "principal",
+    "passage": "Pollution and disease both harmed the bay's oysters, but researchers concluded that overharvesting was the principal cause of their decline. In every decade they studied, the oyster count fell fastest in the years when boats took the most oysters.",
+    "form": "principal",
+    "wrong_words": [
+      "minor",
+      "unlikely",
+      "secondary"
+    ],
+    "meaning": "Main",
+    "wrong_meanings": [
+      "School leader",
+      "Moral",
+      "Original sum"
+    ]
+  },
+  {
+    "w": "prior",
+    "passage": "Applicants to the animal shelter's volunteer program need no prior experience with dogs. During their first week, staff members teach every newcomer how to feed, walk, and calm the animals, so even people who have never owned a pet can quickly help out.",
+    "form": "prior",
+    "wrong_words": [
+      "subsequent",
+      "ongoing",
+      "future"
+    ],
+    "meaning": "Previous",
+    "wrong_meanings": [
+      "More important",
+      "Later",
+      "Paid"
+    ]
+  },
+  {
+    "w": "pristine",
+    "passage": "Because a rockfall had sealed the cave's entrance for thousands of years, the explorers who finally reopened it found it in pristine condition. The delicate crystal formations were unbroken, and no trash, soot, or footprints marked the floor.",
+    "form": "pristine",
+    "wrong_words": [
+      "ruined",
+      "hazardous",
+      "ordinary"
+    ],
+    "meaning": "Unspoiled",
+    "wrong_meanings": [
+      "Recently built",
+      "Badly damaged",
+      "Dangerous"
+    ]
+  },
+  {
+    "w": "probe",
+    "passage": "After residents near the chemical plant complained of mysterious illnesses, a team of reporters spent a year probing the company's safety records. Their investigation uncovered dozens of leaks that the company had never disclosed to regulators.",
+    "form": "probing",
+    "wrong_words": [
+      "praising",
+      "ignoring",
+      "archiving"
+    ],
+    "meaning": "Examining closely",
+    "wrong_meanings": [
+      "Poking with a tool",
+      "Approving",
+      "Filing away"
+    ]
+  },
+  {
+    "w": "problematic",
+    "passage": "Historians studying the battle have only one eyewitness account to work with, which they find problematic. The writer may have misremembered events years later, and as an officer on the losing side, he had reasons to exaggerate the enemy's strength.",
+    "form": "problematic",
+    "wrong_words": [
+      "essential",
+      "effortless",
+      "customary"
+    ],
+    "meaning": "Troublesome",
+    "wrong_meanings": [
+      "Mathematical",
+      "Reassuring",
+      "Traditional"
+    ]
+  },
+  {
+    "w": "prodigious",
+    "passage": "Arctic terns make a prodigious journey every year. Flying from the Arctic to the Antarctic and back, a single bird may travel roughly 70,000 kilometers, the longest annual migration of any animal known.",
+    "form": "prodigious",
+    "wrong_words": [
+      "brief",
+      "modest",
+      "routine"
+    ],
+    "meaning": "Enormous",
+    "wrong_meanings": [
+      "Talented",
+      "Short",
+      "Ordinary"
+    ]
+  },
+  {
+    "w": "proficient",
+    "passage": "When the exchange student arrived in Osaka, she knew only a few phrases of Japanese. After two years of daily lessons and conversations with her host family, however, she had become proficient in the language and could follow university lectures and write essays with ease.",
+    "form": "proficient",
+    "wrong_words": [
+      "uninterested",
+      "confused",
+      "hesitant"
+    ],
+    "meaning": "Skilled",
+    "wrong_meanings": [
+      "Interested",
+      "Beginning",
+      "Certified"
+    ]
+  },
+  {
+    "w": "profound",
+    "passage": "The spread of the printing press in fifteenth-century Europe had a profound effect on society. Books, once copied slowly by hand, became affordable to ordinary people, literacy rose sharply, and new ideas traveled faster than ever before.",
+    "form": "profound",
+    "wrong_words": [
+      "minor",
+      "temporary",
+      "negligible"
+    ],
+    "meaning": "Far-reaching",
+    "wrong_meanings": [
+      "Wise",
+      "Mysterious",
+      "Brief"
+    ]
+  },
+  {
+    "w": "progressive",
+    "passage": "The inherited disorder causes a progressive loss of hearing. Patients usually notice only slight difficulty in their teens, but their hearing worsens steadily over many years, and by middle age most rely on hearing aids.",
+    "form": "progressive",
+    "wrong_words": [
+      "sudden",
+      "temporary",
+      "reversible"
+    ],
+    "meaning": "Gradually increasing",
+    "wrong_meanings": [
+      "Politically liberal",
+      "Modern",
+      "Abrupt"
+    ]
+  },
+  {
+    "w": "prohibit",
+    "passage": "To protect shorebirds that nest in the sand, the park prohibits dogs on the beach from April through August. Rangers patrol the shoreline during those months and issue fines to visitors who ignore the rule.",
+    "form": "prohibits",
+    "wrong_words": [
+      "welcomes",
+      "requires",
+      "trains"
+    ],
+    "meaning": "Forbids",
+    "wrong_meanings": [
+      "Allows",
+      "Requires",
+      "Hides from"
+    ]
+  },
+  {
+    "w": "proliferate",
+    "passage": "As smartphones became common in the 2010s, food delivery apps proliferated. Within a few years, a city that had once been served by a single delivery company had dozens of them, each competing for the same restaurants and customers.",
+    "form": "proliferated",
+    "wrong_words": [
+      "disappeared",
+      "merged",
+      "stagnated"
+    ],
+    "meaning": "Multiplied rapidly",
+    "wrong_meanings": [
+      "Shrank in number",
+      "Combined",
+      "Became cheaper"
+    ]
+  },
+  {
+    "w": "prolific",
+    "passage": "The fictional painter Marguerite Osei, heroine of the novel, is remarkably prolific. Over a forty-year career she completes more than 3,000 canvases, many of them in a single afternoon, and her studio overflows with finished work.",
+    "form": "prolific",
+    "wrong_words": [
+      "reclusive",
+      "cautious",
+      "obscure"
+    ],
+    "meaning": "Productive",
+    "wrong_meanings": [
+      "Famous",
+      "Wealthy",
+      "Careless"
+    ]
+  },
+  {
+    "w": "prolong",
+    "passage": "Shipping companies often coat fresh apples with a thin layer of edible wax. The coating slows the loss of moisture from the fruit and can prolong its shelf life by several weeks, allowing the apples to reach distant markets still crisp.",
+    "form": "prolong",
+    "wrong_words": [
+      "shorten",
+      "measure",
+      "label"
+    ],
+    "meaning": "Extend",
+    "wrong_meanings": [
+      "Shorten",
+      "Record",
+      "Guarantee"
+    ]
+  },
+  {
+    "w": "prominent",
+    "passage": "As a teenager, she organized small cleanups along the river near her home. By her forties, she had become a prominent voice in the national environmental movement, testifying before lawmakers and leading campaigns followed by millions.",
+    "form": "prominent",
+    "wrong_words": [
+      "silent",
+      "minor",
+      "hesitant"
+    ],
+    "meaning": "Leading",
+    "wrong_meanings": [
+      "Sticking out",
+      "Loud",
+      "Quiet"
+    ]
+  },
+  {
+    "w": "propensity",
+    "passage": "Many retrievers have a strong propensity for swimming. Even puppies that have never seen a lake will often plunge into the water on their first visit, a trait that breeders selected for when the dogs were used to fetch ducks.",
+    "form": "propensity",
+    "wrong_words": [
+      "aversion",
+      "talent",
+      "reward"
+    ],
+    "meaning": "Natural tendency",
+    "wrong_meanings": [
+      "Learned skill",
+      "Strong dislike",
+      "Physical need"
+    ]
+  },
+  {
+    "w": "proponent",
+    "passage": "In the 1850s, as the city grew more crowded, one local newspaper editor became a leading proponent of a large public park. He wrote dozens of editorials urging officials to set aside land where workers and their families could escape the noise of the streets.",
+    "form": "proponent",
+    "wrong_words": [
+      "critic",
+      "beneficiary",
+      "designer"
+    ],
+    "meaning": "Supporter",
+    "wrong_meanings": [
+      "Opponent",
+      "Builder",
+      "User"
+    ]
+  },
+  {
+    "w": "proposition",
+    "passage": "To most of her neighbors, opening a bookstore in a town of only 800 people seemed a risky proposition. Yet by hosting weekly readings and selling coffee alongside the books, the owner turned a profit within two years.",
+    "form": "proposition",
+    "wrong_words": [
+      "tradition",
+      "rumor",
+      "pastime"
+    ],
+    "meaning": "Undertaking",
+    "wrong_meanings": [
+      "Formal statement",
+      "Ballot measure",
+      "Old custom"
+    ]
+  },
+  {
+    "w": "prosaic",
+    "passage": "For decades, villagers told tales of a ghost that moaned inside the abandoned mill on windy nights. When engineers finally inspected the building, the true explanation proved prosaic: air whistling through a cracked window frame.",
+    "form": "prosaic",
+    "wrong_words": [
+      "supernatural",
+      "terrifying",
+      "elaborate"
+    ],
+    "meaning": "Ordinary",
+    "wrong_meanings": [
+      "Written in prose",
+      "Frightening",
+      "Complicated"
+    ]
+  },
+  {
+    "w": "prospect",
+    "passage": "For farmers in the drought-stricken valley, the prospect of spring rain brought both hope and worry. Rain would revive their wilting crops, but a storm that was too heavy could wash away the dry topsoil before it had time to absorb the water.",
+    "form": "prospect",
+    "wrong_words": [
+      "memory",
+      "cost",
+      "history"
+    ],
+    "meaning": "Possibility",
+    "wrong_meanings": [
+      "Scenic view",
+      "Potential customer",
+      "Recollection"
+    ]
+  },
+  {
+    "w": "prosperity",
+    "passage": "When the railroad reached the town in 1871, it brought new prosperity. Local farmers could suddenly ship grain to distant markets, merchants opened shops along the main street, and within a decade the population had tripled.",
+    "form": "prosperity",
+    "wrong_words": [
+      "hardship",
+      "isolation",
+      "decline"
+    ],
+    "meaning": "Economic success",
+    "wrong_meanings": [
+      "Hard times",
+      "Population",
+      "Optimism"
+    ]
+  },
+  {
+    "w": "protocol",
+    "passage": "Before entering the clean room where computer chips are made, technicians must follow a strict protocol. They put on full-body suits, pass through a chamber that blasts away dust, and enter only after a supervisor checks each step.",
+    "form": "protocol",
+    "wrong_words": [
+      "diet",
+      "budget",
+      "hunch"
+    ],
+    "meaning": "Set procedure",
+    "wrong_meanings": [
+      "Diplomatic manners",
+      "Formal treaty",
+      "Personal habit"
+    ]
+  },
+  {
+    "w": "provisional",
+    "passage": "The election commission released provisional results on election night. Officials cautioned, however, that the totals could change once absentee ballots, which would not be counted until later in the week, were added.",
+    "form": "provisional",
+    "wrong_words": [
+      "official",
+      "final",
+      "fraudulent"
+    ],
+    "meaning": "Temporary",
+    "wrong_meanings": [
+      "Final",
+      "Secret",
+      "Expected"
+    ]
+  },
+  {
+    "w": "provocative",
+    "passage": "The museum's new exhibit is deliberately provocative. One installation displays a mound of discarded clothing taller than a person, forcing visitors to confront how much they throw away, and the exhibit has drawn both angry letters and passionate praise.",
+    "form": "provocative",
+    "wrong_words": [
+      "soothing",
+      "conventional",
+      "forgettable"
+    ],
+    "meaning": "Meant to stir reactions",
+    "wrong_meanings": [
+      "Calming",
+      "Traditional",
+      "Seductive"
+    ]
+  },
+  {
+    "w": "provoke",
+    "passage": "When the newspaper printed an essay arguing that the town's historic courthouse should be torn down, the editors expected some disagreement. They were surprised, however, when the essay managed to provoke more than four hundred angry letters in a single week.",
+    "form": "provoke",
+    "wrong_words": [
+      "prevent",
+      "silence",
+      "answer"
+    ],
+    "meaning": "Stir up",
+    "wrong_meanings": [
+      "Tease",
+      "Calm",
+      "Receive"
+    ]
+  },
+  {
+    "w": "prudent",
+    "passage": "With storms becoming more frequent along the coast, the town's planners decided it would be prudent to raise the new library a full meter above the ground. The extra height added to construction costs, but it protected the collection from future flooding.",
+    "form": "prudent",
+    "wrong_words": [
+      "reckless",
+      "illegal",
+      "fashionable"
+    ],
+    "meaning": "Wise",
+    "wrong_meanings": [
+      "Cheap",
+      "Stylish",
+      "Rash"
+    ]
+  },
+  {
+    "w": "pursue",
+    "passage": "Although her parents hoped she would one day take over the family hardware store, Maya decided to pursue a career in marine biology. She enrolled in a university program on the coast and spent her summers tagging sea turtles.",
+    "form": "pursue",
+    "wrong_words": [
+      "abandon",
+      "avoid",
+      "inherit"
+    ],
+    "meaning": "Seek",
+    "wrong_meanings": [
+      "Chase down",
+      "Avoid",
+      "Inherit"
+    ]
+  },
+  {
+    "w": "quandary",
+    "passage": "The editor found herself in a quandary. The article was ready to print, but a last-minute source had cast doubt on one of its central claims: publishing on schedule risked spreading an error, while delaying it risked losing the story to a rival paper.",
+    "form": "quandary",
+    "wrong_words": [
+      "triumph",
+      "rage",
+      "stupor"
+    ],
+    "meaning": "Dilemma",
+    "wrong_meanings": [
+      "Rush",
+      "Fury",
+      "Daze"
+    ]
+  },
+  {
+    "w": "quell",
+    "passage": "After a minor chemical spill near the reservoir, many residents worried that their tap water was unsafe. To quell those fears, city officials held a public meeting and released test results showing that the water met every safety standard.",
+    "form": "quell",
+    "wrong_words": [
+      "heighten",
+      "ignore",
+      "share"
+    ],
+    "meaning": "Calm",
+    "wrong_meanings": [
+      "Stir up",
+      "Overlook",
+      "Express"
+    ]
+  },
+  {
+    "w": "questionable",
+    "passage": "The study claimed that a new diet sharply improved memory, but its conclusions were questionable. It included only twelve participants, lasted just one week, and was paid for by the company that sold the diet.",
+    "form": "questionable",
+    "wrong_words": [
+      "convincing",
+      "groundbreaking",
+      "undeniable"
+    ],
+    "meaning": "Doubtful",
+    "wrong_meanings": [
+      "Persuasive",
+      "Curious",
+      "Widely discussed"
+    ]
+  },
+  {
+    "w": "quintessential",
+    "passage": "With its red vinyl booths, chrome counter, and waitress who knows every customer's usual order, the diner is the quintessential small-town restaurant. Filmmakers looking for a classic American setting have used it in more than a dozen movies.",
+    "form": "quintessential",
+    "wrong_words": [
+      "atypical",
+      "newest",
+      "costliest"
+    ],
+    "meaning": "Most typical",
+    "wrong_meanings": [
+      "Least typical",
+      "Most expensive",
+      "Most recent"
+    ]
+  },
+  {
+    "w": "radical",
+    "passage": "The mechanical reaper brought radical changes to farming in the nineteenth century. Harvesting work that had once required a dozen laborers could now be done by one person and a team of horses, and many farm workers left the countryside for factory jobs.",
+    "form": "radical",
+    "wrong_words": [
+      "trivial",
+      "gradual",
+      "temporary"
+    ],
+    "meaning": "Sweeping",
+    "wrong_meanings": [
+      "Extremist",
+      "Slight",
+      "Slow"
+    ]
+  },
+  {
+    "w": "rapport",
+    "passage": "The new teacher worked quickly to build rapport with her students, learning every name on the first day and asking each of them about their interests. By October, even the shyest students felt comfortable sharing their ideas in class.",
+    "form": "rapport",
+    "wrong_words": [
+      "distance",
+      "discipline",
+      "rivalry"
+    ],
+    "meaning": "Friendly connection",
+    "wrong_meanings": [
+      "Formal report",
+      "Strict authority",
+      "Competition"
+    ]
+  },
+  {
+    "w": "ratify",
+    "passage": "The treaty could not take effect until it had been ratified by at least two-thirds of the member nations. After months of debate, the last of the required parliaments voted its approval, and the agreement became binding the following spring.",
+    "form": "ratified",
+    "wrong_words": [
+      "drafted",
+      "violated",
+      "translated"
+    ],
+    "meaning": "Formally approved",
+    "wrong_meanings": [
+      "Written",
+      "Broken",
+      "Reworded"
+    ]
+  },
+  {
+    "w": "rational",
+    "passage": "When stock prices suddenly plunged, many investors sold their shares in a panic. Lena, however, made a rational decision: she reviewed each company's finances, concluded that their long-term prospects were strong, and kept her investments.",
+    "form": "rational",
+    "wrong_words": [
+      "reckless",
+      "frantic",
+      "sentimental"
+    ],
+    "meaning": "Logical",
+    "wrong_meanings": [
+      "Emotional",
+      "Hasty",
+      "Generous"
+    ]
+  },
+  {
+    "w": "rationalize",
+    "passage": "After skipping his third practice in a row, Theo rationalized his absence by telling himself that rest was just as important as training. Deep down, though, he knew the real reason was that he dreaded the coach's grueling new drills.",
+    "form": "rationalized",
+    "wrong_words": [
+      "confessed",
+      "regretted",
+      "announced"
+    ],
+    "meaning": "Excused with false reasons",
+    "wrong_meanings": [
+      "Admitted",
+      "Streamlined",
+      "Calculated"
+    ]
+  },
+  {
+    "w": "readily",
+    "passage": "Before the reservoir was built, fresh water was scarce in the valley, and families walked for miles to collect it. Today, clean water is readily available from taps in every home, and few residents remember the long walks of the past.",
+    "form": "readily",
+    "wrong_words": [
+      "rarely",
+      "seldom",
+      "formerly"
+    ],
+    "meaning": "Easily",
+    "wrong_meanings": [
+      "Eagerly",
+      "Rarely",
+      "Previously"
+    ]
+  },
+  {
+    "w": "realm",
+    "passage": "For centuries, travel to the Moon belonged to the realm of fiction, imagined by novelists but dismissed as impossible by engineers. That changed in the twentieth century, when rockets powerful enough to escape Earth's gravity were finally built.",
+    "form": "realm",
+    "wrong_words": [
+      "economy",
+      "laboratory",
+      "calendar"
+    ],
+    "meaning": "Domain",
+    "wrong_meanings": [
+      "Kingdom",
+      "Price",
+      "Era"
+    ]
+  },
+  {
+    "w": "rebellion",
+    "passage": "At the strict boarding school, students were required to wear the same gray uniform every day. Her bright red socks were a small rebellion, a quiet way of defying the dull rules, and although teachers frowned at them, no one ever forbade them.",
+    "form": "rebellion",
+    "wrong_words": [
+      "tribute",
+      "courtesy",
+      "requirement"
+    ],
+    "meaning": "Act of defiance",
+    "wrong_meanings": [
+      "Armed uprising",
+      "Polite gesture",
+      "Official rule"
+    ]
+  },
+  {
+    "w": "rebuke",
+    "passage": "When the players arrived twenty minutes late for the bus to the championship game, the coach rebuked them sharply in front of the entire team. He warned that anyone who was late again would spend the next game on the bench.",
+    "form": "rebuked",
+    "wrong_words": [
+      "praised",
+      "thanked",
+      "excused"
+    ],
+    "meaning": "Scolded",
+    "wrong_meanings": [
+      "Rewarded",
+      "Forgave",
+      "Defeated"
+    ]
+  },
+  {
+    "w": "rebuttal",
+    "passage": "During the debate, the first speaker argued that the town should ban cars from its main shopping street. Her opponent then delivered a forceful rebuttal, presenting survey data showing that most local shops depended on customers who arrived by car.",
+    "form": "rebuttal",
+    "wrong_words": [
+      "endorsement",
+      "summary",
+      "apology"
+    ],
+    "meaning": "Counterargument",
+    "wrong_meanings": [
+      "Agreement",
+      "Recap",
+      "Apology"
+    ]
+  },
+  {
+    "w": "recalcitrant",
+    "passage": "The farmer's mule was famously recalcitrant. No matter how gently he coaxed it or how hard he tugged on its rope, it planted its hooves at the edge of the wooden bridge and refused to take another step.",
+    "form": "recalcitrant",
+    "wrong_words": [
+      "obedient",
+      "agile",
+      "timid"
+    ],
+    "meaning": "Stubbornly uncooperative",
+    "wrong_meanings": [
+      "Easily frightened",
+      "Willing",
+      "Quick"
+    ]
+  },
+  {
+    "w": "recede",
+    "passage": "In the weeks after the flood, residents waited anxiously for the waters to recede. As the river slowly dropped back within its banks, families returned to find mud coating their floors and furniture.",
+    "form": "recede",
+    "wrong_words": [
+      "rise",
+      "freeze",
+      "overflow"
+    ],
+    "meaning": "Withdraw",
+    "wrong_meanings": [
+      "Swell",
+      "Freeze",
+      "Fade from memory"
+    ]
+  },
+  {
+    "w": "receptive",
+    "passage": "The new manager was receptive to her team's suggestions. She held weekly meetings at which anyone could propose changes, and within her first month several employees' ideas had already been put into practice.",
+    "form": "receptive",
+    "wrong_words": [
+      "hostile",
+      "indifferent",
+      "oblivious"
+    ],
+    "meaning": "Open",
+    "wrong_meanings": [
+      "Opposed",
+      "Uninterested",
+      "Unaware"
+    ]
+  },
+  {
+    "w": "reciprocal",
+    "passage": "Under the new treaty between the two neighboring countries, the visa policy is reciprocal. Each nation allows the other's citizens to live and work within its borders without special permits, so travelers in both directions benefit equally.",
+    "form": "reciprocal",
+    "wrong_words": [
+      "temporary",
+      "unilateral",
+      "secret"
+    ],
+    "meaning": "Mutual",
+    "wrong_meanings": [
+      "One-sided",
+      "Short-term",
+      "Hidden"
+    ]
+  },
+  {
+    "w": "reciprocate",
+    "passage": "When her neighbors spent an entire weekend helping her repair her storm-damaged roof, Mrs. Alvarez was eager to reciprocate. The following Saturday, she cooked them a large dinner and offered to watch their children whenever they needed help.",
+    "form": "reciprocate",
+    "wrong_words": [
+      "complain",
+      "refuse",
+      "apologize"
+    ],
+    "meaning": "Return the favor",
+    "wrong_meanings": [
+      "Move back and forth",
+      "Object",
+      "Decline"
+    ]
+  },
+  {
+    "w": "reciprocity",
+    "passage": "Trade agreements depend on reciprocity. A country that lowers its taxes on foreign goods expects its trading partners to lower their taxes in return, and if they refuse, the agreement usually collapses.",
+    "form": "reciprocity",
+    "wrong_words": [
+      "secrecy",
+      "isolation",
+      "charity"
+    ],
+    "meaning": "Mutual exchange",
+    "wrong_meanings": [
+      "Generosity",
+      "Isolation",
+      "Confidentiality"
+    ]
+  },
+  {
+    "w": "recognizable",
+    "passage": "Although the singer had not released an album in twenty years, her voice remained instantly recognizable. When her new song played on the radio, listeners across the country identified her within the first few notes.",
+    "form": "recognizable",
+    "wrong_words": [
+      "forgettable",
+      "unremarkable",
+      "inaudible"
+    ],
+    "meaning": "Identifiable",
+    "wrong_meanings": [
+      "Admirable",
+      "Unfamiliar",
+      "Loud"
+    ]
+  },
+  {
+    "w": "recollect",
+    "passage": "At ninety, the retired sailor sometimes forgot what he had eaten for breakfast. Yet he could still recollect the name of every ship he had served on and describe the storms each one had weathered decades earlier.",
+    "form": "recollect",
+    "wrong_words": [
+      "forget",
+      "command",
+      "pronounce"
+    ],
+    "meaning": "Remember",
+    "wrong_meanings": [
+      "Gather again",
+      "Forget",
+      "Spell"
+    ]
+  },
+  {
+    "w": "reconcile",
+    "passage": "Biographers have long struggled to reconcile the inventor's public generosity with his private cruelty. He donated fortunes to hospitals and schools, yet letters from his employees describe him as a harsh, even vindictive, boss.",
+    "form": "reconcile",
+    "wrong_words": [
+      "conceal",
+      "celebrate",
+      "document"
+    ],
+    "meaning": "Make consistent",
+    "wrong_meanings": [
+      "Restore friendship",
+      "Hide",
+      "Praise"
+    ]
+  },
+  {
+    "w": "reconstitute",
+    "passage": "After the war scattered its musicians, the city's orchestra stopped performing for several years. In 1950 it was reconstituted as a national ensemble, with new members recruited from across the country and a mission to tour every province.",
+    "form": "reconstituted",
+    "wrong_words": [
+      "dismissed",
+      "criticized",
+      "remembered"
+    ],
+    "meaning": "Re-formed",
+    "wrong_meanings": [
+      "Rehydrated",
+      "Disbanded",
+      "Recalled"
+    ]
+  },
+  {
+    "w": "reconstruct",
+    "passage": "No one has ever seen the dinosaur move, but its footprints survive in hardened mud. By measuring the spacing and depth of those tracks, paleontologists reconstructed how the animal walked, estimating both its stride length and its top speed.",
+    "form": "reconstructed",
+    "wrong_words": [
+      "ignored",
+      "disproved",
+      "excavated"
+    ],
+    "meaning": "Pieced together",
+    "wrong_meanings": [
+      "Rebuilt physically",
+      "Overlooked",
+      "Dug up"
+    ]
+  },
+  {
+    "w": "rectify",
+    "passage": "When hundreds of customers discovered they had been charged twice for the same order, the company issued an apology. It promised to rectify the error within a week by refunding every extra charge.",
+    "form": "rectify",
+    "wrong_words": [
+      "repeat",
+      "conceal",
+      "investigate"
+    ],
+    "meaning": "Correct",
+    "wrong_meanings": [
+      "Repeat",
+      "Hide",
+      "Explain"
+    ]
+  },
+  {
+    "w": "redefine",
+    "passage": "For centuries, maps were printed on paper and updated only every few years. Satellite navigation redefined what a map could be, turning it into a constantly updated guide that could reroute drivers around traffic in seconds.",
+    "form": "redefined",
+    "wrong_words": [
+      "preserved",
+      "limited",
+      "imitated"
+    ],
+    "meaning": "Transformed",
+    "wrong_meanings": [
+      "Explained again",
+      "Kept the same",
+      "Narrowed"
+    ]
+  },
+  {
+    "w": "redress",
+    "passage": "For decades, women at the company had earned less than men for the same work. The new policy was designed to redress that injustice: it required managers to review every salary and pay back wages to employees who had been underpaid.",
+    "form": "redress",
+    "wrong_words": [
+      "conceal",
+      "prolong",
+      "measure"
+    ],
+    "meaning": "Remedy",
+    "wrong_meanings": [
+      "Dress again",
+      "Continue",
+      "Record"
+    ]
+  },
+  {
+    "w": "redundant",
+    "passage": "The editor crossed out the phrase \"past history\" in the student's essay. She explained that the word \"past\" was redundant, since history is by definition about events that have already happened.",
+    "form": "redundant",
+    "wrong_words": [
+      "vague",
+      "offensive",
+      "informal"
+    ],
+    "meaning": "Unnecessarily repetitive",
+    "wrong_meanings": [
+      "Out of a job",
+      "Unclear",
+      "Rude"
+    ]
+  },
+  {
+    "w": "reenact",
+    "passage": "Every summer, hundreds of volunteers dressed in wool coats and tricorn hats gather to reenact a Revolutionary War battle on the field where it was fought. They march in the original formations and fire blank charges from muskets while spectators watch from the hillside.",
+    "form": "reenact",
+    "wrong_words": [
+      "forget",
+      "avoid",
+      "oppose"
+    ],
+    "meaning": "Act out again",
+    "wrong_meanings": [
+      "Pass into law again",
+      "Remember",
+      "Fight for real"
+    ]
+  },
+  {
+    "w": "refine",
+    "passage": "The first trial of the new water filter produced inconsistent results. Rather than starting over, the engineers refined their design, adjusting the size of the filter's pores and slowing the flow of water, until every test met the safety standard.",
+    "form": "refined",
+    "wrong_words": [
+      "abandoned",
+      "published",
+      "concealed"
+    ],
+    "meaning": "Improved",
+    "wrong_meanings": [
+      "Purified",
+      "Gave up",
+      "Publicized"
+    ]
+  },
+  {
+    "w": "reform",
+    "passage": "In the 1880s, the city's police department was notorious for bribery and favoritism. A series of reforms, including hiring officers through written exams rather than political connections, gradually transformed it into one of the most respected departments in the country.",
+    "form": "reforms",
+    "wrong_words": [
+      "scandals",
+      "traditions",
+      "lawsuits"
+    ],
+    "meaning": "Improvements",
+    "wrong_meanings": [
+      "Punishments",
+      "Customs",
+      "Protests"
+    ]
+  },
+  {
+    "w": "refute",
+    "passage": "For decades, many doctors believed that stomach ulcers were caused mainly by stress. That belief was refuted when researchers demonstrated that most ulcers are caused by a bacterium and can be cured with antibiotics.",
+    "form": "refuted",
+    "wrong_words": [
+      "confirmed",
+      "adopted",
+      "inherited"
+    ],
+    "meaning": "Disproved",
+    "wrong_meanings": [
+      "Declined",
+      "Supported",
+      "Repeated"
+    ]
+  },
+  {
+    "w": "regime",
+    "passage": "In the novel, a military regime seizes power in a small island nation and immediately shuts down every independent newspaper. The story follows a young printer who secretly publishes pamphlets criticizing the generals who now rule the country.",
+    "form": "regime",
+    "wrong_words": [
+      "academy",
+      "parade",
+      "alliance"
+    ],
+    "meaning": "Government",
+    "wrong_meanings": [
+      "Fitness routine",
+      "Era",
+      "Political party"
+    ]
+  },
+  {
+    "w": "regulate",
+    "passage": "Unlike mammals, desert lizards cannot produce much of their own body heat. Instead, they regulate their temperature through behavior, basking on sunny rocks in the cool morning and retreating into shady burrows during the midday heat.",
+    "form": "regulate",
+    "wrong_words": [
+      "raise",
+      "measure",
+      "ignore"
+    ],
+    "meaning": "Control",
+    "wrong_meanings": [
+      "Make laws for",
+      "Measure",
+      "Increase"
+    ]
+  },
+  {
+    "w": "reinforce",
+    "passage": "A team of biologists found that honeybees could learn to recognize photographs of particular human faces. A second study, using an entirely different set of photographs, reinforced that conclusion, since the bees once again picked out the faces they had been trained on.",
+    "form": "reinforced",
+    "wrong_words": [
+      "undermined",
+      "contradicted",
+      "replaced"
+    ],
+    "meaning": "Strengthened",
+    "wrong_meanings": [
+      "Weakened",
+      "Added troops to",
+      "Overturned"
+    ]
+  },
+  {
+    "w": "rejection",
+    "passage": "Most astronomers of her era accepted the idea that the universe was static and unchanging. The young astronomer's outright rejection of that model shocked her colleagues, but her measurements of distant galaxies eventually persuaded many of them that the universe is expanding.",
+    "form": "rejection",
+    "wrong_words": [
+      "acceptance",
+      "defense",
+      "imitation"
+    ],
+    "meaning": "Refusal to accept",
+    "wrong_meanings": [
+      "Being turned down",
+      "Support",
+      "Copying"
+    ]
+  },
+  {
+    "w": "relegate",
+    "passage": "When the school opened its new science wing, the old wooden lab tables were relegated to a storage room in the basement. There they sat for years, collecting dust, while students worked at gleaming new benches upstairs.",
+    "form": "relegated",
+    "wrong_words": [
+      "promoted",
+      "sold",
+      "returned"
+    ],
+    "meaning": "Banished",
+    "wrong_meanings": [
+      "Promoted",
+      "Assigned a task",
+      "Sold"
+    ]
+  },
+  {
+    "w": "relentless",
+    "passage": "For eleven straight days, the relentless rain soaked the region. Not a single hour passed without a downpour, and rivers rose until they spilled over their banks and flooded the streets of several towns.",
+    "form": "relentless",
+    "wrong_words": [
+      "intermittent",
+      "gentle",
+      "welcome"
+    ],
+    "meaning": "Unceasing",
+    "wrong_meanings": [
+      "Occasional",
+      "Light",
+      "Welcome"
+    ]
+  },
+  {
+    "w": "reliability",
+    "passage": "The researchers questioned the reliability of the survey's data. Adults had been asked to recall exactly how many hours they had slept each night as young children, and memories that old are often inaccurate.",
+    "form": "reliability",
+    "wrong_words": [
+      "relevance",
+      "popularity",
+      "length"
+    ],
+    "meaning": "Trustworthiness",
+    "wrong_meanings": [
+      "Relation to the topic",
+      "Popularity",
+      "Size"
+    ]
+  },
+  {
+    "w": "relinquish",
+    "passage": "After leading the company for thirty years, the founder finally agreed to relinquish control to a younger board of directors. She kept an office in the building, but she no longer made decisions about the company's products or budget.",
+    "form": "relinquish",
+    "wrong_words": [
+      "seize",
+      "expand",
+      "demand"
+    ],
+    "meaning": "Give up",
+    "wrong_meanings": [
+      "Take by force",
+      "Increase",
+      "Request"
+    ]
+  },
+  {
+    "w": "reluctance",
+    "passage": "Despite his reluctance to speak in public, the shy engineer agreed to present the team's findings at the conference. He rehearsed for weeks in front of a mirror, and his hands still trembled as he walked onto the stage.",
+    "form": "reluctance",
+    "wrong_words": [
+      "eagerness",
+      "talent",
+      "training"
+    ],
+    "meaning": "Unwillingness",
+    "wrong_meanings": [
+      "Eagerness",
+      "Skill",
+      "Preparation"
+    ]
+  },
+  {
+    "w": "remiss",
+    "passage": "The museum director began her speech by saying that she would be remiss not to thank the volunteers. Over the past year, they had spent more than 2,000 unpaid hours cleaning and repairing the exhibit's fragile tapestries.",
+    "form": "remiss",
+    "wrong_words": [
+      "justified",
+      "pleased",
+      "eager"
+    ],
+    "meaning": "Neglectful",
+    "wrong_meanings": [
+      "Pardoned",
+      "Relieved",
+      "Eager"
+    ]
+  },
+  {
+    "w": "remnant",
+    "passage": "Only a small remnant of the ancient city wall still stands. The crumbling stretch of stone, about ten meters long, is now surrounded by apartment buildings, and few passersby realize that it once encircled the entire medieval town.",
+    "form": "remnant",
+    "wrong_words": [
+      "replica",
+      "blueprint",
+      "monument"
+    ],
+    "meaning": "Leftover piece",
+    "wrong_meanings": [
+      "Copy",
+      "Plan",
+      "Memorial"
+    ]
+  },
+  {
+    "w": "remorse",
+    "passage": "In the novel's final chapter, the thief returns the stolen necklace and confesses to the family, weeping. His remorse is genuine: he spends the rest of his life working to repay the people he wronged.",
+    "form": "remorse",
+    "wrong_words": [
+      "pride",
+      "greed",
+      "amusement"
+    ],
+    "meaning": "Deep regret",
+    "wrong_meanings": [
+      "Pride",
+      "Greed",
+      "Fear of punishment"
+    ]
+  },
+  {
+    "w": "remote",
+    "passage": "The searchers knew their chance of finding the lost ring on the beach was remote. The tide had come in twice since it was dropped, and the sand stretched for miles in both directions.",
+    "form": "remote",
+    "wrong_words": [
+      "certain",
+      "excellent",
+      "guaranteed"
+    ],
+    "meaning": "Slight",
+    "wrong_meanings": [
+      "Far away",
+      "Controlled from afar",
+      "Strong"
+    ]
+  },
+  {
+    "w": "render",
+    "passage": "The spring flood washed away a large section of the mountain road and rendered it impassable for weeks. Until repairs were finished, the village at the top of the pass could be reached only by helicopter.",
+    "form": "rendered",
+    "wrong_words": [
+      "kept",
+      "found",
+      "declared"
+    ],
+    "meaning": "Made",
+    "wrong_meanings": [
+      "Gave",
+      "Painted",
+      "Translated"
+    ]
+  },
+  {
+    "w": "renovate",
+    "passage": "Instead of tearing down the century-old theater, a group of volunteers spent three years renovating it. They repaired the leaking roof, restored the painted ceiling, and replaced hundreds of torn velvet seats.",
+    "form": "renovating",
+    "wrong_words": [
+      "demolishing",
+      "selling",
+      "touring"
+    ],
+    "meaning": "Restoring",
+    "wrong_meanings": [
+      "Tearing down",
+      "Renaming",
+      "Visiting"
+    ]
+  },
+  {
+    "w": "renown",
+    "passage": "Inés Calder, the chef at the center of the novel, begins her career in a tiny roadside café. Her desserts eventually win her international renown, and food lovers travel from across the world to taste them.",
+    "form": "renown",
+    "wrong_words": [
+      "obscurity",
+      "debt",
+      "criticism"
+    ],
+    "meaning": "Fame",
+    "wrong_meanings": [
+      "Wealth",
+      "Disapproval",
+      "Anonymity"
+    ]
+  },
+  {
+    "w": "repercussion",
+    "passage": "The decision to drain the wetland and build a shopping center had repercussions that its planners never anticipated. Without the marsh to absorb rainwater, nearby neighborhoods began to flood during storms, and property values fell.",
+    "form": "repercussions",
+    "wrong_words": [
+      "benefits",
+      "blueprints",
+      "sponsors"
+    ],
+    "meaning": "Unintended consequences",
+    "wrong_meanings": [
+      "Echoes",
+      "Advantages",
+      "Designs"
+    ]
+  },
+  {
+    "w": "repertoire",
+    "passage": "The northern mockingbird has an enormous repertoire. A single male may imitate the songs of dozens of other bird species, along with sounds such as car alarms and creaking gates, and he keeps adding new songs throughout his life.",
+    "form": "repertoire",
+    "wrong_words": [
+      "territory",
+      "appetite",
+      "wingspan"
+    ],
+    "meaning": "Range of songs",
+    "wrong_meanings": [
+      "Territory",
+      "Appetite",
+      "Audience"
+    ]
+  },
+  {
+    "w": "repetitive",
+    "passage": "Workers on the assembly line spent eight hours a day tightening the same four bolts on identical parts. Because the work was so repetitive, many workers complained of boredom, and the factory eventually installed machines to do the task.",
+    "form": "repetitive",
+    "wrong_words": [
+      "dangerous",
+      "creative",
+      "varied"
+    ],
+    "meaning": "Monotonous",
+    "wrong_meanings": [
+      "Risky",
+      "Inventive",
+      "Diverse"
+    ]
+  },
+  {
+    "w": "replicate",
+    "passage": "The original study reported that a simple breathing exercise dramatically improved students' test scores. When three other laboratories tried to replicate the experiment using the same procedures, however, none of them found any effect, and many scientists began to doubt the result.",
+    "form": "replicate",
+    "wrong_words": [
+      "fund",
+      "cancel",
+      "publicize"
+    ],
+    "meaning": "Repeat",
+    "wrong_meanings": [
+      "Pay for",
+      "Publish",
+      "Reverse"
+    ]
+  },
+  {
+    "w": "repress",
+    "passage": "During the solemn ceremony, the guest of honor tripped on the stage steps and sent his notes flying. The young usher had to repress a laugh, biting her lip and staring at the floor until the moment had passed.",
+    "form": "repress",
+    "wrong_words": [
+      "share",
+      "release",
+      "explain"
+    ],
+    "meaning": "Hold back",
+    "wrong_meanings": [
+      "Crush by force",
+      "Let out",
+      "Imitate"
+    ]
+  },
+  {
+    "w": "reprieve",
+    "passage": "After two weeks of scorching temperatures, a brief thunderstorm offered residents a reprieve from the heat wave. By the next afternoon, however, the thermometer had climbed past 100 degrees again.",
+    "form": "reprieve",
+    "wrong_words": [
+      "warning",
+      "reminder",
+      "preview"
+    ],
+    "meaning": "Temporary relief",
+    "wrong_meanings": [
+      "Pardon from execution",
+      "Warning",
+      "Preview"
+    ]
+  }
+]

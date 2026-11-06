@@ -1,0 +1,1714 @@
+[
+ {
+  "w": "feudal",
+  "passage": "In medieval Europe, most peasants worked land they did not own. Under the feudal system, a lord granted estates to vassals, who in return pledged military service and a share of each harvest. This web of obligations bound together kings, nobles, and farmers for centuries.",
+  "form": "feudal",
+  "wrong_words": [
+   "democratic",
+   "mercantile",
+   "nomadic"
+  ],
+  "meaning": "Based on land granted for service",
+  "wrong_meanings": [
+   "Based on elected representation",
+   "Based on trade between cities",
+   "Based on shared family ownership"
+  ]
+ },
+ {
+  "w": "finite",
+  "passage": "Groundwater in many desert aquifers accumulated over thousands of years and is replenished only slowly by rain. Because this supply is finite, hydrologists warn that pumping it faster than it refills will eventually leave wells dry.",
+  "form": "finite",
+  "wrong_words": [
+   "abundant",
+   "renewable",
+   "contaminated"
+  ],
+  "meaning": "Limited in amount",
+  "wrong_meanings": [
+   "Clearly defined",
+   "Already completed",
+   "Precisely measured"
+  ]
+ },
+ {
+  "w": "flourish",
+  "passage": "After a dam was removed from the river, salmon returned to spawning grounds they had not reached in decades. Within a few years, the fish began to flourish, and the eagles and bears that feed on them grew more numerous as well.",
+  "form": "flourish",
+  "wrong_words": [
+   "migrate",
+   "decline",
+   "disperse"
+  ],
+  "meaning": "Thrive",
+  "wrong_meanings": [
+   "Wave about boldly",
+   "Spread out",
+   "Mature slowly"
+  ]
+ },
+ {
+  "w": "fluctuate",
+  "passage": "Desert temperatures can fluctuate dramatically within a single day: a sandy plain that reaches 45°C by mid-afternoon may drop close to freezing before dawn. Animals living there must cope with both extremes.",
+  "form": "fluctuate",
+  "wrong_words": [
+   "stabilize",
+   "accumulate",
+   "persist"
+  ],
+  "meaning": "Rise and fall",
+  "wrong_meanings": [
+   "Remain steady",
+   "Climb steadily",
+   "Spread evenly"
+  ]
+ },
+ {
+  "w": "fluctuation",
+  "passage": "Economists tracking the price of coffee beans noticed a sharp fluctuation last year. Prices nearly doubled in the spring after a frost damaged crops, then fell back to their earlier level by autumn once new harvests arrived.",
+  "form": "fluctuation",
+  "wrong_words": [
+   "decline",
+   "surplus",
+   "shortage"
+  ],
+  "meaning": "Swing up and down",
+  "wrong_meanings": [
+   "Steady drop",
+   "Excess supply",
+   "Lack of supply"
+  ]
+ },
+ {
+  "w": "flux",
+  "passage": "During the early years of the internet, the rules of the music business were in flux. Record labels, artists, and new online services were all experimenting with different ways to sell songs, and no one could predict which model would last.",
+  "form": "flux",
+  "wrong_words": [
+   "decline",
+   "balance",
+   "force"
+  ],
+  "meaning": "Constant change",
+  "wrong_meanings": [
+   "Steady flow",
+   "Sharp decline",
+   "Firm agreement"
+  ]
+ },
+ {
+  "w": "forge",
+  "passage": "Facing a common rival, the two small kingdoms worked to forge an alliance. Their rulers arranged a marriage between their families, exchanged ambassadors, and agreed to defend each other's borders, creating a partnership that lasted more than a century.",
+  "form": "forge",
+  "wrong_words": [
+   "dissolve",
+   "postpone",
+   "imitate"
+  ],
+  "meaning": "Build",
+  "wrong_meanings": [
+   "Fake",
+   "Hammer into shape",
+   "Move ahead steadily"
+  ]
+ },
+ {
+  "w": "formidable",
+  "passage": "Early mountaineers regarded the peak's north face as truly formidable. Its sheer walls of ice rose nearly two kilometers, and sudden storms had turned back every team that attempted it for thirty years.",
+  "form": "formidable",
+  "wrong_words": [
+   "trivial",
+   "manageable",
+   "scenic"
+  ],
+  "meaning": "Intimidatingly difficult",
+  "wrong_meanings": [
+   "Widely admired",
+   "Beautifully shaped",
+   "Easily overcome"
+  ]
+ },
+ {
+  "w": "forsake",
+  "passage": "In the novel, Elena is offered a comfortable position in the city if she will forsake the struggling village school she founded. She refuses, telling the messenger that she would rather teach by candlelight than leave her students without a teacher.",
+  "form": "forsake",
+  "wrong_words": [
+   "expand",
+   "renovate",
+   "promote"
+  ],
+  "meaning": "Abandon",
+  "wrong_meanings": [
+   "Criticize",
+   "Rename",
+   "Support"
+  ]
+ },
+ {
+  "w": "forthcoming",
+  "passage": "When reporters asked the mayor's office how the contract had been awarded, officials were not forthcoming. They declined to release the bidding documents and referred all questions to a lawyer, who also refused to comment.",
+  "form": "forthcoming",
+  "wrong_words": [
+   "prepared",
+   "mistaken",
+   "present"
+  ],
+  "meaning": "Willing to share information",
+  "wrong_meanings": [
+   "Scheduled to happen",
+   "Easy to locate",
+   "Polite to visitors"
+  ]
+ },
+ {
+  "w": "fortify",
+  "passage": "To protect the harbor from naval raids, colonial engineers worked to fortify its entrance. They built thick stone walls along both shores, mounted cannons on the cliffs, and stretched a heavy chain across the channel that could be raised to block approaching ships.",
+  "form": "fortify",
+  "wrong_words": [
+   "widen",
+   "survey",
+   "decorate"
+  ],
+  "meaning": "Strengthen against attack",
+  "wrong_meanings": [
+   "Enrich with vitamins",
+   "Make wider",
+   "Map out"
+  ]
+ },
+ {
+  "w": "fortitude",
+  "passage": "Recovering from a spinal injury, the young violinist spent eighteen months relearning how to hold her bow. Her teachers marveled at her fortitude: despite constant pain and slow progress, she practiced every day without complaint and returned to the stage within two years.",
+  "form": "fortitude",
+  "wrong_words": [
+   "talent",
+   "wealth",
+   "impatience"
+  ],
+  "meaning": "Courage through hardship",
+  "wrong_meanings": [
+   "Musical skill",
+   "Good fortune",
+   "Stubborn pride"
+  ]
+ },
+ {
+  "w": "fortuitous",
+  "passage": "The discovery of the cave paintings was entirely fortuitous. Four teenagers chasing a runaway dog stumbled into a narrow opening in the hillside and found walls covered with images of horses and bison that had gone unseen for thousands of years.",
+  "form": "fortuitous",
+  "wrong_words": [
+   "deliberate",
+   "inevitable",
+   "systematic"
+  ],
+  "meaning": "Lucky and unplanned",
+  "wrong_meanings": [
+   "Carefully planned",
+   "Widely reported",
+   "Financially rewarding"
+  ]
+ },
+ {
+  "w": "foster",
+  "passage": "Hoping to foster cooperation among residents, the city converted several empty lots into community gardens. Neighbors who had never spoken began sharing tools, trading seeds, and organizing harvest dinners together.",
+  "form": "foster",
+  "wrong_words": [
+   "require",
+   "measure",
+   "discourage"
+  ],
+  "meaning": "Encourage",
+  "wrong_meanings": [
+   "Raise as a guardian",
+   "Demand",
+   "Record"
+  ]
+ },
+ {
+  "w": "foundational",
+  "passage": "For centuries, students of geometry began with the same ancient textbook. Its definitions and proofs were foundational, providing the basic principles on which later mathematicians built entire new fields, from trigonometry to the study of curved surfaces.",
+  "form": "foundational",
+  "wrong_words": [
+   "obsolete",
+   "decorative",
+   "controversial"
+  ],
+  "meaning": "Basic and essential",
+  "wrong_meanings": [
+   "Out of date",
+   "Physically structural",
+   "Widely disputed"
+  ]
+ },
+ {
+  "w": "fragile",
+  "passage": "Coral reefs are fragile ecosystems. A rise in water temperature of just one or two degrees can cause corals to expel the algae that feed them, and a single careless anchor drop can destroy colonies that took centuries to grow.",
+  "form": "fragile",
+  "wrong_words": [
+   "resilient",
+   "productive",
+   "remote"
+  ],
+  "meaning": "Easily damaged",
+  "wrong_meanings": [
+   "Rarely visited",
+   "Highly productive",
+   "Lightweight"
+  ]
+ },
+ {
+  "w": "fringe",
+  "passage": "For decades, the idea that continents drift across Earth's surface was a fringe theory, dismissed by most geologists as fanciful. Only in the 1960s, when maps of the ocean floor revealed spreading ridges, did the idea move into the scientific mainstream.",
+  "form": "fringe",
+  "wrong_words": [
+   "popular",
+   "settled",
+   "central"
+  ],
+  "meaning": "Outside the mainstream",
+  "wrong_meanings": [
+   "Along the outer edge",
+   "Carefully tested",
+   "Widely accepted"
+  ]
+ },
+ {
+  "w": "frivolous",
+  "passage": "The museum's board rejected the proposal for a gold-plated entrance sign. Members called the expense frivolous at a time when the roof leaked and several galleries lacked the climate control needed to protect old paintings.",
+  "form": "frivolous",
+  "wrong_words": [
+   "necessary",
+   "modest",
+   "overdue"
+  ],
+  "meaning": "Lacking serious purpose",
+  "wrong_meanings": [
+   "Playful and lighthearted",
+   "Legally questionable",
+   "Carefully planned"
+  ]
+ },
+ {
+  "w": "frugal",
+  "passage": "Living on a teacher's small salary, my grandmother was famously frugal. She reused wrapping paper, mended her clothes instead of replacing them, and grew most of the vegetables her family ate, yet she still saved enough to pay for three children's college tuition.",
+  "form": "frugal",
+  "wrong_words": [
+   "generous",
+   "careless",
+   "wealthy"
+  ],
+  "meaning": "Thrifty",
+  "wrong_meanings": [
+   "Strict",
+   "Wealthy",
+   "Hardworking"
+  ]
+ },
+ {
+  "w": "fundamental",
+  "passage": "Some discoveries refine existing theories; others require a fundamental change in how scientists think. When researchers learned that some microbes live without sunlight, near volcanic vents on the ocean floor, they had to rethink basic assumptions about where life can exist.",
+  "form": "fundamental",
+  "wrong_words": [
+   "minor",
+   "temporary",
+   "gradual"
+  ],
+  "meaning": "Basic and far-reaching",
+  "wrong_meanings": [
+   "Small and gradual",
+   "Purely technical",
+   "Required by law"
+  ]
+ },
+ {
+  "w": "futile",
+  "passage": "Engineers spent years trying to keep the desert highway clear by plowing away drifting sand, but the effort proved futile: each storm buried the road again within hours. Eventually, they planted rows of shrubs to slow the wind, which finally kept the dunes in place.",
+  "form": "futile",
+  "wrong_words": [
+   "efficient",
+   "controversial",
+   "popular"
+  ],
+  "meaning": "Pointless",
+  "wrong_meanings": [
+   "Expensive",
+   "Lengthy",
+   "Dangerous"
+  ]
+ },
+ {
+  "w": "galvanize",
+  "passage": "The collapse of a poorly maintained bridge in one Midwestern city helped galvanize public support for national inspection standards. Within months, citizens who had rarely thought about infrastructure were writing to legislators, and new safety laws passed with broad backing.",
+  "form": "galvanize",
+  "wrong_words": [
+   "weaken",
+   "conceal",
+   "delay"
+  ],
+  "meaning": "Stir up",
+  "wrong_meanings": [
+   "Coat with zinc",
+   "Shock electrically",
+   "Divide"
+  ]
+ },
+ {
+  "w": "garner",
+  "passage": "The documentary was made on a tiny budget by two first-time filmmakers, yet it managed to garner widespread praise. Critics called it the most moving film of the year, and it went on to win awards at festivals on three continents.",
+  "form": "garner",
+  "wrong_words": [
+   "avoid",
+   "imitate",
+   "withdraw"
+  ],
+  "meaning": "Gather",
+  "wrong_meanings": [
+   "Store as grain",
+   "Decorate",
+   "Reject"
+  ]
+ },
+ {
+  "w": "gauge",
+  "passage": "Before launching a new line of sneakers nationwide, the company released a small batch in three cities to gauge customer interest. Sales data from those stores would show whether the design was popular enough to justify mass production.",
+  "form": "gauge",
+  "wrong_words": [
+   "ignore",
+   "inflate",
+   "satisfy"
+  ],
+  "meaning": "Measure",
+  "wrong_meanings": [
+   "Increase",
+   "Disregard",
+   "Fulfill"
+  ]
+ },
+ {
+  "w": "generalize",
+  "passage": "The study surveyed only college students in a single city, so the authors cautioned readers not to generalize its results to all adults. People of different ages and backgrounds, they noted, might respond very differently to the same questions.",
+  "form": "generalize",
+  "wrong_words": [
+   "exaggerate",
+   "dismiss",
+   "conceal"
+  ],
+  "meaning": "Extend broadly",
+  "wrong_meanings": [
+   "Overstate",
+   "Simplify",
+   "Reject"
+  ]
+ },
+ {
+  "w": "generate",
+  "passage": "Wind turbines along the coast now generate about a third of the region's electricity. On especially gusty days, the turbines produce more power than local homes can use, and the surplus is sent to neighboring states.",
+  "form": "generate",
+  "wrong_words": [
+   "consume",
+   "conserve",
+   "transmit"
+  ],
+  "meaning": "Produce",
+  "wrong_meanings": [
+   "Use up",
+   "Save",
+   "Carry"
+  ]
+ },
+ {
+  "w": "genuine",
+  "passage": "Appraisers were skeptical when a farmer brought in a painting he claimed was a lost work by a famous seventeenth-century artist. After chemical tests showed that its pigments and canvas matched those of the period, however, experts agreed that the painting was genuine.",
+  "form": "genuine",
+  "wrong_words": [
+   "valuable",
+   "damaged",
+   "famous"
+  ],
+  "meaning": "Authentic",
+  "wrong_meanings": [
+   "Sincere",
+   "Expensive",
+   "Well preserved"
+  ]
+ },
+ {
+  "w": "glean",
+  "passage": "Because few written records survive from the town's early years, historians have had to glean details about daily life from scattered sources: tax receipts, shipping logs, a handful of letters, and household objects found in old wells. From these fragments, a surprisingly detailed picture of the town has emerged.",
+  "form": "glean",
+  "wrong_words": [
+   "invent",
+   "publish",
+   "discard"
+  ],
+  "meaning": "Gather bit by bit",
+  "wrong_meanings": [
+   "Harvest grain",
+   "Make up",
+   "Throw out"
+  ]
+ },
+ {
+  "w": "grapple",
+  "passage": "Coastal cities are still trying to grapple with the effects of rising sea levels. Planners must decide whether to build seawalls, raise roads, or move entire neighborhoods inland, and each option is expensive and controversial.",
+  "form": "grapple",
+  "wrong_words": [
+   "agree",
+   "coincide",
+   "dispense"
+  ],
+  "meaning": "Struggle",
+  "wrong_meanings": [
+   "Wrestle physically",
+   "Cooperate",
+   "Interfere"
+  ]
+ },
+ {
+  "w": "grasp",
+  "passage": "At first, the apprentice could follow the master carpenter's instructions but could not grasp why each joint had to be cut at a particular angle. Only after a poorly fitted chair collapsed beneath him did he see how the angles distributed weight.",
+  "form": "grasp",
+  "wrong_words": [
+   "measure",
+   "remember",
+   "admire"
+  ],
+  "meaning": "Understand",
+  "wrong_meanings": [
+   "Hold tightly",
+   "Reach for",
+   "Accept"
+  ]
+ },
+ {
+  "w": "gregarious",
+  "passage": "Unlike solitary leopards, lions are gregarious animals. They live in prides of up to thirty individuals, hunt cooperatively, and spend much of the day resting together in the shade.",
+  "form": "gregarious",
+  "wrong_words": [
+   "nocturnal",
+   "aggressive",
+   "carnivorous"
+  ],
+  "meaning": "Living in groups",
+  "wrong_meanings": [
+   "Talkative",
+   "Fierce",
+   "Active at night"
+  ]
+ },
+ {
+  "w": "grievance",
+  "passage": "The workers' chief grievance was the factory's twelve-hour shift, which left them exhausted and, they argued, more likely to suffer accidents. After months of petitions went unanswered, they organized a strike demanding an eight-hour day.",
+  "form": "grievance",
+  "wrong_words": [
+   "achievement",
+   "reward",
+   "ambition"
+  ],
+  "meaning": "Complaint",
+  "wrong_meanings": [
+   "Sorrow",
+   "Benefit",
+   "Goal"
+  ]
+ },
+ {
+  "w": "guarantee",
+  "passage": "Because rainfall in the region varies so much from year to year, no amount of careful planting can guarantee a good harvest. Farmers therefore grow several different crops, hoping that at least some will thrive whatever the weather.",
+  "form": "guarantee",
+  "wrong_words": [
+   "prevent",
+   "delay",
+   "encourage"
+  ],
+  "meaning": "Ensure",
+  "wrong_meanings": [
+   "Prevent",
+   "Promote",
+   "Postpone"
+  ]
+ },
+ {
+  "w": "habitat",
+  "passage": "The giant panda's habitat is limited to a few mountain ranges in central China, where cool, damp bamboo forests provide nearly all of the animal's food. As roads and farms have divided these forests, conservationists have worked to reconnect them with wildlife corridors.",
+  "form": "habitat",
+  "wrong_words": [
+   "diet",
+   "population",
+   "migration"
+  ],
+  "meaning": "Natural home",
+  "wrong_meanings": [
+   "Daily routine",
+   "Food supply",
+   "Total number"
+  ]
+ },
+ {
+  "w": "hackneyed",
+  "passage": "The novel's critics found little to praise in its plot, which relied on hackneyed devices: a long-lost twin, a mysterious letter that arrives at the perfect moment, and a villain who explains his scheme just before being caught. Several reviewers complained that they had seen every twist coming.",
+  "form": "hackneyed",
+  "wrong_words": [
+   "innovative",
+   "subtle",
+   "elaborate"
+  ],
+  "meaning": "Overused",
+  "wrong_meanings": [
+   "Original",
+   "Complicated",
+   "Barely noticeable"
+  ]
+ },
+ {
+  "w": "harbinger",
+  "passage": "In many northern towns, the first red-winged blackbirds of the year are treated as a harbinger of spring. The males arrive in late winter, often while snow still covers the ground, and their calls signal that warmer weather will soon follow.",
+  "form": "harbinger",
+  "wrong_words": [
+   "relic",
+   "victim",
+   "cause"
+  ],
+  "meaning": "Early sign",
+  "wrong_meanings": [
+   "Leftover trace",
+   "Main cause",
+   "Common victim"
+  ]
+ },
+ {
+  "w": "hasty",
+  "passage": "The committee's hasty decision to close the library branch drew criticism from residents. Members had voted after only ten minutes of discussion, without reviewing usage data or asking the public for comment.",
+  "form": "hasty",
+  "wrong_words": [
+   "unanimous",
+   "popular",
+   "reluctant"
+  ],
+  "meaning": "Rushed",
+  "wrong_meanings": [
+   "Agreed on by all",
+   "Well supported",
+   "Hesitant"
+  ]
+ },
+ {
+  "w": "heed",
+  "passage": "Hikers who heed the rangers' warnings about afternoon thunderstorms usually start their climbs before dawn and are off the exposed summit by noon. Those who ignore the advice risk being caught above the tree line when lightning strikes.",
+  "form": "heed",
+  "wrong_words": [
+   "issue",
+   "doubt",
+   "forget"
+  ],
+  "meaning": "Pay attention to",
+  "wrong_meanings": [
+   "Give out",
+   "Question",
+   "Write down"
+  ]
+ },
+ {
+  "w": "hegemony",
+  "passage": "For much of the nineteenth century, Britain's navy was larger than the next two navies combined, giving the nation a hegemony over world sea trade that few rivals dared to challenge. Its warships patrolled merchant routes from the Caribbean to the Indian Ocean.",
+  "form": "hegemony",
+  "wrong_words": [
+   "dependence",
+   "rivalry",
+   "neutrality"
+  ],
+  "meaning": "Dominance",
+  "wrong_meanings": [
+   "Reliance",
+   "Competition",
+   "Impartiality"
+  ]
+ },
+ {
+  "w": "hence",
+  "passage": "The island's soil is thin and its rainfall unpredictable; hence, most of its food has always arrived by ship. When storms delayed deliveries, residents relied on salted fish and stored grain.",
+  "form": "hence",
+  "wrong_words": [
+   "however",
+   "meanwhile",
+   "nevertheless"
+  ],
+  "meaning": "As a result",
+  "wrong_meanings": [
+   "In contrast",
+   "At the same time",
+   "Despite this"
+  ]
+ },
+ {
+  "w": "heterogeneous",
+  "passage": "The soil samples from the floodplain were remarkably heterogeneous. Within a few meters, researchers found layers of fine clay, coarse gravel, and sand rich in decaying leaves, each left by a different flood.",
+  "form": "heterogeneous",
+  "wrong_words": [
+   "uniform",
+   "fertile",
+   "shallow"
+  ],
+  "meaning": "Varied",
+  "wrong_meanings": [
+   "Uniform",
+   "Fertile",
+   "Thin"
+  ]
+ },
+ {
+  "w": "hierarchy",
+  "passage": "Within a wolf pack, a clear hierarchy determines which animals eat first after a hunt and which may breed. Subordinate wolves typically drop their heads and tails when approaching the dominant pair.",
+  "form": "hierarchy",
+  "wrong_words": [
+   "territory",
+   "alliance",
+   "rivalry"
+  ],
+  "meaning": "Ranking system",
+  "wrong_meanings": [
+   "Home range",
+   "Partnership",
+   "Competition"
+  ]
+ },
+ {
+  "w": "hinder",
+  "passage": "Heavy snowfall continued to hinder rescue efforts on the mountain. Helicopters could not fly in the low clouds, and teams on foot advanced only a few hundred meters per hour through drifts as deep as their waists.",
+  "form": "hinder",
+  "wrong_words": [
+   "assist",
+   "inspire",
+   "conclude"
+  ],
+  "meaning": "Slow down",
+  "wrong_meanings": [
+   "Help",
+   "Motivate",
+   "End"
+  ]
+ },
+ {
+  "w": "hoard",
+  "passage": "As autumn days grow shorter, red squirrels hoard pinecones in large piles beneath their favorite trees. These stores, which can contain thousands of cones, allow the animals to survive winters when fresh food is scarce.",
+  "form": "hoard",
+  "wrong_words": [
+   "scatter",
+   "devour",
+   "discard"
+  ],
+  "meaning": "Stockpile",
+  "wrong_meanings": [
+   "Eat quickly",
+   "Spread out",
+   "Throw away"
+  ]
+ },
+ {
+  "w": "homogeneous",
+  "passage": "Early factories valued homogeneous materials. A batch of steel with the same composition throughout could be cut, shaped, and welded predictably, whereas metal with uneven pockets of impurities often cracked under stress.",
+  "form": "homogeneous",
+  "wrong_words": [
+   "inexpensive",
+   "imported",
+   "lightweight"
+  ],
+  "meaning": "Uniform throughout",
+  "wrong_meanings": [
+   "Low-cost",
+   "Brought from abroad",
+   "Light"
+  ]
+ },
+ {
+  "w": "honorable",
+  "passage": "Although the general lost the battle, historians describe his conduct as honorable: he refused to abandon his wounded soldiers, treated prisoners humanely, and accepted full blame for the defeat rather than shifting it onto his officers. Even his former enemies praised his integrity.",
+  "form": "honorable",
+  "wrong_words": [
+   "reckless",
+   "victorious",
+   "cowardly"
+  ],
+  "meaning": "Morally upright",
+  "wrong_meanings": [
+   "Famous",
+   "Successful",
+   "Bold"
+  ]
+ },
+ {
+  "w": "horizon",
+  "passage": "Living in a remote mountain village, the girl had never traveled more than twenty kilometers from home. A scholarship to a city boarding school widened her horizons: she studied astronomy, learned two new languages, and met classmates from a dozen countries.",
+  "form": "horizons",
+  "wrong_words": [
+   "routines",
+   "friendships",
+   "responsibilities"
+  ],
+  "meaning": "Range of experience",
+  "wrong_meanings": [
+   "Lines where sky meets land",
+   "Daily schedules",
+   "Circles of friends"
+  ]
+ },
+ {
+  "w": "hostile",
+  "passage": "The first scientific teams to winter in Antarctica faced a hostile environment. Temperatures fell below -60°C, winds reached hurricane strength, and months of darkness made even short trips outside dangerous.",
+  "form": "hostile",
+  "wrong_words": [
+   "familiar",
+   "pristine",
+   "temperate"
+  ],
+  "meaning": "Harsh and dangerous",
+  "wrong_meanings": [
+   "Openly opposed",
+   "Untouched",
+   "Mild"
+  ]
+ },
+ {
+  "w": "humility",
+  "passage": "Despite winning the national science prize, the young researcher spoke with notable humility. She credited her lab partners and teachers for the discovery and insisted that she had simply been lucky enough to notice an unusual result.",
+  "form": "humility",
+  "wrong_words": [
+   "arrogance",
+   "urgency",
+   "precision"
+  ],
+  "meaning": "Modesty",
+  "wrong_meanings": [
+   "Pride",
+   "Haste",
+   "Embarrassment"
+  ]
+ },
+ {
+  "w": "hyperbole",
+  "passage": "When the coach told reporters that his team had practiced \"a million hours\" before the championship, no one took the number literally. The remark was hyperbole, meant to convey how hard the players had worked rather than to state an exact figure.",
+  "form": "hyperbole",
+  "wrong_words": [
+   "evidence",
+   "testimony",
+   "understatement"
+  ],
+  "meaning": "Exaggeration",
+  "wrong_meanings": [
+   "Proof",
+   "Sworn statement",
+   "Understatement"
+  ]
+ },
+ {
+  "w": "hypothesis",
+  "passage": "Noticing that frogs in one pond had more limb deformities than frogs elsewhere, a biologist proposed a hypothesis: a parasite in the pond's water was disrupting the tadpoles' development. She then designed an experiment to test whether frogs raised without the parasite developed normally.",
+  "form": "hypothesis",
+  "wrong_words": [
+   "conclusion",
+   "law",
+   "verdict"
+  ],
+  "meaning": "Testable explanation",
+  "wrong_meanings": [
+   "Proven conclusion",
+   "Scientific law",
+   "Careful measurement"
+  ]
+ },
+ {
+  "w": "hypothesize",
+  "passage": "Because the oldest pottery fragments at the site lie beneath a layer of volcanic ash, archaeologists hypothesize that an eruption forced the original settlers to abandon the village. They plan to date the ash to see whether it matches the period when the settlement was emptied.",
+  "form": "hypothesize",
+  "wrong_words": [
+   "prove",
+   "deny",
+   "forget"
+  ],
+  "meaning": "Suggest as a possibility",
+  "wrong_meanings": [
+   "Prove",
+   "Reject",
+   "Ignore"
+  ]
+ },
+ {
+  "w": "idealistic",
+  "passage": "As a young lawyer, Marcus was idealistic, convinced that a single well-argued case could end unfair housing practices across the entire state. Twenty years of slow legal battles taught him that change usually came in small, hard-won steps.",
+  "form": "idealistic",
+  "wrong_words": [
+   "pragmatic",
+   "cynical",
+   "indecisive"
+  ],
+  "meaning": "Driven by lofty hopes",
+  "wrong_meanings": [
+   "Practical",
+   "Distrustful",
+   "Unable to decide"
+  ]
+ },
+ {
+  "w": "ideology",
+  "passage": "The newspaper's editors tried to avoid tying the paper to any single political ideology. They published columns by writers on the left and the right and encouraged readers to weigh competing arguments for themselves.",
+  "form": "ideology",
+  "wrong_words": [
+   "candidate",
+   "scandal",
+   "campaign"
+  ],
+  "meaning": "System of beliefs",
+  "wrong_meanings": [
+   "Person running for office",
+   "Public controversy",
+   "Election effort"
+  ]
+ },
+ {
+  "w": "idiosyncratic",
+  "passage": "The composer's notation was highly idiosyncratic. Instead of standard symbols, she used colored dots, wavy lines, and small drawings of animals to tell performers how loudly or softly to play, and musicians often needed her personal guide to interpret a score.",
+  "form": "idiosyncratic",
+  "wrong_words": [
+   "conventional",
+   "precise",
+   "illegible"
+  ],
+  "meaning": "Peculiar to one person",
+  "wrong_meanings": [
+   "Standard",
+   "Exact",
+   "Impossible to read"
+  ]
+ },
+ {
+  "w": "idyllic",
+  "passage": "The painting shows an idyllic country scene: cows graze beside a calm stream, children play under shady oaks, and a farmhouse glows in the warm light of late afternoon. Viewers at the time saw it as a peaceful escape from crowded industrial cities.",
+  "form": "idyllic",
+  "wrong_words": [
+   "ominous",
+   "industrial",
+   "ordinary"
+  ],
+  "meaning": "Peaceful and charming",
+  "wrong_meanings": [
+   "Threatening",
+   "Factory-filled",
+   "Unremarkable"
+  ]
+ },
+ {
+  "w": "ignorant",
+  "passage": "Many early sailors were ignorant of the cause of scurvy. They did not know that the disease came from a lack of vitamin C, so voyages often lost large portions of their crews before anyone thought to bring citrus fruit aboard.",
+  "form": "ignorant",
+  "wrong_words": [
+   "afraid",
+   "careless",
+   "weary"
+  ],
+  "meaning": "Unaware",
+  "wrong_meanings": [
+   "Frightened",
+   "Rude",
+   "Tired"
+  ]
+ },
+ {
+  "w": "illuminate",
+  "passage": "Letters discovered in an attic help illuminate the life of a nineteenth-century mapmaker about whom little was known. In them, she describes her surveying trips, her disputes with publishers, and her methods for drawing coastlines accurately.",
+  "form": "illuminate",
+  "wrong_words": [
+   "obscure",
+   "shorten",
+   "complicate"
+  ],
+  "meaning": "Clarify",
+  "wrong_meanings": [
+   "Light up",
+   "Hide",
+   "Complicate"
+  ]
+ },
+ {
+  "w": "illusion",
+  "passage": "Visitors to the exhibit see what appears to be a deep tunnel cut into the gallery wall. The effect is an illusion: the \"tunnel\" is painted on a flat surface, with carefully shaded lines that trick the eye into perceiving depth.",
+  "form": "illusion",
+  "wrong_words": [
+   "opening",
+   "entrance",
+   "excavation"
+  ],
+  "meaning": "Visual trick",
+  "wrong_meanings": [
+   "Real passage",
+   "Entryway",
+   "Excavated hole"
+  ]
+ },
+ {
+  "w": "illustrate",
+  "passage": "To illustrate how quickly bacteria can multiply, the teacher placed a single grain of rice on the first square of a chessboard, two on the second, and four on the third. Students soon realized that the final squares would require more rice than exists on Earth.",
+  "form": "illustrate",
+  "wrong_words": [
+   "measure",
+   "prevent",
+   "conceal"
+  ],
+  "meaning": "Demonstrate",
+  "wrong_meanings": [
+   "Draw pictures of",
+   "Measure",
+   "Stop"
+  ]
+ },
+ {
+  "w": "imitate",
+  "passage": "Young songbirds learn their calls by listening to adult males and trying to imitate them. A zebra finch raised in isolation, without a tutor to copy, produces a song that sounds noticeably different from those of wild birds.",
+  "form": "imitate",
+  "wrong_words": [
+   "ignore",
+   "attract",
+   "silence"
+  ],
+  "meaning": "Copy",
+  "wrong_meanings": [
+   "Avoid",
+   "Draw in",
+   "Quiet"
+  ]
+ },
+ {
+  "w": "imminent",
+  "passage": "When seismometers detected swarms of small earthquakes beneath the volcano and the ground near its summit began to bulge, scientists concluded that an eruption was imminent. Officials ordered nearby villages evacuated within twenty-four hours.",
+  "form": "imminent",
+  "wrong_words": [
+   "unlikely",
+   "harmless",
+   "overdue"
+  ],
+  "meaning": "About to happen",
+  "wrong_meanings": [
+   "Improbable",
+   "Not dangerous",
+   "Long delayed"
+  ]
+ },
+ {
+  "w": "immune",
+  "passage": "Unlike most of her competitors, the champion seemed immune to pressure. Whether she was leading comfortably or facing match point, she played each shot with the same calm focus.",
+  "form": "immune",
+  "wrong_words": [
+   "vulnerable",
+   "attracted",
+   "opposed"
+  ],
+  "meaning": "Unaffected",
+  "wrong_meanings": [
+   "Protected from infection",
+   "Easily harmed",
+   "Opposed"
+  ]
+ },
+ {
+  "w": "impartial",
+  "passage": "Because both teams had accused previous referees of favoritism, the league brought in an official from another country for the final match. Fans on both sides agreed that he was impartial, applying the rules equally no matter which team committed a foul.",
+  "form": "impartial",
+  "wrong_words": [
+   "strict",
+   "lenient",
+   "biased"
+  ],
+  "meaning": "Unbiased",
+  "wrong_meanings": [
+   "Harsh",
+   "Forgiving",
+   "Incomplete"
+  ]
+ },
+ {
+  "w": "impasse",
+  "passage": "After three weeks of talks, negotiators for the union and the company reached an impasse. Neither side would budge on wages, and both rejected a mediator's compromise, so the discussions were suspended indefinitely.",
+  "form": "impasse",
+  "wrong_words": [
+   "agreement",
+   "outcome",
+   "understanding"
+  ],
+  "meaning": "Deadlock",
+  "wrong_meanings": [
+   "Agreement",
+   "Turning point",
+   "Settlement"
+  ]
+ },
+ {
+  "w": "impassive",
+  "passage": "Throughout the trial, the defendant remained impassive. Even as witnesses described the crime in vivid detail and the jury announced its verdict, his face showed neither fear nor relief.",
+  "form": "impassive",
+  "wrong_words": [
+   "talkative",
+   "tearful",
+   "restless"
+  ],
+  "meaning": "Expressionless",
+  "wrong_meanings": [
+   "Talkative",
+   "Weepy",
+   "Fidgety"
+  ]
+ },
+ {
+  "w": "impede",
+  "passage": "Fallen trees and debris continued to impede the flow of the river after the storm. Water backed up behind the blockages, flooding nearby fields until crews could clear the channel.",
+  "form": "impede",
+  "wrong_words": [
+   "accelerate",
+   "purify",
+   "measure"
+  ],
+  "meaning": "Obstruct",
+  "wrong_meanings": [
+   "Speed up",
+   "Clean",
+   "Record"
+  ]
+ },
+ {
+  "w": "impending",
+  "passage": "Dark clouds gathered over the harbor, and the wind shifted sharply to the east. Sensing the impending storm, fishermen hauled their boats onto the beach and tied down their nets.",
+  "form": "impending",
+  "wrong_words": [
+   "distant",
+   "previous",
+   "gentle"
+  ],
+  "meaning": "Approaching",
+  "wrong_meanings": [
+   "Faraway",
+   "Earlier",
+   "Mild"
+  ]
+ },
+ {
+  "w": "impenetrable",
+  "passage": "The insurance contract was nearly impenetrable to ordinary customers. Written in dense legal language with sentences running half a page, it left many policyholders unsure what their coverage actually included.",
+  "form": "impenetrable",
+  "wrong_words": [
+   "unavailable",
+   "appealing",
+   "familiar"
+  ],
+  "meaning": "Impossible to understand",
+  "wrong_meanings": [
+   "Impossible to enter",
+   "Unobtainable",
+   "Attractive"
+  ]
+ },
+ {
+  "w": "imperative",
+  "passage": "Because the vaccine must be kept below -70°C, it is imperative that clinics have specialized freezers. If the doses warm even briefly, they can lose their effectiveness and must be thrown away.",
+  "form": "imperative",
+  "wrong_words": [
+   "unusual",
+   "optional",
+   "unlikely"
+  ],
+  "meaning": "Essential",
+  "wrong_meanings": [
+   "Commanding in tone",
+   "Optional",
+   "Uncommon"
+  ]
+ },
+ {
+  "w": "imperceptible",
+  "passage": "The glacier's movement is imperceptible to a person standing on it; the ice advances only a few centimeters each day. Over decades, however, that slow creep carries boulders many kilometers down the valley.",
+  "form": "imperceptible",
+  "wrong_words": [
+   "dangerous",
+   "obvious",
+   "audible"
+  ],
+  "meaning": "Unnoticeable",
+  "wrong_meanings": [
+   "Hazardous",
+   "Plain to see",
+   "Able to be heard"
+  ]
+ },
+ {
+  "w": "implausible",
+  "passage": "The defendant claimed that a stranger had broken into the locked office, taken the files, and relocked the door without leaving fingerprints or appearing on any security camera. Jurors found the story implausible and quickly returned a guilty verdict.",
+  "form": "implausible",
+  "wrong_words": [
+   "convincing",
+   "entertaining",
+   "detailed"
+  ],
+  "meaning": "Hard to believe",
+  "wrong_meanings": [
+   "Believable",
+   "Amusing",
+   "Thorough"
+  ]
+ },
+ {
+  "w": "implement",
+  "passage": "After the city council approved the new recycling program, officials had six months to implement it. They distributed bins to every household, hired additional drivers, and launched an advertising campaign to explain the new rules.",
+  "form": "implement",
+  "wrong_words": [
+   "debate",
+   "repeal",
+   "propose"
+  ],
+  "meaning": "Put into effect",
+  "wrong_meanings": [
+   "Use as a tool",
+   "Argue over",
+   "Cancel"
+  ]
+ },
+ {
+  "w": "implicate",
+  "passage": "Investigators examining the warehouse fire found evidence that seemed to implicate the building's owner. Records showed he had recently tripled his insurance coverage, and a witness had seen his car parked nearby shortly before the flames appeared.",
+  "form": "implicate",
+  "wrong_words": [
+   "clear",
+   "protect",
+   "reward"
+  ],
+  "meaning": "Show to be involved",
+  "wrong_meanings": [
+   "Prove innocent",
+   "Shield",
+   "Compensate"
+  ]
+ },
+ {
+  "w": "implicit",
+  "passage": "Although the club's rules never stated that members had to wear formal clothing, the expectation was implicit: newcomers who arrived in jeans received disapproving glances and were rarely invited back. No one had to say a word for the message to be understood.",
+  "form": "implicit",
+  "wrong_words": [
+   "explicit",
+   "temporary",
+   "unreasonable"
+  ],
+  "meaning": "Understood though unstated",
+  "wrong_meanings": [
+   "Clearly spelled out",
+   "Short-lived",
+   "Unfair"
+  ]
+ },
+ {
+  "w": "imply",
+  "passage": "The author never directly states that the narrator's father has lost his job. However, by describing how he leaves the house each morning in a suit and then spends the day sitting alone in a park, she seems to imply it.",
+  "form": "imply",
+  "wrong_words": [
+   "deny",
+   "celebrate",
+   "forget"
+  ],
+  "meaning": "Hint at",
+  "wrong_meanings": [
+   "Refuse to admit",
+   "Praise",
+   "Overlook"
+  ]
+ },
+ {
+  "w": "import",
+  "passage": "At first, few scholars recognized the import of the clay tablets uncovered in the desert. Only after linguists deciphered them, revealing the earliest known written laws of the region, did the tablets' value to historians become clear.",
+  "form": "import",
+  "wrong_words": [
+   "age",
+   "origin",
+   "fragility"
+  ],
+  "meaning": "Significance",
+  "wrong_meanings": [
+   "Shipment from abroad",
+   "Age",
+   "Place of origin"
+  ]
+ },
+ {
+  "w": "impose",
+  "passage": "To reduce traffic in the historic center, the city decided to impose a fee on drivers entering downtown during weekday rush hours. Many shop owners objected, arguing that the charge would drive customers to suburban malls.",
+  "form": "impose",
+  "wrong_words": [
+   "waive",
+   "refund",
+   "lower"
+  ],
+  "meaning": "Introduce as a requirement",
+  "wrong_meanings": [
+   "Cancel",
+   "Pay back",
+   "Reduce"
+  ]
+ },
+ {
+  "w": "impoverished",
+  "passage": "Decades of growing the same crop year after year left the farmland impoverished. Stripped of nitrogen and other nutrients, the soil produced smaller harvests each season until farmers began rotating crops and planting clover.",
+  "form": "impoverished",
+  "wrong_words": [
+   "flooded",
+   "enriched",
+   "overgrown"
+  ],
+  "meaning": "Depleted",
+  "wrong_meanings": [
+   "Lacking money",
+   "Waterlogged",
+   "Overgrown"
+  ]
+ },
+ {
+  "w": "imprecise",
+  "passage": "Early clocks were notoriously imprecise; some gained or lost as much as fifteen minutes a day. Sailors who relied on them to calculate longitude could end up far off course.",
+  "form": "imprecise",
+  "wrong_words": [
+   "expensive",
+   "ornate",
+   "heavy"
+  ],
+  "meaning": "Inaccurate",
+  "wrong_meanings": [
+   "Costly",
+   "Decorative",
+   "Bulky"
+  ]
+ },
+ {
+  "w": "impulse",
+  "passage": "Standing in the checkout line, Maya felt a sudden impulse to buy the glossy magazine, though she had not planned to. She resisted, reminding herself that she was saving for a new bicycle.",
+  "form": "impulse",
+  "wrong_words": [
+   "reluctance",
+   "obligation",
+   "refusal"
+  ],
+  "meaning": "Urge",
+  "wrong_meanings": [
+   "Nerve signal",
+   "Unwillingness",
+   "Duty"
+  ]
+ },
+ {
+  "w": "inactive",
+  "passage": "Geologists classify the volcano as inactive: it has not erupted in more than ten thousand years and shows no signs of rising magma. Still, they continue to monitor it, since even long-quiet volcanoes occasionally reawaken.",
+  "form": "inactive",
+  "wrong_words": [
+   "explosive",
+   "dangerous",
+   "unstable"
+  ],
+  "meaning": "Not currently erupting",
+  "wrong_meanings": [
+   "Prone to blasts",
+   "Hazardous",
+   "Shaky"
+  ]
+ },
+ {
+  "w": "inadequate",
+  "passage": "The town's water treatment plant was built for twenty thousand residents. Now that the population has tripled, the plant's capacity has become inadequate, and during dry summers officials must ask residents to limit their water use.",
+  "form": "inadequate",
+  "wrong_words": [
+   "excessive",
+   "flexible",
+   "ample"
+  ],
+  "meaning": "Insufficient",
+  "wrong_meanings": [
+   "Too large",
+   "Adaptable",
+   "Plentiful"
+  ]
+ },
+ {
+  "w": "inadvertent",
+  "passage": "The chemist's most famous discovery was inadvertent. While trying to make a new adhesive, she spilled a compound on her shoe and noticed that it repelled water and oil, a property that later made it valuable for stain-resistant fabrics.",
+  "form": "inadvertent",
+  "wrong_words": [
+   "deliberate",
+   "profitable",
+   "overlooked"
+  ],
+  "meaning": "Accidental",
+  "wrong_meanings": [
+   "Intentional",
+   "Lucrative",
+   "Ignored"
+  ]
+ },
+ {
+  "w": "inauspicious",
+  "passage": "The expedition got off to an inauspicious start. On the first day, a supply truck broke down, two members fell ill, and a storm forced the team to wait in a roadside motel for nearly a week.",
+  "form": "inauspicious",
+  "wrong_words": [
+   "efficient",
+   "ambitious",
+   "impressive"
+  ],
+  "meaning": "Unpromising",
+  "wrong_meanings": [
+   "Well-run",
+   "Bold",
+   "Remarkable"
+  ]
+ },
+ {
+  "w": "incentive",
+  "passage": "To encourage residents to install solar panels, the state offered an incentive: homeowners who added panels could deduct a third of the installation cost from their taxes. Within five years, the number of rooftop systems had quadrupled.",
+  "form": "incentive",
+  "wrong_words": [
+   "obstacle",
+   "alternative",
+   "ultimatum"
+  ],
+  "meaning": "Motivating reward",
+  "wrong_meanings": [
+   "Barrier",
+   "Other choice",
+   "Final demand"
+  ]
+ },
+ {
+  "w": "incessant",
+  "passage": "For three months, the incessant hammering from the building site next door made it nearly impossible for the writer to concentrate. The noise began at seven each morning and did not stop until dusk, even on weekends.",
+  "form": "incessant",
+  "wrong_words": [
+   "occasional",
+   "faint",
+   "rhythmic"
+  ],
+  "meaning": "Nonstop",
+  "wrong_meanings": [
+   "Infrequent",
+   "Quiet",
+   "Regular in beat"
+  ]
+ },
+ {
+  "w": "incidence",
+  "passage": "After the town began adding fluoride to its drinking water, dentists reported a sharp drop in the incidence of tooth decay among children. The number of cavities per child fell by nearly half within a decade.",
+  "form": "incidence",
+  "wrong_words": [
+   "severity",
+   "cost",
+   "treatment"
+  ],
+  "meaning": "Frequency",
+  "wrong_meanings": [
+   "Seriousness",
+   "Expense",
+   "Care"
+  ]
+ },
+ {
+  "w": "incident",
+  "passage": "Airport officials reported a minor incident on Tuesday morning when a baggage cart rolled onto a taxiway. No one was injured, but two departing flights were delayed for about twenty minutes while crews moved the cart.",
+  "form": "incident",
+  "wrong_words": [
+   "renovation",
+   "ceremony",
+   "inspection"
+  ],
+  "meaning": "Event",
+  "wrong_meanings": [
+   "Building project",
+   "Formal celebration",
+   "Official check"
+  ]
+ },
+ {
+  "w": "incidental",
+  "passage": "For the photographer, the birds in the picture were incidental; she had set up her camera to capture the old lighthouse at sunset, and the flock simply happened to fly through the frame. Critics, however, praised the birds as the image's most striking feature.",
+  "form": "incidental",
+  "wrong_words": [
+   "essential",
+   "intentional",
+   "staged"
+  ],
+  "meaning": "Of minor importance",
+  "wrong_meanings": [
+   "Central",
+   "Planned",
+   "Artificially arranged"
+  ]
+ },
+ {
+  "w": "incisive",
+  "passage": "The reviewer's incisive critique identified, in just a few paragraphs, the three weaknesses in the study's design that other readers had missed. The authors later thanked her for pointing them toward a more convincing experiment.",
+  "form": "incisive",
+  "wrong_words": [
+   "lengthy",
+   "vague",
+   "hostile"
+  ],
+  "meaning": "Sharp and insightful",
+  "wrong_meanings": [
+   "Long-winded",
+   "Unclear",
+   "Unfriendly"
+  ]
+ },
+ {
+  "w": "incite",
+  "passage": "The governor accused the pamphlet's authors of trying to incite a riot. Its pages urged readers to gather outside the courthouse armed with clubs and to \"take justice into their own hands\" if the verdict displeased them.",
+  "form": "incite",
+  "wrong_words": [
+   "prevent",
+   "investigate",
+   "report"
+  ],
+  "meaning": "Provoke",
+  "wrong_meanings": [
+   "Stop",
+   "Look into",
+   "Describe"
+  ]
+ },
+ {
+  "w": "incline",
+  "passage": "Because they had been treated unfairly by previous landlords, many tenants were inclined to distrust the new management company's promises. Only after the company repaired long-neglected heating systems did residents begin to believe it.",
+  "form": "inclined",
+  "wrong_words": [
+   "forbidden",
+   "obligated",
+   "advised"
+  ],
+  "meaning": "Likely",
+  "wrong_meanings": [
+   "Sloped",
+   "Not allowed",
+   "Required"
+  ]
+ },
+ {
+  "w": "inclusion",
+  "passage": "The anthology's editors drew praise for their inclusion of writers who had long been overlooked, such as poets who published only in small regional magazines. Many readers encountered these voices for the first time in its pages.",
+  "form": "inclusion",
+  "wrong_words": [
+   "rejection",
+   "criticism",
+   "imitation"
+  ],
+  "meaning": "Choosing to feature",
+  "wrong_meanings": [
+   "Turning away",
+   "Faultfinding",
+   "Copying"
+  ]
+ },
+ {
+  "w": "incongruous",
+  "passage": "In the middle of the quiet nineteenth-century village stood an incongruous sight: a glass-and-steel office tower, twenty stories tall, surrounded by thatched cottages and cobblestone lanes. Visitors often stopped to photograph the odd contrast.",
+  "form": "incongruous",
+  "wrong_words": [
+   "ancient",
+   "elegant",
+   "ordinary"
+  ],
+  "meaning": "Out of place",
+  "wrong_meanings": [
+   "Very old",
+   "Graceful",
+   "Commonplace"
+  ]
+ },
+ {
+  "w": "inconsequential",
+  "passage": "The editor told the young reporter to cut the paragraph describing the color of the mayor's tie. Such inconsequential details, she explained, distracted readers from the story's real subject: a budget shortfall that threatened to close two fire stations.",
+  "form": "inconsequential",
+  "wrong_words": [
+   "crucial",
+   "technical",
+   "confidential"
+  ],
+  "meaning": "Unimportant",
+  "wrong_meanings": [
+   "Essential",
+   "Specialized",
+   "Secret"
+  ]
+ },
+ {
+  "w": "incorporate",
+  "passage": "When redesigning the museum, the architects chose to incorporate parts of the original 1890s structure into the new building. The old brick facade now forms one wall of the glass atrium, and iron columns from the former train shed support its roof.",
+  "form": "incorporate",
+  "wrong_words": [
+   "demolish",
+   "replicate",
+   "conceal"
+  ],
+  "meaning": "Include",
+  "wrong_meanings": [
+   "Form a company from",
+   "Tear down",
+   "Copy"
+  ]
+ },
+ {
+  "w": "incredulous",
+  "passage": "When the young astronomer announced that she had found a comet with her backyard telescope, her colleagues were incredulous. Only after observatories around the world confirmed the sighting did they accept that an amateur instrument had made the discovery.",
+  "form": "incredulous",
+  "wrong_words": [
+   "jealous",
+   "delighted",
+   "grateful"
+  ],
+  "meaning": "Disbelieving",
+  "wrong_meanings": [
+   "Envious",
+   "Overjoyed",
+   "Astonishing"
+  ]
+ },
+ {
+  "w": "incumbent",
+  "passage": "In the city's mayoral race, the incumbent enjoyed several advantages over her challengers. Having already served two terms, she was well known to voters and could point to new parks and repaired roads completed under her leadership.",
+  "form": "incumbent",
+  "wrong_words": [
+   "newcomer",
+   "outsider",
+   "volunteer"
+  ],
+  "meaning": "Current officeholder",
+  "wrong_meanings": [
+   "First-time candidate",
+   "Required duty",
+   "Campaign volunteer"
+  ]
+ },
+ {
+  "w": "indecipherable",
+  "passage": "The letters were written in a faded, cramped script, and water damage had blurred many lines, leaving large portions indecipherable. Archivists later used infrared imaging to recover some of the missing words.",
+  "form": "indecipherable",
+  "wrong_words": [
+   "valuable",
+   "authentic",
+   "intact"
+  ],
+  "meaning": "Unreadable",
+  "wrong_meanings": [
+   "Precious",
+   "Genuine",
+   "Undamaged"
+  ]
+ },
+ {
+  "w": "indifference",
+  "passage": "The scientist's warnings about the polluted river were met with indifference. Local officials neither disputed her data nor acted on it, and the factory continued releasing waste for another decade.",
+  "form": "indifference",
+  "wrong_words": [
+   "hostility",
+   "alarm",
+   "gratitude"
+  ],
+  "meaning": "Lack of concern",
+  "wrong_meanings": [
+   "Open anger",
+   "Panic",
+   "Thankfulness"
+  ]
+ },
+ {
+  "w": "indifferent",
+  "passage": "Most of the students were eager to join the field trip to the planetarium, but Theo seemed indifferent. He shrugged when asked whether he wanted to go and spent the bus ride reading a comic book without glancing out the window.",
+  "form": "indifferent",
+  "wrong_words": [
+   "nervous",
+   "thrilled",
+   "resentful"
+  ],
+  "meaning": "Uninterested",
+  "wrong_meanings": [
+   "Mediocre",
+   "Impartial",
+   "Anxious"
+  ]
+ },
+ {
+  "w": "indigenous",
+  "passage": "Ecologists restoring the prairie removed invasive grasses introduced from Europe and replanted species indigenous to the region, such as big bluestem and purple coneflower. Within a few seasons, native bees and butterflies returned.",
+  "form": "indigenous",
+  "wrong_words": [
+   "foreign",
+   "harmful",
+   "unknown"
+  ],
+  "meaning": "Native",
+  "wrong_meanings": [
+   "Imported",
+   "Damaging",
+   "Unfamiliar"
+  ]
+ },
+ {
+  "w": "indignant",
+  "passage": "Residents were indignant when they learned that the council had quietly approved a landfill next to the elementary school without holding a single public hearing. Hundreds packed the next meeting to protest what they called an unfair and secretive decision.",
+  "form": "indignant",
+  "wrong_words": [
+   "relieved",
+   "curious",
+   "amused"
+  ],
+  "meaning": "Angered by unfairness",
+  "wrong_meanings": [
+   "Comforted",
+   "Interested",
+   "Entertained"
+  ]
+ },
+ {
+  "w": "induce",
+  "passage": "Doctors sometimes use medication to induce sleep in patients recovering from serious head injuries. Keeping the brain at rest, they believe, can reduce swelling and give damaged tissue time to heal.",
+  "form": "induce",
+  "wrong_words": [
+   "prevent",
+   "interrupt",
+   "monitor"
+  ],
+  "meaning": "Bring about",
+  "wrong_meanings": [
+   "Persuade",
+   "Stop",
+   "Observe"
+  ]
+ },
+ {
+  "w": "indulgent",
+  "passage": "The grandparents were famously indulgent with the children: they allowed second helpings of dessert, let bedtimes stretch past midnight, and rarely said no to any request. The children's parents sometimes worried that each visit undid months of careful rules.",
+  "form": "indulgent",
+  "wrong_words": [
+   "strict",
+   "impatient",
+   "stingy"
+  ],
+  "meaning": "Lenient",
+  "wrong_meanings": [
+   "Demanding",
+   "Easily annoyed",
+   "Ungenerous"
+  ]
+ },
+ {
+  "w": "industrious",
+  "passage": "Beavers are among the most industrious animals in North America. A single family may cut down hundreds of trees in a year, hauling branches and mud to build dams that can stretch more than a hundred meters.",
+  "form": "industrious",
+  "wrong_words": [
+   "dangerous",
+   "playful",
+   "territorial"
+  ],
+  "meaning": "Hardworking",
+  "wrong_meanings": [
+   "Manufacturing-based",
+   "Risky",
+   "Fun-loving"
+  ]
+ }
+]

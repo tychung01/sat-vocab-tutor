@@ -2,8 +2,9 @@
 
 Fails (exit code 1) if the file isn't valid, "count" doesn't match, a word
 appears twice, or an entry is missing a definition, usage, example, source, or
-added date. Also fails if no example sentence contains the word, since the
-quiz needs one to build fill-in-the-blank questions (same rule as app.js).
+added date. Also fails if no example sentence contains the word (the quiz
+builds extra questions from it, same rule as questions.js), or if the word's
+SAT quiz content is missing or breaks a rule in add_sat_questions.py.
 
 Usage: python scripts/validate_db.py
 """
@@ -12,6 +13,8 @@ import json
 import re
 import sys
 from pathlib import Path
+
+from add_sat_questions import sat_problems
 
 DB = Path(__file__).resolve().parent.parent / "data" / "words.json"
 
@@ -38,6 +41,10 @@ def main():
                 problems.append(f"{w}: missing {field}")
         if entry.get("examples") and not any(word_in(e, w) for e in entry["examples"]):
             problems.append(f"{w}: no example sentence contains the word (quiz can't blank it)")
+        if "sat" not in entry:
+            problems.append(f"{w}: missing SAT quiz content (write it and run scripts/add_sat_questions.py)")
+        else:
+            problems += [f"{w}: SAT quiz content: {p}" for p in sat_problems(w, entry["sat"])]
     if problems:
         print("\n".join(problems))
         sys.exit(1)

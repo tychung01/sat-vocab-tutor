@@ -1,0 +1,1714 @@
+[
+  {
+    "w": "diverse",
+    "passage": "Coral reefs cover less than one percent of the ocean floor, yet they shelter roughly a quarter of all known marine species. A single reef may host thousands of kinds of fish, sponges, crabs, and algae, each with its own shape, diet, and habits. Few habitats on Earth are as diverse as these underwater cities.",
+    "form": "diverse",
+    "wrong_words": [
+      "fragile",
+      "ancient",
+      "isolated"
+    ],
+    "meaning": "Varied",
+    "wrong_meanings": [
+      "Divided",
+      "Unusual",
+      "Crowded"
+    ]
+  },
+  {
+    "w": "divulge",
+    "passage": "During the trial, the journalist was pressed repeatedly to name the official who had leaked the documents. She had promised the official anonymity, however, and she refused to divulge the person's identity even when the judge threatened to hold her in contempt of court.",
+    "form": "divulge",
+    "wrong_words": [
+      "protect",
+      "question",
+      "conceal"
+    ],
+    "meaning": "Disclose",
+    "wrong_meanings": [
+      "Defend",
+      "Invent",
+      "Doubt"
+    ]
+  },
+  {
+    "w": "dogmatic",
+    "passage": "Early in his career, the astronomer was known for weighing every rival theory with care. In later years, though, he grew increasingly dogmatic: he dismissed new observations that conflicted with his model, insisted that his conclusions were beyond question, and refused even to read papers by critics.",
+    "form": "dogmatic",
+    "wrong_words": [
+      "cautious",
+      "skeptical",
+      "curious"
+    ],
+    "meaning": "Rigidly certain",
+    "wrong_meanings": [
+      "Religiously devout",
+      "Openly hostile",
+      "Professionally successful"
+    ]
+  },
+  {
+    "w": "dominant",
+    "passage": "In the grasslands of the northern plains, ecologists counted more than forty plant species, but one stood out. Blue grama grass made up nearly seventy percent of the plant cover at every site, shaping which insects and grazing animals could thrive there. Because of its abundance and influence, researchers describe it as the dominant species of the ecosystem.",
+    "form": "dominant",
+    "wrong_words": [
+      "endangered",
+      "invasive",
+      "minor"
+    ],
+    "meaning": "Most prevalent",
+    "wrong_meanings": [
+      "Most aggressive",
+      "Most controlling",
+      "Most recent"
+    ]
+  },
+  {
+    "w": "dominate",
+    "passage": "Visitors arriving in the valley town notice the cathedral before anything else. Its bell tower rises more than ninety meters, nearly four times the height of the surrounding houses, and can be seen from every road leading in. Even centuries after it was built, the structure continues to dominate the town's skyline.",
+    "form": "dominate",
+    "wrong_words": [
+      "decorate",
+      "complement",
+      "obscure"
+    ],
+    "meaning": "Stand out over",
+    "wrong_meanings": [
+      "Rule harshly over",
+      "Defeat soundly",
+      "Take control of"
+    ]
+  },
+  {
+    "w": "dormant",
+    "passage": "Seeds of some desert wildflowers can survive in dry soil for years without sprouting. They remain dormant through long droughts, their growth effectively paused, until a heavy rain finally soaks the ground. Within days of such a storm, the desert floor can be carpeted with blossoms.",
+    "form": "dormant",
+    "wrong_words": [
+      "visible",
+      "scattered",
+      "exposed"
+    ],
+    "meaning": "Inactive",
+    "wrong_meanings": [
+      "Asleep",
+      "Dead",
+      "Hidden"
+    ]
+  },
+  {
+    "w": "drift",
+    "passage": "In 2014, a marine researcher released hundreds of numbered plastic cards into the North Atlantic. With no engines or sails, the cards could only drift wherever the currents and winds carried them. Over the following year, beachcombers found some of them on shores as far away as Norway and the Azores.",
+    "form": "drift",
+    "wrong_words": [
+      "sink",
+      "dissolve",
+      "migrate"
+    ],
+    "meaning": "Float passively",
+    "wrong_meanings": [
+      "Pile up",
+      "Wander aimlessly",
+      "Gradually change"
+    ]
+  },
+  {
+    "w": "dubious",
+    "passage": "The supplement's packaging promised that a single daily capsule would improve memory, cure insomnia, and slow aging. Yet the company had conducted no controlled trials, and the only evidence on its website came from anonymous customer reviews. Consumer advocates warned that such dubious claims should not be trusted.",
+    "form": "dubious",
+    "wrong_words": [
+      "modest",
+      "technical",
+      "detailed"
+    ],
+    "meaning": "Questionable",
+    "wrong_meanings": [
+      "Hesitant",
+      "Ambiguous",
+      "Illegal"
+    ]
+  },
+  {
+    "w": "duration",
+    "passage": "Researchers studying sleep in hummingbirds found that the birds enter a deep, energy-saving state called torpor on cold nights. On mild nights the state lasted only an hour or two, but in freezing weather its duration stretched to as long as eight hours, ending only when the sun began to warm the air.",
+    "form": "duration",
+    "wrong_words": [
+      "intensity",
+      "frequency",
+      "onset"
+    ],
+    "meaning": "Length",
+    "wrong_meanings": [
+      "Depth",
+      "Toughness",
+      "Timing"
+    ]
+  },
+  {
+    "w": "dwindle",
+    "passage": "When the town's textile mill closed in the 1950s, families began leaving in search of work elsewhere. Each year the school enrolled fewer students and more storefronts stood empty on Main Street. By the 1980s the population, once nearly ten thousand, had continued to dwindle until fewer than two thousand residents remained.",
+    "form": "dwindle",
+    "wrong_words": [
+      "fluctuate",
+      "stabilize",
+      "diversify"
+    ],
+    "meaning": "Shrink",
+    "wrong_meanings": [
+      "Waste away",
+      "Scatter",
+      "Vary"
+    ]
+  },
+  {
+    "w": "dynamic",
+    "passage": "Many people picture sand dunes as fixed features of the landscape, but satellite images tell a different story. Driven by steady winds, some dunes in the Sahara advance tens of meters each year, merging, splitting, and reshaping themselves as they go. Geologists therefore treat dune fields as dynamic systems rather than permanent landforms.",
+    "form": "dynamic",
+    "wrong_words": [
+      "barren",
+      "uniform",
+      "stable"
+    ],
+    "meaning": "Constantly changing",
+    "wrong_meanings": [
+      "Full of energy",
+      "Highly powerful",
+      "Exciting to watch"
+    ]
+  },
+  {
+    "w": "earnest",
+    "passage": "When Lena's grandfather began telling stories about his childhood in the fishing village, she set aside her phone and listened closely. She asked careful questions, wrote down the names of every relative he mentioned, and asked him to repeat the parts she did not understand. Her earnest interest clearly moved him.",
+    "form": "earnest",
+    "wrong_words": [
+      "casual",
+      "polite",
+      "fleeting"
+    ],
+    "meaning": "Sincere",
+    "wrong_meanings": [
+      "Grim",
+      "Eager to please",
+      "Excessive"
+    ]
+  },
+  {
+    "w": "eccentric",
+    "passage": "The novelist was famous in her village for her unusual habits. She wore a feathered hat to the grocery store, wrote only between midnight and dawn, and kept a pet goose that followed her on walks. Neighbors found her eccentric but harmless, and children gathered at her gate to hear her stories.",
+    "form": "eccentric",
+    "wrong_words": [
+      "reclusive",
+      "arrogant",
+      "fashionable"
+    ],
+    "meaning": "Odd",
+    "wrong_meanings": [
+      "Off-center",
+      "Mentally ill",
+      "Wealthy"
+    ]
+  },
+  {
+    "w": "eclectic",
+    "passage": "The composer refused to limit herself to any single tradition. Her symphony blends West African drumming, Baroque counterpoint, Appalachian fiddle tunes, and electronic sound effects, sometimes within a single movement. Critics have praised the eclectic score for weaving such varied sources into a unified whole.",
+    "form": "eclectic",
+    "wrong_words": [
+      "traditional",
+      "minimal",
+      "unfinished"
+    ],
+    "meaning": "Wide-ranging in influences",
+    "wrong_meanings": [
+      "Highly selective",
+      "Strangely chaotic",
+      "Carefully restrained"
+    ]
+  },
+  {
+    "w": "efficacy",
+    "passage": "Before a new vaccine can be approved, researchers must show that it actually prevents disease. In one large trial, volunteers who received the vaccine were ninety percent less likely to become ill than those who received a placebo. This result provided strong evidence of the vaccine's efficacy.",
+    "form": "efficacy",
+    "wrong_words": [
+      "safety",
+      "affordability",
+      "popularity"
+    ],
+    "meaning": "Effectiveness",
+    "wrong_meanings": [
+      "Speed",
+      "Ease of use",
+      "Strength"
+    ]
+  },
+  {
+    "w": "efficient",
+    "passage": "Traditional incandescent bulbs convert only about ten percent of the electricity they use into light; the rest escapes as heat. LED bulbs, by contrast, turn most of their energy into light and last many times longer. Because they waste so little power, LEDs are considered far more efficient.",
+    "form": "efficient",
+    "wrong_words": [
+      "fashionable",
+      "durable",
+      "powerful"
+    ],
+    "meaning": "Less wasteful",
+    "wrong_meanings": [
+      "Faster",
+      "Better organized",
+      "More capable"
+    ]
+  },
+  {
+    "w": "effusive",
+    "passage": "Most reviewers responded to the young pianist's debut with polite approval. One critic, however, was effusive, describing the performance as \"a revelation,\" praising her \"breathtaking command\" of every passage, and devoting three full columns to a recital that most papers covered in a paragraph.",
+    "form": "effusive",
+    "wrong_words": [
+      "dismissive",
+      "reserved",
+      "ambivalent"
+    ],
+    "meaning": "Gushing",
+    "wrong_meanings": [
+      "Flowing out",
+      "Insincere",
+      "Lengthy"
+    ]
+  },
+  {
+    "w": "egalitarian",
+    "passage": "Archaeologists excavating the ancient village were struck by how similar its houses were. Every dwelling was roughly the same size, built from the same materials, and furnished with the same kinds of tools and pottery. The absence of palaces or wealthy graves suggests that the community was largely egalitarian.",
+    "form": "egalitarian",
+    "wrong_words": [
+      "hierarchical",
+      "nomadic",
+      "prosperous"
+    ],
+    "meaning": "Without class distinctions",
+    "wrong_meanings": [
+      "Politically democratic",
+      "Peacefully united",
+      "Strictly ruled"
+    ]
+  },
+  {
+    "w": "elaborate",
+    "passage": "Male bowerbirds attract mates by building structures on the forest floor. One species weaves twigs into a tunnel and decorates the entrance with hundreds of carefully sorted objects, from blue berries and shells to bits of colored glass, arranging them by size and hue. These elaborate displays can take weeks to complete.",
+    "form": "elaborate",
+    "wrong_words": [
+      "crude",
+      "temporary",
+      "hidden"
+    ],
+    "meaning": "Intricate",
+    "wrong_meanings": [
+      "Explained",
+      "Exaggerated",
+      "Unnecessary"
+    ]
+  },
+  {
+    "w": "elated",
+    "passage": "For three seasons the team of paleontologists had dug through the badlands without finding more than scattered bone fragments. So when a graduate student uncovered a nearly complete skull late one afternoon, the crew was elated, shouting and hugging one another before calling the museum to share the news.",
+    "form": "elated",
+    "wrong_words": [
+      "relieved",
+      "exhausted",
+      "puzzled"
+    ],
+    "meaning": "Overjoyed",
+    "wrong_meanings": [
+      "Lifted up",
+      "Satisfied",
+      "Surprised"
+    ]
+  },
+  {
+    "w": "elevate",
+    "passage": "Before the 1920s, jazz was often dismissed by music critics as mere dance-hall entertainment. The inventive recordings of a new generation of soloists helped elevate the genre's reputation, and within a few decades jazz was being performed in concert halls and studied in universities.",
+    "form": "elevate",
+    "wrong_words": [
+      "define",
+      "preserve",
+      "diminish"
+    ],
+    "meaning": "Raise",
+    "wrong_meanings": [
+      "Lift physically",
+      "Cheer up",
+      "Promote to office"
+    ]
+  },
+  {
+    "w": "elicit",
+    "passage": "Psychologists studying infant hearing cannot simply ask babies what they notice. Instead, they play a series of sounds and watch for reactions. A familiar tone soon produces no response, but a new one tends to elicit a quick turn of the head, revealing that the infant has detected the change.",
+    "form": "elicit",
+    "wrong_words": [
+      "prevent",
+      "imitate",
+      "measure"
+    ],
+    "meaning": "Bring out",
+    "wrong_meanings": [
+      "Allow",
+      "Demand",
+      "Cause to vanish"
+    ]
+  },
+  {
+    "w": "eliminate",
+    "passage": "Until the mid-twentieth century, smallpox killed millions of people each year. Through a worldwide vaccination campaign, health workers tracked down every remaining case and immunized everyone nearby. By 1980 the disease no longer existed outside of laboratories, making it the first human disease that public health efforts managed to eliminate entirely.",
+    "form": "eliminate",
+    "wrong_words": [
+      "diagnose",
+      "contain",
+      "study"
+    ],
+    "meaning": "Wipe out",
+    "wrong_meanings": [
+      "Leave out",
+      "Disqualify",
+      "Reduce"
+    ]
+  },
+  {
+    "w": "elite",
+    "passage": "Each year, thousands of young violinists apply to the summer academy, but only twelve are accepted. Those chosen have typically won national competitions and performed as soloists with orchestras before turning eighteen. Joining this elite group often launches a professional career.",
+    "form": "elite",
+    "wrong_words": [
+      "diverse",
+      "youthful",
+      "local"
+    ],
+    "meaning": "Select",
+    "wrong_meanings": [
+      "Wealthy",
+      "Snobbish",
+      "Powerful"
+    ]
+  },
+  {
+    "w": "eloquent",
+    "passage": "The abolitionist had escaped slavery as a young man and taught himself to read in secret. Audiences who came to hear him speak were often stunned by his command of language: his vivid images, carefully balanced sentences, and stirring appeals moved listeners to tears. Many who doubted the cause left his eloquent lectures convinced.",
+    "form": "eloquent",
+    "wrong_words": [
+      "lengthy",
+      "scholarly",
+      "formal"
+    ],
+    "meaning": "Persuasively expressive",
+    "wrong_meanings": [
+      "Loudly delivered",
+      "Elegantly dressed",
+      "Highly educated"
+    ]
+  },
+  {
+    "w": "elusive",
+    "passage": "The giant squid lives in the deep ocean, more than five hundred meters below the surface, and for over a century scientists knew it only from carcasses that washed ashore. Repeated expeditions with submarines and cameras failed to record a living specimen. The creature remained so elusive that the first video of one in its habitat was not captured until 2012.",
+    "form": "elusive",
+    "wrong_words": [
+      "dangerous",
+      "enormous",
+      "common"
+    ],
+    "meaning": "Hard to find",
+    "wrong_meanings": [
+      "Hard to understand",
+      "Deceptive",
+      "Shy"
+    ]
+  },
+  {
+    "w": "emanate",
+    "passage": "Deep-sea anglerfish live in waters too dark for sunlight to reach. A dangling lure on the female's head contains glowing bacteria, and the faint blue light that seems to emanate from its tip draws curious prey close enough to be swallowed.",
+    "form": "emanate",
+    "wrong_words": [
+      "fade",
+      "reflect",
+      "vanish"
+    ],
+    "meaning": "Come out",
+    "wrong_meanings": [
+      "Fall away",
+      "Bounce off",
+      "Spread news"
+    ]
+  },
+  {
+    "w": "emancipate",
+    "passage": "In the early nineteenth century, several northern states passed gradual abolition laws. Rather than free all enslaved people at once, these laws typically declared that children born after a certain date would be released from bondage upon reaching adulthood. As a result, the measures took decades to fully emancipate the enslaved population.",
+    "form": "emancipate",
+    "wrong_words": [
+      "employ",
+      "relocate",
+      "educate"
+    ],
+    "meaning": "Free",
+    "wrong_meanings": [
+      "Grant voting rights to",
+      "Separate from family",
+      "Count"
+    ]
+  },
+  {
+    "w": "embargo",
+    "passage": "In 1807, hoping to pressure Britain and France to respect American ships, the United States government banned all exports to foreign nations. The policy backfired: American merchants lost their markets, ports from Boston to Charleston fell silent, and the economy slumped. Congress lifted the embargo just over a year later.",
+    "form": "embargo",
+    "wrong_words": [
+      "tariff",
+      "treaty",
+      "alliance"
+    ],
+    "meaning": "Trade ban",
+    "wrong_meanings": [
+      "Import tax",
+      "Formal warning",
+      "Peace agreement"
+    ]
+  },
+  {
+    "w": "embed",
+    "passage": "To track how glaciers move, geologists sometimes drill holes into the ice and lower sensors into them. As meltwater refreezes around each device, the ice holds it firmly in place. Scientists embed the sensors at several depths so that they can compare how quickly different layers of the glacier are flowing.",
+    "form": "embed",
+    "wrong_words": [
+      "calibrate",
+      "retrieve",
+      "dissolve"
+    ],
+    "meaning": "Fix firmly within",
+    "wrong_meanings": [
+      "Assign to a group",
+      "Hide secretly",
+      "Attach loosely to"
+    ]
+  },
+  {
+    "w": "embellish",
+    "passage": "Historians treat the explorer's published journals with caution. When his original field notes were rediscovered, they recorded a modest encounter with a single bear, yet the printed account describes a desperate struggle against three. He appears to have chosen to embellish his adventures to make them more thrilling for readers.",
+    "form": "embellish",
+    "wrong_words": [
+      "document",
+      "abridge",
+      "recall"
+    ],
+    "meaning": "Exaggerate",
+    "wrong_meanings": [
+      "Decorate",
+      "Illustrate",
+      "Disguise"
+    ]
+  },
+  {
+    "w": "embody",
+    "passage": "When the city commissioned a memorial for its firefighters, the sculptor wanted a single figure to stand for courage and sacrifice. She depicted a firefighter carrying a child from a burning building, his face calm despite the danger. Residents say the bronze figure seems to embody the selflessness the memorial honors.",
+    "form": "embody",
+    "wrong_words": [
+      "question",
+      "conceal",
+      "exaggerate"
+    ],
+    "meaning": "Give form to",
+    "wrong_meanings": [
+      "Include",
+      "Contain physically",
+      "Organize"
+    ]
+  },
+  {
+    "w": "emerge",
+    "passage": "At first, the field biologists' data on frog calls seemed random. After recording thousands of calls across an entire breeding season and plotting them against temperature, however, a clear pattern began to emerge: on warmer nights, males called faster and at higher pitches.",
+    "form": "emerge",
+    "wrong_words": [
+      "fade",
+      "repeat",
+      "collapse"
+    ],
+    "meaning": "Become apparent",
+    "wrong_meanings": [
+      "Climb out",
+      "Escape",
+      "Grow larger"
+    ]
+  },
+  {
+    "w": "emergence",
+    "passage": "For most of the nineteenth century, newspapers relied on illustrations engraved by hand. The arrival of halftone printing in the 1880s allowed photographs to be reproduced cheaply on the page, and its emergence transformed journalism, giving rise to the news photographer as a new profession.",
+    "form": "emergence",
+    "wrong_words": [
+      "decline",
+      "expense",
+      "prohibition"
+    ],
+    "meaning": "Appearance",
+    "wrong_meanings": [
+      "Escape",
+      "Urgency",
+      "Rebirth"
+    ]
+  },
+  {
+    "w": "emit",
+    "passage": "Fireflies produce light through a chemical reaction in special cells near the tip of the abdomen. Each species has its own signal: males of some kinds emit a single yellow flash every few seconds, while others produce rapid bursts of green, allowing females to recognize suitable mates in the dark.",
+    "form": "emit",
+    "wrong_words": [
+      "detect",
+      "absorb",
+      "imitate"
+    ],
+    "meaning": "Give off",
+    "wrong_meanings": [
+      "Leave out",
+      "Send away",
+      "Announce"
+    ]
+  },
+  {
+    "w": "empathy",
+    "passage": "In one experiment, young rats repeatedly chose to free a trapped companion from a small cage, even when a pile of chocolate chips sat nearby. Rats that had themselves once been confined acted especially quickly. Researchers suggested that the animals were showing a form of empathy, responding to another's distress as if they felt it.",
+    "form": "empathy",
+    "wrong_words": [
+      "curiosity",
+      "aggression",
+      "obedience"
+    ],
+    "meaning": "Fellow feeling",
+    "wrong_meanings": [
+      "Pity",
+      "Cooperation",
+      "Loyalty"
+    ]
+  },
+  {
+    "w": "emphasis",
+    "passage": "Unlike many elementary schools of its time, the experimental academy devoted little class time to memorizing facts. Instead, students spent most of each day building models, conducting experiments, and debating questions in small groups. Its founders placed particular emphasis on learning through hands-on discovery.",
+    "form": "emphasis",
+    "wrong_words": [
+      "doubt",
+      "limits",
+      "blame"
+    ],
+    "meaning": "Importance",
+    "wrong_meanings": [
+      "Loudness",
+      "Pressure",
+      "Repetition"
+    ]
+  },
+  {
+    "w": "empirical",
+    "passage": "For centuries, many people believed that maggots arose spontaneously from rotting meat. In 1668, one physician tested the idea by placing meat in jars, some sealed and some open. Maggots appeared only in the open jars, where flies could lay eggs, giving empirical support to the view that living things come from other living things.",
+    "form": "empirical",
+    "wrong_words": [
+      "theoretical",
+      "religious",
+      "popular"
+    ],
+    "meaning": "Experimental",
+    "wrong_meanings": [
+      "Philosophical",
+      "Imperial",
+      "Absolute"
+    ]
+  },
+  {
+    "w": "emulate",
+    "passage": "Young painters in Renaissance Florence often trained by copying the works of established masters. By studying how a celebrated artist handled light, color, and perspective, apprentices hoped to emulate his achievements and, ideally, someday surpass them with masterpieces of their own.",
+    "form": "emulate",
+    "wrong_words": [
+      "criticize",
+      "overlook",
+      "forget"
+    ],
+    "meaning": "Match by imitating",
+    "wrong_meanings": [
+      "Mock",
+      "Simulate digitally",
+      "Steal"
+    ]
+  },
+  {
+    "w": "enact",
+    "passage": "After a series of deadly factory fires, public pressure on state legislators grew intense. Within two years, lawmakers had debated and passed more than thirty new statutes requiring fire exits, sprinklers, and regular inspections. Reformers celebrated the decision to enact these measures as a turning point for workplace safety.",
+    "form": "enact",
+    "wrong_words": [
+      "propose",
+      "repeal",
+      "postpone"
+    ],
+    "meaning": "Make into law",
+    "wrong_meanings": [
+      "Act out",
+      "Perform onstage",
+      "Suggest"
+    ]
+  },
+  {
+    "w": "encompass",
+    "passage": "The new national park is far larger than its predecessor. Its boundaries encompass three mountain ranges, more than forty lakes, and the entire watershed of the river that flows through the valley, giving migrating elk room to move between their summer and winter grazing grounds.",
+    "form": "encompass",
+    "wrong_words": [
+      "border",
+      "divide",
+      "exclude"
+    ],
+    "meaning": "Include",
+    "wrong_meanings": [
+      "Circle around",
+      "Point toward",
+      "Achieve"
+    ]
+  },
+  {
+    "w": "encounter",
+    "passage": "Setting out across the plains in late summer, the expedition expected an easy crossing of the mountains. Instead, the party would encounter early blizzards, waist-deep snow, and dwindling food supplies, hardships that nearly forced the travelers to turn back before they reached the western rivers.",
+    "form": "encounter",
+    "wrong_words": [
+      "avoid",
+      "predict",
+      "record"
+    ],
+    "meaning": "Face",
+    "wrong_meanings": [
+      "Fight",
+      "Bump into",
+      "Greet"
+    ]
+  },
+  {
+    "w": "endemic",
+    "passage": "Madagascar separated from the African mainland more than 150 million years ago, and its plants and animals evolved in isolation. As a result, about ninety percent of the island's species, including every kind of lemur, are endemic and occur nowhere else on Earth.",
+    "form": "endemic",
+    "wrong_words": [
+      "endangered",
+      "nocturnal",
+      "migratory"
+    ],
+    "meaning": "Native exclusively",
+    "wrong_meanings": [
+      "Widespread",
+      "Diseased",
+      "Recently introduced"
+    ]
+  },
+  {
+    "w": "endorse",
+    "passage": "When the city council proposed converting an abandoned rail line into a walking trail, the plan faced little opposition. The local hiking club publicly praised it, the chamber of commerce predicted it would attract tourists, and the mayor announced that she would endorse the project in her annual address.",
+    "form": "endorse",
+    "wrong_words": [
+      "oppose",
+      "evaluate",
+      "reconsider"
+    ],
+    "meaning": "Back",
+    "wrong_meanings": [
+      "Sign",
+      "Pay for",
+      "Advertise"
+    ]
+  },
+  {
+    "w": "enduring",
+    "passage": "When it was first published in 1813, the novel sold modestly and received only a handful of reviews. Yet more than two centuries later, it remains in print in dozens of languages and is adapted for film and television almost every decade, a testament to its enduring appeal.",
+    "form": "enduring",
+    "wrong_words": [
+      "limited",
+      "sudden",
+      "fading"
+    ],
+    "meaning": "Lasting",
+    "wrong_meanings": [
+      "Suffering",
+      "Tolerating",
+      "Patient"
+    ]
+  },
+  {
+    "w": "enforce",
+    "passage": "The fishing law had been on the books for years, but with only one warden assigned to the entire coastline, illegal catches went largely unpunished. Only after the state hired additional officers and equipped patrol boats with tracking systems were authorities able to enforce the limits effectively.",
+    "form": "enforce",
+    "wrong_words": [
+      "debate",
+      "relax",
+      "publicize"
+    ],
+    "meaning": "Compel compliance with",
+    "wrong_meanings": [
+      "Strengthen physically",
+      "Write",
+      "Force out"
+    ]
+  },
+  {
+    "w": "enfranchise",
+    "passage": "Through the early 1900s, women in many countries could own property and pay taxes but could not cast a ballot. Suffragists marched, petitioned, and lobbied for decades before governments finally passed laws to enfranchise them, granting women the same voting rights men had long held.",
+    "form": "enfranchise",
+    "wrong_words": [
+      "employ",
+      "represent",
+      "silence"
+    ],
+    "meaning": "Give the vote to",
+    "wrong_meanings": [
+      "License a business",
+      "Set free",
+      "Elect"
+    ]
+  },
+  {
+    "w": "enhance",
+    "passage": "Astronomers rarely use raw telescope images in their research. Instead, they apply software that reduces background noise, sharpens blurred edges, and boosts faint colors. These techniques enhance the images so that dim galaxies and fine structures become visible.",
+    "form": "enhance",
+    "wrong_words": [
+      "distort",
+      "archive",
+      "replicate"
+    ],
+    "meaning": "Improve",
+    "wrong_meanings": [
+      "Enlarge",
+      "Alter falsely",
+      "Decorate"
+    ]
+  },
+  {
+    "w": "enigmatic",
+    "passage": "Carved into the hillside more than two thousand years ago, the giant figures have puzzled researchers for generations. No written records explain who made them or why, and their strange shapes match no known symbols from the region. The purpose of these enigmatic carvings is still debated.",
+    "form": "enigmatic",
+    "wrong_words": [
+      "eroded",
+      "colossal",
+      "primitive"
+    ],
+    "meaning": "Mysterious",
+    "wrong_meanings": [
+      "Sacred",
+      "Frightening",
+      "Complicated"
+    ]
+  },
+  {
+    "w": "enormous",
+    "passage": "The blue whale is the largest animal known to have ever lived. Adults can reach thirty meters in length and weigh as much as two hundred tons, and even a newborn calf weighs more than a full-grown elephant. Such enormous creatures survive by eating up to four tons of tiny krill each day.",
+    "form": "enormous",
+    "wrong_words": [
+      "graceful",
+      "ancient",
+      "solitary"
+    ],
+    "meaning": "Huge",
+    "wrong_meanings": [
+      "Outrageous",
+      "Heavy",
+      "Powerful"
+    ]
+  },
+  {
+    "w": "entity",
+    "passage": "For decades the research station was run as a department of the university, sharing its budget and staff. In 2005, however, it was reorganized as an independent entity, with its own board of directors, its own funding sources, and the legal authority to sign contracts in its own name.",
+    "form": "entity",
+    "wrong_words": [
+      "division",
+      "project",
+      "program"
+    ],
+    "meaning": "Organization",
+    "wrong_meanings": [
+      "Building",
+      "Living being",
+      "Concept"
+    ]
+  },
+  {
+    "w": "entrenched",
+    "passage": "When railroads first proposed standard time zones in the 1880s, many towns resisted. Each community had set its clocks by the local sun for generations, and residents viewed the custom as part of their identity. Because such entrenched habits were hard to overturn, it took decades for the new system to win full acceptance.",
+    "form": "entrenched",
+    "wrong_words": [
+      "recent",
+      "harmless",
+      "flexible"
+    ],
+    "meaning": "Deep-rooted",
+    "wrong_meanings": [
+      "Dug in",
+      "Fortified",
+      "Hidden"
+    ]
+  },
+  {
+    "w": "enumerate",
+    "passage": "The engineers' report on the bridge collapse does not offer a single explanation. Instead, it goes on to enumerate seven separate factors, listing each in turn, from corroded support cables and outdated design standards to heavier-than-expected traffic and years of delayed maintenance.",
+    "form": "enumerate",
+    "wrong_words": [
+      "dismiss",
+      "conceal",
+      "simplify"
+    ],
+    "meaning": "Itemize",
+    "wrong_meanings": [
+      "Calculate",
+      "Rank",
+      "Summarize"
+    ]
+  },
+  {
+    "w": "envision",
+    "passage": "When the landscape architect first walked through the abandoned rail yard, she saw more than rusted tracks and weeds. She began to envision a park filled with wildflower meadows, shaded walking paths, and an outdoor amphitheater, and she spent the next decade turning that picture into reality.",
+    "form": "envision",
+    "wrong_words": [
+      "document",
+      "demolish",
+      "inspect"
+    ],
+    "meaning": "Imagine",
+    "wrong_meanings": [
+      "Observe",
+      "Predict",
+      "Remember"
+    ]
+  },
+  {
+    "w": "ephemeral",
+    "passage": "Mayflies spend up to two years as aquatic larvae in streams and ponds. Once they mature and take to the air, however, their adult lives are remarkably ephemeral: most survive only a single day, just long enough to mate and lay eggs before dying.",
+    "form": "ephemeral",
+    "wrong_words": [
+      "productive",
+      "solitary",
+      "predictable"
+    ],
+    "meaning": "Short-lived",
+    "wrong_meanings": [
+      "Delicate",
+      "Insignificant",
+      "Fragile"
+    ]
+  },
+  {
+    "w": "epitomize",
+    "passage": "Built in 1931, the skyscraper's sleek setbacks, geometric ornaments, and gleaming metal spire contain nearly every feature associated with Art Deco design. Architecture students are often taken there because the building is said to epitomize the style more completely than any other.",
+    "form": "epitomize",
+    "wrong_words": [
+      "reject",
+      "predate",
+      "abandon"
+    ],
+    "meaning": "Perfectly represent",
+    "wrong_meanings": [
+      "Summarize briefly",
+      "Invent",
+      "Decorate"
+    ]
+  },
+  {
+    "w": "epoch",
+    "passage": "Some geologists argue that human activity has altered Earth so profoundly that the planet has entered a new epoch. Layers of plastic, concrete, and radioactive particles now appear in sediments worldwide, and they propose that this period, beginning in the mid-twentieth century, be named the Anthropocene.",
+    "form": "epoch",
+    "wrong_words": [
+      "crisis",
+      "orbit",
+      "habitat"
+    ],
+    "meaning": "Era",
+    "wrong_meanings": [
+      "Moment",
+      "Event",
+      "Location"
+    ]
+  },
+  {
+    "w": "equanimity",
+    "passage": "The pilot's voice over the intercom remained steady as she explained that one engine had failed and the plane would return to the airport. Passengers later said that her equanimity in the face of danger kept the cabin calm, and the aircraft landed safely twenty minutes later.",
+    "form": "equanimity",
+    "wrong_words": [
+      "urgency",
+      "hesitation",
+      "humor"
+    ],
+    "meaning": "Composure",
+    "wrong_meanings": [
+      "Fairness",
+      "Indifference",
+      "Courage"
+    ]
+  },
+  {
+    "w": "equate",
+    "passage": "Many early economists measured a nation's well-being almost entirely by its total output of goods. Later scholars objected that this approach tended to equate wealth with happiness, ignoring factors such as health, leisure, and community ties that surveys show matter greatly to people's satisfaction with their lives.",
+    "form": "equate",
+    "wrong_words": [
+      "contrast",
+      "replace",
+      "separate"
+    ],
+    "meaning": "Treat as identical",
+    "wrong_meanings": [
+      "Balance evenly",
+      "Calculate precisely",
+      "Exchange fairly"
+    ]
+  },
+  {
+    "w": "equilibrium",
+    "passage": "When wolves were reintroduced to the park, elk numbers fell sharply and willow saplings that the elk had been eating began to recover. Over the next two decades, however, the swings grew smaller, and populations of wolves, elk, and willows settled into a new equilibrium in which none changed dramatically from year to year.",
+    "form": "equilibrium",
+    "wrong_words": [
+      "conflict",
+      "decline",
+      "hierarchy"
+    ],
+    "meaning": "Balance",
+    "wrong_meanings": [
+      "Equality",
+      "Partnership",
+      "Calmness"
+    ]
+  },
+  {
+    "w": "equip",
+    "passage": "The community college's new program is designed for adults returning to the workforce. Over twelve weeks, participants learn to build spreadsheets, write professional emails, and manage project schedules. Organizers hope the course will equip graduates with the practical skills employers increasingly expect.",
+    "form": "equip",
+    "wrong_words": [
+      "burden",
+      "impress",
+      "test"
+    ],
+    "meaning": "Provide",
+    "wrong_meanings": [
+      "Dress",
+      "Arm",
+      "Decorate"
+    ]
+  },
+  {
+    "w": "equitable",
+    "passage": "When three neighboring towns agreed to share water from a single reservoir, they argued for months over how to divide it. The final agreement assigns each town a share based on its population and farmland, so that no community receives more than its fair portion. Residents of all three towns praised the arrangement as equitable.",
+    "form": "equitable",
+    "wrong_words": [
+      "generous",
+      "temporary",
+      "profitable"
+    ],
+    "meaning": "Fair",
+    "wrong_meanings": [
+      "Identical",
+      "Calm",
+      "Valuable"
+    ]
+  },
+  {
+    "w": "equivalent",
+    "passage": "Comparing ancient and modern prices is difficult. Historians estimate that in parts of the Roman Empire, a soldier's daily wage could buy about ten loaves of bread; by that measure, his pay was roughly equivalent to what a worker earning sixty dollars a day could purchase today.",
+    "form": "equivalent",
+    "wrong_words": [
+      "superior",
+      "unrelated",
+      "inferior"
+    ],
+    "meaning": "Equal",
+    "wrong_meanings": [
+      "Similar in form",
+      "Exchangeable",
+      "Converted"
+    ]
+  },
+  {
+    "w": "erode",
+    "passage": "The city's new transit line was promised for 2015, then 2018, then 2021. Each delay was accompanied by a larger budget and a fresh set of assurances from officials. Surveys show that these repeated broken promises have continued to erode residents' confidence in the transit agency.",
+    "form": "erode",
+    "wrong_words": [
+      "restore",
+      "reflect",
+      "justify"
+    ],
+    "meaning": "Undermine",
+    "wrong_meanings": [
+      "Wash away",
+      "Rust",
+      "Expose"
+    ]
+  },
+  {
+    "w": "erratic",
+    "passage": "Unlike many insects that fly in straight paths, the moth zigzags, loops, and abruptly changes direction several times per second. Biologists believe this erratic flight helps it escape bats, because a predator cannot easily predict where its prey will be a moment later.",
+    "form": "erratic",
+    "wrong_words": [
+      "rapid",
+      "silent",
+      "graceful"
+    ],
+    "meaning": "Unpredictable",
+    "wrong_meanings": [
+      "Mistaken",
+      "Wandering",
+      "Clumsy"
+    ]
+  },
+  {
+    "w": "erroneous",
+    "passage": "For decades, textbooks claimed that different regions of the tongue detect different tastes, with sweetness sensed at the tip and bitterness at the back. Later experiments showed that taste receptors for every flavor are spread across the entire tongue, revealing the old map to be erroneous.",
+    "form": "erroneous",
+    "wrong_words": [
+      "incomplete",
+      "outdated",
+      "controversial"
+    ],
+    "meaning": "Mistaken",
+    "wrong_meanings": [
+      "Wandering",
+      "Careless",
+      "Deceitful"
+    ]
+  },
+  {
+    "w": "essence",
+    "passage": "The poet rewrote the short poem more than forty times, cutting it from thirty lines to just six. She explained that she had removed every image and phrase that was merely decorative, keeping only what was necessary to express the poem's essence: the quiet grief of a mother watching her son leave home.",
+    "form": "essence",
+    "wrong_words": [
+      "length",
+      "rhythm",
+      "audience"
+    ],
+    "meaning": "Core",
+    "wrong_meanings": [
+      "Fragrance",
+      "Extract",
+      "Existence"
+    ]
+  },
+  {
+    "w": "esteem",
+    "passage": "Although she never sought publicity, the botanist was consulted by researchers from around the world, and her field guides became standard references. When she retired, dozens of former students and colleagues traveled to honor her, a sign of the high esteem in which she was held.",
+    "form": "esteem",
+    "wrong_words": [
+      "suspicion",
+      "secrecy",
+      "isolation"
+    ],
+    "meaning": "Regard",
+    "wrong_meanings": [
+      "Opinion",
+      "Value",
+      "Price"
+    ]
+  },
+  {
+    "w": "ethical",
+    "passage": "In the 1970s, investigators learned that some medical studies had been conducted on patients who were never told the risks or asked for permission. In response, universities created review boards to examine proposed research and ensure that it met ethical standards, including informed consent and protection from unnecessary harm.",
+    "form": "ethical",
+    "wrong_words": [
+      "financial",
+      "technical",
+      "statistical"
+    ],
+    "meaning": "Moral",
+    "wrong_meanings": [
+      "Legal",
+      "Cultural",
+      "Professional"
+    ]
+  },
+  {
+    "w": "euphemism",
+    "passage": "In the company's annual report, the layoff of nearly two thousand employees appeared only as a \"workforce adjustment.\" Labor advocates criticized the phrase as a classic euphemism designed to soften an announcement that, put plainly, meant thousands of people had lost their jobs.",
+    "form": "euphemism",
+    "wrong_words": [
+      "metaphor",
+      "contradiction",
+      "slogan"
+    ],
+    "meaning": "Mild substitute expression",
+    "wrong_meanings": [
+      "Outright lie",
+      "Technical term",
+      "Polite compliment"
+    ]
+  },
+  {
+    "w": "evaluate",
+    "passage": "To determine which of three reading programs best helped struggling third graders, the school district assigned each program to a different group of schools. At the end of the year, researchers will evaluate the programs by comparing students' test scores, attendance, and teachers' reports of their progress.",
+    "form": "evaluate",
+    "wrong_words": [
+      "promote",
+      "design",
+      "fund"
+    ],
+    "meaning": "Assess",
+    "wrong_meanings": [
+      "Calculate",
+      "Approve",
+      "Estimate the price of"
+    ]
+  },
+  {
+    "w": "eventual",
+    "passage": "In the early rounds of the chess tournament, few spectators paid attention to the seventeen-year-old from a small town. She lost her first game and barely advanced to the second week. Yet she won her next eight matches in a row, and the crowd that gathered for the final watched her become the eventual champion.",
+    "form": "eventual",
+    "wrong_words": [
+      "former",
+      "reluctant",
+      "probable"
+    ],
+    "meaning": "Ultimate",
+    "wrong_meanings": [
+      "Possible",
+      "Occasional",
+      "Eventful"
+    ]
+  },
+  {
+    "w": "evident",
+    "passage": "The rescued sea turtle had refused food for weeks. When she finally snapped up a piece of squid, the veterinary team's relief was evident: technicians cheered, the lead veterinarian broke into a wide grin, and someone ran to tell the volunteers waiting outside.",
+    "form": "evident",
+    "wrong_words": [
+      "concealed",
+      "muted",
+      "doubtful"
+    ],
+    "meaning": "Plain to see",
+    "wrong_meanings": [
+      "Proven in court",
+      "Factual",
+      "Expected"
+    ]
+  },
+  {
+    "w": "evoke",
+    "passage": "The novelist rarely tells readers directly what her characters feel. Instead, she relies on small sensory details, such as the smell of wet wool or the creak of a porch swing, to evoke a sense of the narrator's lost childhood and the longing she feels for it.",
+    "form": "evoke",
+    "wrong_words": [
+      "deny",
+      "explain",
+      "dismiss"
+    ],
+    "meaning": "Call up",
+    "wrong_meanings": [
+      "Summon spirits",
+      "Cause",
+      "Describe"
+    ]
+  },
+  {
+    "w": "evolve",
+    "passage": "The painter's earliest canvases were realistic landscapes, faithful to every leaf and cloud. Over the next three decades, his style would gradually evolve: shapes grew simpler, colors bolder, and by the end of his career his works consisted of a few blocks of pure color.",
+    "form": "evolve",
+    "wrong_words": [
+      "stagnate",
+      "vanish",
+      "repeat"
+    ],
+    "meaning": "Develop",
+    "wrong_meanings": [
+      "Adapt biologically",
+      "Spin",
+      "Improve"
+    ]
+  },
+  {
+    "w": "exacerbate",
+    "passage": "The region was already suffering from a two-year drought when an unusually hot summer arrived. Soaring temperatures increased evaporation from reservoirs and drove residents to water their lawns more often, both of which served only to exacerbate the existing water shortage.",
+    "form": "exacerbate",
+    "wrong_words": [
+      "alleviate",
+      "reveal",
+      "predict"
+    ],
+    "meaning": "Worsen",
+    "wrong_meanings": [
+      "Speed up",
+      "Irritate",
+      "Cause"
+    ]
+  },
+  {
+    "w": "exaggeration",
+    "passage": "In his letters home, the young sailor described waves \"as tall as church steeples\" during a storm off Cape Horn. Weather records for that week, however, show swells of only about four meters, suggesting that his account was an exaggeration meant to impress his family.",
+    "form": "exaggeration",
+    "wrong_words": [
+      "understatement",
+      "omission",
+      "apology"
+    ],
+    "meaning": "Overstatement",
+    "wrong_meanings": [
+      "Fabrication",
+      "Forecast",
+      "Complaint"
+    ]
+  },
+  {
+    "w": "exasperate",
+    "passage": "The renovation of the museum was supposed to take six months. Two years later, the entrance was still blocked by scaffolding, galleries were closed without notice, and the reopening date had been postponed four times. These repeated delays began to exasperate even the museum's most loyal members.",
+    "form": "exasperate",
+    "wrong_words": [
+      "intrigue",
+      "reassure",
+      "surprise"
+    ],
+    "meaning": "Infuriate",
+    "wrong_meanings": [
+      "Exhaust",
+      "Worsen",
+      "Confuse"
+    ]
+  },
+  {
+    "w": "exceed",
+    "passage": "Organizers of the community book drive had hoped to collect five thousand books for local schools. By the end of the month, donations had poured in from businesses, churches, and families across the county, and the total came to more than twelve thousand, far enough to exceed the original goal.",
+    "form": "exceed",
+    "wrong_words": [
+      "approach",
+      "revise",
+      "match"
+    ],
+    "meaning": "Surpass",
+    "wrong_meanings": [
+      "Violate",
+      "Excel",
+      "Leave behind"
+    ]
+  },
+  {
+    "w": "exclude",
+    "passage": "In designing their study of a new allergy medication, the researchers decided to exclude anyone who was already taking other allergy drugs. Including such participants, they reasoned, would make it impossible to tell whether any improvement came from the new medication or from the treatments the patients were already using.",
+    "form": "exclude",
+    "wrong_words": [
+      "recruit",
+      "interview",
+      "reward"
+    ],
+    "meaning": "Leave out",
+    "wrong_meanings": [
+      "Expel",
+      "Ignore",
+      "Shut away"
+    ]
+  },
+  {
+    "w": "execute",
+    "passage": "The rescue of the trapped miners required weeks of careful planning. Engineers designed a narrow capsule, drillers bored a shaft more than six hundred meters deep, and medical teams prepared for every possible emergency. When the moment came, the crews were able to execute the plan flawlessly, lifting every miner to the surface within a single day.",
+    "form": "execute",
+    "wrong_words": [
+      "abandon",
+      "revise",
+      "announce"
+    ],
+    "meaning": "Carry out",
+    "wrong_meanings": [
+      "Put to death",
+      "Sign legally",
+      "Draw up"
+    ]
+  },
+  {
+    "w": "exemplary",
+    "passage": "During her twelve years at the hospital, the nurse never missed a shift, trained dozens of new staff members, and was repeatedly praised by patients for her patience and skill. The administration presented her with its highest award, citing her exemplary service as a model for others.",
+    "form": "exemplary",
+    "wrong_words": [
+      "routine",
+      "brief",
+      "controversial"
+    ],
+    "meaning": "Outstanding",
+    "wrong_meanings": [
+      "Typical",
+      "Cautionary",
+      "Illustrative"
+    ]
+  },
+  {
+    "w": "exemplify",
+    "passage": "The town's main street is lined with brick storefronts built in the 1890s, each featuring tall arched windows, decorative iron cornices, and painted signs above the doors. Preservationists say these buildings exemplify the commercial architecture of small midwestern railroad towns of that era.",
+    "form": "exemplify",
+    "wrong_words": [
+      "predate",
+      "reject",
+      "surpass"
+    ],
+    "meaning": "Typify",
+    "wrong_meanings": [
+      "Perfect",
+      "Quote",
+      "Copy"
+    ]
+  },
+  {
+    "w": "exhaustive",
+    "passage": "The historian spent four years tracking down the missing letter. She examined every box in three national archives, read thousands of pages of diplomatic correspondence, and contacted the descendants of everyone the writer was known to have met. Only after this exhaustive search did she finally locate it in a private collection.",
+    "form": "exhaustive",
+    "wrong_words": [
+      "hasty",
+      "secret",
+      "costly"
+    ],
+    "meaning": "Comprehensive",
+    "wrong_meanings": [
+      "Tiring",
+      "Draining",
+      "Excessive"
+    ]
+  },
+  {
+    "w": "exhibit",
+    "passage": "Doctors at the rural clinic grew concerned when patients from the same village began arriving with fevers, joint pain, and a distinctive rash. Because so many of them would exhibit identical symptoms within a single week, investigators suspected a shared source, which they soon traced to a contaminated well.",
+    "form": "exhibit",
+    "wrong_words": [
+      "prevent",
+      "ignore",
+      "exaggerate"
+    ],
+    "meaning": "Show",
+    "wrong_meanings": [
+      "Put on public display",
+      "Present as evidence",
+      "Act out"
+    ]
+  },
+  {
+    "w": "exodus",
+    "passage": "Between 1916 and 1970, roughly six million Black Americans left the rural South for cities in the North and West, seeking factory jobs and escape from segregation laws. This vast exodus reshaped the nation's cities, transforming their politics, music, and neighborhoods.",
+    "form": "exodus",
+    "wrong_words": [
+      "reunion",
+      "settlement",
+      "uprising"
+    ],
+    "meaning": "Mass departure",
+    "wrong_meanings": [
+      "Religious journey",
+      "Forced exile",
+      "Escape from danger"
+    ]
+  },
+  {
+    "w": "exonerate",
+    "passage": "The man had spent eighteen years in prison for a robbery he insisted he had not committed. When new DNA testing of evidence from the crime scene revealed that the genetic material belonged to someone else, the results helped exonerate him, and a judge ordered his immediate release.",
+    "form": "exonerate",
+    "wrong_words": [
+      "convict",
+      "identify",
+      "sentence"
+    ],
+    "meaning": "Clear of guilt",
+    "wrong_meanings": [
+      "Release from prison",
+      "Pardon",
+      "Free from duty"
+    ]
+  },
+  {
+    "w": "expedite",
+    "passage": "During the outbreak, the usual process for approving new diagnostic tests could take more than a year. To expedite the review, regulators hired temporary staff, allowed companies to submit data in stages, and met with developers weekly, reducing the waiting time to just a few months.",
+    "form": "expedite",
+    "wrong_words": [
+      "prolong",
+      "suspend",
+      "complicate"
+    ],
+    "meaning": "Accelerate",
+    "wrong_meanings": [
+      "Send away",
+      "Simplify",
+      "Make easier"
+    ]
+  },
+  {
+    "w": "expertise",
+    "passage": "The ancient manuscript was written in a script that few living scholars could read. Researchers therefore turned to a retired linguist who had spent fifty years studying the region's lost languages. Her expertise allowed the team to translate passages that had baffled others for decades.",
+    "form": "expertise",
+    "wrong_words": [
+      "curiosity",
+      "enthusiasm",
+      "persistence"
+    ],
+    "meaning": "Specialized knowledge",
+    "wrong_meanings": [
+      "Experience abroad",
+      "Professional status",
+      "Practical advice"
+    ]
+  },
+  {
+    "w": "expiration",
+    "passage": "The family bookstore had occupied the same corner for forty years, renting its space under a series of long-term leases. When the building's new owner announced that rent would triple, the store had no choice but to relocate upon the expiration of its current lease that spring.",
+    "form": "expiration",
+    "wrong_words": [
+      "signing",
+      "renewal",
+      "extension"
+    ],
+    "meaning": "End",
+    "wrong_meanings": [
+      "Breathing out",
+      "Death",
+      "Cancellation"
+    ]
+  },
+  {
+    "w": "explicate",
+    "passage": "In the seminar, the professor spent an entire class period on a single fourteen-line sonnet. Working slowly, she would explicate each line in turn, pointing out double meanings, tracing the source of each image, and showing how the poem's rhyme scheme reinforced its argument.",
+    "form": "explicate",
+    "wrong_words": [
+      "memorize",
+      "recite",
+      "skip"
+    ],
+    "meaning": "Analyze in detail",
+    "wrong_meanings": [
+      "Read aloud",
+      "Translate",
+      "Rewrite"
+    ]
+  },
+  {
+    "w": "explicit",
+    "passage": "Earlier versions of the contest rules had only hinted that entries must be the applicant's own work, leading to disputes when some contestants submitted group projects. The revised guidelines are explicit, stating in bold type that each submission must be created entirely by a single student without outside help.",
+    "form": "explicit",
+    "wrong_words": [
+      "vague",
+      "lenient",
+      "brief"
+    ],
+    "meaning": "Clearly stated",
+    "wrong_meanings": [
+      "Graphic",
+      "Strict",
+      "Detailed"
+    ]
+  },
+  {
+    "w": "exploit",
+    "passage": "In the dense rainforest, little sunlight reaches the ground. Rather than growing a thick trunk of its own, the strangler fig sends its roots down around a host tree and climbs toward the canopy. The plant is thus able to exploit the height of its host to reach the light it needs.",
+    "form": "exploit",
+    "wrong_words": [
+      "resist",
+      "limit",
+      "measure"
+    ],
+    "meaning": "Take advantage of",
+    "wrong_meanings": [
+      "Mistreat",
+      "Explore",
+      "Damage"
+    ]
+  },
+  {
+    "w": "expose",
+    "passage": "For months, a team of reporters examined city contracts, interviewed former employees, and tracked payments between officials and construction firms. Their investigation helped expose a bribery scheme in which council members had steered millions of dollars in projects to companies owned by their relatives.",
+    "form": "expose",
+    "wrong_words": [
+      "fund",
+      "defend",
+      "organize"
+    ],
+    "meaning": "Reveal",
+    "wrong_meanings": [
+      "Subject to danger",
+      "Display",
+      "Leave unprotected"
+    ]
+  },
+  {
+    "w": "extensive",
+    "passage": "The hurricane's winds and flooding damaged nearly every structure along a forty-kilometer stretch of coastline. Roads were washed away, power lines were downed across three counties, and thousands of homes were left uninhabitable. Officials said repairing such extensive damage could take several years.",
+    "form": "extensive",
+    "wrong_words": [
+      "minor",
+      "sudden",
+      "unexpected"
+    ],
+    "meaning": "Widespread",
+    "wrong_meanings": [
+      "Expensive",
+      "Lengthy",
+      "Permanent"
+    ]
+  },
+  {
+    "w": "extent",
+    "passage": "Days after the tanker ran aground, oil had been spotted along beaches more than a hundred kilometers apart. Using aircraft and satellite images, scientists are still trying to map the full extent of the spill, which may have spread far beyond what was first reported.",
+    "form": "extent",
+    "wrong_words": [
+      "cause",
+      "cost",
+      "smell"
+    ],
+    "meaning": "Reach",
+    "wrong_meanings": [
+      "Degree of truth",
+      "Duration",
+      "Thickness"
+    ]
+  },
+  {
+    "w": "external",
+    "passage": "Some educators argue that grades and prizes are poor long-term motivators. In their view, students who work only for external rewards often lose interest once those rewards are removed, whereas students driven by their own curiosity tend to keep learning on their own.",
+    "form": "external",
+    "wrong_words": [
+      "generous",
+      "frequent",
+      "academic"
+    ],
+    "meaning": "Outside",
+    "wrong_meanings": [
+      "Visible",
+      "Foreign",
+      "Physical"
+    ]
+  },
+  {
+    "w": "extraneous",
+    "passage": "The editor returned the draft of the article with dozens of sentences crossed out. In her note, she explained that the writer's anecdotes about his travel arrangements and the history of the hotel, while entertaining, were extraneous to the story's real subject: the city's struggle to rebuild after the flood.",
+    "form": "extraneous",
+    "wrong_words": [
+      "essential",
+      "central",
+      "related"
+    ],
+    "meaning": "Irrelevant",
+    "wrong_meanings": [
+      "External",
+      "Excessive",
+      "Foreign"
+    ]
+  },
+  {
+    "w": "fabricate",
+    "passage": "The journalist's articles were praised for their vivid quotations until editors tried to contact some of the people he had interviewed. Several of them could not be found, and others said they had never spoken to him. An investigation concluded that he had chosen to fabricate entire conversations.",
+    "form": "fabricate",
+    "wrong_words": [
+      "transcribe",
+      "shorten",
+      "translate"
+    ],
+    "meaning": "Make up",
+    "wrong_meanings": [
+      "Build",
+      "Manufacture",
+      "Weave"
+    ]
+  },
+  {
+    "w": "facet",
+    "passage": "The biography does not limit itself to the inventor's laboratory work. Its chapters also examine his troubled childhood, his long friendship with a rival scientist, his lifelong love of opera, and his failed run for public office. The author explores nearly every facet of this complicated life.",
+    "form": "facet",
+    "wrong_words": [
+      "failure",
+      "decade",
+      "rumor"
+    ],
+    "meaning": "Aspect",
+    "wrong_meanings": [
+      "Cut surface",
+      "Detail",
+      "Mystery"
+    ]
+  },
+  {
+    "w": "facilitate",
+    "passage": "Before the bridge was built, merchants in the two river towns had to wait hours for a slow ferry, and goods often spoiled on the way. The new crossing allowed wagons to move freely between the towns in minutes, which helped facilitate trade and contributed to both towns' rapid growth.",
+    "form": "facilitate",
+    "wrong_words": [
+      "regulate",
+      "tax",
+      "restrict"
+    ],
+    "meaning": "Ease",
+    "wrong_meanings": [
+      "Lead",
+      "Build",
+      "Pay for"
+    ]
+  },
+  {
+    "w": "faction",
+    "passage": "As the debate over the new constitution dragged on, the reform party could no longer present a united front. One faction demanded immediate, sweeping changes to the voting system, while the rest of the party favored gradual reforms, and the two groups eventually began holding separate meetings.",
+    "form": "faction",
+    "wrong_words": [
+      "candidate",
+      "nation",
+      "committee"
+    ],
+    "meaning": "Splinter group",
+    "wrong_meanings": [
+      "Fraction",
+      "Rival party",
+      "Small portion"
+    ]
+  },
+  {
+    "w": "fallacy",
+    "passage": "Many people believe that going outside with wet hair in cold weather causes colds. Medical researchers point out that colds are caused by viruses, not by low temperatures, and that people catch more colds in winter mainly because they spend more time indoors together. The popular belief is, in short, a fallacy.",
+    "form": "fallacy",
+    "wrong_words": [
+      "tradition",
+      "precaution",
+      "remedy"
+    ],
+    "meaning": "Misconception",
+    "wrong_meanings": [
+      "Flawed argument",
+      "Deception",
+      "Failure"
+    ]
+  },
+  {
+    "w": "fastidious",
+    "passage": "Before a single plate left her kitchen, the chef examined it under a bright lamp, wiped away stray drops of sauce with a cloth, and adjusted each garnish with tweezers. Some of her staff found this fastidious attention to detail exhausting, but diners said it made every dish look like a painting.",
+    "form": "fastidious",
+    "wrong_words": [
+      "occasional",
+      "careless",
+      "casual"
+    ],
+    "meaning": "Meticulous",
+    "wrong_meanings": [
+      "Fussy about food",
+      "Quick",
+      "Fashionable"
+    ]
+  },
+  {
+    "w": "fatigue",
+    "passage": "Engineers examining the cracked aircraft wing found no sign of a single sudden impact. Instead, the metal had weakened gradually after thousands of cycles of bending during takeoffs and landings, until tiny cracks formed and spread. Their report attributed the failure to metal fatigue.",
+    "form": "fatigue",
+    "wrong_words": [
+      "corrosion",
+      "expansion",
+      "contamination"
+    ],
+    "meaning": "Stress-induced weakening",
+    "wrong_meanings": [
+      "Tiredness",
+      "Boredom",
+      "Rust"
+    ]
+  },
+  {
+    "w": "feasible",
+    "passage": "The town council liked the idea of building a light-rail line to the regional airport. After engineers estimated the cost at more than four times the town's annual budget, however, and state officials declined to provide funding, council members concluded that the project was not feasible.",
+    "form": "feasible",
+    "wrong_words": [
+      "popular",
+      "necessary",
+      "original"
+    ],
+    "meaning": "Practical",
+    "wrong_meanings": [
+      "Likely",
+      "Permitted",
+      "Reasonable"
+    ]
+  },
+  {
+    "w": "fervent",
+    "passage": "She had grown up beside a river polluted by factory waste, and as an adult she devoted her life to cleaning it up. She organized protests, testified before lawmakers dozens of times, and even moved her family to a riverside cabin to monitor the water herself. Friends described her as a fervent advocate for clean water.",
+    "form": "fervent",
+    "wrong_words": [
+      "reluctant",
+      "moderate",
+      "silent"
+    ],
+    "meaning": "Passionate",
+    "wrong_meanings": [
+      "Burning hot",
+      "Angry",
+      "Official"
+    ]
+  }
+]

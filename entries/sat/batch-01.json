@@ -1,0 +1,1714 @@
+[
+  {
+    "w": "abandon",
+    "passage": "Early in the project, the engineers planned to build the bridge's towers from locally quarried limestone. After test samples cracked under heavy loads, however, the team abandoned that plan entirely and turned instead to reinforced concrete, a material whose strength had already been proven on similar spans.",
+    "form": "abandoned",
+    "wrong_words": [
+      "defended",
+      "publicized",
+      "funded"
+    ],
+    "meaning": "Gave up",
+    "wrong_meanings": [
+      "Deserted in danger",
+      "Stopped controlling",
+      "Postponed briefly"
+    ]
+  },
+  {
+    "w": "abate",
+    "passage": "For three days the storm battered the coastal town, flooding streets and knocking out power. Only when the winds finally began to abate on the fourth morning did residents venture outside to survey the damage, stepping carefully over fallen branches.",
+    "form": "abate",
+    "wrong_words": [
+      "intensify",
+      "howl",
+      "gather"
+    ],
+    "meaning": "Die down",
+    "wrong_meanings": [
+      "Grow stronger",
+      "Change direction",
+      "Be deducted"
+    ]
+  },
+  {
+    "w": "aberration",
+    "passage": "For decades, the river's spring floods arrived in April with remarkable regularity. When a flood came in late February one year, hydrologists initially regarded the event as little more than a statistical aberration. Early floods in each of the following three years, however, suggested that the river's timing was genuinely shifting.",
+    "form": "aberration",
+    "wrong_words": [
+      "trend",
+      "certainty",
+      "prediction"
+    ],
+    "meaning": "Unusual exception",
+    "wrong_meanings": [
+      "Mental lapse",
+      "Optical distortion",
+      "Lasting change"
+    ]
+  },
+  {
+    "w": "abstain",
+    "passage": "In the final vote on the city's new zoning plan, seven council members voted yes and five voted no. The remaining member chose to abstain, explaining that because her family owned property in the affected district, casting a ballot either way could look like a conflict of interest.",
+    "form": "abstain",
+    "wrong_words": [
+      "object",
+      "campaign",
+      "testify"
+    ],
+    "meaning": "Refrain from voting",
+    "wrong_meanings": [
+      "Resign from office",
+      "Vote against",
+      "Avoid eating"
+    ]
+  },
+  {
+    "w": "abstract",
+    "passage": "Unlike the realistic landscapes that filled the gallery's first floor, the paintings upstairs were entirely abstract. Rather than depicting hills or rivers, the artist covered each canvas with overlapping bands of color and sharp geometric shapes that referred to nothing in the visible world.",
+    "form": "abstract",
+    "wrong_words": [
+      "detailed",
+      "faded",
+      "miniature"
+    ],
+    "meaning": "Nonrepresentational",
+    "wrong_meanings": [
+      "Theoretical",
+      "Briefly summarized",
+      "Hard to understand"
+    ]
+  },
+  {
+    "w": "acclaim",
+    "passage": "The novelist's first two books sold poorly and were largely ignored by reviewers. Her third, however, won widespread acclaim: critics praised its inventive structure, prize committees shortlisted it, and it was soon translated into more than twenty languages.",
+    "form": "acclaim",
+    "wrong_words": [
+      "scrutiny",
+      "notoriety",
+      "controversy"
+    ],
+    "meaning": "Enthusiastic praise",
+    "wrong_meanings": [
+      "Public criticism",
+      "Financial reward",
+      "Loud announcement"
+    ]
+  },
+  {
+    "w": "accommodate",
+    "passage": "The original concert hall, built in 1890, seated only six hundred people. As the orchestra's audience grew, the city added two balconies and widened the main floor so that the building could accommodate nearly two thousand listeners at each performance.",
+    "form": "accommodate",
+    "wrong_words": [
+      "entertain",
+      "inspire",
+      "survey"
+    ],
+    "meaning": "Make room for",
+    "wrong_meanings": [
+      "Adapt to",
+      "Do a favor for",
+      "Satisfy the wishes of"
+    ]
+  },
+  {
+    "w": "accumulate",
+    "passage": "Each year, a thin layer of sediment settles on the bottom of the mountain lake. Over thousands of years these layers accumulate into a deposit several meters thick, and by drilling cores from it, geologists can read a record of the region's past climate, much as one counts tree rings.",
+    "form": "accumulate",
+    "wrong_words": [
+      "dissolve",
+      "erode",
+      "scatter"
+    ],
+    "meaning": "Build up",
+    "wrong_meanings": [
+      "Wash away",
+      "Earn interest",
+      "Sort themselves"
+    ]
+  },
+  {
+    "w": "acknowledge",
+    "passage": "The author's argument that remote work increases productivity is persuasive, but it is not one-sided. She openly acknowledges that some employees struggle without the structure of an office, and she devotes a full chapter to these workers before explaining why she believes the benefits still outweigh the costs.",
+    "form": "acknowledges",
+    "wrong_words": [
+      "denies",
+      "doubts",
+      "forgets"
+    ],
+    "meaning": "Admits",
+    "wrong_meanings": [
+      "Greets",
+      "Thanks publicly",
+      "Formally certifies"
+    ]
+  },
+  {
+    "w": "acquiesce",
+    "passage": "The workers had demanded a four-day week, and at first the factory's owner refused even to discuss it. After a month-long strike halted production, though, he finally acquiesced, signing the agreement with obvious reluctance and declining to speak to reporters afterward.",
+    "form": "acquiesced",
+    "wrong_words": [
+      "retaliated",
+      "celebrated",
+      "retired"
+    ],
+    "meaning": "Gave in",
+    "wrong_meanings": [
+      "Struck back",
+      "Agreed eagerly",
+      "Negotiated harder"
+    ]
+  },
+  {
+    "w": "acquire",
+    "passage": "Children who grow up hearing two languages at home usually acquire both with little apparent effort. By contrast, adults learning a second language often spend years studying its grammar and vocabulary and may never lose a noticeable accent.",
+    "form": "acquire",
+    "wrong_words": [
+      "forget",
+      "translate",
+      "avoid"
+    ],
+    "meaning": "Learn",
+    "wrong_meanings": [
+      "Purchase",
+      "Inherit",
+      "Take over"
+    ]
+  },
+  {
+    "w": "acumen",
+    "passage": "Within ten years of opening a single bakery, Rosa Mendel owned a chain of forty shops. Rivals credited her success to luck, but those who worked with her pointed to her business acumen: she could size up a neighborhood in an afternoon and predict, almost unerringly, whether a new location would thrive.",
+    "form": "acumen",
+    "wrong_words": [
+      "partners",
+      "loans",
+      "license"
+    ],
+    "meaning": "Sharp judgment",
+    "wrong_meanings": [
+      "Wealth",
+      "Connections",
+      "Ambition"
+    ]
+  },
+  {
+    "w": "acute",
+    "passage": "Barn owls can catch mice in total darkness. Their hearing is so acute that they can locate a rustling animal beneath a layer of snow, using the tiny difference in when a sound reaches each ear to pinpoint its position.",
+    "form": "acute",
+    "wrong_words": [
+      "limited",
+      "ordinary",
+      "damaged"
+    ],
+    "meaning": "Keen",
+    "wrong_meanings": [
+      "Severe",
+      "Painful",
+      "Narrowly angled"
+    ]
+  },
+  {
+    "w": "adamant",
+    "passage": "Many of the builders urged the architect to add columns to support the museum's wide, overhanging roof. She remained adamant, however, insisting that the open entrance was essential to her design and that hidden steel beams could carry the load.",
+    "form": "adamant",
+    "wrong_words": [
+      "indecisive",
+      "apologetic",
+      "flexible"
+    ],
+    "meaning": "Firmly resolved",
+    "wrong_meanings": [
+      "Physically tough",
+      "Openly angry",
+      "Quietly unsure"
+    ]
+  },
+  {
+    "w": "adaptation",
+    "passage": "Desert plants face a constant shortage of water, and many have evolved features that help them survive it. The thick, waxy coating on a cactus stem, for example, is one such adaptation: it reduces the amount of water lost to evaporation in the intense heat.",
+    "form": "adaptation",
+    "wrong_words": [
+      "weakness",
+      "ornament",
+      "accident"
+    ],
+    "meaning": "Helpful evolved trait",
+    "wrong_meanings": [
+      "Film version",
+      "Rewritten story",
+      "Temporary adjustment"
+    ]
+  },
+  {
+    "w": "adept",
+    "passage": "Sea otters are adept at using tools. Floating on their backs, they balance flat stones on their chests and strike clams against them until the shells crack open, a technique young otters learn by watching their mothers.",
+    "form": "adept",
+    "wrong_words": [
+      "clumsy",
+      "hesitant",
+      "uninterested"
+    ],
+    "meaning": "Skilled",
+    "wrong_meanings": [
+      "Eager",
+      "Accustomed",
+      "Forbidden"
+    ]
+  },
+  {
+    "w": "adequate",
+    "passage": "The animal shelter's old heating system was not elegant, but it was adequate: it kept the kennels warm enough through the winter, even if the front office stayed chilly. Given its tight budget, the shelter decided to spend its funds on veterinary care rather than on a new furnace.",
+    "form": "adequate",
+    "wrong_words": [
+      "luxurious",
+      "dangerous",
+      "broken"
+    ],
+    "meaning": "Good enough",
+    "wrong_meanings": [
+      "Outstanding",
+      "Quite expensive",
+      "Equal in size"
+    ]
+  },
+  {
+    "w": "adherent",
+    "passage": "Stoicism, a philosophy founded in ancient Athens, taught that people should focus only on what they can control. The school attracted adherents from every level of Roman society: the emperor Marcus Aurelius and the former slave Epictetus both followed its teachings closely.",
+    "form": "adherents",
+    "wrong_words": [
+      "critics",
+      "opponents",
+      "skeptics"
+    ],
+    "meaning": "Followers",
+    "wrong_meanings": [
+      "Things that stick",
+      "Opponents",
+      "Founders"
+    ]
+  },
+  {
+    "w": "adjacent",
+    "passage": "The researchers compared two plots of land: one inside the protected forest and one on adjacent land, separated from it only by a narrow road. Because the plots shared the same soil and rainfall, any difference in bird populations could more confidently be linked to logging.",
+    "form": "adjacent",
+    "wrong_words": [
+      "distant",
+      "remote",
+      "foreign"
+    ],
+    "meaning": "Neighboring",
+    "wrong_meanings": [
+      "Similar",
+      "Parallel",
+      "Protected"
+    ]
+  },
+  {
+    "w": "adjust",
+    "passage": "When the orchestra moved into its new hall, the musicians at first found the sound unfamiliar; notes seemed to linger longer than they had in the old theater. Over several weeks of rehearsal, the players learned to adjust their tempos and dynamics, playing slightly faster and softer to suit the room's echo.",
+    "form": "adjust",
+    "wrong_words": [
+      "abandon",
+      "ignore",
+      "record"
+    ],
+    "meaning": "Change slightly",
+    "wrong_meanings": [
+      "Settle a claim",
+      "Get used to",
+      "Repair"
+    ]
+  },
+  {
+    "w": "admiration",
+    "passage": "As a young engineer, Lena Okafor studied every bridge designed by her mentor and kept sketches of them pinned above her desk. Her admiration for his work never faded, even after she had become a famous designer herself and her own bridges were more widely celebrated than his.",
+    "form": "admiration",
+    "wrong_words": [
+      "contempt",
+      "envy",
+      "curiosity"
+    ],
+    "meaning": "Warm respect",
+    "wrong_meanings": [
+      "Astonishment",
+      "Jealousy",
+      "Disapproval"
+    ]
+  },
+  {
+    "w": "admonish",
+    "passage": "When a student spilled paint across the studio floor and tried to hide the mess, the instructor did not shout. Instead, she quietly admonished him, reminding him that accidents were forgivable but concealing them was not, and then handed him a mop.",
+    "form": "admonished",
+    "wrong_words": [
+      "praised",
+      "ignored",
+      "thanked"
+    ],
+    "meaning": "Gently scolded",
+    "wrong_meanings": [
+      "Encouraged",
+      "Punished severely",
+      "Questioned"
+    ]
+  },
+  {
+    "w": "advent",
+    "passage": "Before the advent of refrigerated rail cars in the 1870s, fresh meat could rarely be shipped more than a short distance. Once the cars came into use, ranchers in the West could sell beef to cities on the East Coast, and the meatpacking industry grew rapidly.",
+    "form": "advent",
+    "wrong_words": [
+      "decline",
+      "abandonment",
+      "criticism"
+    ],
+    "meaning": "Arrival",
+    "wrong_meanings": [
+      "Religious season",
+      "Disappearance",
+      "Funding"
+    ]
+  },
+  {
+    "w": "adversary",
+    "passage": "For twenty years the two paleontologists competed to map the region's fossil beds, racing each other to new sites and publicly mocking each other's conclusions. Yet when one fell ill, her longtime adversary visited the hospital daily and finished cataloging her specimens for her.",
+    "form": "adversary",
+    "wrong_words": [
+      "assistant",
+      "student",
+      "admirer"
+    ],
+    "meaning": "Rival",
+    "wrong_meanings": [
+      "Accuser",
+      "Partner",
+      "Supervisor"
+    ]
+  },
+  {
+    "w": "adverse",
+    "passage": "Before a new medication is approved, it is tested on thousands of volunteers. Researchers record every adverse reaction, from mild headaches to dangerous drops in blood pressure, so that doctors can weigh these harms against the drug's benefits.",
+    "form": "adverse",
+    "wrong_words": [
+      "beneficial",
+      "intended",
+      "emotional"
+    ],
+    "meaning": "Harmful",
+    "wrong_meanings": [
+      "Reluctant",
+      "Rare",
+      "Opposing in court"
+    ]
+  },
+  {
+    "w": "advocate",
+    "passage": "Public health nurse Ada Brennan spent two decades documenting how contaminated wells spread disease in rural towns. She became one of the region's most effective voices for clean water, testifying before lawmakers and writing newspaper columns to advocate the construction of public water systems.",
+    "form": "advocate",
+    "wrong_words": [
+      "delay",
+      "question",
+      "oppose"
+    ],
+    "meaning": "Argue for",
+    "wrong_meanings": [
+      "Defend in court",
+      "Investigate",
+      "Pay for"
+    ]
+  },
+  {
+    "w": "aesthetic",
+    "passage": "The bridge's designers made several choices for purely aesthetic reasons. The gentle curve of the deck and the slender, tapering towers add nothing to the structure's strength, but they give the bridge a grace that has made it a favorite subject for photographers.",
+    "form": "aesthetic",
+    "wrong_words": [
+      "economic",
+      "structural",
+      "legal"
+    ],
+    "meaning": "Artistic",
+    "wrong_meanings": [
+      "Practical",
+      "Financial",
+      "Personal"
+    ]
+  },
+  {
+    "w": "affable",
+    "passage": "Visitors to the archive were often nervous about handling its fragile manuscripts, but the head librarian quickly put them at ease. She was so affable, chatting about her favorite documents and laughing at her own clumsy early mistakes, that even first-time researchers soon felt comfortable asking questions.",
+    "form": "affable",
+    "wrong_words": [
+      "stern",
+      "secretive",
+      "forgetful"
+    ],
+    "meaning": "Friendly",
+    "wrong_meanings": [
+      "Careful",
+      "Experienced",
+      "Strict"
+    ]
+  },
+  {
+    "w": "affectionate",
+    "passage": "In her letters to her younger brother, the poet signed off with nicknames from their childhood and filled the margins with tiny drawings of the family dog. These affectionate details reveal a warmth that her formal published verse rarely shows.",
+    "form": "affectionate",
+    "wrong_words": [
+      "careless",
+      "bitter",
+      "technical"
+    ],
+    "meaning": "Loving",
+    "wrong_meanings": [
+      "Formal",
+      "Emotionally moved",
+      "Pretentious"
+    ]
+  },
+  {
+    "w": "affinity",
+    "passage": "From an early age, the composer showed a striking affinity for the sounds of the natural world. As a boy he spent hours by the river transcribing bird calls into notebooks, and many of his later symphonies include melodies built from those childhood transcriptions.",
+    "form": "affinity",
+    "wrong_words": [
+      "aversion",
+      "indifference",
+      "hostility"
+    ],
+    "meaning": "Natural attraction",
+    "wrong_meanings": [
+      "Chemical bond",
+      "Family connection",
+      "Strong distaste"
+    ]
+  },
+  {
+    "w": "affirm",
+    "passage": "After a lower court ruled that the town's new noise ordinance was constitutional, opponents appealed the decision. The state's highest court, however, affirmed the ruling, agreeing with the lower court's reasoning and leaving the ordinance in effect.",
+    "form": "affirmed",
+    "wrong_words": [
+      "overturned",
+      "questioned",
+      "ignored"
+    ],
+    "meaning": "Upheld",
+    "wrong_meanings": [
+      "Stated confidently",
+      "Encouraged emotionally",
+      "Struck down"
+    ]
+  },
+  {
+    "w": "affluent",
+    "passage": "During the late nineteenth century, many of the nation's most affluent families built summer homes along the Rhode Island coast. These \"cottages,\" as their owners modestly called them, often contained dozens of rooms, marble staircases, and gardens tended by large staffs of servants.",
+    "form": "affluent",
+    "wrong_words": [
+      "impoverished",
+      "rural",
+      "anxious"
+    ],
+    "meaning": "Wealthy",
+    "wrong_meanings": [
+      "Flowing freely",
+      "Influential",
+      "Fashionable"
+    ]
+  },
+  {
+    "w": "aggregate",
+    "passage": "Individually, the small changes in each school's test scores were too slight to mean much. When the researchers combined data from all three hundred schools, though, the aggregate results revealed a clear pattern: scores rose steadily in districts that had lengthened their school day.",
+    "form": "aggregate",
+    "wrong_words": [
+      "individual",
+      "preliminary",
+      "contradictory"
+    ],
+    "meaning": "Combined",
+    "wrong_meanings": [
+      "Separate",
+      "Early",
+      "Made of gravel"
+    ]
+  },
+  {
+    "w": "agrarian",
+    "passage": "In the early 1800s, most Americans lived on farms and earned their living from the land. Many political leaders of the period celebrated this agrarian way of life, arguing that independent farmers made the most virtuous and self-reliant citizens. Within a century, though, the growth of factories had drawn millions of people into cities.",
+    "form": "agrarian",
+    "wrong_words": [
+      "urban",
+      "industrial",
+      "nomadic"
+    ],
+    "meaning": "Farming",
+    "wrong_meanings": [
+      "Factory-based",
+      "Wandering",
+      "Political"
+    ]
+  },
+  {
+    "w": "akin",
+    "passage": "Some music educators argue that learning to read music is akin to learning a second language. Both require students to master a system of written symbols, connect those symbols to sounds, and eventually process them so quickly that the translation becomes automatic.",
+    "form": "akin",
+    "wrong_words": [
+      "opposed",
+      "unrelated",
+      "inferior"
+    ],
+    "meaning": "Similar",
+    "wrong_meanings": [
+      "Related by blood",
+      "Preferable",
+      "Opposed"
+    ]
+  },
+  {
+    "w": "alarmed",
+    "passage": "When the ship's navigator noticed that the compass needle was spinning wildly, he was alarmed: without a reliable heading, the vessel could easily drift onto the reefs that lined the coast. He immediately woke the captain.",
+    "form": "alarmed",
+    "wrong_words": [
+      "amused",
+      "relieved",
+      "bored"
+    ],
+    "meaning": "Frightened",
+    "wrong_meanings": [
+      "Fitted with alarms",
+      "Awakened",
+      "Annoyed"
+    ]
+  },
+  {
+    "w": "albeit",
+    "passage": "The new telescope produced sharper images than any earlier instrument, albeit at a much higher cost. Its main mirror alone took four years and nearly half of the project's budget to grind and polish.",
+    "form": "albeit",
+    "wrong_words": [
+      "hence",
+      "likewise",
+      "moreover"
+    ],
+    "meaning": "Though",
+    "wrong_meanings": [
+      "Because",
+      "Especially",
+      "Unless"
+    ]
+  },
+  {
+    "w": "alienate",
+    "passage": "The mayor's plan to close three neighborhood libraries saved money, but it alienated many of her strongest supporters. Residents who had campaigned for her in two elections felt betrayed, and several announced that they would back her opponent in the next race.",
+    "form": "alienated",
+    "wrong_words": [
+      "energized",
+      "reassured",
+      "united"
+    ],
+    "meaning": "Drove away",
+    "wrong_meanings": [
+      "Transferred to others",
+      "Confused",
+      "Inspired"
+    ]
+  },
+  {
+    "w": "alleviate",
+    "passage": "During the drought, farmers in the valley struggled to keep their crops alive. To alleviate the crisis, the regional government released water from a reservoir upstream and offered low-interest loans to help growers survive until the rains returned.",
+    "form": "alleviate",
+    "wrong_words": [
+      "worsen",
+      "document",
+      "predict"
+    ],
+    "meaning": "Ease",
+    "wrong_meanings": [
+      "Raise up",
+      "Prolong",
+      "Explain"
+    ]
+  },
+  {
+    "w": "alliance",
+    "passage": "Two trading cities on the Baltic Sea had spent decades competing for control of the herring trade. When pirates began attacking ships from both ports, however, the cities set aside their differences. Under the terms of their new alliance, each city contributed warships to a shared fleet that escorted merchant vessels across the sea.",
+    "form": "alliance",
+    "wrong_words": [
+      "rivalry",
+      "dispute",
+      "embargo"
+    ],
+    "meaning": "Partnership",
+    "wrong_meanings": [
+      "Competition",
+      "Trade ban",
+      "Family relationship"
+    ]
+  },
+  {
+    "w": "allocate",
+    "passage": "Each spring, the school board must decide how to allocate its limited budget. This year, members voted to devote the largest share to repairing aging buildings, while smaller amounts went to new textbooks and after-school programs.",
+    "form": "allocate",
+    "wrong_words": [
+      "audit",
+      "reduce",
+      "publish"
+    ],
+    "meaning": "Distribute",
+    "wrong_meanings": [
+      "Locate",
+      "Save",
+      "Raise"
+    ]
+  },
+  {
+    "w": "allude",
+    "passage": "The poem never names the war in which the speaker's brother died. Instead, it alludes to the conflict through scattered images (a telegram left unopened, a flag folded on a shelf, the sound of distant drums), trusting readers to recognize what these details suggest.",
+    "form": "alludes",
+    "wrong_words": [
+      "responds",
+      "objects",
+      "surrenders"
+    ],
+    "meaning": "Refers indirectly",
+    "wrong_meanings": [
+      "Escapes",
+      "Points directly",
+      "Plays tricks"
+    ]
+  },
+  {
+    "w": "aloof",
+    "passage": "At family gatherings the old man remained aloof, sitting apart near the window and answering questions with a single word. Only after his death did his grandchildren discover the diaries in which he had recorded, with obvious tenderness, every detail of their visits.",
+    "form": "aloof",
+    "wrong_words": [
+      "cheerful",
+      "talkative",
+      "generous"
+    ],
+    "meaning": "Distant",
+    "wrong_meanings": [
+      "Overhead",
+      "Superior in rank",
+      "Hostile"
+    ]
+  },
+  {
+    "w": "alter",
+    "passage": "The novel's first edition ends with the heroine leaving her village forever. Under pressure from his publisher, however, the author agreed to alter the final chapter for the second edition, so that she returns home and marries her childhood friend instead.",
+    "form": "alter",
+    "wrong_words": [
+      "preserve",
+      "restore",
+      "translate"
+    ],
+    "meaning": "Change",
+    "wrong_meanings": [
+      "Shorten",
+      "Hem a garment",
+      "Approve"
+    ]
+  },
+  {
+    "w": "altruism",
+    "passage": "Biologists have long been puzzled by altruism in the animal world. Vampire bats, for example, will regurgitate part of a meal to feed a roostmate that failed to find food, even though doing so leaves the giver hungrier and brings it no immediate gain.",
+    "form": "altruism",
+    "wrong_words": [
+      "aggression",
+      "competition",
+      "camouflage"
+    ],
+    "meaning": "Selfless helping",
+    "wrong_meanings": [
+      "Fierce competition",
+      "Protective coloring",
+      "Group migration"
+    ]
+  },
+  {
+    "w": "amass",
+    "passage": "Over four decades, the retired schoolteacher amassed a collection of more than ten thousand seashells, many of which she gathered herself on beaches around the world. After her death, the collection was donated to a natural history museum, where scientists still use it to track changes in ocean life.",
+    "form": "amassed",
+    "wrong_words": [
+      "discarded",
+      "sold",
+      "photographed"
+    ],
+    "meaning": "Gathered",
+    "wrong_meanings": [
+      "Sold off",
+      "Organized",
+      "Studied"
+    ]
+  },
+  {
+    "w": "ambiguous",
+    "passage": "The final scene of the film is deliberately ambiguous. As the camera pulls away, viewers cannot tell whether the main character has boarded the departing train or stayed behind on the platform, and fans have argued about the ending for years.",
+    "form": "ambiguous",
+    "wrong_words": [
+      "predictable",
+      "lengthy",
+      "cheerful"
+    ],
+    "meaning": "Open to interpretation",
+    "wrong_meanings": [
+      "Hard to watch",
+      "Overly long",
+      "Easy to predict"
+    ]
+  },
+  {
+    "w": "ambivalent",
+    "passage": "Many residents of the fishing town are ambivalent about the proposed wind farm offshore. They welcome the jobs and cheaper electricity it would bring, but they also worry that the turbines could disrupt fish populations and spoil the view that draws tourists each summer.",
+    "form": "ambivalent",
+    "wrong_words": [
+      "indifferent",
+      "enthusiastic",
+      "ignorant"
+    ],
+    "meaning": "Of two minds",
+    "wrong_meanings": [
+      "Unconcerned",
+      "Strongly opposed",
+      "Poorly informed"
+    ]
+  },
+  {
+    "w": "ameliorate",
+    "passage": "Studies of urban heat islands show that dense neighborhoods with little greenery can be several degrees hotter than nearby parks. To ameliorate the problem, some cities have begun planting trees along streets and installing light-colored roofs that reflect sunlight instead of absorbing it.",
+    "form": "ameliorate",
+    "wrong_words": [
+      "exaggerate",
+      "measure",
+      "ignore"
+    ],
+    "meaning": "Lessen",
+    "wrong_meanings": [
+      "Explain",
+      "Spread",
+      "Make worse"
+    ]
+  },
+  {
+    "w": "amenable",
+    "passage": "At first, the village elders resisted the engineers' plan to reroute the stream. After the engineers showed that the new channel would protect the village's fields from flooding, though, most elders became amenable to the idea, and construction began the following spring.",
+    "form": "amenable",
+    "wrong_words": [
+      "hostile",
+      "oblivious",
+      "immune"
+    ],
+    "meaning": "Receptive",
+    "wrong_meanings": [
+      "Legally answerable",
+      "Opposed",
+      "Indifferent"
+    ]
+  },
+  {
+    "w": "amend",
+    "passage": "Rather than write an entirely new constitution, the delegates voted to amend the existing one. They added a clause guaranteeing freedom of the press and changed the method for electing judges, but left the rest of the document untouched.",
+    "form": "amend",
+    "wrong_words": [
+      "abolish",
+      "replace",
+      "ratify"
+    ],
+    "meaning": "Revise",
+    "wrong_meanings": [
+      "Approve formally",
+      "Repeal",
+      "Apologize for"
+    ]
+  },
+  {
+    "w": "amplify",
+    "passage": "Social media did not create the rumor about contaminated tap water, which began with a single misread lab report. But online sharing greatly amplified it: within a day, the false claim had reached hundreds of thousands of people and prompted a run on bottled water.",
+    "form": "amplified",
+    "wrong_words": [
+      "corrected",
+      "concealed",
+      "debunked"
+    ],
+    "meaning": "Spread more widely",
+    "wrong_meanings": [
+      "Raised the volume of",
+      "Explained in detail",
+      "Disproved"
+    ]
+  },
+  {
+    "w": "anachronism",
+    "passage": "Careful viewers of the historical drama, which is set in 1850, spotted one glaring anachronism. In a crowded street scene, a passerby can be seen wearing a digital wristwatch, a device that would not exist for more than a century.",
+    "form": "anachronism",
+    "wrong_words": [
+      "symbol",
+      "tribute",
+      "metaphor"
+    ],
+    "meaning": "Out-of-period detail",
+    "wrong_meanings": [
+      "Visual metaphor",
+      "Deliberate tribute",
+      "Background extra"
+    ]
+  },
+  {
+    "w": "analogous",
+    "passage": "The way a vaccine prepares the immune system is analogous to a fire drill: by rehearsing its response to a harmless imitation of danger, the body learns to react quickly when a real threat appears. Neither the drill nor the vaccine involves an actual emergency, yet both leave participants better prepared.",
+    "form": "analogous",
+    "wrong_words": [
+      "opposed",
+      "preferable",
+      "unrelated"
+    ],
+    "meaning": "Comparable",
+    "wrong_meanings": [
+      "Identical",
+      "Superior",
+      "Opposite"
+    ]
+  },
+  {
+    "w": "analogy",
+    "passage": "To help students grasp how electric current works, the physics teacher used a familiar analogy: she compared wires to water pipes, voltage to water pressure, and current to the amount of water flowing past a point each second. Although imperfect, the comparison made an invisible process far easier to picture.",
+    "form": "analogy",
+    "wrong_words": [
+      "experiment",
+      "formula",
+      "demonstration"
+    ],
+    "meaning": "Comparison",
+    "wrong_meanings": [
+      "Calculation",
+      "Proof",
+      "Story"
+    ]
+  },
+  {
+    "w": "ancestor",
+    "passage": "Whales may seem to have little in common with deer, but fossils show that the two groups are related. The earliest known ancestor of modern whales was a small, four-legged land mammal that waded in shallow streams, and over millions of years its descendants gradually took to the sea.",
+    "form": "ancestor",
+    "wrong_words": [
+      "descendant",
+      "predator",
+      "rival"
+    ],
+    "meaning": "Evolutionary forebear",
+    "wrong_meanings": [
+      "Offspring",
+      "Hunter",
+      "Older sibling"
+    ]
+  },
+  {
+    "w": "anecdote",
+    "passage": "The senator opened her speech not with statistics but with a brief anecdote: she described a night shift she had once spent shadowing a nurse in an understaffed hospital. Only after this personal story did she turn to the numbers supporting her proposal.",
+    "form": "anecdote",
+    "wrong_words": [
+      "chart",
+      "survey",
+      "joke"
+    ],
+    "meaning": "Personal story",
+    "wrong_meanings": [
+      "Rumor",
+      "Statistic",
+      "Formal report"
+    ]
+  },
+  {
+    "w": "animosity",
+    "passage": "The two neighboring towns had competed to become the county seat in 1880, and the losing side never forgot it. For generations, the animosity between them showed itself in bitter football rivalries, angry letters to the local paper, and even a refusal to share a fire department.",
+    "form": "animosity",
+    "wrong_words": [
+      "affection",
+      "distance",
+      "trade"
+    ],
+    "meaning": "Hostility",
+    "wrong_meanings": [
+      "Liveliness",
+      "Rivalry in sports",
+      "Physical separation"
+    ]
+  },
+  {
+    "w": "annotate",
+    "passage": "Before the seminar, students were asked to annotate the speech, writing brief explanations in the margins wherever the speaker referred to an unfamiliar event or used a striking figure of speech. The instructor then collected the marked-up copies to see which passages had puzzled the class most.",
+    "form": "annotate",
+    "wrong_words": [
+      "memorize",
+      "recite",
+      "shorten"
+    ],
+    "meaning": "Add notes to",
+    "wrong_meanings": [
+      "Summarize",
+      "Translate",
+      "Grade"
+    ]
+  },
+  {
+    "w": "anomaly",
+    "passage": "For most of the year, the lake sensor recorded water temperatures within a narrow range. One reading in July, however, showed a sudden spike of nearly ten degrees. Researchers eventually traced this anomaly to a malfunctioning battery rather than to any change in the lake itself.",
+    "form": "anomaly",
+    "wrong_words": [
+      "pattern",
+      "trend",
+      "average"
+    ],
+    "meaning": "Irregularity",
+    "wrong_meanings": [
+      "Average value",
+      "Repeated cycle",
+      "Hidden identity"
+    ]
+  },
+  {
+    "w": "antagonistic",
+    "passage": "Relations between the newspaper and the city's police chief had grown openly antagonistic. The paper ran a series of stories accusing his department of misconduct, and the chief responded by banning its reporters from press briefings.",
+    "form": "antagonistic",
+    "wrong_words": [
+      "cordial",
+      "routine",
+      "cooperative"
+    ],
+    "meaning": "Hostile",
+    "wrong_meanings": [
+      "Theatrical",
+      "Businesslike",
+      "Mutually helpful"
+    ]
+  },
+  {
+    "w": "antecedent",
+    "passage": "Jazz did not appear out of nowhere in early twentieth-century New Orleans. Its antecedents include West African drumming traditions, the spirituals sung in Southern churches, and the brass band marches that were popular at the time.",
+    "form": "antecedents",
+    "wrong_words": [
+      "imitators",
+      "critics",
+      "successors"
+    ],
+    "meaning": "Forerunners",
+    "wrong_meanings": [
+      "Grammatical referents",
+      "Followers",
+      "Audiences"
+    ]
+  },
+  {
+    "w": "anticipate",
+    "passage": "Experienced chess players often anticipate their opponents' moves several turns in advance. By recognizing familiar patterns on the board, they can foresee likely attacks and position their pieces to block them before the threat even materializes.",
+    "form": "anticipate",
+    "wrong_words": [
+      "imitate",
+      "forget",
+      "criticize"
+    ],
+    "meaning": "Predict",
+    "wrong_meanings": [
+      "Look forward to eagerly",
+      "Copy",
+      "Delay"
+    ]
+  },
+  {
+    "w": "antiquity",
+    "passage": "The marble statue, discovered by divers off the Greek coast, dates from antiquity. Chemical analysis of the stone and the style of the carving suggest it was sculpted around 400 BCE, and the ship that carried it sank only a few centuries later.",
+    "form": "antiquity",
+    "wrong_words": [
+      "modernity",
+      "infancy",
+      "obscurity"
+    ],
+    "meaning": "Ancient times",
+    "wrong_meanings": [
+      "Great value",
+      "Rarity",
+      "Recent decades"
+    ]
+  },
+  {
+    "w": "antithesis",
+    "passage": "The architect's sleek glass library is the antithesis of the heavy stone building it replaced. Where the old structure was dark, closed, and fortress-like, the new one is bright and open, inviting passersby to look inside.",
+    "form": "antithesis",
+    "wrong_words": [
+      "replica",
+      "continuation",
+      "extension"
+    ],
+    "meaning": "Opposite",
+    "wrong_meanings": [
+      "Copy",
+      "Thesis statement",
+      "Successor"
+    ]
+  },
+  {
+    "w": "apathy",
+    "passage": "Organizers of the city election worried about voter apathy after turnout in the previous race fell below twenty percent. Surveys revealed that many residents simply did not care who won, believing that local government had little effect on their daily lives.",
+    "form": "apathy",
+    "wrong_words": [
+      "fraud",
+      "enthusiasm",
+      "confusion"
+    ],
+    "meaning": "Indifference",
+    "wrong_meanings": [
+      "Sympathy",
+      "Anger",
+      "Exhaustion"
+    ]
+  },
+  {
+    "w": "apex",
+    "passage": "Orcas sit at the apex of the ocean food chain. No other animal hunts adult orcas, and they in turn prey on fish, seals, and even great white sharks.",
+    "form": "apex",
+    "wrong_words": [
+      "base",
+      "middle",
+      "fringe"
+    ],
+    "meaning": "Top",
+    "wrong_meanings": [
+      "Beginning",
+      "Outer edge",
+      "Turning point"
+    ]
+  },
+  {
+    "w": "apparent",
+    "passage": "The apparent calm of the forest floor is misleading. Beneath the leaf litter, millions of fungi, insects, and bacteria are constantly at work breaking down dead plants and recycling nutrients into the soil.",
+    "form": "apparent",
+    "wrong_words": [
+      "genuine",
+      "lasting",
+      "dangerous"
+    ],
+    "meaning": "Seeming",
+    "wrong_meanings": [
+      "Obvious",
+      "Inherited",
+      "Actual"
+    ]
+  },
+  {
+    "w": "appease",
+    "passage": "Facing a revolt by nobles who resented his heavy taxes, the king tried to appease them by lowering the tax on land and granting them seats on his royal council. The concessions calmed the nobles for a time, but within five years they had risen against him again.",
+    "form": "appease",
+    "wrong_words": [
+      "punish",
+      "imprison",
+      "outwit"
+    ],
+    "meaning": "Placate",
+    "wrong_meanings": [
+      "Defeat",
+      "Relieve the hunger of",
+      "Deceive"
+    ]
+  },
+  {
+    "w": "appraise",
+    "passage": "Before the auction, an expert was hired to appraise each painting in the estate. She examined the canvases, verified the artists' signatures, and reviewed recent sales of similar works before assigning each piece an estimated price.",
+    "form": "appraise",
+    "wrong_words": [
+      "restore",
+      "frame",
+      "praise"
+    ],
+    "meaning": "Assess the value of",
+    "wrong_meanings": [
+      "Compliment",
+      "Repair",
+      "Purchase"
+    ]
+  },
+  {
+    "w": "appreciate",
+    "passage": "Collectors who bought first editions of the novel in 1950 for a few dollars have watched their copies appreciate dramatically. Today, a copy in good condition can sell for more than twenty thousand dollars at auction.",
+    "form": "appreciate",
+    "wrong_words": [
+      "deteriorate",
+      "disappear",
+      "circulate"
+    ],
+    "meaning": "Rise in value",
+    "wrong_meanings": [
+      "Be enjoyed",
+      "Be fully understood",
+      "Wear out"
+    ]
+  },
+  {
+    "w": "apprehensive",
+    "passage": "Many of the sailors were apprehensive about the voyage. No ship had ever attempted to cross the northern passage so late in the season, and the men had heard stories of vessels trapped in the ice for entire winters.",
+    "form": "apprehensive",
+    "wrong_words": [
+      "excited",
+      "indifferent",
+      "confident"
+    ],
+    "meaning": "Anxious",
+    "wrong_meanings": [
+      "Understanding",
+      "Arrested",
+      "Eager"
+    ]
+  },
+  {
+    "w": "approximate",
+    "passage": "Because the ancient city's census records were lost, historians can offer only approximate figures for its population. By counting the houses uncovered by archaeologists and estimating how many people lived in each, they place it somewhere between 20,000 and 30,000.",
+    "form": "approximate",
+    "wrong_words": [
+      "exact",
+      "official",
+      "inflated"
+    ],
+    "meaning": "Estimated",
+    "wrong_meanings": [
+      "Nearby",
+      "Exact",
+      "Officially recorded"
+    ]
+  },
+  {
+    "w": "arbitrary",
+    "passage": "Critics of the school's dress code argue that many of its rules are arbitrary. Students may wear blue shirts but not green ones, for instance, and sneakers are allowed on Mondays but banned the rest of the week, yet administrators have offered no reason for either rule.",
+    "form": "arbitrary",
+    "wrong_words": [
+      "sensible",
+      "outdated",
+      "strict"
+    ],
+    "meaning": "Without reason",
+    "wrong_meanings": [
+      "Too strict",
+      "Old-fashioned",
+      "Decided by judges"
+    ]
+  },
+  {
+    "w": "arcane",
+    "passage": "Medieval guilds closely guarded the arcane techniques of their crafts. Glassmakers in Venice, for example, were forbidden to leave the city, lest they reveal to outsiders the secret methods that gave Venetian glass its unusual clarity.",
+    "form": "arcane",
+    "wrong_words": [
+      "simple",
+      "public",
+      "modern"
+    ],
+    "meaning": "Known only to insiders",
+    "wrong_meanings": [
+      "Curved",
+      "Ancient",
+      "Dangerous"
+    ]
+  },
+  {
+    "w": "archaic",
+    "passage": "Some laws remain on the books long after they have become archaic. In one small town, for example, an 1890 ordinance still technically forbids tying a horse to a lamppost on Main Street, even though no one has ridden a horse downtown in decades.",
+    "form": "archaic",
+    "wrong_words": [
+      "popular",
+      "controversial",
+      "effective"
+    ],
+    "meaning": "Outdated",
+    "wrong_meanings": [
+      "Arched",
+      "Foundational",
+      "Unfair"
+    ]
+  },
+  {
+    "w": "ardent",
+    "passage": "Throughout her life, the novelist remained one of the suffrage movement's most ardent supporters. She marched in every parade, wrote dozens of pamphlets, and once spent a week in jail rather than pay a fine for protesting.",
+    "form": "ardent",
+    "wrong_words": [
+      "reluctant",
+      "silent",
+      "distant"
+    ],
+    "meaning": "Passionate",
+    "wrong_meanings": [
+      "Burning hot",
+      "Wealthy",
+      "Hesitant"
+    ]
+  },
+  {
+    "w": "arduous",
+    "passage": "The pilgrims' route across the mountains was arduous. They climbed steep, rocky trails for days, often in freezing rain, and many turned back exhausted before reaching the monastery at the summit.",
+    "form": "arduous",
+    "wrong_words": [
+      "pleasant",
+      "brief",
+      "familiar"
+    ],
+    "meaning": "Grueling",
+    "wrong_meanings": [
+      "Scenic",
+      "Holy",
+      "Crowded"
+    ]
+  },
+  {
+    "w": "articulate",
+    "passage": "In her essay, the philosopher tries to articulate a feeling that most people experience but rarely put into words: the strange sadness of finishing a book one has loved. Her careful descriptions have led many readers to remark that she has finally named something they had always known.",
+    "form": "articulate",
+    "wrong_words": [
+      "suppress",
+      "ignore",
+      "relieve"
+    ],
+    "meaning": "Express clearly",
+    "wrong_meanings": [
+      "Connect by joints",
+      "Pronounce",
+      "Hide"
+    ]
+  },
+  {
+    "w": "artifact",
+    "passage": "Among the artifacts recovered from the shipwreck were bronze coins, clay oil lamps, and a carved ivory comb. These objects, made and used by the ship's passengers, offer historians a rare glimpse of daily life at sea two thousand years ago.",
+    "form": "artifacts",
+    "wrong_words": [
+      "fossils",
+      "minerals",
+      "skeletons"
+    ],
+    "meaning": "Human-made objects",
+    "wrong_meanings": [
+      "Natural remains",
+      "Procedural errors",
+      "Works of fine art"
+    ]
+  },
+  {
+    "w": "artificial",
+    "passage": "The actor's performance struck critics as artificial. His smile never reached his eyes, and his tearful speech in the final scene seemed rehearsed rather than felt.",
+    "form": "artificial",
+    "wrong_words": [
+      "moving",
+      "subtle",
+      "lengthy"
+    ],
+    "meaning": "Insincere",
+    "wrong_meanings": [
+      "Synthetic",
+      "Skillful",
+      "Overly long"
+    ]
+  },
+  {
+    "w": "ascertain",
+    "passage": "Before the old bridge could be reopened, engineers had to ascertain whether its steel cables had been weakened by decades of corrosion. They took samples from each cable and tested them in a laboratory to determine exactly how much weight the cables could bear.",
+    "form": "ascertain",
+    "wrong_words": [
+      "predict",
+      "doubt",
+      "conceal"
+    ],
+    "meaning": "Find out",
+    "wrong_meanings": [
+      "Guess",
+      "Insist",
+      "Promise"
+    ]
+  },
+  {
+    "w": "aspiration",
+    "passage": "From the time she built her first radio at age eleven, the young engineer's greatest aspiration was to design instruments for space exploration. Decades later, she realized that dream when a spectrometer she had developed flew aboard a probe to Saturn.",
+    "form": "aspiration",
+    "wrong_words": [
+      "fear",
+      "regret",
+      "obstacle"
+    ],
+    "meaning": "Ambition",
+    "wrong_meanings": [
+      "Breathing",
+      "Fear",
+      "Talent"
+    ]
+  },
+  {
+    "w": "assent",
+    "passage": "Under the kingdom's constitution, no bill could become law without the monarch's assent. In practice, however, the queen had not refused to sign a bill passed by parliament in more than a century.",
+    "form": "assent",
+    "wrong_words": [
+      "dissent",
+      "knowledge",
+      "criticism"
+    ],
+    "meaning": "Approval",
+    "wrong_meanings": [
+      "Rise to power",
+      "Objection",
+      "Awareness"
+    ]
+  },
+  {
+    "w": "assert",
+    "passage": "In her new book, the historian asserts that the decline of the ancient city was caused not by invasion, as long believed, but by a series of droughts. She supports this bold claim with evidence from tree rings and lake sediment cores.",
+    "form": "asserts",
+    "wrong_words": [
+      "denies",
+      "doubts",
+      "forgets"
+    ],
+    "meaning": "Claims confidently",
+    "wrong_meanings": [
+      "Admits reluctantly",
+      "Questions",
+      "Forgets"
+    ]
+  },
+  {
+    "w": "assiduous",
+    "passage": "The novel's hero succeeds not through brilliance but through assiduous effort. Night after night, by the light of a single candle, he copies out the law books he cannot afford to buy, until after six years he knows them better than his teachers do.",
+    "form": "assiduous",
+    "wrong_words": [
+      "careless",
+      "sporadic",
+      "reluctant"
+    ],
+    "meaning": "Diligent",
+    "wrong_meanings": [
+      "Brilliant",
+      "Occasional",
+      "Unwilling"
+    ]
+  },
+  {
+    "w": "assume",
+    "passage": "When the company's founder retired, her daughter assumed control of the business. Within five years the daughter had doubled its size, opening factories in three new countries.",
+    "form": "assumed",
+    "wrong_words": [
+      "relinquished",
+      "resented",
+      "doubted"
+    ],
+    "meaning": "Took on",
+    "wrong_meanings": [
+      "Supposed",
+      "Pretended",
+      "Gave up"
+    ]
+  },
+  {
+    "w": "assure",
+    "passage": "Passengers grew nervous as the plane shook through a patch of turbulence. Soon the pilot's calm voice came over the speakers to assure them that the bumps were normal and that the aircraft was in no danger.",
+    "form": "assure",
+    "wrong_words": [
+      "warn",
+      "caution",
+      "alert"
+    ],
+    "meaning": "Reassure",
+    "wrong_meanings": [
+      "Insure financially",
+      "Warn",
+      "Make certain of"
+    ]
+  },
+  {
+    "w": "astute",
+    "passage": "The detective in the story is remarkably astute. Within minutes of meeting a stranger, she can tell from his calloused hands and sunburned neck that he works outdoors, and from a faint smell of salt that he has recently been at sea.",
+    "form": "astute",
+    "wrong_words": [
+      "careless",
+      "suspicious",
+      "secretive"
+    ],
+    "meaning": "Perceptive",
+    "wrong_meanings": [
+      "Distrustful",
+      "Talkative",
+      "Strict"
+    ]
+  },
+  {
+    "w": "attain",
+    "passage": "After years of training at high altitude, the runner finally attained her goal of breaking the national record in the marathon. She crossed the finish line nearly a minute ahead of the previous record holder's best time.",
+    "form": "attained",
+    "wrong_words": [
+      "abandoned",
+      "revised",
+      "announced"
+    ],
+    "meaning": "Achieved",
+    "wrong_meanings": [
+      "Set",
+      "Gave up",
+      "Postponed"
+    ]
+  },
+  {
+    "w": "attribute",
+    "passage": "For years, farmers in the region blamed the declining bee population on harsh winters. A new study, however, attributes the losses mainly to a pesticide widely used on nearby fields, noting that colonies far from those fields have remained healthy.",
+    "form": "attributes",
+    "wrong_words": [
+      "compares",
+      "dedicates",
+      "restricts"
+    ],
+    "meaning": "Traces the cause of",
+    "wrong_meanings": [
+      "Compares",
+      "Restricts",
+      "Pays tribute for"
+    ]
+  },
+  {
+    "w": "atypical",
+    "passage": "Most species of spider live alone and will attack or even eat others of their kind. One species found in tropical forests is strikingly atypical: its members live in colonies of thousands, build shared webs, and cooperate to capture prey far larger than any single spider could subdue.",
+    "form": "atypical",
+    "wrong_words": [
+      "aggressive",
+      "solitary",
+      "venomous"
+    ],
+    "meaning": "Unusual",
+    "wrong_meanings": [
+      "Common",
+      "Dangerous",
+      "Primitive"
+    ]
+  },
+  {
+    "w": "audacious",
+    "passage": "The plan was audacious: a crew of six would sail a small wooden raft across eight thousand kilometers of open Pacific Ocean to test whether ancient peoples could have made the same voyage. Many experts predicted that the raft would sink within weeks.",
+    "form": "audacious",
+    "wrong_words": [
+      "modest",
+      "routine",
+      "secret"
+    ],
+    "meaning": "Daring",
+    "wrong_meanings": [
+      "Impolite",
+      "Cautious",
+      "Expensive"
+    ]
+  },
+  {
+    "w": "augment",
+    "passage": "The town's reservoir can no longer supply enough water for its growing population during dry summers. To augment the supply, officials plan to drill several new wells and to build a system that captures rainwater from rooftops.",
+    "form": "augment",
+    "wrong_words": [
+      "ration",
+      "measure",
+      "purify"
+    ],
+    "meaning": "Increase",
+    "wrong_meanings": [
+      "Predict",
+      "Limit",
+      "Clean"
+    ]
+  },
+  {
+    "w": "auspicious",
+    "passage": "The new restaurant's opening night was hardly auspicious. A storm knocked out the power an hour after the doors opened, and the few diners who stayed ate cold food by candlelight. Yet within a year, it had become one of the most popular restaurants in the city.",
+    "form": "auspicious",
+    "wrong_words": [
+      "disastrous",
+      "memorable",
+      "eventful"
+    ],
+    "meaning": "Promising",
+    "wrong_meanings": [
+      "Suspicious",
+      "Formal",
+      "Crowded"
+    ]
+  },
+  {
+    "w": "austere",
+    "passage": "The monks' living quarters were austere: each small cell contained only a narrow wooden bed, a single chair, and a shelf for books, with no paintings or decorations on the bare stone walls. Visitors who had admired the monastery's richly ornamented chapel were often surprised by the contrast.",
+    "form": "austere",
+    "wrong_words": [
+      "spacious",
+      "luxurious",
+      "cluttered"
+    ],
+    "meaning": "Plain",
+    "wrong_meanings": [
+      "Strict",
+      "Expensive",
+      "Old-fashioned"
+    ]
+  },
+  {
+    "w": "authentic",
+    "passage": "For decades, the museum displayed a small bronze helmet as a rare example of ancient Celtic metalwork. When chemists analyzed the metal, however, they found traces of an alloy not produced until the 1800s, proving that the helmet, long thought to be authentic, was in fact a clever forgery.",
+    "form": "authentic",
+    "wrong_words": [
+      "decorative",
+      "fragile",
+      "damaged"
+    ],
+    "meaning": "Genuine",
+    "wrong_meanings": [
+      "Original in style",
+      "Reliable",
+      "Authorized"
+    ]
+  },
+  {
+    "w": "autocratic",
+    "passage": "The new manager's autocratic style quickly caused friction in the office. She made every decision herself, refused to consult her team, and overruled even minor choices that employees had once been trusted to make on their own.",
+    "form": "autocratic",
+    "wrong_words": [
+      "collaborative",
+      "relaxed",
+      "inconsistent"
+    ],
+    "meaning": "Domineering",
+    "wrong_meanings": [
+      "Automatic",
+      "Self-taught",
+      "Democratic"
+    ]
+  },
+  {
+    "w": "autonomy",
+    "passage": "Under the agreement, the island would remain part of the country but gain broad autonomy over its own affairs. It would elect its own parliament, set its own taxes, and run its own schools, while the national government kept control only of defense and foreign policy.",
+    "form": "autonomy",
+    "wrong_words": [
+      "debt",
+      "influence",
+      "uncertainty"
+    ],
+    "meaning": "Self-government",
+    "wrong_meanings": [
+      "Wealth",
+      "Isolation",
+      "Responsibility"
+    ]
+  },
+  {
+    "w": "avid",
+    "passage": "Long before she became a professional ornithologist, Ruth Alvarez's avid interest in birds was obvious to everyone around her. As a girl, she woke before dawn every weekend to hike to the marshes, kept detailed notebooks of every species she saw, and saved her allowance for a pair of binoculars.",
+    "form": "avid",
+    "wrong_words": [
+      "passing",
+      "reluctant",
+      "professional"
+    ],
+    "meaning": "Eager",
+    "wrong_meanings": [
+      "Greedy",
+      "Brief",
+      "Expert"
+    ]
+  },
+  {
+    "w": "axiom",
+    "passage": "In Euclid's geometry, the statement that a straight line can be drawn between any two points is accepted without proof. From this axiom and a handful of others like it, Euclid derived hundreds of theorems about triangles, circles, and other figures.",
+    "form": "axiom",
+    "wrong_words": [
+      "theorem",
+      "diagram",
+      "exception"
+    ],
+    "meaning": "Basic assumption",
+    "wrong_meanings": [
+      "Proven result",
+      "Popular proverb",
+      "Drawing"
+    ]
+  },
+  {
+    "w": "banal",
+    "passage": "Critics praised the film's stunning photography but found its dialogue banal. The characters spoke almost entirely in tired clichés such as \"It's now or never\" and \"We're not so different, you and I,\" and few lines surprised anyone in the audience.",
+    "form": "banal",
+    "wrong_words": [
+      "witty",
+      "inaudible",
+      "poetic"
+    ],
+    "meaning": "Unoriginal",
+    "wrong_meanings": [
+      "Offensive",
+      "Overly formal",
+      "Hard to hear"
+    ]
+  },
+  {
+    "w": "beckon",
+    "passage": "For the young musician raised in a small mountain town, the city beckoned. Its concert halls, jazz clubs, and conservatories promised everything her hometown could not offer, and at eighteen she boarded a train with nothing but her violin and a suitcase.",
+    "form": "beckoned",
+    "wrong_words": [
+      "threatened",
+      "receded",
+      "faded"
+    ],
+    "meaning": "Seemed inviting",
+    "wrong_meanings": [
+      "Signaled by hand",
+      "Seemed dangerous",
+      "Grew distant"
+    ]
+  },
+  {
+    "w": "belie",
+    "passage": "The lighthouse keeper's cheerful letters to his sister belied the hardship of his life on the island. In reality, storms often cut him off from supplies for weeks, and his journal records long stretches of loneliness and hunger.",
+    "form": "belied",
+    "wrong_words": [
+      "revealed",
+      "described",
+      "worsened"
+    ],
+    "meaning": "Disguised",
+    "wrong_meanings": [
+      "Exposed",
+      "Recorded",
+      "Caused"
+    ]
+  },
+  {
+    "w": "belligerent",
+    "passage": "As negotiations dragged on, the ambassador's tone grew increasingly belligerent. He pounded the table, accused the other delegates of lying, and threatened to walk out of the talks entirely.",
+    "form": "belligerent",
+    "wrong_words": [
+      "conciliatory",
+      "hesitant",
+      "formal"
+    ],
+    "meaning": "Combative",
+    "wrong_meanings": [
+      "Tired",
+      "Apologetic",
+      "Uncertain"
+    ]
+  },
+  {
+    "w": "beneficiary",
+    "passage": "Clownfish and sea anemones share a relationship in which both species gain. The anemone's stinging tentacles shield the clownfish from predators, making the fish a clear beneficiary of the arrangement; in return, the clownfish chases away fish that would otherwise nibble on the anemone.",
+    "form": "beneficiary",
+    "wrong_words": [
+      "victim",
+      "predator",
+      "rival"
+    ],
+    "meaning": "One who gains",
+    "wrong_meanings": [
+      "Donor",
+      "Target of harm",
+      "Legal heir"
+    ]
+  },
+  {
+    "w": "benevolent",
+    "passage": "Unlike the cruel rulers of many fairy tales, the old king in this story is benevolent. He forgives the debts of struggling farmers, opens the royal granary to the hungry during famine, and pardons a thief who stole bread to feed his children.",
+    "form": "benevolent",
+    "wrong_words": [
+      "tyrannical",
+      "cowardly",
+      "foolish"
+    ],
+    "meaning": "Kind",
+    "wrong_meanings": [
+      "Wealthy",
+      "Powerful",
+      "Elderly"
+    ]
+  }
+]
