@@ -72,8 +72,16 @@ In the teacher dashboard, click a student and use **Word list**. Type a word
 and click **Add word**. The dashboard looks it up online (the Free Dictionary
 API, then Wiktionary for phrases). It shows the definition, part of speech,
 and an example so you can check or edit them before you click **Save word**.
-If neither dictionary has the word, type the definition yourself. Added words
-show up first in that student's flashcards and quizzes the next time they open the app.
+If neither dictionary has the word, type the definition yourself. The example
+sentence is required and has to use the word, because quiz questions are
+built from it. Added words show up first in that student's flashcards and
+quizzes the next time they open the app.
+
+Under **Quiz answer choices** the dashboard suggests three wrong words for
+the fill-in-the-blank question, the word's meaning as used in the sentence,
+and three wrong meanings. Edit them, click **Suggest new choices** for a
+fresh set, or clear a group to have the quiz pick new choices each time.
+Each group is all or nothing. The quiz shuffles the choices every time.
 
 **Remove word** takes a word off that student's list. Words from the shared
 database can be restored later; their progress on them is kept. Any teacher

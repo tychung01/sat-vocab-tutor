@@ -6,13 +6,16 @@
 //   - a text using the word: "As used in the text, what does the word "..."
 //     most nearly mean?" Choices are short meanings ("Stretching toward").
 // Words in the database have written passages and wrong choices for both
-// (their "sat" field; see scripts/add_sat_questions.py). For words without
-// them, such as teachers' words, questions are built from the example
+// (their "sat" field; see scripts/add_sat_questions.py). A teacher's word may
+// have written choices for one or both formats, with its example sentence as
+// the passage. Any format without written choices is built from the example
 // sentence, with wrong choices picked from other words of the same part of
 // speech whose definitions don't overlap with the answer's.
 //
-// A question is { key, target, prompt (HTML), question, choices }, where each
-// choice is { text, correct, note } and note (if any) explains a wrong choice.
+// A question is { key, kind, target, prompt (HTML), question, choices }, where
+// kind is "complete", "meaning", or "define", and each choice is
+// { text, correct, note } (note, if any, explains a wrong choice). Choices
+// are always shuffled.
 
 export function shuffle(list) {
   const a = [...list];
@@ -165,28 +168,36 @@ export function usableExample(sentence, word) {
 
 // ---------- written questions ----------
 
+// Written questions, for each format whose choices are all there.
 function fromSat(target) {
-  const { passage, form, wrong_words: wrongWords, meaning, wrong_meanings: wrongMeanings } = target.sat;
-  const match = passage.match(new RegExp(`\\b${form.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i"));
+  const { passage, form, wrong_words: wrongWords = [], meaning = "", wrong_meanings: wrongMeanings = [] } = target.sat;
+  const match = passage && form && passage.match(new RegExp(`\\b${form.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i"));
   if (!match) return [];
   const before = passage.slice(0, match.index);
   const after = passage.slice(match.index + match[0].length);
-  return [
-    {
+  const questions = [];
+  // A blank at the start of the text would need capitalized choices, which the SAT avoids.
+  if (wrongWords.length === 3 && match.index > 0) {
+    questions.push({
       key: "sat-complete",
+      kind: "complete",
       target,
       prompt: escapeHtml(before) + BLANK + escapeHtml(after),
       question: COMPLETE,
       choices: shuffle([{ text: match[0], correct: true }, ...wrongWords.map((text) => ({ text, correct: false }))]),
-    },
-    {
+    });
+  }
+  if (meaning && wrongMeanings.length === 3) {
+    questions.push({
       key: "sat-meaning",
+      kind: "meaning",
       target,
       prompt: escapeHtml(passage),
       question: meanQuestion(target.word, match[0]),
       choices: shuffle([{ text: meaning, correct: true }, ...wrongMeanings.map((text) => ({ text, correct: false }))]),
-    },
-  ];
+    });
+  }
+  return questions;
 }
 
 // ---------- questions built from an example sentence ----------
@@ -278,6 +289,7 @@ function completeQuestion(target, example, match, ending, pool) {
   if (!others) return null;
   return {
     key: "example-complete",
+    kind: "complete",
     target,
     prompt: escapeHtml(before) + BLANK + escapeHtml(example.slice(match.index + match[0].length)),
     question: COMPLETE,
@@ -301,6 +313,7 @@ function meaningQuestion(target, example, match, ending, pool) {
   if (!others) return null;
   return {
     key: "example-meaning",
+    kind: "meaning",
     target,
     prompt: escapeHtml(example),
     question: meanQuestion(target.word, match[0]),
@@ -336,6 +349,7 @@ function defineQuestion(target, pool) {
     || shuffle(pool.filter((w) => w.word !== target.word)).slice(0, 3);
   return {
     key: "define",
+    kind: "define",
     target,
     prompt: escapeHtml(target.word),
     question: `Which choice best defines the ${target.word.includes(" ") ? "phrase" : "word"} “${target.word}”?`,
@@ -351,11 +365,36 @@ function defineQuestion(target, pool) {
 // each attempt uses a format not yet asked, or at least not the most recent one.
 export function buildQuestion(target, pool, asked = []) {
   const written = target.sat ? fromSat(target) : [];
-  const options = shuffle(written.length ? written : fromExamples(target, pool));
+  const covered = new Set(written.map((q) => q.kind));
+  const options = shuffle([...written, ...fromExamples(target, pool).filter((q) => !covered.has(q.kind))]);
   if (!options.length) return defineQuestion(target, pool);
   const fresh = options.find((q) => !asked.includes(q.key));
   if (fresh) return fresh;
   const notLast = options.filter((q) => q.key !== asked.at(-1));
   const pick = notLast.length ? notLast : options;
   return pick[Math.floor(Math.random() * pick.length)];
+}
+
+// Suggested choices for a word a teacher is adding, built from its first usable
+// example sentence: { form, wrongWords, meaning, wrongMeanings, blankAtStart },
+// or null when no example uses the word. wrongWords is empty when the word
+// starts the sentence, since the fill-in-the-blank format can't be used then.
+export function suggestChoices(entry, pool) {
+  for (const example of entry.examples || []) {
+    const match = findWordIn(example, entry.word);
+    const ending = match && endingOf(entry.word, match[0].toLowerCase());
+    if (ending === null || !match) continue;
+    const others = pool.filter((w) => w.word !== entry.word);
+    const complete = match.index > 0 ? completeQuestion(entry, example, match, ending, others) : null;
+    const meaning = meaningQuestion(entry, example, match, ending, others);
+    const wrong = (q) => (q ? q.choices.filter((c) => !c.correct).map((c) => c.text) : []);
+    return {
+      form: match[0],
+      blankAtStart: match.index === 0,
+      wrongWords: wrong(complete),
+      meaning: meaning ? meaning.choices.find((c) => c.correct).text : "",
+      wrongMeanings: wrong(meaning),
+    };
+  }
+  return null;
 }

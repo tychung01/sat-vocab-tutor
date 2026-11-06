@@ -10,7 +10,7 @@ import {
 } from "./firebase.js";
 import { OWNER_EMAILS } from "./firebase-config.js";
 import { loadWords, wordsForStudent, TEACHER_SOURCE } from "./words.js";
-import { usableExample } from "./questions.js";
+import { usableExample, suggestChoices } from "./questions.js";
 
 const $ = (id) => document.getElementById(id);
 let dbWords = [];
@@ -275,24 +275,106 @@ function renderWordTools(container, student, row) {
       <label>Definition <textarea name="definition" rows="2" required>${escapeHtml(entry.definition)}</textarea></label>
       <label>Example sentence, using the word <textarea name="example" rows="2" required>${escapeHtml(entry.example)}</textarea></label>
       <p class="muted">Quiz questions are built from this sentence in the SAT's Words in Context format, so it needs to use the word (or a form like "-ed" or "-ing").</p>
+      <fieldset class="choice-fields">
+        <legend>Quiz answer choices (optional)</legend>
+        <p class="muted choice-help"></p>
+        <div class="choice-group">
+          <span class="group-label">Wrong choices for the fill-in-the-blank question</span>
+          <div class="choice-inputs">
+            ${[1, 2, 3].map((n) => `<input name="wrong${n}" aria-label="Wrong choice ${n}" autocomplete="off">`).join("")}
+          </div>
+        </div>
+        <div class="choice-group">
+          <label class="group-label" for="meaning-${escapeHtml(student.uid)}">Meaning as used in the sentence (the correct answer)</label>
+          <input name="meaning" id="meaning-${escapeHtml(student.uid)}" autocomplete="off">
+          <span class="group-label">Wrong meanings</span>
+          <div class="choice-inputs stacked">
+            ${[1, 2, 3].map((n) => `<input name="wrongMeaning${n}" aria-label="Wrong meaning ${n}" autocomplete="off">`).join("")}
+          </div>
+        </div>
+        <button class="link suggest" type="button">Suggest new choices</button>
+      </fieldset>
       <p class="error" hidden></p>
       <div class="preview-actions">
         <button class="btn primary" type="submit">Save word</button>
-        <button class="btn" type="button">Cancel</button>
+        <button class="btn cancel" type="button">Cancel</button>
       </div>`;
     preview.hidden = false;
     (entry.definition ? preview.example : preview.definition).focus();
-    preview.querySelector("button[type=button]").addEventListener("click", () => { preview.hidden = true; });
+    preview.querySelector(".cancel").addEventListener("click", () => { preview.hidden = true; });
+
+    const blankInputs = [1, 2, 3].map((n) => preview[`wrong${n}`]);
+    const meaningInputs = [1, 2, 3].map((n) => preview[`wrongMeaning${n}`]);
+    const help = preview.querySelector(".choice-help");
+    const showError = (message, field) => {
+      preview.querySelector(".error").textContent = message;
+      preview.querySelector(".error").hidden = false;
+      field?.focus();
+    };
+    const draft = () => ({
+      word,
+      part_of_speech: preview.pos.value.trim().toLowerCase() || "word",
+      definition: preview.definition.value.trim(),
+      examples: [asSentence(preview.example.value)],
+    });
+    // Choices the teacher has typed aren't replaced by new suggestions unless they ask.
+    let edited = false;
+    function suggest() {
+      const s = suggestChoices(draft(), dbWords);
+      if (!s) {
+        help.textContent = "Write an example sentence that uses the word to get suggested choices.";
+        return;
+      }
+      blankInputs.forEach((input, i) => { input.value = s.wrongWords[i] || ""; input.disabled = s.blankAtStart; });
+      preview.meaning.value = s.meaning;
+      meaningInputs.forEach((input, i) => { input.value = s.wrongMeanings[i] || ""; });
+      help.textContent = s.blankAtStart
+        ? `The sentence starts with "${s.form}", so the quiz can't blank it out and will only ask what it means. Move the word later in the sentence to use both questions.`
+        : "Suggested from other words, in the form the sentence uses. Edit any of them, or clear a group to have the quiz pick new choices each time.";
+      edited = false;
+    }
+    [...blankInputs, preview.meaning, ...meaningInputs].forEach((input) => input.addEventListener("input", () => { edited = true; }));
+    [preview.example, preview.definition, preview.pos].forEach((input) => input.addEventListener("change", () => { if (!edited) suggest(); }));
+    preview.querySelector(".suggest").addEventListener("click", suggest);
+    suggest();
+
     preview.onsubmit = (e) => {
       e.preventDefault();
       const example = preview.example.value.trim();
       if (!usableExample(example, word)) {
-        preview.querySelector(".error").textContent = word.includes(" ")
+        showError(word.includes(" ")
           ? `The example sentence needs to use "${word}".`
-          : `The example sentence needs to use "${word}" or a form of it ending in -s, -ed, -ing, or -ly.`;
-        preview.querySelector(".error").hidden = false;
-        preview.example.focus();
+          : `The example sentence needs to use "${word}" or a form of it ending in -s, -ed, -ing, or -ly.`, preview.example);
         return;
+      }
+      // Each group of choices is all or nothing; an empty group is picked by the quiz.
+      const info = suggestChoices(draft(), []);
+      const filled = (inputs) => inputs.filter((input) => !input.disabled).map((input) => input.value.trim()).filter(Boolean);
+      const distinct = (list) => new Set(list.map((t) => t.toLowerCase())).size === list.length;
+      const wrongWords = filled(blankInputs);
+      if (wrongWords.length && wrongWords.length < 3) {
+        showError("Fill in all three wrong choices for the fill-in-the-blank question, or clear them to let the quiz pick.", blankInputs.find((i) => !i.value.trim()));
+        return;
+      }
+      if (wrongWords.length && !distinct([info.form, ...wrongWords])) {
+        showError(`The wrong choices for the fill-in-the-blank question must differ from each other and from "${info.form}".`, blankInputs[0]);
+        return;
+      }
+      const meaningGroup = filled([preview.meaning, ...meaningInputs]);
+      if (meaningGroup.length && meaningGroup.length < 4) {
+        showError("Fill in the meaning and all three wrong meanings, or clear them to let the quiz pick.", [preview.meaning, ...meaningInputs].find((i) => !i.value.trim()));
+        return;
+      }
+      if (meaningGroup.length && !distinct(meaningGroup)) {
+        showError("The meaning and the wrong meanings must all be different.", meaningInputs[0]);
+        return;
+      }
+      const capitalize = (t) => t.charAt(0).toUpperCase() + t.slice(1);
+      const sat = { passage: asSentence(example), form: info.form };
+      if (wrongWords.length) sat.wrong_words = wrongWords;
+      if (meaningGroup.length) {
+        sat.meaning = capitalize(meaningGroup[0]);
+        sat.wrong_meanings = meaningGroup.slice(1).map(capitalize);
       }
       const saved = {
         word,
@@ -304,6 +386,7 @@ function renderWordTools(container, student, row) {
         sources: [TEACHER_SOURCE],
         added: new Date().toISOString().slice(0, 10),
         addedBy: currentUser.email,
+        ...(sat.wrong_words || sat.meaning ? { sat } : {}),
       };
       change(async () => {
         await addStudentWord(student.uid, saved);
