@@ -5,7 +5,7 @@
 // Progress is saved to Firestore so the teacher dashboard can see it.
 
 import {
-  configured, isAdmin, watchUser, signIn, signOutUser, recordLogin,
+  configured, isTeacher, watchUser, signIn, signOutUser, recordLogin,
   loadProgress, saveWordProgress, LEARNED_STREAK, PRACTICE_LIMIT,
 } from "./firebase.js";
 import { loadWords } from "./words.js";
@@ -394,7 +394,8 @@ async function showSignedIn(signedInUser) {
   $("status").textContent = "Loading your progress…";
   $("status").hidden = false;
   $("who").textContent = user.displayName || user.email;
-  $("admin-link").hidden = !isAdmin(user);
+  $("admin-link").hidden = true;
+  isTeacher(user).then((teacher) => { $("admin-link").hidden = !teacher; });
   $("account").hidden = false;
 
   recordLogin(user).catch(() => {});

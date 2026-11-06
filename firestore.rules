@@ -1,33 +1,53 @@
 rules_version = '2';
 
 // Students can read and write only their own records.
-// The teacher (listed in isAdmin) can read everyone's records.
-// Paste this into Firebase console → Firestore Database → Rules, then Publish.
+// Teachers can read everyone's records. The owner (listed in isAppOwner) is
+// always a teacher and is the only one who can add or remove other teachers,
+// who are stored in /teachers/{email}.
+// Publish with: npx -y firebase-tools@13.29.1 deploy --only firestore:rules
 service cloud.firestore {
   match /databases/{database}/documents {
-    function isAdmin() {
-      return request.auth != null
-        && request.auth.token.email_verified == true
-        && request.auth.token.email in ['tychung01@gmail.com'];
+    function signedInEmail() {
+      return request.auth != null && request.auth.token.email_verified == true;
     }
 
-    function isOwner(uid) {
+    // Keep in sync with OWNER_EMAILS in firebase-config.js.
+    function isAppOwner() {
+      return signedInEmail() && request.auth.token.email in ['tychung01@gmail.com'];
+    }
+
+    function isTeacher() {
+      return isAppOwner()
+        || (signedInEmail() && exists(/databases/$(database)/documents/teachers/$(request.auth.token.email)));
+    }
+
+    function isSelf(uid) {
       return request.auth != null && request.auth.uid == uid;
     }
 
     match /users/{uid} {
-      allow read: if isOwner(uid) || isAdmin();
-      allow create, update: if isOwner(uid);
+      allow read: if isSelf(uid) || isTeacher();
+      allow create, update: if isSelf(uid);
 
       match /logins/{loginId} {
-        allow read: if isOwner(uid) || isAdmin();
-        allow create: if isOwner(uid);
+        allow read: if isSelf(uid) || isTeacher();
+        allow create: if isSelf(uid);
       }
     }
 
     match /progress/{uid} {
-      allow read: if isOwner(uid) || isAdmin();
-      allow create, update: if isOwner(uid);
+      allow read: if isSelf(uid) || isTeacher();
+      allow create, update: if isSelf(uid);
+    }
+
+    match /teachers/{email} {
+      allow read: if isTeacher();
+      // The document ID must be the teacher's email, lowercased, matching the stored field.
+      allow create: if isAppOwner()
+        && email == email.lower()
+        && request.resource.data.email == email
+        && request.resource.data.keys().hasOnly(['email', 'addedBy', 'addedAt']);
+      allow delete: if isAppOwner();
     }
   }
 }

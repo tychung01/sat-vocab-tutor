@@ -5,10 +5,10 @@ import {
   getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import {
-  getFirestore, doc, getDoc, setDoc, addDoc, collection, getDocs, query, orderBy, limit,
+  getFirestore, doc, getDoc, setDoc, addDoc, deleteDoc, collection, getDocs, query, orderBy, limit,
   serverTimestamp, increment,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-import { firebaseConfig, ADMIN_EMAILS } from "./firebase-config.js";
+import { firebaseConfig, OWNER_EMAILS } from "./firebase-config.js";
 
 export const configured = Boolean(firebaseConfig);
 const app = configured ? initializeApp(firebaseConfig) : null;
@@ -22,8 +22,34 @@ export const LEARNED_STREAK = 3;
 // growing; newer words join a student's practice list as they learn older ones.
 export const PRACTICE_LIMIT = 1200;
 
-export function isAdmin(user) {
-  return Boolean(user && user.emailVerified && ADMIN_EMAILS.includes(user.email));
+// The owner can add and remove teachers; everyone in /teachers can use the dashboard.
+export function isOwner(user) {
+  return Boolean(user && user.emailVerified && OWNER_EMAILS.includes(user.email.toLowerCase()));
+}
+
+export async function isTeacher(user) {
+  if (!user || !user.emailVerified) return false;
+  if (isOwner(user)) return true;
+  try {
+    // Firestore rules only let teachers read /teachers, so a non-teacher gets an error here.
+    return (await getDoc(doc(db, "teachers", user.email.toLowerCase()))).exists();
+  } catch {
+    return false;
+  }
+}
+
+export async function listTeachers() {
+  const snap = await getDocs(collection(db, "teachers"));
+  return snap.docs.map((d) => d.data());
+}
+
+export function addTeacher(email, addedBy) {
+  const id = email.trim().toLowerCase();
+  return setDoc(doc(db, "teachers", id), { email: id, addedBy, addedAt: serverTimestamp() });
+}
+
+export function removeTeacher(email) {
+  return deleteDoc(doc(db, "teachers", email));
 }
 
 export function watchUser(callback) {

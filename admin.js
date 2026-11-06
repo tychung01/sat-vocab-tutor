@@ -1,9 +1,12 @@
 // Teacher dashboard: lists every student who has signed in, with login history
-// and learned/practice counts. Firestore rules only let admin accounts read this.
+// and learned/practice counts, and the list of teachers. Firestore rules only let
+// teachers read this, and only the owner can add or remove teachers.
 
 import {
-  configured, isAdmin, watchUser, signIn, signOutUser, listStudents, recentLogins, LEARNED_STREAK, PRACTICE_LIMIT,
+  configured, isOwner, isTeacher, watchUser, signIn, signOutUser, listStudents, recentLogins,
+  listTeachers, addTeacher, removeTeacher, LEARNED_STREAK, PRACTICE_LIMIT,
 } from "./firebase.js";
+import { OWNER_EMAILS } from "./firebase-config.js";
 import { loadWords } from "./words.js";
 
 const $ = (id) => document.getElementById(id);
@@ -98,12 +101,79 @@ async function toggleDetail(row) {
   </div></td>`;
 }
 
+// ---------- teachers ----------
+
+let currentUser = null;
+
+async function renderTeachers() {
+  const owner = isOwner(currentUser);
+  $("add-teacher").hidden = !owner;
+  $("teachers-help").textContent = owner
+    ? "Teachers can open this dashboard and see every student's progress. Add the Google account they'll sign in with. Only you, as the owner, can add or remove teachers."
+    : "Teachers can open this dashboard and see every student's progress. Only the owner can add or remove teachers.";
+  let teachers = [];
+  try {
+    teachers = await listTeachers();
+  } catch {
+    $("teacher-list").innerHTML = `<li class="muted">Couldn't load the teacher list.</li>`;
+    return;
+  }
+  const owners = OWNER_EMAILS.map((email) => `<li><span>${escapeHtml(email)}</span><span class="badge learned">Owner</span></li>`);
+  const others = teachers
+    .filter((t) => !OWNER_EMAILS.includes(t.email))
+    .sort((a, b) => a.email.localeCompare(b.email))
+    .map((t) => `<li><span>${escapeHtml(t.email)}</span>
+      <span class="muted">added ${formatTime(t.addedAt)}</span>
+      ${owner ? `<button class="link remove-teacher" data-email="${escapeHtml(t.email)}">Remove</button>` : ""}</li>`);
+  $("teacher-list").innerHTML = [...owners, ...others].join("");
+  document.querySelectorAll(".remove-teacher").forEach((b) => {
+    b.addEventListener("click", async () => {
+      if (!confirm(`Remove ${b.dataset.email} as a teacher? They'll lose access to this dashboard.`)) return;
+      try {
+        await removeTeacher(b.dataset.email);
+        renderTeachers();
+      } catch {
+        showTeacherError("Couldn't remove that teacher. Please try again.");
+      }
+    });
+  });
+}
+
+function showTeacherError(message) {
+  $("teacher-error").textContent = message;
+  $("teacher-error").hidden = !message;
+}
+
+$("add-teacher").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email = $("teacher-email").value.trim().toLowerCase();
+  showTeacherError("");
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    showTeacherError("Enter a full email address, like name@school.org.");
+    return;
+  }
+  if (OWNER_EMAILS.includes(email)) {
+    showTeacherError("That's the owner account, which is already a teacher.");
+    return;
+  }
+  try {
+    await addTeacher(email, currentUser.email);
+    $("teacher-email").value = "";
+    renderTeachers();
+  } catch {
+    showTeacherError("Couldn't add that teacher. Please try again.");
+  }
+});
+
+// ---------- start ----------
+
 async function showDashboard(user) {
+  currentUser = user;
   $("sign-in").hidden = true;
   $("who").textContent = user.email;
   $("account").hidden = false;
-  if (!isAdmin(user)) {
-    $("status").textContent = "This account doesn't have teacher access.";
+  if (!(await isTeacher(user))) {
+    $("status").textContent = "This account doesn't have teacher access. Ask the app's owner to add you as a teacher.";
     $("status").hidden = false;
     $("dashboard").hidden = true;
     return;
@@ -125,6 +195,7 @@ async function showDashboard(user) {
   $("dashboard").hidden = false;
   renderStats();
   renderRows();
+  renderTeachers();
 }
 
 $("search").addEventListener("input", renderRows);

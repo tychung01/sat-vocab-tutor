@@ -178,3 +178,17 @@ table.students { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
 .detail-grid h3 { font-size: 0.9rem; margin: 0 0 6px; }
 .detail-grid ul { margin: 0 0 8px; padding-left: 18px; }
 .detail-grid p { margin: 0 0 10px; }
+
+.teachers { margin-top: 32px; }
+.teachers h2 { font-size: 1.15rem; margin: 0 0 4px; }
+.add-teacher { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0; }
+.add-teacher input {
+  flex: 1 1 260px; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--text); font: inherit;
+}
+.teacher-list { list-style: none; padding: 0; margin: 12px 0 0; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+.teacher-list li { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.teacher-list li:last-child { border-bottom: 0; }
+.teacher-list li > span:first-child { font-weight: 600; }
+.teacher-list .remove-teacher { margin-left: auto; color: var(--bad); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

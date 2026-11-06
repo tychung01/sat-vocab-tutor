@@ -11,6 +11,6 @@ export const firebaseConfig = {
   appId: "1:74196131281:web:6a39371cebd2c8e1ead4f0",
 };
 
-// Accounts that can open the teacher dashboard (admin.html).
-// Keep this in sync with isAdmin() in firestore.rules.
-export const ADMIN_EMAILS = ["tychung01@gmail.com"];
+// The app owner: always a teacher, and the only account that can add or remove
+// teachers in the dashboard. Keep this in sync with isAppOwner() in firestore.rules.
+export const OWNER_EMAILS = ["tychung01@gmail.com"];

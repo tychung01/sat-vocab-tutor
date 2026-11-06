@@ -52,14 +52,22 @@ These values are meant to be public. The Firestore rules decide who can read
 or write data.
 
 ## Adding another teacher
-Add their email in two places: `ADMIN_EMAILS` in `firebase-config.js` and
-`isAdmin()` in `firestore.rules`. Then run the deploy command.
+Open the teacher dashboard while signed in as the owner, enter the teacher's
+Google email under **Teachers**, and click **Add teacher**. They can use the
+dashboard as soon as they sign in with that account. Remove them the same way.
+Teachers are stored in Firestore under `teachers/{email}`.
+
+Only the owner can add or remove teachers. The owner is set in two places:
+`OWNER_EMAILS` in `firebase-config.js` and `isAppOwner()` in
+`firestore.rules`. Changing the owner means editing both and running the
+deploy command.
 
 ## What's stored
 - `users/{uid}`: name, email, photo, first and last login, login count
 - `users/{uid}/logins`: one entry per visit (time and browser)
+- `teachers/{email}`: teachers the owner has added, with who added them and when
 - `progress/{uid}`: for each word tried, the current streak of correct
   answers, total correct and wrong, and when it was last answered
 
-Students can read and write only their own records. Teachers listed in the
-rules can read everyone's.
+Students can read and write only their own records. The owner and the
+teachers in `teachers/` can read everyone's.
