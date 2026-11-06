@@ -176,6 +176,11 @@ table.students { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
 .students tr.student { cursor: pointer; }
 .students tr.student:hover { background: var(--accent-soft); }
 .students tr.detail td { background: var(--bg); }
+.added-words { max-height: 420px; overflow-y: auto; margin-top: 12px; }
+.added-words th { position: sticky; top: 0; background: var(--surface); }
+.added-words td:nth-child(2) { min-width: 220px; }
+.added-words td:nth-child(5) { white-space: nowrap; }
+.added-words .remove-word { color: var(--bad); }
 .muted { color: var(--muted); }
 .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
 .detail-grid h3 { font-size: 0.9rem; margin: 0 0 6px; }

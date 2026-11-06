@@ -76,6 +76,10 @@ their flashcards and quizzes. **Remove** takes it off everyone's list; their
 progress on it is kept. Words already in the shared database can't be added
 again. To take a word off just one student's list, use their **Word list**.
 
+**Words added by teachers**, below that, lists every word added by hand,
+whether for all students or for one student, newest first, with who it's for,
+who added it, and when. **Remove** there takes off that one addition.
+
 ## Changing one student's words
 In the teacher dashboard, click a student and use **Word list**. Type a word
 and click **Add word**. The dashboard looks it up online (the Free Dictionary

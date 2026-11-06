@@ -234,6 +234,7 @@ function renderWordTools(container, student, row) {
     renderWordTools(container, student, row);
     row.innerHTML = rowCells(student);
     renderStats();
+    renderAddedWords();
     return true;
   }
 
@@ -440,27 +441,51 @@ function showPreview(word, entry, note, { title, save }) {
 
 // ---------- words for all students ----------
 
-function renderClassWords() {
-  const sorted = [...classWords].sort((a, b) => a.word.localeCompare(b.word));
-  $("class-word-list").innerHTML = sorted.length
-    ? sorted.map((w) => `<li><span><strong>${escapeHtml(w.word)}</strong>: ${escapeHtml(w.definition)}</span>
-      <button class="link remove-word" data-word="${escapeHtml(w.word)}">Remove</button></li>`).join("")
-    : `<li class="muted">None yet.</li>`;
-  document.querySelectorAll("#class-word-list .remove-word").forEach((b) => {
-    b.addEventListener("click", async () => {
-      const word = b.dataset.word;
-      if (!confirm(`Remove "${word}" for all students? Their progress on it is kept in case you add it again.`)) return;
-      showClassWordError("");
-      try {
-        await removeClassWord(word);
-      } catch {
-        showClassWordError("Couldn't remove that word. Please try again.");
-        return;
-      }
-      classWords = classWords.filter((w) => w.word !== word);
-      refreshCounts();
-    });
+// Every word a teacher added by hand, for all students or for one, newest first.
+function renderAddedWords() {
+  const rows = [
+    ...classWords.map((w) => ({ entry: w, forLabel: "All students" })),
+    ...students.flatMap((st) => Object.values(st.wordList.added).map((w) => ({ entry: w, student: st, forLabel: st.name || st.email }))),
+  ].sort((a, b) => (b.entry.added || "").localeCompare(a.entry.added || "") || a.entry.word.localeCompare(b.entry.word));
+  $("added-words-heading").textContent = `Words added by teachers (${rows.length})`;
+  $("added-words-rows").innerHTML = rows.length
+    ? rows.map(({ entry: w, student: st, forLabel }) => `<tr>
+      <td><strong>${escapeHtml(w.word)}</strong>${w.part_of_speech ? ` <span class="muted">(${escapeHtml(w.part_of_speech)})</span>` : ""}</td>
+      <td>${escapeHtml(w.definition)}</td>
+      <td>${st ? escapeHtml(forLabel) : `<span class="badge learned">${forLabel}</span>`}</td>
+      <td>${escapeHtml(w.addedBy || "—")}</td>
+      <td>${escapeHtml(w.added || "—")}</td>
+      <td><button class="link remove-word" data-word="${escapeHtml(w.word)}" data-uid="${st ? escapeHtml(st.uid) : ""}">Remove</button></td>
+    </tr>`).join("")
+    : `<tr><td colspan="6" class="muted">No words added yet.</td></tr>`;
+  document.querySelectorAll("#added-words-rows .remove-word").forEach((b) => {
+    b.addEventListener("click", () => removeAddedWord(b.dataset.word, students.find((st) => st.uid === b.dataset.uid)));
   });
+}
+
+// Remove a word added for all students, or one added for a single student.
+async function removeAddedWord(word, student) {
+  const who = student ? `${student.name || student.email}'s word list` : "all students";
+  if (!confirm(`Remove "${word}" from ${who}? Progress on it is kept in case you add it again.`)) return;
+  showAddedWordsError("");
+  try {
+    if (student) {
+      await removeStudentWord(student.uid, word, false);
+      delete student.wordList.added[word];
+    } else {
+      await removeClassWord(word);
+      classWords = classWords.filter((w) => w.word !== word);
+    }
+  } catch {
+    showAddedWordsError("Couldn't remove that word. Please try again.");
+    return;
+  }
+  refreshCounts();
+}
+
+function showAddedWordsError(message) {
+  $("added-words-error").textContent = message;
+  $("added-words-error").hidden = !message;
 }
 
 function showClassWordError(message) {
@@ -470,7 +495,7 @@ function showClassWordError(message) {
 
 // Redraw everything that depends on which words the students have.
 function refreshCounts() {
-  renderClassWords();
+  renderAddedWords();
   renderStats();
   renderRows();
 }

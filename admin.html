@@ -62,7 +62,27 @@
           <button class="btn primary" type="submit">Add word for all students</button>
         </form>
         <p class="error" id="class-word-error" hidden></p>
-        <ul class="teacher-list word-changes" id="class-word-list"></ul>
+      </section>
+
+      <section class="teachers" aria-labelledby="added-words-heading">
+        <h2 id="added-words-heading">Words added by teachers</h2>
+        <p class="muted">Every word added by hand, for all students or for one student, newest first.</p>
+        <p class="error" id="added-words-error" hidden></p>
+        <div class="table-wrap added-words">
+          <table class="students">
+            <thead>
+              <tr>
+                <th scope="col">Word</th>
+                <th scope="col">Definition</th>
+                <th scope="col">For</th>
+                <th scope="col">Added by</th>
+                <th scope="col">Added</th>
+                <th scope="col"><span class="visually-hidden">Remove</span></th>
+              </tr>
+            </thead>
+            <tbody id="added-words-rows"></tbody>
+          </table>
+        </div>
       </section>
 
       <section class="teachers" aria-labelledby="teachers-heading">
