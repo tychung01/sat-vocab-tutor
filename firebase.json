@@ -13,6 +13,7 @@
       "scripts/**",
       "docs/**",
       "lists/**",
+      "tests/**",
       "**/*.md",
       "firestore.rules",
       "requirements.txt",

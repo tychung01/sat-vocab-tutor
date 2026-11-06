@@ -17,6 +17,11 @@ in a normal terminal):
 
     npx -y firebase-tools@13.29.1 deploy --only hosting,firestore:rules
 
+Before publishing a change to `firestore.rules`, run its tests. They need
+Java for the Firestore emulator (for example `brew install openjdk`):
+
+    cd tests && npm install && npm test
+
 New words don't need a deploy. The app reads `data/words.json` from GitHub
 first, so the monthly update shows up on its own.
 

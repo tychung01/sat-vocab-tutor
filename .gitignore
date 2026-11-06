@@ -5,3 +5,5 @@ sources/lists/
 .firebase/
 __pycache__/
 .DS_Store
+node_modules/
+*-debug.log
