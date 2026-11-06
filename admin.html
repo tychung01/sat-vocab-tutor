@@ -62,7 +62,6 @@
           <button class="btn primary" type="submit">Add word for all students</button>
         </form>
         <p class="error" id="class-word-error" hidden></p>
-        <form class="word-preview" id="class-word-preview" hidden></form>
         <ul class="teacher-list word-changes" id="class-word-list"></ul>
       </section>
 
@@ -79,6 +78,10 @@
       </section>
     </section>
   </main>
+
+  <dialog class="word-dialog" id="word-dialog" aria-labelledby="word-dialog-title">
+    <form class="word-preview" id="word-preview"></form>
+  </dialog>
 
   <script type="module" src="admin.js"></script>
 </body>

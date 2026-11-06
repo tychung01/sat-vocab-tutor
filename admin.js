@@ -174,8 +174,8 @@ function normalizeWord(text) {
   return /^[a-z]([a-z' -]*[a-z])?$/.test(word) ? word : "";
 }
 
-// Look a word up online, then show it in the preview form for the teacher to check.
-async function lookUpAndPreview(word, button, preview, options) {
+// Look a word up online, then show it in the add-word dialog for the teacher to check.
+async function lookUpAndPreview(word, button, options) {
   const label = button.textContent;
   button.disabled = true;
   button.textContent = "Looking up…";
@@ -190,7 +190,7 @@ async function lookUpAndPreview(word, button, preview, options) {
   }
   button.disabled = false;
   button.textContent = label;
-  showPreview(preview, word, found || { part_of_speech: "", definition: "", example: "" }, note, options);
+  showPreview(word, found || { part_of_speech: "", definition: "", example: "" }, note, options);
 }
 
 function renderWordTools(container, student, row) {
@@ -205,7 +205,6 @@ function renderWordTools(container, student, row) {
       <button class="btn" type="submit" value="remove">Remove word</button>
     </form>
     <p class="error" hidden></p>
-    <form class="word-preview" hidden></form>
     <div class="detail-grid">
       <div><h3>Added for this student (${addedWords.length})</h3>${addedWords.length
         ? `<ul class="word-changes">${addedWords.map((w) => `<li><span><strong>${escapeHtml(w.word)}</strong>: ${escapeHtml(w.definition)}</span>
@@ -218,7 +217,6 @@ function renderWordTools(container, student, row) {
     </div>`;
 
   const form = container.querySelector(".word-form");
-  const preview = container.querySelector(".word-preview");
   const error = container.querySelector(".error");
   const showError = (message) => { error.textContent = message; error.hidden = !message; };
 
@@ -231,11 +229,12 @@ function renderWordTools(container, student, row) {
       console.error(err);
       container.querySelectorAll("button").forEach((b) => { b.disabled = false; });
       showError(failMessage);
-      return;
+      return false;
     }
     renderWordTools(container, student, row);
     row.innerHTML = rowCells(student);
     renderStats();
+    return true;
   }
 
   const remove = (word) => {
@@ -260,7 +259,6 @@ function renderWordTools(container, student, row) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     showError("");
-    preview.hidden = true;
     const word = normalizeWord(form.word.value);
     if (!word) {
       showError("Enter a single word or phrase using letters only.");
@@ -281,24 +279,30 @@ function renderWordTools(container, student, row) {
       restore(word);
       return;
     }
-    lookUpAndPreview(word, e.submitter, preview, {
-      id: student.uid,
+    lookUpAndPreview(word, e.submitter, {
+      title: `Add "${word}" for ${student.name || student.email}?`,
+      // The dialog shows the error if saving fails.
       save: (saved) => change(async () => {
         await addStudentWord(student.uid, saved);
         added[word] = saved;
-      }, "Couldn't save that word. Please try again."),
+      }, ""),
     });
   });
 }
 
-// Let the teacher check and edit a looked-up word and write its quiz choices in
-// the preview form. id makes the form's element IDs unique; save(entry) stores it.
-function showPreview(preview, word, entry, note, { id, save }) {
-  preview.innerHTML = `<p><strong>${escapeHtml(word)}</strong> <span class="muted">${escapeHtml(note)}</span></p>
+// Show a looked-up word in a dialog where the teacher checks and edits it and its
+// quiz choices. Nothing is saved until they confirm; save(entry) stores it and
+// resolves to whether that worked.
+function showPreview(word, entry, note, { title, save }) {
+  const dialog = $("word-dialog");
+  const preview = $("word-preview");
+  preview.innerHTML = `<h2 id="word-dialog-title">${escapeHtml(title)}</h2>
+    <p class="dialog-word"><strong>${escapeHtml(word)}</strong> <span class="pos-label"></span></p>
+    <p class="muted">${escapeHtml(note)}</p>
     <label>Part of speech <input name="pos" value="${escapeHtml(entry.part_of_speech)}" placeholder="noun, verb, adjective…"></label>
     <label>Definition <textarea name="definition" rows="2" required>${escapeHtml(entry.definition)}</textarea></label>
     <label>Example sentence, using the word <textarea name="example" rows="2" required>${escapeHtml(entry.example)}</textarea></label>
-    <p class="muted">Quiz questions are built from this sentence in the SAT's Words in Context format, so it needs to use the word (or a form like "-ed" or "-ing").</p>
+    <p class="muted">Quiz questions are built from this sentence in the SAT's Words in Context format, so it needs to use the word (or a form like "-ed" or "-ing"). <span class="form-used"></span></p>
     <fieldset class="choice-fields">
       <legend>Quiz answer choices (optional)</legend>
       <p class="muted choice-help"></p>
@@ -309,8 +313,8 @@ function showPreview(preview, word, entry, note, { id, save }) {
         </div>
       </div>
       <div class="choice-group">
-        <label class="group-label" for="meaning-${escapeHtml(id)}">Meaning as used in the sentence (the correct answer)</label>
-        <input name="meaning" id="meaning-${escapeHtml(id)}" autocomplete="off">
+        <label class="group-label" for="word-meaning">Meaning as used in the sentence (the correct answer)</label>
+        <input name="meaning" id="word-meaning" autocomplete="off">
         <span class="group-label">Wrong meanings</span>
         <div class="choice-inputs stacked">
           ${[1, 2, 3].map((n) => `<input name="wrongMeaning${n}" aria-label="Wrong meaning ${n}" autocomplete="off">`).join("")}
@@ -320,12 +324,19 @@ function showPreview(preview, word, entry, note, { id, save }) {
     </fieldset>
     <p class="error" hidden></p>
     <div class="preview-actions">
-      <button class="btn primary" type="submit">Save word</button>
+      <button class="btn primary" type="submit">Confirm add</button>
       <button class="btn cancel" type="button">Cancel</button>
     </div>`;
-  preview.hidden = false;
+  dialog.showModal();
   (entry.definition ? preview.example : preview.definition).focus();
-  preview.querySelector(".cancel").addEventListener("click", () => { preview.hidden = true; });
+  preview.querySelector(".cancel").addEventListener("click", () => dialog.close());
+
+  // The word, its part of speech, and the form the example sentence uses, kept up to date.
+  const showForm = () => {
+    preview.querySelector(".pos-label").textContent = preview.pos.value.trim() ? `(${preview.pos.value.trim().toLowerCase()})` : "";
+    const s = suggestChoices(draft(), []);
+    preview.querySelector(".form-used").textContent = s && s.form !== word ? `The sentence uses the form "${s.form}".` : "";
+  };
 
   const blankInputs = [1, 2, 3].map((n) => preview[`wrong${n}`]);
   const meaningInputs = [1, 2, 3].map((n) => preview[`wrongMeaning${n}`]);
@@ -359,6 +370,8 @@ function showPreview(preview, word, entry, note, { id, save }) {
   }
   [...blankInputs, preview.meaning, ...meaningInputs].forEach((input) => input.addEventListener("input", () => { edited = true; }));
   [preview.example, preview.definition, preview.pos].forEach((input) => input.addEventListener("change", () => { if (!edited) suggest(); }));
+  [preview.example, preview.pos].forEach((input) => input.addEventListener("input", showForm));
+  showForm();
   preview.querySelector(".suggest").addEventListener("click", suggest);
   suggest();
 
@@ -412,7 +425,16 @@ function showPreview(preview, word, entry, note, { id, save }) {
       addedBy: currentUser.email,
       ...(sat.wrong_words || sat.meaning ? { sat } : {}),
     };
-    save(saved);
+    const buttons = preview.querySelectorAll("button");
+    buttons.forEach((b) => { b.disabled = true; });
+    save(saved).then((ok) => {
+      if (ok) {
+        dialog.close();
+        return;
+      }
+      buttons.forEach((b) => { b.disabled = false; });
+      showError("Couldn't save that word. Please try again.");
+    });
   };
 }
 
@@ -456,7 +478,6 @@ function refreshCounts() {
 $("class-word-form").addEventListener("submit", (e) => {
   e.preventDefault();
   showClassWordError("");
-  $("class-word-preview").hidden = true;
   const word = normalizeWord($("class-word").value);
   if (!word) {
     showClassWordError("Enter a single word or phrase using letters only.");
@@ -470,23 +491,19 @@ $("class-word-form").addEventListener("submit", (e) => {
     showClassWordError(`"${word}" is already in the word database, so every student has it.`);
     return;
   }
-  lookUpAndPreview(word, e.submitter, $("class-word-preview"), {
-    id: "class",
+  lookUpAndPreview(word, e.submitter, {
+    title: `Add "${word}" for all students?`,
     save: async (saved) => {
-      const buttons = $("class-word-preview").querySelectorAll("button");
-      buttons.forEach((b) => { b.disabled = true; });
       try {
         await addClassWord(saved);
       } catch (err) {
         console.error(err);
-        buttons.forEach((b) => { b.disabled = false; });
-        showClassWordError("Couldn't save that word. Please try again.");
-        return;
+        return false;
       }
       classWords = [...classWords, saved];
       $("class-word").value = "";
-      $("class-word-preview").hidden = true;
       refreshCounts();
+      return true;
     },
   });
 });

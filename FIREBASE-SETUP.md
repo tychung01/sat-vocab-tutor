@@ -80,7 +80,7 @@ again. To take a word off just one student's list, use their **Word list**.
 In the teacher dashboard, click a student and use **Word list**. Type a word
 and click **Add word**. The dashboard looks it up online (the Free Dictionary
 API, then Wiktionary for phrases). It shows the definition, part of speech,
-and an example so you can check or edit them before you click **Save word**.
+and an example so you can check or edit them in a dialog. Nothing is saved until you click **Confirm add**; **Cancel** discards it.
 If neither dictionary has the word, type the definition yourself. The example
 sentence is required and has to use the word, because quiz questions are
 built from it. Added words show up first in that student's flashcards and
