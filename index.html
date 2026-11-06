@@ -14,7 +14,10 @@
 <body>
   <header class="top">
     <div class="wrap top-inner">
-      <h1 class="brand">SAT Word Study</h1>
+      <div class="top-left">
+        <h1 class="brand">SAT Word Study</h1>
+        <p class="student-status" id="student-status" aria-live="polite" hidden></p>
+      </div>
       <div class="account" id="account" hidden>
         <span class="who" id="who"></span>
         <a class="link" id="admin-link" href="admin.html" hidden>Teacher dashboard</a>
@@ -25,6 +28,7 @@
     <nav class="wrap tabs" role="tablist" id="tabs" hidden>
       <button role="tab" data-view="study" aria-selected="true">Flashcards</button>
       <button role="tab" data-view="quiz" aria-selected="false">Quiz</button>
+      <button role="tab" data-view="review" aria-selected="false">Review words</button>
       <button role="tab" data-view="words" aria-selected="false">My words</button>
     </nav>
   </header>
@@ -58,30 +62,65 @@
         <div class="actions">
           <button class="btn primary" id="next-card">Next card</button>
         </div>
-        <p class="note">Flashcards are for studying. Words move to <strong>Learned</strong> after 3 correct quiz answers in a row. Your practice list holds up to 1,200 words; new words join it as you learn.</p>
+        <p class="note">After each set of flashcards, you need a perfect quiz score to move on to the next set. Words move to <strong>Learned</strong> after 3 correct quiz answers in a row. Your practice list holds up to 1,200 words; new words join it as you learn.</p>
       </div>
       <div class="done" id="study-done" hidden>
         <h2>Set complete</h2>
-        <p>Ready to test yourself? Take a quiz to move these words toward Learned.</p>
-        <button class="btn secondary" id="study-again">Study another set</button>
+        <p id="study-done-text"></p>
+        <div class="done-actions">
+          <button class="btn primary" id="study-quiz">Take the quiz</button>
+          <button class="btn secondary" id="study-again">Go through the cards again</button>
+        </div>
       </div>
     </section>
 
     <section id="view-quiz" class="view" hidden>
-      <div id="quiz-question">
-        <p class="counter" id="quiz-counter"></p>
-        <p class="quiz-kind" id="quiz-kind"></p>
-        <blockquote class="prompt" id="quiz-prompt"></blockquote>
-        <p class="question" id="quiz-q"></p>
-        <div class="choices" id="quiz-choices"></div>
-        <div class="feedback" id="quiz-feedback" hidden></div>
-        <div class="actions"><button class="btn primary" id="quiz-next" hidden>Next</button></div>
+      <div class="quiz-question">
+        <p class="counter quiz-counter"></p>
+        <blockquote class="prompt quiz-prompt"></blockquote>
+        <p class="question quiz-q"></p>
+        <div class="choices quiz-choices"></div>
+        <div class="feedback quiz-feedback" hidden></div>
+        <div class="actions"><button class="btn primary quiz-next" hidden>Next</button></div>
       </div>
-      <div class="done" id="quiz-done" hidden>
-        <h2 id="quiz-score"></h2>
-        <p id="quiz-learned"></p>
-        <div id="quiz-missed"></div>
-        <button class="btn primary" id="quiz-again">Take another quiz</button>
+      <div class="done quiz-done" hidden>
+        <h2 class="quiz-score"></h2>
+        <p class="win quiz-cheer" hidden></p>
+        <p class="quiz-learned"></p>
+        <p id="quiz-next-step" hidden></p>
+        <div class="done-actions">
+          <button class="btn primary" id="quiz-retake" hidden>Retake the quiz</button>
+          <button class="btn secondary" id="quiz-cards" hidden>Go through the cards again</button>
+          <button class="btn primary" id="quiz-study">Study the next set</button>
+          <button class="btn secondary" id="quiz-again">Take a practice quiz</button>
+        </div>
+        <div class="quiz-missed"></div>
+      </div>
+    </section>
+
+    <section id="view-review" class="view" hidden>
+      <div class="done" id="review-empty" hidden>
+        <h2>No learned words yet</h2>
+        <p>Words you've learned will show up here for review. A word is learned after 3 correct quiz answers in a row.</p>
+      </div>
+      <div class="quiz-question" hidden>
+        <p class="counter quiz-counter"></p>
+        <blockquote class="prompt quiz-prompt"></blockquote>
+        <p class="question quiz-q"></p>
+        <div class="choices quiz-choices"></div>
+        <div class="feedback quiz-feedback" hidden></div>
+        <div class="actions"><button class="btn primary quiz-next" hidden>Next</button></div>
+      </div>
+      <div class="done quiz-done" hidden>
+        <h2 class="quiz-score"></h2>
+        <p class="win quiz-cheer" hidden></p>
+        <p class="quiz-learned"></p>
+        <p id="review-missed-note">Words you missed moved back to Practice so you can study them again.</p>
+        <div class="done-actions">
+          <button class="btn primary" id="review-again">Review 20 more words</button>
+          <button class="btn secondary" id="review-study">Back to flashcards</button>
+        </div>
+        <div class="quiz-missed"></div>
       </div>
     </section>
 
@@ -99,6 +138,7 @@
           <button data-source="official" aria-pressed="false">From practice tests</button>
           <button data-source="academic" aria-pressed="false">Academic word lists</button>
           <button data-source="curated" aria-pressed="false">Common SAT words</button>
+          <button data-source="teacher" aria-pressed="false" id="source-teacher" hidden>From your teacher</button>
         </div>
       </div>
       <p class="counter" id="words-count"></p>
@@ -107,7 +147,7 @@
   </main>
 
   <footer class="wrap foot">
-    <p>Words come from the vocabulary questions in College Board's official SAT and PSAT practice tests and ACT's official practice tests, the <a href="https://www.newgeneralservicelist.com/new-academic-word-list">New Academic Word List</a> (Browne, Culligan &amp; Phillips, CC BY-SA 4.0), Coxhead's Academic Word List, and a list of common SAT words. Definitions and examples are original.</p>
+    <p>Words come from the vocabulary questions in College Board's official SAT and PSAT practice tests and ACT's official practice tests, the <a href="https://www.newgeneralservicelist.com/new-academic-word-list">New Academic Word List</a> (Browne, Culligan &amp; Phillips, CC BY-SA 4.0), Coxhead's Academic Word List, and a list of common SAT words. Definitions and examples are original, except for words your teacher adds, which are looked up in <a href="https://dictionaryapi.dev/">Free Dictionary API</a> (from Wiktionary, CC BY-SA).</p>
     <p>When you sign in, your name, email, visit times, and quiz progress are saved so your teacher can follow your progress.</p>
     <p id="updated"></p>
   </footer>

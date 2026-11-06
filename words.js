@@ -18,3 +18,15 @@ export async function loadWords() {
   }
   throw new Error("Couldn't load the word list");
 }
+
+// Words a teacher added for one student carry this source.
+export const TEACHER_SOURCE = "Added by your teacher";
+
+// One student's words: the database minus words a teacher removed for them,
+// plus words a teacher added (which replace a database entry of the same name).
+export function wordsForStudent(dbWords, list) {
+  const added = Object.values(list.added || {});
+  const addedNames = new Set(added.map((w) => w.word));
+  const removed = list.removed || {};
+  return [...dbWords.filter((w) => !removed[w.word] && !addedNames.has(w.word)), ...added];
+}

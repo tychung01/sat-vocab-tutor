@@ -4,7 +4,7 @@
 import { initializeTestEnvironment, assertSucceeds, assertFails } from "@firebase/rules-unit-testing";
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { doc, getDoc, getDocs, setDoc, deleteDoc, collection, serverTimestamp } from "firebase/firestore";
+import { doc, getDoc, getDocs, setDoc, deleteDoc, collection, serverTimestamp, deleteField } from "firebase/firestore";
 
 const env = await initializeTestEnvironment({
   projectId: "demo-sat",
@@ -29,6 +29,10 @@ await env.withSecurityRulesDisabled(async (c) => {
 
 const add = (db, email, extra = {}) =>
   setDoc(doc(db, "teachers", email), { email, addedBy: "x", addedAt: serverTimestamp(), ...extra });
+
+const editList = (db, uid, changes) =>
+  setDoc(doc(db, "wordlists", uid), { ...changes, updated: serverTimestamp() }, { merge: true });
+const entry = (word) => ({ word, definition: "A test word.", sources: ["Added by your teacher"] });
 
 const cases = [
   ["owner adds a teacher", () => assertSucceeds(add(owner, "new@example.com"))],
@@ -55,6 +59,20 @@ const cases = [
   ["anonymous can't read anything", () => assertFails(getDoc(doc(anon, "progress/s2")))],
   // Teacher docs can only be created, so the dashboard checks the list before adding.
   ["owner can't overwrite an existing teacher", () => assertFails(add(owner, "teacher@example.com"))],
+  ["teacher adds a word for a student", () => assertSucceeds(editList(teacher, "s1", { added: { zephyr: entry("zephyr"), quixotic: entry("quixotic") } }))],
+  ["teacher removes a database word for a student", () => assertSucceeds(editList(teacher, "s1", { removed: { abandon: true } }))],
+  ["teacher deletes an added word", async () => {
+    await assertSucceeds(editList(teacher, "s1", { added: { zephyr: deleteField() } }));
+    const added = (await getDoc(doc(teacher, "wordlists/s1"))).data().added;
+    if ("zephyr" in added || !("quixotic" in added)) throw new Error(`unexpected added words: ${Object.keys(added)}`);
+  }],
+  ["owner edits a student's word list", () => assertSucceeds(editList(owner, "s2", { removed: { abandon: true } }))],
+  ["teacher can't add other fields to a word list", () => assertFails(editList(teacher, "s1", { note: "x" }))],
+  ["student reads own word list", () => assertSucceeds(getDoc(doc(student, "wordlists/s1")))],
+  ["student can't change own word list", () => assertFails(editList(student, "s1", { added: { easy: entry("easy") } }))],
+  ["student can't read another student's word list", () => assertFails(getDoc(doc(student, "wordlists/s2")))],
+  ["teacher lists word lists", () => assertSucceeds(getDocs(collection(teacher, "wordlists")))],
+  ["anonymous can't read a word list", () => assertFails(getDoc(doc(anon, "wordlists/s1")))],
 ];
 
 let failed = 0;

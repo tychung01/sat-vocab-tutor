@@ -6,7 +6,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import {
   getFirestore, doc, getDoc, setDoc, addDoc, deleteDoc, collection, getDocs, query, orderBy, limit,
-  serverTimestamp, increment,
+  serverTimestamp, increment, deleteField,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 import { firebaseConfig, OWNER_EMAILS } from "./firebase-config.js";
 
@@ -64,18 +64,32 @@ export function signOutUser() {
   return signOut(auth);
 }
 
-// Record a visit once per browser session: update the user's profile and add a login entry.
+function localDay(date) {
+  return date.toLocaleDateString("en-CA"); // YYYY-MM-DD in the student's time zone
+}
+
+// Record a visit once per browser session: update the user's profile, add a login
+// entry, and count consecutive days with a visit. Returns that day streak.
 export async function recordLogin(user) {
+  const ref = doc(db, "users", user.uid);
+  const existing = await getDoc(ref);
+  const data = existing.exists() ? existing.data() : {};
   const key = `satvocab.session.${user.uid}`;
   try {
-    if (sessionStorage.getItem(key)) return;
+    if (sessionStorage.getItem(key)) return data.loginStreak || 1;
     sessionStorage.setItem(key, "1");
   } catch {
     // Without sessionStorage every page load counts as a visit.
   }
-  const ref = doc(db, "users", user.uid);
-  const existing = await getDoc(ref);
+  const today = localDay(new Date());
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  const loginStreak = data.lastLoginDay === today ? data.loginStreak || 1
+    : data.lastLoginDay === localDay(yesterday) ? (data.loginStreak || 0) + 1
+    : 1;
   await setDoc(ref, {
+    loginStreak,
+    lastLoginDay: today,
     name: user.displayName || "",
     email: user.email || "",
     photo: user.photoURL || "",
@@ -87,12 +101,20 @@ export async function recordLogin(user) {
     at: serverTimestamp(),
     device: navigator.userAgent.slice(0, 200),
   });
+  return loginStreak;
 }
 
-// Progress is one document per student: { words: { [word]: { streak, correct, wrong, last } } }.
+// Progress is one document per student: { words: { [word]: { streak, correct, wrong, last } },
+// studied: [words from finished flashcard sets since the last review quiz],
+// required: the quiz the student must pass before the next set, { mode, words } or null }.
 export async function loadProgress(uid) {
   const snap = await getDoc(doc(db, "progress", uid));
-  return snap.exists() ? snap.data().words || {} : {};
+  const data = snap.exists() ? snap.data() : {};
+  return { words: data.words || {}, studied: data.studied || [], required: data.required || null };
+}
+
+export function saveStudyState(uid, { studied, required }) {
+  return setDoc(doc(db, "progress", uid), { studied, required, updated: serverTimestamp() }, { merge: true });
 }
 
 export function saveWordProgress(uid, word, record) {
@@ -102,14 +124,48 @@ export function saveWordProgress(uid, word, record) {
   }, { merge: true });
 }
 
+// Each student's word list changes are one document, which only teachers can write:
+// { added: { [word]: entry }, removed: { [word]: true } } (removed holds database words).
+function wordListFrom(data = {}) {
+  return { added: data.added || {}, removed: data.removed || {} };
+}
+
+export async function loadWordList(uid) {
+  const snap = await getDoc(doc(db, "wordlists", uid));
+  return wordListFrom(snap.exists() ? snap.data() : {});
+}
+
+function saveWordList(uid, changes) {
+  return setDoc(doc(db, "wordlists", uid), { ...changes, updated: serverTimestamp() }, { merge: true });
+}
+
+export function addStudentWord(uid, entry) {
+  return saveWordList(uid, { added: { [entry.word]: entry }, removed: { [entry.word]: deleteField() } });
+}
+
+// A database word is hidden for the student; a teacher-added word is deleted.
+export function removeStudentWord(uid, word, inDatabase) {
+  return saveWordList(uid, inDatabase
+    ? { added: { [word]: deleteField() }, removed: { [word]: true } }
+    : { added: { [word]: deleteField() } });
+}
+
+export function restoreStudentWord(uid, word) {
+  return saveWordList(uid, { removed: { [word]: deleteField() } });
+}
+
 // Teacher dashboard reads.
 export async function listStudents() {
-  const [users, progress] = await Promise.all([
+  const [users, progress, wordLists] = await Promise.all([
     getDocs(collection(db, "users")),
     getDocs(collection(db, "progress")),
+    getDocs(collection(db, "wordlists")),
   ]);
   const progressById = Object.fromEntries(progress.docs.map((d) => [d.id, d.data().words || {}]));
-  return users.docs.map((d) => ({ uid: d.id, ...d.data(), words: progressById[d.id] || {} }));
+  const listsById = Object.fromEntries(wordLists.docs.map((d) => [d.id, d.data()]));
+  return users.docs.map((d) => ({
+    uid: d.id, ...d.data(), words: progressById[d.id] || {}, wordList: wordListFrom(listsById[d.id]),
+  }));
 }
 
 export async function recentLogins(uid, count = 10) {

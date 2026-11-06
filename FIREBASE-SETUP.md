@@ -67,12 +67,31 @@ Only the owner can add or remove teachers. The owner is set in two places:
 `firestore.rules`. Changing the owner means editing both and running the
 deploy command.
 
+## Changing one student's words
+In the teacher dashboard, click a student and use **Word list**. Type a word
+and click **Add word**. The dashboard looks it up online (the Free Dictionary
+API, then Wiktionary for phrases). It shows the definition, part of speech,
+and an example so you can check or edit them before you click **Save word**.
+If neither dictionary has the word, type the definition yourself. Added words
+show up first in that student's flashcards and quizzes the next time they open the app.
+
+**Remove word** takes a word off that student's list. Words from the shared
+database can be restored later; their progress on them is kept. Any teacher
+can do this, and students can't change their own list.
+
 ## What's stored
-- `users/{uid}`: name, email, photo, first and last login, login count
+- `users/{uid}`: name, email, photo, first and last login, login count, and
+  how many days in a row they've visited
 - `users/{uid}/logins`: one entry per visit (time and browser)
 - `teachers/{email}`: teachers the owner has added, with who added them and when
+- `wordlists/{uid}`: words a teacher added for that student (with definitions)
+  and shared words a teacher removed for them
 - `progress/{uid}`: for each word tried, the current streak of correct
-  answers, total correct and wrong, and when it was last answered
+  answers, total correct and wrong, and when it was last answered, the words
+  studied since the last 50-word review, and the quiz the student must pass
+  with a perfect score before the next set (each 10-card set, and a review
+  quiz every 50 words)
 
-Students can read and write only their own records. The owner and the
-teachers in `teachers/` can read everyone's.
+Students can read and write only their own records, except their word list,
+which they can read but only teachers can change. The owner and the teachers
+in `teachers/` can read everyone's.

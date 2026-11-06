@@ -1,6 +1,7 @@
 rules_version = '2';
 
-// Students can read and write only their own records.
+// Students can read and write only their own records, except their word list
+// (/wordlists/{uid}), which only teachers can change.
 // Teachers can read everyone's records. The owner (listed in isAppOwner) is
 // always a teacher and is the only one who can add or remove other teachers,
 // who are stored in /teachers/{email}.
@@ -38,6 +39,13 @@ service cloud.firestore {
     match /progress/{uid} {
       allow read: if isSelf(uid) || isTeacher();
       allow create, update: if isSelf(uid);
+    }
+
+    // Words a teacher added or removed for one student. Only teachers change it.
+    match /wordlists/{uid} {
+      allow read: if isSelf(uid) || isTeacher();
+      allow create, update: if isTeacher()
+        && request.resource.data.keys().hasOnly(['added', 'removed', 'updated']);
     }
 
     match /teachers/{email} {
