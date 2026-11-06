@@ -157,6 +157,11 @@ $("add-teacher").addEventListener("submit", async (e) => {
     return;
   }
   try {
+    // The rules only allow creating teacher docs, so re-adding one would be denied.
+    if ((await listTeachers()).some((t) => t.email === email)) {
+      showTeacherError("That account is already a teacher.");
+      return;
+    }
     await addTeacher(email, currentUser.email);
     $("teacher-email").value = "";
     renderTeachers();
