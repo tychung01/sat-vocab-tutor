@@ -319,14 +319,9 @@ function makeQuiz(root, onDone) {
   // Questions answered correctly in a row in this quiz.
   let run = 0;
 
-  function showCounter() {
-    el("counter").textContent = `${title}Question ${index + 1} of ${questions.length}`
-      + (run > 0 ? ` · 🔥 ${run} correct in a row` : "");
-  }
-
   function show() {
     const q = questions[index];
-    showCounter();
+    el("counter").textContent = `${title}Question ${index + 1} of ${questions.length}`;
     el("prompt").innerHTML = q.prompt;
     el("q").textContent = q.question;
     el("feedback").hidden = true;
@@ -353,7 +348,6 @@ function makeQuiz(root, onDone) {
       missed.push(q.target);
     }
     run = right ? run + 1 : 0;
-    showCounter();
     const { becameLearned, lostLearned } = record(q.target.word, right);
     if (becameLearned) newlyLearned.push(q.target.word);
 
@@ -364,8 +358,8 @@ function makeQuiz(root, onDone) {
     }
     if (t.usage) html += `<p>${escapeHtml(t.usage)}</p>`;
     if (becameLearned) html += `<p class="win">🎉 <strong>${escapeHtml(t.word)}</strong> moved to Learned!</p>`;
-    else if (lostLearned) html += `<p>This word moved back to Practice. Get it right ${LEARNED_STREAK} times in a row to learn it again.</p>`;
-    else html += `<p class="streak">${streakText(t.word)}</p>`;
+    if (lostLearned) html += `<p>This word moved back to Practice. Get it right ${LEARNED_STREAK} times in a row to learn it again.</p>`;
+    html += `<p class="streak">${run ? "🔥 " : ""}${run} of ${index + 1} correct in a row</p>`;
     el("feedback").innerHTML = html;
     el("feedback").hidden = false;
     el("next").hidden = false;
