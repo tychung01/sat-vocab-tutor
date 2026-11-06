@@ -83,7 +83,10 @@ who added it, and when. **Remove** there takes off that one addition.
 ## Changing one student's words
 In the teacher dashboard, click a student and use **Word list**. Type a word
 and click **Add word**. The dashboard looks it up online (the Free Dictionary
-API, then Wiktionary for phrases). It shows the definition, part of speech,
+API, then Wiktionary for phrases), then has Claude write the part of speech,
+definition, an SAT-style example passage, and the quiz answer choices (see
+"Claude-written words" below). If Claude isn't set up or can't answer, the
+dialog shows what the dictionary has. It shows the definition, part of speech,
 and an example so you can check or edit them in a dialog. Nothing is saved until you click **Confirm add**; **Cancel** discards it.
 If neither dictionary has the word, type the definition yourself. The example
 sentence is required and has to use the word, because quiz questions are
@@ -99,6 +102,21 @@ Each group is all or nothing. The quiz shuffles the choices every time.
 **Remove word** takes a word off that student's list. Words from the shared
 database can be restored later; their progress on them is kept. Any teacher
 can do this, and students can't change their own list.
+
+## Claude-written words (one-time setup)
+The `writeWord` Cloud Function in `functions/` asks Claude (`claude-opus-5-5`)
+to write each new word's content. Only teachers can call it. It needs:
+
+1. The Firebase pay-as-you-go **Blaze** plan (Cloud Functions require it):
+   Firebase console → the project → **Upgrade**. The free allowance covers
+   this function's use.
+2. An Anthropic API key from https://console.anthropic.com, stored as a
+   Firebase secret (it never reaches the browser):
+   `npx -y firebase-tools@13 functions:secrets:set ANTHROPIC_API_KEY`
+3. Deploy it: `npx -y firebase-tools@13 deploy --only functions`
+
+Each word costs well under a cent in Claude usage. If Claude declines a
+request, the function retries it on Anthropic's default fallback model.
 
 ## What's stored
 - `users/{uid}`: name, email, photo, first and last login, login count, and

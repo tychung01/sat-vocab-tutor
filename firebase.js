@@ -8,6 +8,7 @@ import {
   getFirestore, doc, getDoc, setDoc, addDoc, deleteDoc, collection, getDocs, query, orderBy, limit,
   serverTimestamp, increment, deleteField,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { getFunctions, httpsCallable } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-functions.js";
 import { firebaseConfig, OWNER_EMAILS } from "./firebase-config.js";
 
 export const configured = Boolean(firebaseConfig);
@@ -167,6 +168,13 @@ export function addClassWord(entry) {
 
 export function removeClassWord(word) {
   return deleteDoc(doc(db, "classwords", word));
+}
+
+// Claude writes a new word's part of speech, definition, example passage, and quiz
+// choices (the writeWord Cloud Function; only teachers can call it).
+export async function writeWordContent(word, definition = "") {
+  const result = await httpsCallable(getFunctions(app), "writeWord")({ word, definition });
+  return result.data;
 }
 
 // Teacher dashboard reads.

@@ -6,7 +6,7 @@
 import {
   configured, isOwner, isTeacher, watchUser, signIn, signOutUser, listStudents, recentLogins,
   listTeachers, addTeacher, removeTeacher, addStudentWord, removeStudentWord, restoreStudentWord,
-  loadClassWords, addClassWord, removeClassWord,
+  loadClassWords, addClassWord, removeClassWord, writeWordContent,
   LEARNED_STREAK, PRACTICE_LIMIT,
 } from "./firebase.js";
 import { OWNER_EMAILS } from "./firebase-config.js";
@@ -174,7 +174,9 @@ function normalizeWord(text) {
   return /^[a-z]([a-z' -]*[a-z])?$/.test(word) ? word : "";
 }
 
-// Look a word up online, then show it in the add-word dialog for the teacher to check.
+// Look a word up online and have Claude write the rest, then show it in the
+// add-word dialog for the teacher to check. If Claude can't, the dialog shows
+// what the dictionary has.
 async function lookUpAndPreview(word, button, options) {
   const label = button.textContent;
   button.disabled = true;
@@ -188,9 +190,24 @@ async function lookUpAndPreview(word, button, options) {
   } catch {
     note = "Couldn't reach the online dictionary. Type a definition and example below.";
   }
+  button.textContent = "Writing an example…";
+  let entry = found || { part_of_speech: "", definition: "", example: "" };
+  try {
+    const written = await writeWordContent(word, found?.definition || "");
+    entry = {
+      part_of_speech: written.part_of_speech,
+      definition: asSentence(written.definition),
+      example: written.passage,
+      choices: { wrongWords: written.wrong_words, meaning: written.meaning, wrongMeanings: written.wrong_meanings },
+    };
+    note = "Written by Claude. Check it and edit anything before you add it.";
+  } catch (err) {
+    console.error("Couldn't write the word with Claude", err);
+    note += " (Claude couldn't write an example this time.)";
+  }
   button.disabled = false;
   button.textContent = label;
-  showPreview(word, found || { part_of_speech: "", definition: "", example: "" }, note, options);
+  showPreview(word, entry, note, options);
 }
 
 function renderWordTools(container, student, row) {
@@ -302,7 +319,7 @@ function showPreview(word, entry, note, { title, save }) {
     <p class="muted">${escapeHtml(note)}</p>
     <label>Part of speech <input name="pos" value="${escapeHtml(entry.part_of_speech)}" placeholder="noun, verb, adjective…"></label>
     <label>Definition <textarea name="definition" rows="2" required>${escapeHtml(entry.definition)}</textarea></label>
-    <label>Example sentence, using the word <textarea name="example" rows="2" required>${escapeHtml(entry.example)}</textarea></label>
+    <label>Example sentence, using the word <textarea name="example" rows="4" required>${escapeHtml(entry.example)}</textarea></label>
     <p class="muted">Quiz questions are built from this sentence in the SAT's Words in Context format, so it needs to use the word (or a form like "-ed" or "-ing"). <span class="form-used"></span></p>
     <fieldset class="choice-fields">
       <legend>Quiz answer choices (optional)</legend>
@@ -375,6 +392,14 @@ function showPreview(word, entry, note, { title, save }) {
   showForm();
   preview.querySelector(".suggest").addEventListener("click", suggest);
   suggest();
+  // Claude's choices replace the suggestions; "Suggest new choices" still swaps them out.
+  if (entry.choices) {
+    const { wrongWords, meaning, wrongMeanings } = entry.choices;
+    blankInputs.forEach((input, i) => { if (!input.disabled) input.value = wrongWords[i] || ""; });
+    preview.meaning.value = meaning || "";
+    meaningInputs.forEach((input, i) => { input.value = wrongMeanings[i] || ""; });
+    help.textContent = "Written by Claude for this passage. Edit any of them, click Suggest new choices, or clear a group to have the quiz pick new choices each time.";
+  }
 
   preview.onsubmit = (e) => {
     e.preventDefault();
