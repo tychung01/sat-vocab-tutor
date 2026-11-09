@@ -241,3 +241,4 @@ table.students { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
 .fireworks { position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1000; }
 #invite-list .resend-invite { margin-left: auto; }
 #invite-list .remove-teacher { margin-left: 0; }
+.dialog-warning { padding: 8px 12px; border-radius: 8px; background: var(--bad-soft); color: var(--text); }

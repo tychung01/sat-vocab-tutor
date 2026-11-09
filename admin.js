@@ -11,7 +11,7 @@ import {
 } from "./firebase.js";
 import { OWNER_EMAILS } from "./firebase-config.js";
 import { loadWords, wordsForStudent, TEACHER_SOURCE } from "./words.js";
-import { usableExample, suggestChoices } from "./questions.js";
+import { usableExample, suggestChoices, wordFinder } from "./questions.js";
 
 const $ = (id) => document.getElementById(id);
 let dbWords = [];
@@ -31,6 +31,12 @@ function formatTime(ts) {
 
 function studentWordNames(student) {
   return new Set(wordsForStudent(dbWords, student.wordList, classWords).map((w) => w.word));
+}
+
+// The start of a message about a word that's already there, maybe in another form:
+// `"abandoned" is a form of "abandon", which is` or `"abandon" is`.
+function alreadyThere(word, found) {
+  return found === word ? `"${word}" is` : `"${word}" is a form of "${found}", which is`;
 }
 
 function summarize(student) {
@@ -282,19 +288,25 @@ function renderWordTools(container, student, row) {
       showError("Enter a single word or phrase using letters only.");
       return;
     }
-    const onList = studentWordNames(student).has(word);
+    // The word on the list that this one is, in any form ("abandoned" finds "abandon").
+    const onList = wordFinder([...studentWordNames(student)])(word);
     if (e.submitter?.value === "remove") {
-      if (onList) remove(word);
+      if (onList) remove(onList);
       else showError(`"${word}" isn't on this student's word list.`);
       return;
     }
     if (onList) {
-      showError(`"${word}" is already on this student's word list.`);
+      showError(`${alreadyThere(word, onList)} already on this student's word list.`);
       return;
     }
-    // A shared word the teacher removed earlier just comes back.
-    if (removed[word]) {
+    // A shared word the teacher removed earlier just comes back, in its own form.
+    const wasRemoved = wordFinder(Object.keys(removed))(word);
+    if (wasRemoved === word) {
       restore(word);
+      return;
+    }
+    if (wasRemoved) {
+      showError(`${alreadyThere(word, wasRemoved)} removed for this student. Add "${wasRemoved}" to restore it.`);
       return;
     }
     lookUpAndPreview(word, e.submitter, {
@@ -311,11 +323,12 @@ function renderWordTools(container, student, row) {
 // Show a looked-up word in a dialog where the teacher checks and edits it and its
 // quiz choices. Nothing is saved until they confirm; save(entry) stores it and
 // resolves to whether that worked.
-function showPreview(word, entry, note, { title, save }) {
+function showPreview(word, entry, note, { title, warning = "", save }) {
   const dialog = $("word-dialog");
   const preview = $("word-preview");
   preview.innerHTML = `<h2 id="word-dialog-title">${escapeHtml(title)}</h2>
     <p class="dialog-word"><strong>${escapeHtml(word)}</strong> <span class="pos-label"></span></p>
+    ${warning ? `<p class="dialog-warning">${escapeHtml(warning)}</p>` : ""}
     <p class="muted">${escapeHtml(note)}</p>
     <label>Part of speech <input name="pos" value="${escapeHtml(entry.part_of_speech)}" placeholder="noun, verb, adjective…"></label>
     <label>Definition <textarea name="definition" rows="2" required>${escapeHtml(entry.definition)}</textarea></label>
@@ -533,19 +546,35 @@ $("class-word-form").addEventListener("submit", (e) => {
     showClassWordError("Enter a single word or phrase using letters only.");
     return;
   }
-  if (classWords.some((w) => w.word === word)) {
-    showClassWordError(`"${word}" is already added for all students.`);
+  const inClass = wordFinder(classWords.map((w) => w.word))(word);
+  if (inClass) {
+    showClassWordError(`${alreadyThere(word, inClass)} already added for all students.`);
     return;
   }
-  if (dbWords.some((w) => w.word === word)) {
-    showClassWordError(`"${word}" is already in the word database, so every student has it.`);
+  const inDatabase = wordFinder(dbWords.map((w) => w.word))(word);
+  if (inDatabase) {
+    showClassWordError(`${alreadyThere(word, inDatabase)} already in the word database, so every student has it.`);
     return;
   }
+  // Students who already have this word, in any form, added just for them. Their
+  // copy is removed when the word is added for everyone, so no one has it twice.
+  const copies = students.flatMap((st) => {
+    const found = wordFinder(Object.keys(st.wordList.added))(word);
+    return found ? [{ student: st, word: found }] : [];
+  });
   lookUpAndPreview(word, e.submitter, {
     title: `Add "${word}" for all students?`,
+    warning: copies.length
+      ? `Already added just for ${copies.map((c) => `${c.student.name || c.student.email} (as "${c.word}")`).join(", ")}. `
+        + "Adding it for all students replaces their copy, so they won't have it twice."
+      : "",
     save: async (saved) => {
       try {
         await addClassWord(saved);
+        for (const { student, word: copy } of copies) {
+          await removeStudentWord(student.uid, copy, false);
+          delete student.wordList.added[copy];
+        }
       } catch (err) {
         console.error(err);
         return false;

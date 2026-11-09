@@ -88,6 +88,13 @@ their flashcards and quizzes. **Remove** takes it off everyone's list; their
 progress on it is kept. Words already in the shared database can't be added
 again. To take a word off just one student's list, use their **Word list**.
 
+No student gets the same word twice, even in another form or tense: the
+dashboard won't add "abandoned" when "abandon" is on the list (for all
+students, the database, or that student). If some students already have a
+word added just for them, adding it for all students replaces their copy, and
+the dialog says who. The study app also keeps only one form of each word, with
+a teacher's word winning over the database's.
+
 **Words added by teachers**, below that, lists every word added by hand,
 whether for all students or for one student, newest first, with who it's for,
 who added it, and when. **Remove** there takes off that one addition.

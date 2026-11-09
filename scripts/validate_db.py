@@ -1,7 +1,7 @@
 """Check data/words.json before it's committed.
 
 Fails (exit code 1) if the file isn't valid, "count" doesn't match, a word
-appears twice, or an entry is missing a definition, usage, example, source, or
+appears twice (also as another form, like "abandon" and "abandoned"), or an entry is missing a definition, usage, example, source, or
 added date. Also fails if no example sentence contains the word (the quiz
 builds extra questions from it, same rule as questions.js), or if the word's
 SAT quiz content is missing or breaks a rule in add_sat_questions.py.
@@ -14,7 +14,7 @@ import re
 import sys
 from pathlib import Path
 
-from add_sat_questions import sat_problems
+from add_sat_questions import forms_of, sat_problems
 
 DB = Path(__file__).resolve().parent.parent / "data" / "words.json"
 
@@ -45,6 +45,10 @@ def main():
             problems.append(f"{w}: missing SAT quiz content (write it and run scripts/add_sat_questions.py)")
         else:
             problems += [f"{w}: SAT quiz content: {p}" for p in sat_problems(w, entry["sat"])]
+    # A student shouldn't get two forms of one word.
+    for w in sorted(seen):
+        for other in sorted(forms_of(w) & seen - {w}):
+            problems.append(f"same word in different forms: {w}, {other}")
     if problems:
         print("\n".join(problems))
         sys.exit(1)

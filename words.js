@@ -1,3 +1,5 @@
+import { wordFinder } from "./questions.js";
+
 // Loads the word database. The site is served from Firebase Hosting, but the
 // monthly update commits new words to GitHub, so the GitHub copy is read first
 // and the copy deployed with the site is the fallback.
@@ -22,18 +24,25 @@ export async function loadWords() {
 // Words a teacher added, for one student or for all of them, carry this source.
 export const TEACHER_SOURCE = "Added by your teacher";
 
+// The words in list minus any that are the same word, in any form, as one in
+// replacements ("abandoned" replaces "abandon"), followed by the replacements.
+function replaceSameWords(list, replacements) {
+  if (!replacements.length) return list;
+  const find = wordFinder(replacements.map((w) => w.word));
+  return [...list.filter((w) => !find(w.word)), ...replacements];
+}
+
 // The words every student gets: the database plus words a teacher added for all
-// students (which replace a database entry of the same name).
+// students (which replace a database entry for the same word, in any form).
 export function sharedWords(dbWords, classWords = []) {
-  const classNames = new Set(classWords.map((w) => w.word));
-  return [...dbWords.filter((w) => !classNames.has(w.word)), ...classWords];
+  return replaceSameWords(dbWords, classWords);
 }
 
 // One student's words: the shared words minus words a teacher removed for them,
-// plus words a teacher added just for them (which replace a shared word of the same name).
+// plus words a teacher added just for them (which replace a shared word for the
+// same word, in any form). No student gets two forms of one word.
 export function wordsForStudent(dbWords, list, classWords = []) {
-  const added = Object.values(list.added || {});
-  const addedNames = new Set(added.map((w) => w.word));
   const removed = list.removed || {};
-  return [...sharedWords(dbWords, classWords).filter((w) => !removed[w.word] && !addedNames.has(w.word)), ...added];
+  const shared = sharedWords(dbWords, classWords).filter((w) => !removed[w.word]);
+  return replaceSameWords(shared, Object.values(list.added || {}));
 }

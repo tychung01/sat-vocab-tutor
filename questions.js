@@ -139,6 +139,59 @@ function inflect(word, ending, participle = false) {
   }
 }
 
+// ---------- the same word in another form ----------
+
+// The word and its regular and irregular forms: abandon -> abandons, abandoned,
+// abandoning, abandonly; give -> gave, given.
+function formsOf(word) {
+  const last = word.at(-1);
+  const forms = new Set([word, word + "s", word + "es", word + "d", word + "ed", word + last + "ed", word + "ing",
+    word + last + "ing", word + "ly", word + "ally"]);
+  if (word.endsWith("e")) forms.add(word.slice(0, -1) + "ing");
+  if (word.endsWith("y")) ["ies", "ied", "ily"].forEach((ending) => forms.add(word.slice(0, -1) + ending));
+  for (const ending of ["s", "ed", "ing", "ly"]) forms.add(inflect(word, ending));
+  forms.add(inflect(word, "ed", true));
+  forms.delete(null);
+  return forms;
+}
+
+// The words this one could be a form of, including itself: "abandoned" ->
+// abandon(ed); "studies" -> study; "making" -> make; "given" -> give.
+export function baseForms(word) {
+  const bases = new Set([word]);
+  if (/[ -]/.test(word)) return bases;
+  const cut = (n, add = "") => word.slice(0, -n) + add;
+  const candidates = [
+    cut(1), cut(2), cut(3, "y"), // -s, -es, -ies
+    cut(1), cut(2), cut(3), cut(3, "y"), // -d, -ed, doubled -ed, -ied
+    cut(3), cut(3, "e"), cut(4), cut(4, "ie"), // -ing, -e + ing, doubled -ing, -ying
+    cut(2), cut(4), cut(1, "e"), cut(3, "y"), // -ly, -ally, -le -> -ly, -ily
+  ];
+  for (const base of candidates) {
+    if (base.length >= 3 && formsOf(base).has(word)) bases.add(base);
+  }
+  for (const [base, { past, participle }] of Object.entries(IRREGULAR)) {
+    for (const prefix of COMPOUND_PREFIXES) {
+      if (word === prefix + past || word === prefix + participle) bases.add(prefix + base);
+    }
+  }
+  return bases;
+}
+
+// Finds which of the given words is the same word as another one, in any form:
+// find("abandoned") is "abandon" when "abandon" is in the list, and null when
+// none is.
+export function wordFinder(names) {
+  const index = new Map();
+  for (const name of names) {
+    for (const base of baseForms(name)) if (!index.has(base)) index.set(base, name);
+  }
+  return (word) => {
+    for (const base of baseForms(word)) if (index.has(base)) return index.get(base);
+    return null;
+  };
+}
+
 // Which ending turns the word into the form used in the text: "" for the word
 // itself, null for other forms (like "abandonment"), which neither format fits.
 function endingOf(word, form) {
