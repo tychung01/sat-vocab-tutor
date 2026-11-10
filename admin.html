@@ -72,38 +72,6 @@
         <ul class="teacher-list" id="invite-list"></ul>
       </section>
 
-      <section class="teachers" aria-labelledby="class-words-heading">
-        <h2 id="class-words-heading">Words for all students</h2>
-        <p class="muted">Add a word to every student's list, including students who sign up later. Added words are looked up online and come up first in their flashcards and quizzes. To add or remove a word for one student, click their row above.</p>
-        <form class="word-form" id="class-word-form">
-          <label for="class-word" class="visually-hidden">Word</label>
-          <input type="text" id="class-word" placeholder="Word" autocomplete="off" required>
-          <button class="btn primary" type="submit">Add word for all students</button>
-        </form>
-        <p class="error" id="class-word-error" hidden></p>
-      </section>
-
-      <section class="teachers" aria-labelledby="added-words-heading">
-        <h2 id="added-words-heading">Words added by teachers</h2>
-        <p class="muted">Every word added by hand, for all students or for one student, newest first.</p>
-        <p class="error" id="added-words-error" hidden></p>
-        <div class="table-wrap added-words">
-          <table class="students">
-            <thead>
-              <tr>
-                <th scope="col">Word</th>
-                <th scope="col">Definition</th>
-                <th scope="col">For</th>
-                <th scope="col">Added by</th>
-                <th scope="col">Added</th>
-                <th scope="col"><span class="visually-hidden">Remove</span></th>
-              </tr>
-            </thead>
-            <tbody id="added-words-rows"></tbody>
-          </table>
-        </div>
-      </section>
-
       <section class="teachers" aria-labelledby="teachers-heading">
         <h2 id="teachers-heading">Teachers</h2>
         <p class="muted" id="teachers-help"></p>
@@ -118,8 +86,40 @@
       </div>
 
       <div id="tab-database" role="tabpanel" hidden>
-        <section aria-labelledby="db-heading">
-          <h2 id="db-heading" class="visually-hidden">Word database</h2>
+        <section class="teachers" aria-labelledby="class-words-heading">
+          <h2 id="class-words-heading">Words for all students</h2>
+          <p class="muted">Add a word to every student's list, including students who sign up later. Added words are looked up online and come up first in their flashcards and quizzes. To add or remove a word for one student, click their row on the Students tab.</p>
+          <form class="word-form" id="class-word-form">
+            <label for="class-word" class="visually-hidden">Word</label>
+            <input type="text" id="class-word" placeholder="Word" autocomplete="off" required>
+            <button class="btn primary" type="submit">Add word for all students</button>
+          </form>
+          <p class="error" id="class-word-error" hidden></p>
+        </section>
+
+        <section class="teachers" aria-labelledby="added-words-heading">
+          <h2 id="added-words-heading">Words added by teachers</h2>
+          <p class="muted">Every word added by hand, for all students or for one student, newest first.</p>
+          <p class="error" id="added-words-error" hidden></p>
+          <div class="table-wrap added-words">
+            <table class="students">
+              <thead>
+                <tr>
+                  <th scope="col">Word</th>
+                  <th scope="col">Definition</th>
+                  <th scope="col">For</th>
+                  <th scope="col">Added by</th>
+                  <th scope="col">Added</th>
+                  <th scope="col"><span class="visually-hidden">Remove</span></th>
+                </tr>
+              </thead>
+              <tbody id="added-words-rows"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="teachers" aria-labelledby="db-heading">
+          <h2 id="db-heading">All words</h2>
           <p class="muted">Every word students study: the word database plus words added for all students. Search to find a word, then remove it for all students or for one student. Students' progress on a removed word is kept, and you can restore it.</p>
           <div class="filters">
             <input type="search" id="db-search" placeholder="Search words or definitions" aria-label="Search words or definitions">

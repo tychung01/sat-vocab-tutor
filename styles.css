@@ -226,6 +226,7 @@ table.students { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
 .word-changes .remove-word { color: var(--bad); }
 
 .teachers { margin-top: 32px; }
+[role=tabpanel] > .teachers:first-child { margin-top: 0; }
 .teachers h2 { font-size: 1.15rem; margin: 0 0 4px; }
 .add-teacher { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0; }
 .add-teacher input {

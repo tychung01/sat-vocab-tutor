@@ -558,7 +558,7 @@ $("class-word-form").addEventListener("submit", (e) => {
   }
   const hidden = wordFinder(hiddenNames())(word);
   if (hidden) {
-    showClassWordError(`${alreadyThere(word, hidden)} in the word database but was removed for all students. Restore "${hidden}" in the Word database tab.`);
+    showClassWordError(`${alreadyThere(word, hidden)} in the word database but was removed for all students. Restore "${hidden}" under Removed for all students below.`);
     return;
   }
   const inDatabase = wordFinder(dbWords.map((w) => w.word))(word);
