@@ -1,0 +1,27 @@
+name: Shots
+options:
+  bundleIdPrefix: local.satwords
+  deploymentTarget:
+    iOS: "18.0"
+targets:
+  Shots:
+    type: application
+    platform: iOS
+    sources: [Shots]
+    info:
+      path: Shots/Info.plist
+      properties:
+        UILaunchScreen: {}
+    settings:
+      CODE_SIGN_IDENTITY: "-"
+      CODE_SIGN_STYLE: Manual
+  ShotsUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [ShotsUITests]
+    dependencies:
+      - target: Shots
+    settings:
+      CODE_SIGN_IDENTITY: "-"
+      CODE_SIGN_STYLE: Manual
+      GENERATE_INFOPLIST_FILE: "YES"

@@ -726,12 +726,13 @@ let invites = [];
 
 // The study app's address, next to this dashboard.
 const APP_URL = new URL("./", location.href).href;
+const INSTALL_GUIDE_URL = new URL("install.pdf", APP_URL).href; // made from INSTALL.md
 
 function inviteMessage(email) {
   const teacher = currentUser.displayName || currentUser.email;
   return {
     subject: "You're invited to SAT Word Study",
-    body: `Hi,\n\nI've invited you to SAT Word Study, a vocabulary app for the SAT. You'll study flashcards and take short quizzes in the SAT's Words in Context format.\n\nTo start:\n1. Open ${APP_URL}\n2. Click "Sign in with Google" and sign in with this email address: ${email}\n\n${teacher}`,
+    body: `Hi,\n\nI've invited you to SAT Word Study, a vocabulary app for the SAT. You'll study flashcards and take short quizzes in the SAT's Words in Context format.\n\nTo start:\n1. Open ${APP_URL}\n2. Click "Sign in with Google" and sign in with this email address: ${email}\n\nOn an iPhone or iPad, you can put the app on your home screen. This guide shows how, step by step: ${INSTALL_GUIDE_URL}\n\n${teacher}`,
   };
 }
 
