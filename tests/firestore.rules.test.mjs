@@ -96,6 +96,14 @@ const cases = [
   ["student can't invite themselves", () => assertFails(setDoc(doc(stranger, "invites/stranger@example.com"), { email: "stranger@example.com", invitedBy: "x" }))],
   ["teacher removes an invite", () => assertSucceeds(deleteDoc(doc(teacher, "invites/new@example.com")))],
   ["teacher can use the study app without an invite", () => assertSucceeds(setDoc(doc(teacher, "users/t1"), { name: "T" }))],
+  ["teacher removes a database word for all students", () => assertSucceeds(setDoc(doc(teacher, "hiddenwords/abandon"), { word: "abandon", removedBy: "teacher@example.com", removedAt: serverTimestamp() }))],
+  ["teacher can't hide a word under another ID", () => assertFails(setDoc(doc(teacher, "hiddenwords/abate"), { word: "abandon", removedBy: "x" }))],
+  ["teacher can't add extra fields to a hidden word", () => assertFails(setDoc(doc(teacher, "hiddenwords/abate"), { word: "abate", removedBy: "x", note: "y" }))],
+  ["student reads hidden words", () => assertSucceeds(getDocs(collection(student, "hiddenwords")))],
+  ["student can't hide a word", () => assertFails(setDoc(doc(student, "hiddenwords/abate"), { word: "abate", removedBy: "x" }))],
+  ["student can't restore a hidden word", () => assertFails(deleteDoc(doc(student, "hiddenwords/abandon")))],
+  ["anonymous can't read hidden words", () => assertFails(getDocs(collection(anon, "hiddenwords")))],
+  ["teacher restores a hidden word", () => assertSucceeds(deleteDoc(doc(teacher, "hiddenwords/abandon")))],
 ];
 
 let failed = 0;

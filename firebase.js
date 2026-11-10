@@ -190,6 +190,20 @@ export function removeClassWord(word) {
   return deleteDoc(doc(db, "classwords", word));
 }
 
+// Database words a teacher took off every student's list: one document per word.
+export async function loadHiddenWords() {
+  const snap = await getDocs(collection(db, "hiddenwords"));
+  return snap.docs.map((d) => d.data());
+}
+
+export function hideWord(word, removedBy) {
+  return setDoc(doc(db, "hiddenwords", word), { word, removedBy, removedAt: serverTimestamp() });
+}
+
+export function unhideWord(word) {
+  return deleteDoc(doc(db, "hiddenwords", word));
+}
+
 // Claude writes a new word's part of speech, definition, example passage, and quiz
 // choices (the writeWord Cloud Function; only teachers can call it).
 export async function writeWordContent(word, definition = "") {

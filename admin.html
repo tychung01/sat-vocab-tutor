@@ -32,6 +32,12 @@
     </section>
 
     <section id="dashboard" hidden>
+      <nav class="tabs admin-tabs" role="tablist">
+        <button role="tab" data-tab="students" aria-selected="true" aria-controls="tab-students">Students</button>
+        <button role="tab" data-tab="database" aria-selected="false" aria-controls="tab-database">Word database</button>
+      </nav>
+
+      <div id="tab-students" role="tabpanel">
       <div class="stats" id="stats"></div>
       <div class="filters">
         <input type="search" id="search" placeholder="Search students" aria-label="Search students">
@@ -109,8 +115,60 @@
         <p class="error" id="teacher-error" hidden></p>
         <ul class="teacher-list" id="teacher-list"></ul>
       </section>
+      </div>
+
+      <div id="tab-database" role="tabpanel" hidden>
+        <section aria-labelledby="db-heading">
+          <h2 id="db-heading" class="visually-hidden">Word database</h2>
+          <p class="muted">Every word students study: the word database plus words added for all students. Search to find a word, then remove it for all students or for one student. Students' progress on a removed word is kept, and you can restore it.</p>
+          <div class="filters">
+            <input type="search" id="db-search" placeholder="Search words or definitions" aria-label="Search words or definitions">
+          </div>
+          <p class="muted" id="db-count"></p>
+          <div class="table-wrap added-words db-words">
+            <table class="students">
+              <thead>
+                <tr>
+                  <th scope="col">Word</th>
+                  <th scope="col">Definition</th>
+                  <th scope="col">Source</th>
+                  <th scope="col"><span class="visually-hidden">Remove</span></th>
+                </tr>
+              </thead>
+              <tbody id="db-rows"></tbody>
+            </table>
+          </div>
+          <p class="error" id="db-error" hidden></p>
+        </section>
+
+        <section class="teachers" aria-labelledby="hidden-heading">
+          <h2 id="hidden-heading">Removed for all students</h2>
+          <p class="muted">Database words taken off every student's list. Restore one to give it back to everyone.</p>
+          <ul class="teacher-list" id="hidden-list"></ul>
+        </section>
+      </div>
     </section>
   </main>
+
+  <dialog class="word-dialog" id="delete-dialog" aria-labelledby="delete-title">
+    <form class="word-preview" id="delete-form">
+      <h2 id="delete-title"></h2>
+      <p id="delete-definition"></p>
+      <fieldset class="choice-fields">
+        <legend>Remove it from</legend>
+        <label class="scope-option"><input type="radio" name="scope" value="all" checked>
+          <span><strong>All students</strong><br><span class="muted">Every student's list, including students who sign up later.</span></span></label>
+        <label class="scope-option"><input type="radio" name="scope" value="one">
+          <span><strong>One student</strong><br><select name="student" aria-label="Student"></select></span></label>
+      </fieldset>
+      <p class="muted">Students' progress on the word is kept in case you restore it.</p>
+      <p class="error" hidden></p>
+      <div class="preview-actions">
+        <button class="btn primary danger" type="submit">Confirm remove</button>
+        <button class="btn cancel" type="button">Cancel</button>
+      </div>
+    </form>
+  </dialog>
 
   <dialog class="word-dialog" id="word-dialog" aria-labelledby="word-dialog-title">
     <form class="word-preview" id="word-preview"></form>

@@ -7,16 +7,20 @@ import {
   configured, isOwner, isTeacher, watchUser, signIn, signOutUser, listStudents, recentLogins,
   listTeachers, addTeacher, removeTeacher, addStudentWord, removeStudentWord, restoreStudentWord,
   loadClassWords, addClassWord, removeClassWord, writeWordContent, listInvites, addInvite, removeInvite,
+  loadHiddenWords, hideWord, unhideWord,
   LEARNED_STREAK, PRACTICE_LIMIT,
 } from "./firebase.js";
 import { OWNER_EMAILS } from "./firebase-config.js";
-import { loadWords, wordsForStudent, TEACHER_SOURCE } from "./words.js";
+import { loadWords, wordsForStudent, sharedWords, TEACHER_SOURCE } from "./words.js";
 import { usableExample, suggestChoices, wordFinder } from "./questions.js";
 
 const $ = (id) => document.getElementById(id);
 let dbWords = [];
 // Words a teacher added for every student.
 let classWords = [];
+// Database words a teacher took off every student's list: { word, removedBy, removedAt }.
+let hiddenWords = [];
+const hiddenNames = () => hiddenWords.map((h) => h.word);
 let students = [];
 
 function escapeHtml(text) {
@@ -30,7 +34,7 @@ function formatTime(ts) {
 }
 
 function studentWordNames(student) {
-  return new Set(wordsForStudent(dbWords, student.wordList, classWords).map((w) => w.word));
+  return new Set(wordsForStudent(dbWords, student.wordList, classWords, hiddenNames()).map((w) => w.word));
 }
 
 // The start of a message about a word that's already there, maybe in another form:
@@ -534,6 +538,7 @@ function showClassWordError(message) {
 // Redraw everything that depends on which words the students have.
 function refreshCounts() {
   renderAddedWords();
+  renderDatabase();
   renderStats();
   renderRows();
 }
@@ -549,6 +554,11 @@ $("class-word-form").addEventListener("submit", (e) => {
   const inClass = wordFinder(classWords.map((w) => w.word))(word);
   if (inClass) {
     showClassWordError(`${alreadyThere(word, inClass)} already added for all students.`);
+    return;
+  }
+  const hidden = wordFinder(hiddenNames())(word);
+  if (hidden) {
+    showClassWordError(`${alreadyThere(word, hidden)} in the word database but was removed for all students. Restore "${hidden}" in the Word database tab.`);
     return;
   }
   const inDatabase = wordFinder(dbWords.map((w) => w.word))(word);
@@ -586,6 +596,129 @@ $("class-word-form").addEventListener("submit", (e) => {
     },
   });
 });
+
+// ---------- word database tab ----------
+
+const DB_SHOWN = 200;
+
+function showTab(name) {
+  document.querySelectorAll(".admin-tabs button").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.tab === name)));
+  $("tab-students").hidden = name !== "students";
+  $("tab-database").hidden = name !== "database";
+  try { sessionStorage.setItem("satvocab.adminTab", name); } catch {}
+}
+
+document.querySelectorAll(".admin-tabs button").forEach((b) => b.addEventListener("click", () => showTab(b.dataset.tab)));
+
+// The students whose list has this word.
+function studentsWith(word) {
+  return students.filter((st) => studentWordNames(st).has(word));
+}
+
+function renderDatabase() {
+  const q = $("db-search").value.trim().toLowerCase();
+  const all = sharedWords(dbWords, classWords, hiddenNames());
+  // Words whose name matches come first, then words whose definition does.
+  const byName = all.filter((w) => w.word.includes(q));
+  const byDefinition = q ? all.filter((w) => !w.word.includes(q) && (w.definition || "").toLowerCase().includes(q)) : [];
+  const sortName = (list) => list.sort((a, b) => (b.word.startsWith(q) - a.word.startsWith(q)) || a.word.localeCompare(b.word));
+  const matches = [...sortName(byName), ...sortName(byDefinition)];
+  const shown = matches.slice(0, DB_SHOWN);
+  $("db-count").textContent = q
+    ? `${matches.length} of ${all.length} words match "${q}".` + (matches.length > DB_SHOWN ? ` Showing the first ${DB_SHOWN}.` : "")
+    : `${all.length} words.` + (all.length > DB_SHOWN ? ` Showing the first ${DB_SHOWN}; search to find others.` : "");
+  const isClass = new Set(classWords.map((w) => w.word));
+  $("db-rows").innerHTML = shown.length
+    ? shown.map((w) => {
+      const removedFor = students.filter((st) => st.wordList.removed[w.word]).length;
+      return `<tr>
+        <td><strong>${escapeHtml(w.word)}</strong>${w.part_of_speech ? ` <span class="muted">(${escapeHtml(w.part_of_speech)})</span>` : ""}</td>
+        <td>${escapeHtml(w.definition || "")}</td>
+        <td>${isClass.has(w.word) ? `<span class="badge learned">Added for all students</span>` : "Word database"}${removedFor
+          ? `<br><span class="muted">Removed for ${removedFor} student${removedFor === 1 ? "" : "s"}</span>` : ""}</td>
+        <td><button class="link remove-word" data-word="${escapeHtml(w.word)}">Remove</button></td>
+      </tr>`;
+    }).join("")
+    : `<tr><td colspan="4" class="muted">No words match "${escapeHtml(q)}".</td></tr>`;
+  document.querySelectorAll("#db-rows .remove-word").forEach((b) => b.addEventListener("click", () => confirmRemove(b.dataset.word)));
+
+  const hidden = [...hiddenWords].sort((a, b) => a.word.localeCompare(b.word));
+  $("hidden-heading").textContent = `Removed for all students (${hidden.length})`;
+  $("hidden-list").innerHTML = hidden.length
+    ? hidden.map((h) => `<li><span>${escapeHtml(h.word)}</span>
+      <span class="muted">removed ${formatTime(h.removedAt)} by ${escapeHtml(h.removedBy)}</span>
+      <button class="link restore-hidden" data-word="${escapeHtml(h.word)}">Restore</button></li>`).join("")
+    : `<li class="muted">None.</li>`;
+  document.querySelectorAll("#hidden-list .restore-hidden").forEach((b) => {
+    b.addEventListener("click", async () => {
+      showDbError("");
+      try {
+        await unhideWord(b.dataset.word);
+      } catch {
+        showDbError("Couldn't restore that word. Please try again.");
+        return;
+      }
+      hiddenWords = hiddenWords.filter((h) => h.word !== b.dataset.word);
+      refreshCounts();
+    });
+  });
+}
+
+function showDbError(message) {
+  $("db-error").textContent = message;
+  $("db-error").hidden = !message;
+}
+
+$("db-search").addEventListener("input", renderDatabase);
+
+// Ask how widely to remove a word, then remove it.
+function confirmRemove(word) {
+  const entry = sharedWords(dbWords, classWords, hiddenNames()).find((w) => w.word === word);
+  const dialog = $("delete-dialog");
+  const form = $("delete-form");
+  const error = form.querySelector(".error");
+  const having = studentsWith(word).sort((a, b) => (a.name || a.email).localeCompare(b.name || b.email));
+  $("delete-title").textContent = `Remove "${word}"?`;
+  $("delete-definition").textContent = entry?.definition || "";
+  form.student.innerHTML = having.length
+    ? having.map((st) => `<option value="${escapeHtml(st.uid)}">${escapeHtml(st.name || st.email)}</option>`).join("")
+    : `<option value="">No student has this word yet</option>`;
+  form.scope.value = "all";
+  form.querySelector('input[value="one"]').disabled = !having.length;
+  form.student.disabled = !having.length;
+  form.student.onchange = () => { form.scope.value = "one"; };
+  error.hidden = true;
+  form.querySelectorAll("button").forEach((b) => { b.disabled = false; });
+  form.querySelector(".cancel").onclick = () => dialog.close();
+  form.onsubmit = async (e) => {
+    e.preventDefault();
+    form.querySelectorAll("button").forEach((b) => { b.disabled = true; });
+    const student = form.scope.value === "one" && students.find((st) => st.uid === form.student.value);
+    try {
+      if (student) {
+        // Also deletes a copy added just for this student.
+        await removeStudentWord(student.uid, word, true);
+        delete student.wordList.added[word];
+        student.wordList.removed[word] = true;
+      } else if (classWords.some((w) => w.word === word)) {
+        await removeClassWord(word);
+        classWords = classWords.filter((w) => w.word !== word);
+      } else {
+        await hideWord(word, currentUser.email);
+        hiddenWords = [...hiddenWords, { word, removedBy: currentUser.email, removedAt: new Date() }];
+      }
+    } catch (err) {
+      console.error(err);
+      form.querySelectorAll("button").forEach((b) => { b.disabled = false; });
+      error.textContent = "Couldn't remove that word. Please try again.";
+      error.hidden = false;
+      return;
+    }
+    dialog.close();
+    refreshCounts();
+  };
+  dialog.showModal();
+}
 
 // ---------- invites ----------
 
@@ -763,15 +896,17 @@ async function showDashboard(user) {
   $("status").textContent = "Loading students…";
   $("status").hidden = false;
   try {
-    const [wordsDb, list, shared, invited] = await Promise.all([
+    const [wordsDb, list, shared, invited, hidden] = await Promise.all([
       loadWords(),
       listStudents(),
       loadClassWords(),
       listInvites(),
+      loadHiddenWords(),
     ]);
     dbWords = wordsDb.words;
     classWords = shared;
     invites = invited;
+    hiddenWords = hidden;
     students = list.sort((a, b) => (b.lastLogin?.toMillis() || 0) - (a.lastLogin?.toMillis() || 0));
   } catch {
     $("status").textContent = "Couldn't load student data. Check that the Firestore rules are published (see FIREBASE-SETUP.md).";
@@ -782,6 +917,9 @@ async function showDashboard(user) {
   refreshCounts();
   renderInvites();
   renderTeachers();
+  let tab = "students";
+  try { tab = sessionStorage.getItem("satvocab.adminTab") || tab; } catch {}
+  showTab(tab === "database" ? "database" : "students");
 }
 
 $("search").addEventListener("input", renderRows);

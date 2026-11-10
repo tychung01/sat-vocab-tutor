@@ -78,6 +78,15 @@ service cloud.firestore {
       allow delete: if isTeacher();
     }
 
+    // Database words a teacher took off every student's list. The document ID is the word.
+    match /hiddenwords/{word} {
+      allow read: if request.auth != null;
+      allow create: if isTeacher()
+        && request.resource.data.word == word
+        && request.resource.data.keys().hasOnly(['word', 'removedBy', 'removedAt']);
+      allow delete: if isTeacher();
+    }
+
     match /teachers/{email} {
       allow read: if isTeacher();
       // The document ID must be the teacher's email, lowercased, matching the stored field.

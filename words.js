@@ -32,17 +32,19 @@ function replaceSameWords(list, replacements) {
   return [...list.filter((w) => !find(w.word)), ...replacements];
 }
 
-// The words every student gets: the database plus words a teacher added for all
-// students (which replace a database entry for the same word, in any form).
-export function sharedWords(dbWords, classWords = []) {
-  return replaceSameWords(dbWords, classWords);
+// The words every student gets: the database minus words a teacher removed for
+// everyone (hidden, a list of words), plus words a teacher added for all students
+// (which replace a database entry for the same word, in any form).
+export function sharedWords(dbWords, classWords = [], hidden = []) {
+  const hiddenNames = new Set(hidden);
+  return replaceSameWords(dbWords.filter((w) => !hiddenNames.has(w.word)), classWords);
 }
 
 // One student's words: the shared words minus words a teacher removed for them,
 // plus words a teacher added just for them (which replace a shared word for the
 // same word, in any form). No student gets two forms of one word.
-export function wordsForStudent(dbWords, list, classWords = []) {
+export function wordsForStudent(dbWords, list, classWords = [], hidden = []) {
   const removed = list.removed || {};
-  const shared = sharedWords(dbWords, classWords).filter((w) => !removed[w.word]);
+  const shared = sharedWords(dbWords, classWords, hidden).filter((w) => !removed[w.word]);
   return replaceSameWords(shared, Object.values(list.added || {}));
 }

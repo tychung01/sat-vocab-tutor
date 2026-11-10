@@ -99,6 +99,15 @@ a teacher's word winning over the database's.
 whether for all students or for one student, newest first, with who it's for,
 who added it, and when. **Remove** there takes off that one addition.
 
+## Reviewing the word database
+The dashboard's **Word database** tab lists every word students study (the
+database plus words added for all students) with its definition. Search by
+word or definition. **Remove** opens a confirmation where you choose **All
+students** (every list, including students who sign up later) or **One
+student**. Database words removed for everyone are listed under **Removed for
+all students**, where **Restore** gives them back. Progress is kept either way.
+The monthly update never brings a removed word back.
+
 ## Changing one student's words
 In the teacher dashboard, click a student and use **Word list**. Type a word
 and click **Add word**. The dashboard looks it up online (the Free Dictionary
@@ -144,6 +153,7 @@ request, the function retries it on Anthropic's default fallback model.
 - `teachers/{email}`: teachers the owner has added, with who added them and when
 - `invites/{email}`: students a teacher invited, with who invited them and when
 - `classwords/{word}`: words a teacher added for all students (with definitions)
+- `hiddenwords/{word}`: database words a teacher removed for all students
 - `wordlists/{uid}`: words a teacher added for that student (with definitions)
   and shared words a teacher removed for them
 - `progress/{uid}`: for each word tried, the current streak of correct

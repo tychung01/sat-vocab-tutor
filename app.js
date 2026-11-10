@@ -9,7 +9,7 @@
 
 import {
   configured, isTeacher, watchUser, signIn, signOutUser, recordLogin,
-  loadProgress, saveWordProgress, saveStudyState, loadWordList, loadClassWords,
+  loadProgress, saveWordProgress, saveStudyState, loadWordList, loadClassWords, loadHiddenWords,
   LEARNED_STREAK, PRACTICE_LIMIT,
 } from "./firebase.js";
 import { loadWords, wordsForStudent, TEACHER_SOURCE } from "./words.js";
@@ -565,10 +565,11 @@ async function showSignedIn(signedInUser) {
   const login = recordLogin(user).then((streak) => ({ streak }), (error) => ({ error }));
   try {
     // Without the teacher's changes the student still gets the full database.
-    const [saved, list, classWords, { streak, error }] = await Promise.all([
+    const [saved, list, classWords, hidden, { streak, error }] = await Promise.all([
       loadProgress(user.uid),
       loadWordList(user.uid).catch(() => ({})),
       loadClassWords().catch(() => []),
+      loadHiddenWords().catch(() => []),
       login,
     ]);
     if (error?.code === "permission-denied") {
@@ -579,7 +580,7 @@ async function showSignedIn(signedInUser) {
     progress = saved.words;
     studied = saved.studied;
     required = saved.required;
-    words = wordsForStudent(dbWords, list, classWords);
+    words = wordsForStudent(dbWords, list, classWords, hidden.map((h) => h.word));
   } catch {
     $("status").textContent = "Couldn't load your progress. Please refresh the page.";
     return;
