@@ -2,7 +2,7 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import {
-  getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut,
+  getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signInWithRedirect, signOut,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import {
   getFirestore, doc, getDoc, setDoc, addDoc, deleteDoc, collection, getDocs, query, orderBy, limit,
@@ -57,8 +57,18 @@ export function watchUser(callback) {
   return onAuthStateChanged(auth, callback);
 }
 
+// Opened from the iPhone home screen rather than in a browser tab.
+const homeScreenApp = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+
 export function signIn() {
-  return signInWithPopup(auth, new GoogleAuthProvider());
+  const provider = new GoogleAuthProvider();
+  return signInWithPopup(auth, provider).catch((err) => {
+    // The home-screen app can't always open a pop-up; sign in on a full page instead.
+    // The page reloads signed in, and watchUser picks up the account.
+    const popupFailed = ["auth/popup-blocked", "auth/operation-not-supported-in-this-environment"].includes(err.code);
+    if (homeScreenApp && popupFailed) return signInWithRedirect(auth, provider);
+    throw err;
+  });
 }
 
 export function signOutUser() {

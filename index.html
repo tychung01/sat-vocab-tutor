@@ -6,6 +6,14 @@
   <title>SAT Word Study</title>
   <meta name="description" content="Study vocabulary from official SAT practice tests with flashcards and quizzes.">
   <link rel="stylesheet" href="styles.css">
+  <!-- Home-screen app: Safari's Share → Add to Home Screen opens it full-screen with this icon. -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="SAT Words">
+  <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15171a" media="(prefers-color-scheme: dark)">
   <script>
     // Google sign-in only works on the firebaseapp.com address (same site as the sign-in handler).
     if (location.hostname.endsWith(".web.app")) location.replace(location.href.replace(".web.app", ".firebaseapp.com"));

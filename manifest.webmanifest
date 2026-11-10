@@ -1,0 +1,14 @@
+{
+  "name": "SAT Word Study",
+  "short_name": "SAT Words",
+  "description": "Study vocabulary from official SAT practice tests with flashcards and quizzes.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f6f2",
+  "theme_color": "#f7f6f2",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
