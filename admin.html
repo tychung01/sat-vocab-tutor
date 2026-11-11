@@ -35,6 +35,7 @@
       <nav class="tabs admin-tabs" role="tablist">
         <button role="tab" data-tab="students" aria-selected="true" aria-controls="tab-students">Students</button>
         <button role="tab" data-tab="database" aria-selected="false" aria-controls="tab-database">Word database</button>
+        <button role="tab" data-tab="teachers" aria-selected="false" aria-controls="tab-teachers">Teachers</button>
       </nav>
 
       <div id="tab-students" role="tabpanel">
@@ -70,18 +71,6 @@
         <p class="error" id="invite-error" hidden></p>
         <p class="muted" id="invite-sent" hidden></p>
         <ul class="teacher-list" id="invite-list"></ul>
-      </section>
-
-      <section class="teachers" aria-labelledby="teachers-heading">
-        <h2 id="teachers-heading">Teachers</h2>
-        <p class="muted" id="teachers-help"></p>
-        <form class="add-teacher" id="add-teacher" hidden>
-          <label for="teacher-email" class="visually-hidden">Teacher's Google email</label>
-          <input type="email" id="teacher-email" placeholder="Teacher's Google email" required autocomplete="off">
-          <button class="btn primary" type="submit">Add teacher</button>
-        </form>
-        <p class="error" id="teacher-error" hidden></p>
-        <ul class="teacher-list" id="teacher-list"></ul>
       </section>
       </div>
 
@@ -145,6 +134,20 @@
           <h2 id="hidden-heading">Removed for all students</h2>
           <p class="muted">Database words taken off every student's list. Restore one to give it back to everyone.</p>
           <ul class="teacher-list" id="hidden-list"></ul>
+        </section>
+      </div>
+
+      <div id="tab-teachers" role="tabpanel" hidden>
+        <section class="teachers" aria-labelledby="teachers-heading">
+          <h2 id="teachers-heading" class="visually-hidden">Teachers</h2>
+          <p class="muted" id="teachers-help"></p>
+          <form class="add-teacher" id="add-teacher" hidden>
+            <label for="teacher-email" class="visually-hidden">Teacher's Google email</label>
+            <input type="email" id="teacher-email" placeholder="Teacher's Google email" required autocomplete="off">
+            <button class="btn primary" type="submit">Add teacher</button>
+          </form>
+          <p class="error" id="teacher-error" hidden></p>
+          <ul class="teacher-list" id="teacher-list"></ul>
         </section>
       </div>
     </section>

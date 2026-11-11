@@ -605,6 +605,7 @@ function showTab(name) {
   document.querySelectorAll(".admin-tabs button").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.tab === name)));
   $("tab-students").hidden = name !== "students";
   $("tab-database").hidden = name !== "database";
+  $("tab-teachers").hidden = name !== "teachers";
   try { sessionStorage.setItem("satvocab.adminTab", name); } catch {}
 }
 
@@ -920,7 +921,7 @@ async function showDashboard(user) {
   renderTeachers();
   let tab = "students";
   try { tab = sessionStorage.getItem("satvocab.adminTab") || tab; } catch {}
-  showTab(tab === "database" ? "database" : "students");
+  showTab(["database", "teachers"].includes(tab) ? tab : "students");
 }
 
 $("search").addEventListener("input", renderRows);
