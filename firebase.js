@@ -28,6 +28,8 @@ export function isOwner(user) {
   return Boolean(user && user.emailVerified && OWNER_EMAILS.includes(user.email.toLowerCase()));
 }
 
+// Whether this account can use the teacher dashboard: the owner, or anyone listed
+// in /teachers. Resolves false for signed-out or unverified accounts, never rejects.
 export async function isTeacher(user) {
   if (!user || !user.emailVerified) return false;
   if (isOwner(user)) return true;
@@ -39,6 +41,8 @@ export async function isTeacher(user) {
   }
 }
 
+// The teachers the owner added, one document per email (lowercased). Only
+// teachers can read the list, and only the owner can add or remove from it.
 export async function listTeachers() {
   const snap = await getDocs(collection(db, "teachers"));
   return snap.docs.map((d) => d.data());
@@ -49,10 +53,13 @@ export function addTeacher(email, addedBy) {
   return setDoc(doc(db, "teachers", id), { email: id, addedBy, addedAt: serverTimestamp() });
 }
 
+// email is the document ID, already lowercased.
 export function removeTeacher(email) {
   return deleteDoc(doc(db, "teachers", email));
 }
 
+// Calls callback(user) now and on every sign-in or sign-out, with null when
+// nobody is signed in. Returns a function that stops watching.
 export function watchUser(callback) {
   return onAuthStateChanged(auth, callback);
 }
@@ -60,6 +67,8 @@ export function watchUser(callback) {
 // Opened from the iPhone home screen rather than in a browser tab.
 const homeScreenApp = matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
 
+// Sign in with Google in a pop-up. Rejects with the Firebase error code if that
+// fails, except in the home-screen app, which falls back to a full-page redirect.
 export function signIn() {
   const provider = new GoogleAuthProvider();
   return signInWithPopup(auth, provider).catch((err) => {
@@ -71,6 +80,7 @@ export function signIn() {
   });
 }
 
+// Sign out on this device; watchUser then reports null.
 export function signOutUser() {
   return signOut(auth);
 }
@@ -131,8 +141,29 @@ export function addInvite(email, invitedBy) {
   return setDoc(doc(db, "invites", id), { email: id, invitedBy, invitedAt: serverTimestamp() });
 }
 
+// Stops a student who hasn't signed in yet. A student who already signed in
+// keeps access; take it away with blockStudent instead.
 export function removeInvite(email) {
   return deleteDoc(doc(db, "invites", email));
+}
+
+// Students whose access a teacher took away, one document per email (lowercased).
+// The rules shut them out of their records until the document is deleted.
+export async function listBlocked() {
+  const snap = await getDocs(collection(db, "blocked"));
+  return snap.docs.map((d) => d.data());
+}
+
+// Takes a student's access away from the next time they open the app. Their
+// progress is kept.
+export function blockStudent(email, blockedBy) {
+  const id = email.trim().toLowerCase();
+  return setDoc(doc(db, "blocked", id), { email: id, blockedBy, blockedAt: serverTimestamp() });
+}
+
+// Gives a blocked student their access back, with their progress as it was.
+export function unblockStudent(email) {
+  return deleteDoc(doc(db, "blocked", email));
 }
 
 // Progress is one document per student: { words: { [word]: { streak, correct, wrong, last } },

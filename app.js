@@ -572,17 +572,17 @@ async function showSignedIn(signedInUser) {
       loadHiddenWords().catch(() => []),
       login,
     ]);
-    if (error?.code === "permission-denied") {
-      $("status").textContent = `${user.email} hasn't been invited yet. Ask your teacher to invite this email address, then sign in again. If your teacher invited a different address, sign out and sign in with that one.`;
-      return;
-    }
+    if (error?.code === "permission-denied") throw error;
     loginStreak = streak || 0;
     progress = saved.words;
     studied = saved.studied;
     required = saved.required;
     words = wordsForStudent(dbWords, list, classWords, hidden.map((h) => h.word));
-  } catch {
-    $("status").textContent = "Couldn't load your progress. Please refresh the page.";
+  } catch (err) {
+    // Not invited yet, or a teacher took this account's access away.
+    $("status").textContent = err?.code === "permission-denied"
+      ? `${user.email} doesn't have access to SAT Word Study. Ask your teacher to invite this email address, then sign in again. If your teacher invited a different address, sign out and sign in with that one.`
+      : "Couldn't load your progress. Please refresh the page.";
     return;
   }
   showWordCount();

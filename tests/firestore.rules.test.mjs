@@ -27,7 +27,17 @@ await env.withSecurityRulesDisabled(async (c) => {
   await setDoc(doc(db, "users/s2"), { name: "Other" });
   await setDoc(doc(db, "progress/s2"), { learned: 1 });
   await setDoc(doc(db, "users/s2/logins/a"), { at: 1 });
+  // A student who signed in, then had their access removed.
+  await setDoc(doc(db, "invites/gone@example.com"), { email: "gone@example.com", invitedBy: "teacher@example.com" });
+  await setDoc(doc(db, "users/s4"), { name: "Gone" });
+  await setDoc(doc(db, "progress/s4"), { learned: 1 });
+  await setDoc(doc(db, "wordlists/s4"), { added: {} });
+  await setDoc(doc(db, "blocked/gone@example.com"), { email: "gone@example.com", blockedBy: "teacher@example.com" });
 });
+const gone = as("s4", "gone@example.com");
+const goneMixedCase = as("s4", "Gone@Example.com");
+const block = (db, email, extra = {}) =>
+  setDoc(doc(db, "blocked", email), { email, blockedBy: "teacher@example.com", blockedAt: serverTimestamp(), ...extra });
 
 const add = (db, email, extra = {}) =>
   setDoc(doc(db, "teachers", email), { email, addedBy: "x", addedAt: serverTimestamp(), ...extra });
@@ -104,6 +114,26 @@ const cases = [
   ["student can't restore a hidden word", () => assertFails(deleteDoc(doc(student, "hiddenwords/abandon")))],
   ["anonymous can't read hidden words", () => assertFails(getDocs(collection(anon, "hiddenwords")))],
   ["teacher restores a hidden word", () => assertSucceeds(deleteDoc(doc(teacher, "hiddenwords/abandon")))],
+  ["mixed-case owner email adds a teacher", () => assertSucceeds(add(as("owner3", "TYChung01@Gmail.com"), "mixed@example.com"))],
+  ["mixed-case teacher email reads students", () => assertSucceeds(getDoc(doc(as("t2", "Teacher@Example.com"), "progress/s2")))],
+  ["blocked student can't read own user doc", () => assertFails(getDoc(doc(gone, "users/s4")))],
+  ["blocked student can't update own user doc", () => assertFails(setDoc(doc(gone, "users/s4"), { name: "G" }, { merge: true }))],
+  ["blocked student can't add a login", () => assertFails(setDoc(doc(gone, "users/s4/logins/x"), { at: 1 }))],
+  ["blocked student can't read own progress", () => assertFails(getDoc(doc(gone, "progress/s4")))],
+  ["blocked student can't save progress", () => assertFails(setDoc(doc(gone, "progress/s4"), { learned: 2 }))],
+  ["blocked student can't read own word list", () => assertFails(getDoc(doc(gone, "wordlists/s4")))],
+  ["blocked student with a mixed-case email is still blocked", () => assertFails(getDoc(doc(goneMixedCase, "progress/s4")))],
+  ["teacher still reads a blocked student's progress", () => assertSucceeds(getDoc(doc(teacher, "progress/s4")))],
+  ["teacher lists blocked students", () => assertSucceeds(getDocs(collection(teacher, "blocked")))],
+  ["student can't list blocked students", () => assertFails(getDocs(collection(student, "blocked")))],
+  ["student can't unblock themselves", () => assertFails(deleteDoc(doc(gone, "blocked/gone@example.com")))],
+  ["student can't block another student", () => assertFails(block(student, "other@example.com"))],
+  ["teacher can't block under an uppercase ID", () => assertFails(block(teacher, "Other@Example.com"))],
+  ["teacher can't block with extra fields", () => assertFails(block(teacher, "other@example.com", { note: "x" }))],
+  ["teacher blocks a student who signed in before invites", () => assertSucceeds(block(teacher, "other@example.com"))],
+  ["that student is shut out", () => assertFails(setDoc(doc(as("s2", "other@example.com"), "progress/s2"), { learned: 4 }))],
+  ["teacher restores access", () => assertSucceeds(deleteDoc(doc(teacher, "blocked/gone@example.com")))],
+  ["restored student reads and saves progress again", () => assertSucceeds(setDoc(doc(gone, "progress/s4"), { learned: 2 }).then(() => getDoc(doc(gone, "progress/s4"))))],
 ];
 
 let failed = 0;

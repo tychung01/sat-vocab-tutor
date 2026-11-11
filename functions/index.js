@@ -20,8 +20,11 @@ const anthropicKey = defineSecret("ANTHROPIC_API_KEY");
 // Keep in sync with OWNER_EMAILS in firebase-config.js and isAppOwner() in firestore.rules.
 const OWNER_EMAILS = ["tychung01@gmail.com"];
 
+// Whether the caller (the callable request's auth, with its verified ID token)
+// is the owner or listed in /teachers. This is what keeps students from using
+// the Anthropic API key, so it checks the token, never anything the caller sends.
 async function isTeacher(auth) {
-  const email = auth?.token?.email;
+  const email = auth?.token?.email?.toLowerCase();
   if (!email || auth.token.email_verified !== true) return false;
   if (OWNER_EMAILS.includes(email)) return true;
   return (await getFirestore().doc(`teachers/${email}`).get()).exists;

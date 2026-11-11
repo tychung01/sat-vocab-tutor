@@ -4,7 +4,8 @@ rules_version = '2';
 // (/wordlists/{uid}) and the words added for all students (/classwords/{word}),
 // which only teachers can change. A student can start using the app only after a
 // teacher invites their email (/invites/{email}); students who signed in before
-// invites existed keep access.
+// invites existed keep access. A teacher can take a student's access away
+// (/blocked/{email}), which shuts them out of their records until it's restored.
 // Teachers can read everyone's records. The owner (listed in isAppOwner) is
 // always a teacher and is the only one who can add or remove other teachers,
 // who are stored in /teachers/{email}.
@@ -17,12 +18,12 @@ service cloud.firestore {
 
     // Keep in sync with OWNER_EMAILS in firebase-config.js.
     function isAppOwner() {
-      return signedInEmail() && request.auth.token.email in ['tychung01@gmail.com'];
+      return signedInEmail() && request.auth.token.email.lower() in ['tychung01@gmail.com'];
     }
 
     function isTeacher() {
       return isAppOwner()
-        || (signedInEmail() && exists(/databases/$(database)/documents/teachers/$(request.auth.token.email)));
+        || (signedInEmail() && exists(/databases/$(database)/documents/teachers/$(request.auth.token.email.lower())));
     }
 
     function isSelf(uid) {
@@ -34,25 +35,32 @@ service cloud.firestore {
         && exists(/databases/$(database)/documents/invites/$(request.auth.token.email.lower()));
     }
 
+    // Teachers always can; anyone else, unless a teacher took their access away.
+    function canStudy() {
+      return isTeacher()
+        || (signedInEmail()
+          && !exists(/databases/$(database)/documents/blocked/$(request.auth.token.email.lower())));
+    }
+
     // A student's user record exists once they've signed in with access.
     function hasSignedIn(uid) {
       return exists(/databases/$(database)/documents/users/$(uid));
     }
 
     match /users/{uid} {
-      allow read: if isSelf(uid) || isTeacher();
-      allow create: if isSelf(uid) && (isInvited() || isTeacher());
-      allow update: if isSelf(uid);
+      allow read: if (isSelf(uid) && canStudy()) || isTeacher();
+      allow create: if isSelf(uid) && canStudy() && (isInvited() || isTeacher());
+      allow update: if isSelf(uid) && canStudy();
 
       match /logins/{loginId} {
-        allow read: if isSelf(uid) || isTeacher();
-        allow create: if isSelf(uid) && hasSignedIn(uid);
+        allow read: if (isSelf(uid) && canStudy()) || isTeacher();
+        allow create: if isSelf(uid) && canStudy() && hasSignedIn(uid);
       }
     }
 
     match /progress/{uid} {
-      allow read: if isSelf(uid) || isTeacher();
-      allow create, update: if isSelf(uid) && hasSignedIn(uid);
+      allow read: if (isSelf(uid) && canStudy()) || isTeacher();
+      allow create, update: if isSelf(uid) && canStudy() && hasSignedIn(uid);
     }
 
     // Students a teacher invited. The document ID is the student's email, lowercased.
@@ -64,9 +72,19 @@ service cloud.firestore {
         && request.resource.data.keys().hasOnly(['email', 'invitedBy', 'invitedAt']);
     }
 
+    // Students whose access a teacher took away. The document ID is the student's
+    // email, lowercased. Deleting it gives their access back.
+    match /blocked/{email} {
+      allow read, delete: if isTeacher();
+      allow create: if isTeacher()
+        && email == email.lower()
+        && request.resource.data.email == email
+        && request.resource.data.keys().hasOnly(['email', 'blockedBy', 'blockedAt']);
+    }
+
     // Words a teacher added or removed for one student. Only teachers change it.
     match /wordlists/{uid} {
-      allow read: if isSelf(uid) || isTeacher();
+      allow read: if (isSelf(uid) && canStudy()) || isTeacher();
       allow create, update: if isTeacher()
         && request.resource.data.keys().hasOnly(['added', 'removed', 'updated']);
     }

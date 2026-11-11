@@ -7,7 +7,7 @@ import {
   configured, isOwner, isTeacher, watchUser, signIn, signOutUser, listStudents, recentLogins,
   listTeachers, addTeacher, removeTeacher, addStudentWord, removeStudentWord, restoreStudentWord,
   loadClassWords, addClassWord, removeClassWord, writeWordContent, listInvites, addInvite, removeInvite,
-  loadHiddenWords, hideWord, unhideWord,
+  listBlocked, blockStudent, unblockStudent, loadHiddenWords, hideWord, unhideWord,
   LEARNED_STREAK, PRACTICE_LIMIT,
 } from "./firebase.js";
 import { OWNER_EMAILS } from "./firebase-config.js";
@@ -22,6 +22,9 @@ let classWords = [];
 let hiddenWords = [];
 const hiddenNames = () => hiddenWords.map((h) => h.word);
 let students = [];
+// Students whose access a teacher took away: { email, blockedBy, blockedAt }.
+let blocked = [];
+const blockFor = (student) => blocked.find((b) => b.email === (student.email || "").toLowerCase());
 
 function escapeHtml(text) {
   return String(text).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -87,7 +90,8 @@ function renderRows() {
 function rowCells(s) {
   const { total, learned, practice } = summarize(s);
   const pct = total ? (learned.length / total) * 100 : 0;
-  return `<td><strong>${escapeHtml(s.name || "(no name)")}</strong><br><span class="muted">${escapeHtml(s.email)}</span></td>
+  const badge = blockFor(s) ? ` <span class="badge upcoming">Access removed</span>` : "";
+  return `<td><strong>${escapeHtml(s.name || "(no name)")}</strong>${badge}<br><span class="muted">${escapeHtml(s.email)}</span></td>
     <td>${formatTime(s.lastLogin)}</td>
     <td class="num">${s.loginCount || 0}</td>
     <td class="num">${learned.length}</td>
@@ -123,8 +127,52 @@ async function toggleDetail(row) {
     <div><h3>Learned (${learned.length})</h3><p>${list(learned, "None yet.")}</p></div>
     <div><h3>Closest to learning</h3><p>${list(close, "None in progress.")}</p>
       <h3>Recently missed</h3><p>${list(missed, "None.")}</p></div>
-  </div><div class="word-tools"></div></td>`;
+  </div><div class="word-tools"></div><div class="word-tools access-tools"></div></td>`;
   renderWordTools(detail.querySelector(".word-tools"), student, row);
+  renderAccessTools(detail.querySelector(".access-tools"), student, row);
+}
+
+// Take a student's access away, or give it back. Their progress is kept either way.
+function renderAccessTools(container, student, row) {
+  if (!student.email) {
+    container.remove();
+    return;
+  }
+  const block = blockFor(student);
+  const who = escapeHtml(student.name || student.email);
+  container.innerHTML = block
+    ? `<h3>Access</h3>
+      <p class="muted">${who} can't use the study app. Access removed ${formatTime(block.blockedAt)} by ${escapeHtml(block.blockedBy)}. Their progress is kept.</p>
+      <button class="btn" type="button">Restore access</button>`
+    : `<h3>Access</h3>
+      <p class="muted">Removing access stops ${who} from using the study app, starting the next time they open it. Their progress is kept, so you can restore access later.</p>
+      <button class="btn" type="button">Remove access</button>`;
+  container.insertAdjacentHTML("beforeend", `<p class="error" hidden></p>`);
+  const button = container.querySelector("button");
+  const error = container.querySelector(".error");
+  button.addEventListener("click", async () => {
+    if (!block && !confirm(`Remove ${student.name || student.email}'s access to the study app?`)) return;
+    button.disabled = true;
+    error.hidden = true;
+    try {
+      if (block) {
+        await unblockStudent(block.email);
+        blocked = blocked.filter((b) => b !== block);
+      } else {
+        const email = student.email.toLowerCase();
+        await blockStudent(email, currentUser.email);
+        blocked = [...blocked, { email, blockedBy: currentUser.email, blockedAt: new Date() }];
+      }
+    } catch (err) {
+      console.error(err);
+      button.disabled = false;
+      error.textContent = block ? "Couldn't restore access. Please try again." : "Couldn't remove access. Please try again.";
+      error.hidden = false;
+      return;
+    }
+    row.innerHTML = rowCells(student);
+    renderAccessTools(container, student, row);
+  });
 }
 
 // ---------- each student's words ----------
@@ -794,8 +842,11 @@ $("invite-form").addEventListener("submit", async (e) => {
     showInviteError("Enter a full email address, like name@school.org.");
     return;
   }
-  if (students.some((s) => (s.email || "").toLowerCase() === email)) {
-    showInviteError("That student has already signed in, so they can use the app.");
+  const existing = students.find((s) => (s.email || "").toLowerCase() === email);
+  if (existing) {
+    showInviteError(blockFor(existing)
+      ? "That student's access was removed. Click their row in the table above to restore it."
+      : "That student has already signed in, so they can use the app.");
     return;
   }
   // Invites can only be created, so sending again doesn't save a new one.
@@ -898,13 +949,15 @@ async function showDashboard(user) {
   $("status").textContent = "Loading students…";
   $("status").hidden = false;
   try {
-    const [wordsDb, list, shared, invited, hidden] = await Promise.all([
+    const [wordsDb, list, shared, invited, hidden, removedAccess] = await Promise.all([
       loadWords(),
       listStudents(),
       loadClassWords(),
       listInvites(),
       loadHiddenWords(),
+      listBlocked(),
     ]);
+    blocked = removedAccess;
     dbWords = wordsDb.words;
     classWords = shared;
     invites = invited;
