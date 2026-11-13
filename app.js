@@ -117,14 +117,14 @@ function renderStatus(learned) {
   $("student-status").hidden = false;
 }
 
+// The bar fills toward the next review quiz, so it moves with every set.
 function renderProgress() {
-  const learned = learnedCount();
-  renderStatus(learned);
-  const upcoming = words.length - learned - practiceSet.size;
-  $("progress").innerHTML =
-    `<span><b>${practiceSet.size}</b> practice</span>` +
-    (upcoming > 0 ? `<span><b>${upcoming}</b> more unlock as you learn</span>` : "") +
-    `<span class="bar" aria-hidden="true"><span style="width:${(learned / words.length) * 100}%"></span></span>`;
+  renderStatus(learnedCount());
+  const done = Math.min(studiedWords().length, REVIEW_EVERY);
+  $("progress").innerHTML = required?.mode === "review"
+    ? "<span><b>Review quiz</b> is next</span>"
+    : `<span><b>${done}</b> of ${REVIEW_EVERY} words to your next review</span>`
+      + `<span class="bar" aria-hidden="true"><span style="width:${(done / REVIEW_EVERY) * 100}%"></span></span>`;
 }
 
 // ---------- helpers ----------
@@ -219,17 +219,28 @@ function showCard() {
   $("fc-def").textContent = w.definition;
   $("fc-use").textContent = w.usage;
   $("fc-ex").innerHTML = w.examples.map((e) => `<li>${escapeHtml(e)}</li>`).join("");
+  $("show-meaning").hidden = false;
+  $("next-card").hidden = true;
   setFlipped(false);
 }
 
+// Next card appears once the meaning has been seen, so a set can't be skipped through.
 function setFlipped(flipped) {
   document.querySelector("#flashcard .front").hidden = flipped;
   document.querySelector("#flashcard .back").hidden = !flipped;
   $("flashcard").setAttribute("aria-label", flipped ? "Show word" : "Show meaning");
+  if (flipped) {
+    $("show-meaning").hidden = true;
+    $("next-card").hidden = false;
+  }
 }
 
 $("flashcard").addEventListener("click", () => {
   setFlipped(!document.querySelector("#flashcard .front").hidden);
+});
+$("show-meaning").addEventListener("click", () => {
+  setFlipped(true);
+  $("next-card").focus();
 });
 
 $("next-card").addEventListener("click", () => {
@@ -330,6 +341,7 @@ function reviewText() {
 }
 
 function saveStudy() {
+  renderProgress();
   saveStudyState(user.uid, { studied, required }).catch(() => {
     $("status").textContent = "Couldn't save your progress. Check your connection; your answers will save when it's back.";
     $("status").hidden = false;
@@ -608,6 +620,8 @@ function renderWho() {
   $("who").innerHTML = profile
     ? `${avatarHtml(profile, 28)}<span>${escapeHtml(profile.username)}</span>`
     : escapeHtml(user.displayName || user.email);
+  // With a profile, Sign out is in the profile window, away from the name students tap.
+  $("sign-out").hidden = Boolean(profile);
 }
 
 // The profile dialog creates the profile the first time and changes the picture after that.
@@ -638,7 +652,7 @@ function renderAvatarGrid() {
 
 function openProfileDialog(firstTime) {
   profileFirstTime = firstTime;
-  $("profile-title").textContent = firstTime ? "Create your profile" : "Change your picture";
+  $("profile-title").textContent = firstTime ? "Create your profile" : "Your profile";
   $("profile-intro").hidden = !firstTime;
   $("profile-username").value = profile?.username || "";
   $("profile-username").disabled = !firstTime;
@@ -646,6 +660,7 @@ function openProfileDialog(firstTime) {
     ? "3 to 20 letters, numbers, or underscores (_). You can't change it later, but your teacher can."
     : "To change your user name, ask your teacher.";
   $("profile-cancel").textContent = firstTime ? "Sign out" : "Cancel";
+  $("profile-sign-out").hidden = firstTime;
   chosenPhoto = profile?.photo || `avatar:${AVATARS[Math.floor(Math.random() * AVATARS.length)][0]}`;
   uploadedPhoto = chosenPhoto.startsWith("data:") ? chosenPhoto : "";
   showProfileError("");
@@ -660,6 +675,11 @@ $("who").addEventListener("click", () => {
 // The first time, the dialog stays open until the profile is saved.
 $("profile-dialog").addEventListener("cancel", (e) => {
   if (profileFirstTime) e.preventDefault();
+});
+
+$("profile-sign-out").addEventListener("click", () => {
+  $("profile-dialog").close();
+  signOutUser();
 });
 
 $("profile-cancel").addEventListener("click", () => {
@@ -873,6 +893,17 @@ $("sign-out").addEventListener("click", () => signOutUser());
 function showWordCount() {
   $("updated").textContent = `${words.length} words · word list updated ${dbUpdated}`;
 }
+
+// Without internet, sw.js shows offline.html instead of a browser error. If the
+// connection drops mid-session, answers wait in Firestore's queue until it's back.
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+window.addEventListener("offline", () => {
+  $("status").textContent = "You're offline. Your answers will save when you're back online.";
+  $("status").hidden = false;
+});
+window.addEventListener("online", () => {
+  if ($("status").textContent.startsWith("You're offline")) $("status").hidden = true;
+});
 
 async function start() {
   try {

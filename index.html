@@ -26,7 +26,7 @@
     <div class="wrap top-inner">
       <h1 class="brand">SAT Word Study</h1>
       <div class="account" id="account" hidden>
-        <button class="who" id="who" type="button" title="Change your picture"></button>
+        <button class="who" id="who" type="button" title="Your profile" aria-haspopup="dialog"></button>
         <a class="link" id="admin-link" href="admin.html" hidden>Teacher dashboard</a>
         <button class="link" id="sign-out">Sign out</button>
       </div>
@@ -47,7 +47,9 @@
     <p class="status" id="status">Loading…</p>
 
     <section id="sign-in" class="sign-in" hidden>
+      <img class="sign-in-icon" src="icons/icon-192.png" alt="" width="72" height="72">
       <h2>Sign in to start studying</h2>
+      <p>Learn the vocabulary on the SAT with flashcards, quizzes in the SAT's own question format, and a class leaderboard.</p>
       <p>Sign in with the Google account your teacher invited. Your progress is saved to your account, so you can pick up where you left off on any device.</p>
       <button class="btn primary" id="sign-in-button">Sign in with Google</button>
       <p class="error" id="sign-in-error" hidden></p>
@@ -71,9 +73,9 @@
           </div>
         </button>
         <div class="actions">
-          <button class="btn primary" id="next-card">Next card</button>
+          <button class="btn primary" id="show-meaning">Show meaning</button>
+          <button class="btn primary" id="next-card" hidden>Next card</button>
         </div>
-        <p class="note">After each set of flashcards, you need a perfect quiz score to move on to the next set. Words move to <strong>Learned</strong> after 3 correct quiz answers in a row. Your practice list holds up to 1,200 words; new words join it as you learn.</p>
       </div>
       <div class="done" id="study-done" hidden>
         <h2>Set complete</h2>
@@ -181,6 +183,14 @@
     <section id="view-about" class="view about" hidden>
       <h2>About SAT Word Study</h2>
       <p>A vocabulary app for the SAT: flashcards, quizzes in the SAT's Words in Context format, and a class leaderboard.</p>
+      <h3>How studying works</h3>
+      <ol class="steps">
+        <li><strong>Flashcards.</strong> Study a set of 10 words. Tap <strong>Show meaning</strong> (or the card) to see each word's meaning, usage, and an example, then go on to the next card.</li>
+        <li><strong>Quiz.</strong> After each set, take a quiz on those 10 words. You need every answer right to move on. If you miss one, go through the cards again or retake the quiz; you'll get new questions each time.</li>
+        <li><strong>Learned.</strong> A word moves to Learned after you answer it correctly 3 times in a row.</li>
+        <li><strong>Review quiz.</strong> Every 50 words you study, a review quiz on all 50 comes up on its own, plus up to 5 words you learned earlier. Again you need every answer right to go on to the next set. Missing a learned word moves it back to Practice so you can study it again.</li>
+      </ol>
+      <p>Your practice list holds up to 1,200 words at a time; new words join it as you learn. Finishing a set each day keeps your study streak going.</p>
       <h3>Where the words come from</h3>
       <p>Words come from the vocabulary questions in College Board's official SAT and PSAT practice tests and ACT's official practice tests, the <a href="https://www.newgeneralservicelist.com/new-academic-word-list">New Academic Word List</a> (Browne, Culligan &amp; Phillips, CC BY-SA 4.0), Coxhead's Academic Word List, and a list of common SAT words. Definitions, example passages, and quiz answers were written with the help of Claude, an AI model.</p>
       <p>For words your teacher adds, a starting definition comes from the <a href="https://dictionaryapi.dev/">Free Dictionary API</a> (from Wiktionary, CC BY-SA), Claude writes the rest, and your teacher reviews it before it's added.</p>
@@ -207,6 +217,7 @@
       <div class="preview-actions">
         <button class="btn primary" type="submit" id="profile-save">Save</button>
         <button class="btn" type="button" id="profile-cancel">Cancel</button>
+        <button class="link sign-out-link" type="button" id="profile-sign-out" hidden>Sign out</button>
       </div>
     </form>
   </dialog>

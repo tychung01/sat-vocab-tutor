@@ -4,8 +4,10 @@
   --text: #1f2328;
   --muted: #5f6670;
   --line: #e2e0d8;
-  --accent: #2f5bd3;
-  --accent-soft: #e6ecfb;
+  --accent: #1f7a4d;
+  --accent-soft: #e3f3ea;
+  --practice: #8a5a00;
+  --practice-soft: #fbefd5;
   --good: #1f7a4d;
   --good-soft: #e3f3ea;
   --bad: #b3261e;
@@ -21,8 +23,10 @@
     --text: #e8e6e1;
     --muted: #9aa1aa;
     --line: #30343a;
-    --accent: #7c9cf5;
-    --accent-soft: #232c45;
+    --accent: #5cc48f;
+    --accent-soft: #1c3329;
+    --practice: #e8b85c;
+    --practice-soft: #3a2e17;
     --good: #5cc48f;
     --good-soft: #1c3329;
     --bad: #f08a80;
@@ -134,7 +138,7 @@ main.wrap { padding-top: 24px; padding-bottom: 32px; min-height: 60vh; }
 .choice.correct { border-color: var(--good); background: var(--good-soft); }
 .choice.wrong { border-color: var(--bad); background: var(--bad-soft); }
 .choice:disabled { cursor: default; }
-.feedback { margin-top: 14px; padding: 14px 16px; border-radius: 10px; background: var(--accent-soft); }
+.feedback { margin-top: 14px; padding: 14px 16px; border-radius: 10px; background: var(--surface); border: 1px solid var(--line); }
 .feedback p { margin: 0 0 6px; }
 .feedback p:last-child { margin-bottom: 0; }
 
@@ -169,10 +173,15 @@ main.wrap { padding-top: 24px; padding-bottom: 32px; min-height: 60vh; }
 .about h3 { margin: 22px 0 6px; font-size: 1rem; }
 .about p { margin: 0 0 10px; }
 .about a { color: var(--accent); }
+.about .steps { margin: 0 0 10px; padding-left: 22px; }
+.about .steps li { margin-bottom: 8px; }
 
 /* Account and sign-in */
 .account { display: flex; gap: 12px; align-items: center; font-size: 0.88rem; color: var(--muted); flex-wrap: wrap; }
 .who { color: var(--text); font-weight: 600; background: none; border: 0; padding: 0; display: inline-flex; gap: 8px; align-items: center; }
+.who:has(.avatar)::after { content: "▾"; color: var(--muted); font-size: 0.8em; margin-left: -3px; }
+.sign-out-link { margin-left: auto; align-self: center; }
+.sign-in-icon { border-radius: 16px; display: block; margin: 0 auto 12px; }
 
 /* Profile pictures and the leaderboard */
 .avatar { border-radius: 50%; object-fit: cover; flex: none; background: var(--line); display: inline-block; }
@@ -214,7 +223,7 @@ main.wrap { padding-top: 24px; padding-bottom: 32px; min-height: 60vh; }
 .error { color: var(--bad); }
 .note { color: var(--muted); font-size: 0.85rem; text-align: center; margin-top: 14px; }
 .badge.learned { background: var(--good-soft); color: var(--good); }
-.badge.practice { background: var(--accent-soft); color: var(--accent); }
+.badge.practice { background: var(--practice-soft); color: var(--practice); }
 .badge.upcoming { background: var(--line); color: var(--muted); }
 .feedback .win { color: var(--good); }
 .feedback .streak { color: var(--muted); font-size: 0.9rem; }
@@ -335,6 +344,31 @@ table.students { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
   .board > p { margin: 0 0 4px; }
   .board-list li { padding: 5px 6px; gap: 8px; }
   .board-list .avatar { width: 28px !important; height: 28px !important; font-size: 13px !important; }
+}
+
+/* Teacher dashboard on phones: each student is a card instead of a wide table row,
+   using the cells' data-label for the column names. */
+@media (max-width: 600px) {
+  .stats { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .stat { padding: 8px 10px; }
+  .stat-value { font-size: 1.2rem; }
+  .stat-label { font-size: 0.75rem; }
+  #tab-students > .table-wrap { overflow: visible; background: none; border: 0; }
+  #tab-students table.students, #tab-students table.students tbody,
+  #tab-students tr.student, #tab-students tr.detail, #tab-students tr.detail td { display: block; }
+  #tab-students table.students thead { display: none; }
+  #tab-students tr.student {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px 10px; margin-top: 8px; padding: 12px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  }
+  #tab-students tr.student td { border: 0; padding: 0; text-align: left; }
+  #tab-students tr.student td:first-child { grid-column: 1 / -1; }
+  #tab-students tr.student td[data-label]::before {
+    content: attr(data-label); display: block; font-size: 0.72rem; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  #tab-students tr.detail td { border: 1px solid var(--line); border-top: 0; border-radius: 0 0 12px 12px; margin-top: -10px; padding: 14px 12px; }
+  #tab-students .bar { width: 100%; }
 }
 
 .btn.danger { background: var(--bad); border-color: var(--bad); color: var(--surface); }

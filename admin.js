@@ -94,11 +94,11 @@ function rowCells(s) {
   const badge = blockFor(s) ? ` <span class="badge upcoming">Access removed</span>` : "";
   const tag = s.profile ? `<span class="user-tag">${avatarHtml(s.profile, 20)}${escapeHtml(s.profile.username)}</span>` : "";
   return `<td><strong>${escapeHtml(s.name || "(no name)")}</strong>${badge}<br><span class="muted">${escapeHtml(s.email)}</span>${tag}</td>
-    <td>${formatTime(s.lastLogin)}</td>
-    <td class="num">${s.loginCount || 0}</td>
-    <td class="num">${learned.length}</td>
-    <td class="num">${practice}</td>
-    <td><span class="bar" title="${pct.toFixed(1)}% learned"><span style="width:${pct}%"></span></span></td>`;
+    <td data-label="Last login">${formatTime(s.lastLogin)}</td>
+    <td class="num" data-label="Logins">${s.loginCount || 0}</td>
+    <td class="num" data-label="Learned">${learned.length}</td>
+    <td class="num" data-label="Practice">${practice}</td>
+    <td data-label="Progress"><span class="bar" title="${pct.toFixed(1)}% learned"><span style="width:${pct}%"></span></span></td>`;
 }
 
 async function toggleDetail(row) {
@@ -340,7 +340,7 @@ function renderWordTools(container, student, row) {
   const addedWords = Object.values(added).sort((a, b) => a.word.localeCompare(b.word));
   const removedWords = Object.keys(removed).sort();
   container.innerHTML = `<h3>Word list</h3>
-    <p class="muted">Add a word just for this student or remove one from their list. Added words are looked up online and come up first in their flashcards and quizzes. Progress on removed words is kept in case you restore them.</p>
+    <p class="muted">Add a word just for this student or remove one from their list. Claude writes each word's definition, passage, and quiz choices for you to check. Added words come up first in their flashcards and quizzes. Progress on removed words is kept in case you restore them.</p>
     <form class="word-form">
       <input type="text" name="word" placeholder="Word" aria-label="Word" autocomplete="off" required>
       <button class="btn primary" type="submit" value="add">Add word</button>
