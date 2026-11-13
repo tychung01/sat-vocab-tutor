@@ -29,7 +29,7 @@
         <p class="student-status" id="student-status" aria-live="polite" hidden></p>
       </div>
       <div class="account" id="account" hidden>
-        <span class="who" id="who"></span>
+        <button class="who" id="who" type="button" title="Change your picture"></button>
         <a class="link" id="admin-link" href="admin.html" hidden>Teacher dashboard</a>
         <button class="link" id="sign-out">Sign out</button>
       </div>
@@ -40,6 +40,7 @@
       <button role="tab" data-view="quiz" aria-selected="false">Quiz</button>
       <button role="tab" data-view="review" aria-selected="false">Review words</button>
       <button role="tab" data-view="words" aria-selected="false">My words</button>
+      <button role="tab" data-view="leaders" aria-selected="false">Leaderboard</button>
     </nav>
   </header>
 
@@ -154,11 +155,48 @@
       <p class="counter" id="words-count"></p>
       <div class="word-list" id="word-list"></div>
     </section>
+
+    <section id="view-leaders" class="view" hidden>
+      <p class="status" id="leaders-status" hidden></p>
+      <div class="boards">
+        <section class="board" aria-labelledby="streak-board-heading">
+          <h2 id="streak-board-heading">🔥 Study streak</h2>
+          <p class="muted">Days in a row finishing a set of flashcards.</p>
+          <ol class="board-list" id="streak-board"></ol>
+        </section>
+        <section class="board" aria-labelledby="learned-board-heading">
+          <h2 id="learned-board-heading">⭐ Words learned</h2>
+          <p class="muted">Words answered correctly 3 times in a row.</p>
+          <ol class="board-list" id="learned-board"></ol>
+        </section>
+      </div>
+    </section>
   </main>
+
+  <dialog class="word-dialog" id="profile-dialog" aria-labelledby="profile-title">
+    <form class="word-preview" id="profile-form" novalidate>
+      <h2 id="profile-title">Create your profile</h2>
+      <p class="muted" id="profile-intro">Your user name and picture show on the leaderboard, where other students can see them. Pick something you're happy for your class to see, and don't use your full name.</p>
+      <label id="profile-username-field">User name
+        <input type="text" id="profile-username" maxlength="20" autocomplete="off" autocapitalize="off" spellcheck="false">
+        <span class="muted" id="profile-username-help">3 to 20 letters, numbers, or underscores (_). You can't change it later, but your teacher can.</span>
+      </label>
+      <fieldset class="choice-fields">
+        <legend>Picture</legend>
+        <div class="avatar-grid" id="avatar-grid"></div>
+        <input type="file" id="profile-file" accept="image/*" hidden>
+      </fieldset>
+      <p class="error" id="profile-error" hidden></p>
+      <div class="preview-actions">
+        <button class="btn primary" type="submit" id="profile-save">Save</button>
+        <button class="btn" type="button" id="profile-cancel">Cancel</button>
+      </div>
+    </form>
+  </dialog>
 
   <footer class="wrap foot">
     <p>Words come from the vocabulary questions in College Board's official SAT and PSAT practice tests and ACT's official practice tests, the <a href="https://www.newgeneralservicelist.com/new-academic-word-list">New Academic Word List</a> (Browne, Culligan &amp; Phillips, CC BY-SA 4.0), Coxhead's Academic Word List, and a list of common SAT words. Definitions and examples are original, except for words your teacher adds, which are looked up in <a href="https://dictionaryapi.dev/">Free Dictionary API</a> (from Wiktionary, CC BY-SA).</p>
-    <p>When you sign in, your name, email, visit times, and quiz progress are saved so your teacher can follow your progress.</p>
+    <p>When you sign in, your name, email, visit times, and quiz progress are saved so your teacher can follow your progress. Other students see only your user name, picture, study streak, and number of words learned, on the leaderboard.</p>
     <p id="updated"></p>
   </footer>
 

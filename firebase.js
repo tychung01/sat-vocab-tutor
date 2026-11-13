@@ -6,7 +6,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import {
   getFirestore, doc, getDoc, setDoc, addDoc, deleteDoc, collection, getDocs, query, orderBy, limit,
-  serverTimestamp, increment, deleteField,
+  serverTimestamp, increment, deleteField, writeBatch,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 import { getFunctions, httpsCallable } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-functions.js";
 import { firebaseConfig, OWNER_EMAILS } from "./firebase-config.js";
@@ -85,7 +85,7 @@ export function signOutUser() {
   return signOut(auth);
 }
 
-function localDay(date) {
+export function localDay(date) {
   return date.toLocaleDateString("en-CA"); // YYYY-MM-DD in the student's time zone
 }
 
@@ -164,6 +164,50 @@ export function blockStudent(email, blockedBy) {
 // Gives a blocked student their access back, with their progress as it was.
 export function unblockStudent(email) {
   return deleteDoc(doc(db, "blocked", email));
+}
+
+// Each student's public profile, shown to other students on the leaderboard:
+// { username, photo, setStreak (days in a row they finished a flashcard set),
+//   lastSetDay (YYYY-MM-DD), learned (words learned), updated }.
+// /usernames/{lowercased name} holds { uid } so no two students share a name.
+export async function loadProfile(uid) {
+  const snap = await getDoc(doc(db, "profiles", uid));
+  return snap.exists() ? snap.data() : null;
+}
+
+export async function isUsernameTaken(username) {
+  return (await getDoc(doc(db, "usernames", username.toLowerCase()))).exists();
+}
+
+// Claims the user name and creates the profile together. Rejects with
+// permission-denied if someone else took the name first.
+export function createProfile(uid, profile) {
+  const batch = writeBatch(db);
+  batch.set(doc(db, "usernames", profile.username.toLowerCase()), { uid });
+  batch.set(doc(db, "profiles", uid), { ...profile, updated: serverTimestamp() });
+  return batch.commit();
+}
+
+// Students change their picture and stats this way; the user name stays.
+export function saveProfile(uid, changes) {
+  return setDoc(doc(db, "profiles", uid), { ...changes, updated: serverTimestamp() }, { merge: true });
+}
+
+// Every profile, for the leaderboard.
+export async function listProfiles() {
+  const snap = await getDocs(collection(db, "profiles"));
+  return snap.docs.map((d) => ({ uid: d.id, ...d.data() }));
+}
+
+// Teachers only: give a student a new user name, freeing the old one.
+export function renameStudent(uid, oldName, newName) {
+  const batch = writeBatch(db);
+  if (oldName.toLowerCase() !== newName.toLowerCase()) {
+    batch.delete(doc(db, "usernames", oldName.toLowerCase()));
+    batch.set(doc(db, "usernames", newName.toLowerCase()), { uid });
+  }
+  batch.set(doc(db, "profiles", uid), { username: newName, updated: serverTimestamp() }, { merge: true });
+  return batch.commit();
 }
 
 // Progress is one document per student: { words: { [word]: { streak, correct, wrong, last } },
@@ -254,15 +298,18 @@ export async function writeWordContent(word, definition = "") {
 
 // Teacher dashboard reads.
 export async function listStudents() {
-  const [users, progress, wordLists] = await Promise.all([
+  const [users, progress, wordLists, profiles] = await Promise.all([
     getDocs(collection(db, "users")),
     getDocs(collection(db, "progress")),
     getDocs(collection(db, "wordlists")),
+    getDocs(collection(db, "profiles")),
   ]);
   const progressById = Object.fromEntries(progress.docs.map((d) => [d.id, d.data().words || {}]));
   const listsById = Object.fromEntries(wordLists.docs.map((d) => [d.id, d.data()]));
+  const profilesById = Object.fromEntries(profiles.docs.map((d) => [d.id, d.data()]));
   return users.docs.map((d) => ({
     uid: d.id, ...d.data(), words: progressById[d.id] || {}, wordList: wordListFrom(listsById[d.id]),
+    profile: profilesById[d.id] || null,
   }));
 }
 

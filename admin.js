@@ -7,12 +7,13 @@ import {
   configured, isOwner, isTeacher, watchUser, signIn, signOutUser, listStudents, recentLogins,
   listTeachers, addTeacher, removeTeacher, addStudentWord, removeStudentWord, restoreStudentWord,
   loadClassWords, addClassWord, removeClassWord, writeWordContent, listInvites, addInvite, removeInvite,
-  listBlocked, blockStudent, unblockStudent, loadHiddenWords, hideWord, unhideWord,
+  listBlocked, blockStudent, unblockStudent, loadHiddenWords, isUsernameTaken, renameStudent, saveProfile, hideWord, unhideWord,
   LEARNED_STREAK, PRACTICE_LIMIT,
 } from "./firebase.js";
 import { OWNER_EMAILS } from "./firebase-config.js";
 import { loadWords, wordsForStudent, sharedWords, TEACHER_SOURCE } from "./words.js";
 import { usableExample, suggestChoices, wordFinder } from "./questions.js";
+import { USERNAME_PATTERN, avatarHtml } from "./avatars.js";
 
 const $ = (id) => document.getElementById(id);
 let dbWords = [];
@@ -76,7 +77,7 @@ function renderStats() {
 
 function renderRows() {
   const q = $("search").value.trim().toLowerCase();
-  const shown = students.filter((s) => !q || `${s.name} ${s.email}`.toLowerCase().includes(q));
+  const shown = students.filter((s) => !q || `${s.name} ${s.email} ${s.profile?.username || ""}`.toLowerCase().includes(q));
   $("rows").innerHTML = shown.map((s) =>
     `<tr class="student" data-uid="${escapeHtml(s.uid)}" tabindex="0">${rowCells(s)}</tr>`).join("") || `<tr><td colspan="6" class="muted">No students yet. Students appear here after they sign in to the study app.</td></tr>`;
 
@@ -91,7 +92,8 @@ function rowCells(s) {
   const { total, learned, practice } = summarize(s);
   const pct = total ? (learned.length / total) * 100 : 0;
   const badge = blockFor(s) ? ` <span class="badge upcoming">Access removed</span>` : "";
-  return `<td><strong>${escapeHtml(s.name || "(no name)")}</strong>${badge}<br><span class="muted">${escapeHtml(s.email)}</span></td>
+  const tag = s.profile ? `<span class="user-tag">${avatarHtml(s.profile, 20)}${escapeHtml(s.profile.username)}</span>` : "";
+  return `<td><strong>${escapeHtml(s.name || "(no name)")}</strong>${badge}<br><span class="muted">${escapeHtml(s.email)}</span>${tag}</td>
     <td>${formatTime(s.lastLogin)}</td>
     <td class="num">${s.loginCount || 0}</td>
     <td class="num">${learned.length}</td>
@@ -127,9 +129,74 @@ async function toggleDetail(row) {
     <div><h3>Learned (${learned.length})</h3><p>${list(learned, "None yet.")}</p></div>
     <div><h3>Closest to learning</h3><p>${list(close, "None in progress.")}</p>
       <h3>Recently missed</h3><p>${list(missed, "None.")}</p></div>
-  </div><div class="word-tools"></div><div class="word-tools access-tools"></div></td>`;
+  </div><div class="word-tools"></div><div class="word-tools profile-tools"></div><div class="word-tools access-tools"></div></td>`;
   renderWordTools(detail.querySelector(".word-tools"), student, row);
+  renderProfileTools(detail.querySelector(".profile-tools"), student, row);
   renderAccessTools(detail.querySelector(".access-tools"), student, row);
+}
+
+// The student's leaderboard profile. Teachers can change the user name or remove
+// the picture, for example if either isn't appropriate for the class.
+function renderProfileTools(container, student, row) {
+  const p = student.profile;
+  if (!p) {
+    container.innerHTML = `<h3>Profile</h3><p class="muted">No profile yet. Students pick a user name and picture the next time they sign in.</p>`;
+    return;
+  }
+  container.innerHTML = `<h3>Profile</h3>
+    <p class="profile-line">${avatarHtml(p, 40)}<strong>${escapeHtml(p.username)}</strong>
+      ${p.photo ? `<button class="link remove-photo" type="button">Remove picture</button>` : `<span class="muted">No picture</span>`}</p>
+    <p class="muted">Other students see this on the leaderboard.</p>
+    <form class="word-form rename-form">
+      <input type="text" name="username" placeholder="New user name" aria-label="New user name" maxlength="20" autocomplete="off" required>
+      <button class="btn" type="submit">Change user name</button>
+    </form>
+    <p class="error" hidden></p>`;
+  const error = container.querySelector(".error");
+  const showError = (message) => { error.textContent = message; error.hidden = !message; };
+  const done = () => {
+    row.innerHTML = rowCells(student);
+    renderProfileTools(container, student, row);
+  };
+  container.querySelector(".remove-photo")?.addEventListener("click", async (e) => {
+    if (!confirm(`Remove ${p.username}'s picture? They'll show their initial until they pick a new one.`)) return;
+    e.target.disabled = true;
+    try {
+      await saveProfile(student.uid, { photo: "" });
+    } catch {
+      e.target.disabled = false;
+      showError("Couldn't remove the picture. Please try again.");
+      return;
+    }
+    p.photo = "";
+    done();
+  });
+  container.querySelector(".rename-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    showError("");
+    const name = e.target.username.value.trim();
+    if (!USERNAME_PATTERN.test(name)) {
+      showError("Use 3 to 20 letters, numbers, or underscores (_), with no spaces.");
+      return;
+    }
+    const button = e.submitter;
+    button.disabled = true;
+    try {
+      if (name.toLowerCase() !== p.username.toLowerCase() && await isUsernameTaken(name)) {
+        showError(`"${name}" is already taken.`);
+        button.disabled = false;
+        return;
+      }
+      await renameStudent(student.uid, p.username, name);
+    } catch (err) {
+      console.error(err);
+      button.disabled = false;
+      showError("Couldn't change the user name. Please try again.");
+      return;
+    }
+    p.username = name;
+    done();
+  });
 }
 
 // Take a student's access away, or give it back. Their progress is kept either way.

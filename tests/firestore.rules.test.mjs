@@ -4,7 +4,7 @@
 import { initializeTestEnvironment, assertSucceeds, assertFails } from "@firebase/rules-unit-testing";
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { doc, getDoc, getDocs, setDoc, deleteDoc, collection, serverTimestamp, deleteField } from "firebase/firestore";
+import { doc, getDoc, getDocs, setDoc, deleteDoc, collection, serverTimestamp, deleteField, writeBatch } from "firebase/firestore";
 
 const env = await initializeTestEnvironment({
   projectId: "demo-sat",
@@ -33,7 +33,21 @@ await env.withSecurityRulesDisabled(async (c) => {
   await setDoc(doc(db, "progress/s4"), { learned: 1 });
   await setDoc(doc(db, "wordlists/s4"), { added: {} });
   await setDoc(doc(db, "blocked/gone@example.com"), { email: "gone@example.com", blockedBy: "teacher@example.com" });
+  // Two signed-in students for the profile tests.
+  await setDoc(doc(db, "users/p1"), { name: "P1" });
+  await setDoc(doc(db, "users/p2"), { name: "P2" });
 });
+const p1 = as("p1", "p1@example.com");
+const p2 = as("p2", "p2@example.com");
+const profile = (username, extra = {}) => ({ username, photo: "avatar:owl", setStreak: 0, lastSetDay: "", learned: 0, ...extra });
+// Claims a user name and creates the profile in one batch, as the app does.
+const claim = (db, uid, username, extra = {}) => {
+  const b = writeBatch(db);
+  b.set(doc(db, "usernames", username.toLowerCase()), { uid });
+  b.set(doc(db, "profiles", uid), profile(username, extra));
+  return b.commit();
+};
+const jpeg = (chars) => "data:image/jpeg;base64," + "A".repeat(chars);
 const gone = as("s4", "gone@example.com");
 const goneMixedCase = as("s4", "Gone@Example.com");
 const block = (db, email, extra = {}) =>
@@ -133,6 +147,42 @@ const cases = [
   ["teacher blocks a student who signed in before invites", () => assertSucceeds(block(teacher, "other@example.com"))],
   ["that student is shut out", () => assertFails(setDoc(doc(as("s2", "other@example.com"), "progress/s2"), { learned: 4 }))],
   ["teacher restores access", () => assertSucceeds(deleteDoc(doc(teacher, "blocked/gone@example.com")))],
+  ["student creates a profile with a user name", () => assertSucceeds(claim(p1, "p1", "Word_Wiz"))],
+  ["another student can't take that name in another case", () => assertFails(claim(p2, "p2", "word_wiz"))],
+  ["student can't make a profile without claiming its name", () => assertFails(setDoc(doc(p2, "profiles/p2"), profile("Lone")))],
+  ["student can't claim a name for another profile", () => assertFails(setDoc(doc(p2, "usernames/spare"), { uid: "p2" }))],
+  ["student can't claim a name for someone else", () => assertFails(claim(p2, "p1", "Imposter"))],
+  ["student can't use a name with spaces", () => assertFails(claim(p2, "p2", "bad name"))],
+  ["student can't use a two-letter name", () => assertFails(claim(p2, "p2", "ab"))],
+  ["student with an uploaded photo creates a profile", () => assertSucceeds(claim(p2, "p2", "Quiz_Ace", { photo: jpeg(20000) }))],
+  ["student can't add a second name later", () => assertFails(setDoc(doc(p2, "usernames/second"), { uid: "p2" }))],
+  ["student changes their picture and stats", () => assertSucceeds(setDoc(doc(p1, "profiles/p1"), { photo: "avatar:fox", setStreak: 3, lastSetDay: "2026-11-13", learned: 12 }, { merge: true }))],
+  ["student can't change their own user name", () => assertFails(setDoc(doc(p1, "profiles/p1"), { username: "New_Name" }, { merge: true }))],
+  ["student can't use a picture from another site", () => assertFails(setDoc(doc(p1, "profiles/p1"), { photo: "https://example.com/a.png" }, { merge: true }))],
+  ["student can't save a PNG data URL", () => assertFails(setDoc(doc(p1, "profiles/p1"), { photo: "data:image/png;base64,AAAA" }, { merge: true }))],
+  ["student can't save a picture over 40,000 characters", () => assertFails(setDoc(doc(p1, "profiles/p1"), { photo: jpeg(40000) }, { merge: true }))],
+  ["student can't add other fields", () => assertFails(setDoc(doc(p1, "profiles/p1"), { email: "x" }, { merge: true }))],
+  ["student can't save a fractional count", () => assertFails(setDoc(doc(p1, "profiles/p1"), { learned: 1.5 }, { merge: true }))],
+  ["student can't change another student's profile", () => assertFails(setDoc(doc(p2, "profiles/p1"), { learned: 0 }, { merge: true }))],
+  ["student reads the leaderboard", () => assertSucceeds(getDocs(collection(p2, "profiles")))],
+  ["blocked student can't read the leaderboard", () => assertFails(getDocs(collection(as("s2", "other@example.com"), "profiles")))],
+  ["anonymous can't read the leaderboard", () => assertFails(getDocs(collection(anon, "profiles")))],
+  ["student can't free a user name", () => assertFails(deleteDoc(doc(p1, "usernames/word_wiz")))],
+  ["teacher renames a student", async () => {
+    const b = writeBatch(teacher);
+    b.delete(doc(teacher, "usernames/word_wiz"));
+    b.set(doc(teacher, "usernames/vocab_star"), { uid: "p1" });
+    b.set(doc(teacher, "profiles/p1"), { username: "Vocab_Star" }, { merge: true });
+    await assertSucceeds(b.commit());
+  }],
+  ["the old name is free for someone else", () => assertSucceeds(getDoc(doc(p2, "usernames/word_wiz")).then((d) => { if (d.exists()) throw new Error("still taken"); }))],
+  ["teacher can't rename to a name that's taken", async () => {
+    const b = writeBatch(teacher);
+    b.set(doc(teacher, "usernames/quiz_ace"), { uid: "p1" });
+    b.set(doc(teacher, "profiles/p1"), { username: "Quiz_Ace" }, { merge: true });
+    await assertFails(b.commit());
+  }],
+  ["teacher removes a student's picture", () => assertSucceeds(setDoc(doc(teacher, "profiles/p2"), { photo: "" }, { merge: true }))],
   ["restored student reads and saves progress again", () => assertSucceeds(setDoc(doc(gone, "progress/s4"), { learned: 2 }).then(() => getDoc(doc(gone, "progress/s4"))))],
 ];
 

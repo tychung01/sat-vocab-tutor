@@ -56,10 +56,11 @@ button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); ou
 .progress { display: flex; gap: 14px; font-size: 0.85rem; color: var(--muted); }
 .progress b { color: var(--text); font-variant-numeric: tabular-nums; }
 
-.tabs { display: flex; gap: 4px; margin-top: 8px; }
+.tabs { display: flex; gap: 4px; margin-top: 8px; overflow-x: auto; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
 .tabs button {
   background: none; border: 0; padding: 10px 12px; border-bottom: 2px solid transparent;
-  color: var(--muted); font-weight: 500;
+  color: var(--muted); font-weight: 500; white-space: nowrap; flex: none;
 }
 .tabs button[aria-selected="true"] { color: var(--text); border-bottom-color: var(--accent); }
 .admin-tabs { margin: 0 0 20px; border-bottom: 1px solid var(--line); }
@@ -147,7 +148,37 @@ main.wrap { padding-top: 24px; padding-bottom: 32px; min-height: 60vh; }
 
 /* Account and sign-in */
 .account { display: flex; gap: 12px; align-items: center; font-size: 0.88rem; color: var(--muted); flex-wrap: wrap; }
-.who { color: var(--text); font-weight: 600; }
+.who { color: var(--text); font-weight: 600; background: none; border: 0; padding: 0; display: inline-flex; gap: 8px; align-items: center; }
+
+/* Profile pictures and the leaderboard */
+.avatar { border-radius: 50%; object-fit: cover; flex: none; background: var(--line); display: inline-block; }
+.avatar.initial { display: inline-grid; place-items: center; background: var(--accent-soft); color: var(--accent); font-weight: 700; line-height: 1; }
+.avatar-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(68px, 1fr)); gap: 8px; }
+.avatar-option { border: 2px solid transparent; border-radius: 50%; padding: 4px; background: none; justify-self: center; line-height: 0; }
+.avatar-option[aria-pressed="true"] { border-color: var(--accent); }
+.avatar-option.upload {
+  width: 64px; height: 64px; border-radius: 50%; border: 2px dashed var(--line); line-height: 1.2;
+  font-size: 0.75rem; color: var(--muted); padding: 4px;
+}
+.avatar-option.upload:hover { border-color: var(--accent); color: var(--accent); }
+.word-preview input:disabled { opacity: 0.6; }
+.boards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.board { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+.board h2 { font-size: 1.1rem; margin: 0; }
+.board > p { margin: 2px 0 8px; font-size: 0.88rem; }
+.board-list { list-style: none; padding: 0; margin: 0; }
+.board-list li { display: flex; gap: 10px; align-items: center; padding: 8px; border-bottom: 1px solid var(--line); }
+.board-list li:last-child { border-bottom: 0; }
+.board-list .rank { width: 1.8em; text-align: right; font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; flex: none; }
+.board-list .name { flex: 1; min-width: 0; overflow-wrap: anywhere; font-weight: 600; }
+.board-list .name .muted { font-weight: 400; }
+.board-list .value { white-space: nowrap; color: var(--muted); }
+.board-list .value b { color: var(--text); font-variant-numeric: tabular-nums; }
+.board-list li.me { background: var(--accent-soft); border-radius: 8px; }
+.board-list li.gap { justify-content: center; color: var(--muted); padding: 2px; }
+.board-list li.empty { padding: 12px 8px; }
+.user-tag { display: flex; gap: 6px; align-items: center; margin-top: 4px; font-size: 0.85rem; }
+.profile-line { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 .link { background: none; border: 0; padding: 0; color: var(--accent); text-decoration: underline; font-size: inherit; }
 .progress { align-items: center; padding-top: 8px; }
 .bar { display: inline-block; width: 120px; height: 8px; border-radius: 999px; background: var(--line); overflow: hidden; vertical-align: middle; }

@@ -6,12 +6,17 @@
 // Each finished flashcard set is followed by a required quiz on its words, and
 // every REVIEW_EVERY words studied by a required review quiz on all of them. The
 // student needs a perfect score to move on to the next set.
+// Each student picks a unique user name and a picture the first time they sign
+// in. The leaderboard ranks students by study streak (days in a row finishing a
+// flashcard set) and by words learned, showing only user names and pictures.
 
 import {
   configured, isTeacher, watchUser, signIn, signOutUser, recordLogin,
   loadProgress, saveWordProgress, saveStudyState, loadWordList, loadClassWords, loadHiddenWords,
+  loadProfile, isUsernameTaken, createProfile, saveProfile, listProfiles, localDay,
   LEARNED_STREAK, PRACTICE_LIMIT,
 } from "./firebase.js";
+import { AVATARS, USERNAME_PATTERN, avatarHtml, photoFromFile } from "./avatars.js";
 import { loadWords, wordsForStudent, TEACHER_SOURCE } from "./words.js";
 import { buildQuestion, shuffle, escapeHtml } from "./questions.js";
 import { fireworks } from "./fireworks.js";
@@ -28,8 +33,8 @@ let dbUpdated = "";
 let words = [];
 let user = null;
 let progress = {};
-// Consecutive days the student has visited.
-let loginStreak = 0;
+// The student's public profile: { username, photo, setStreak, lastSetDay, learned }.
+let profile = null;
 // Words from finished flashcard sets since the last review quiz.
 let studied = [];
 // The quiz the student must pass with a perfect score before the next set:
@@ -86,7 +91,10 @@ function record(word, correct) {
   };
   const wasLearned = isLearned(word);
   progress[word] = next;
-  if (wasLearned !== isLearned(word)) rebuildPracticeSet();
+  if (wasLearned !== isLearned(word)) {
+    rebuildPracticeSet();
+    saveProfileChanges({ learned: learnedCount() });
+  }
   renderProgress();
   saveWordProgress(user.uid, word, next).catch(() => {
     $("status").textContent = "Couldn't save your progress. Check your connection; your answers will save when it's back.";
@@ -95,15 +103,20 @@ function record(word, correct) {
   return { becameLearned: !wasLearned && isLearned(word), lostLearned: wasLearned && !correct };
 }
 
+function learnedCount() {
+  return words.filter((w) => isLearned(w.word)).length;
+}
+
 function renderStatus(learned) {
-  $("student-status").innerHTML = (loginStreak
-    ? `<span>🔥 <b>${loginStreak}</b> day${loginStreak === 1 ? "" : "s"} in a row</span>` : "") +
+  const streak = currentStreak(profile);
+  $("student-status").innerHTML = (streak
+    ? `<span title="Days in a row finishing a set of flashcards">🔥 <b>${streak}</b> day${streak === 1 ? "" : "s"} in a row</span>` : "") +
     `<span>⭐ <b>${learned}</b> word${learned === 1 ? "" : "s"} learned</span>`;
   $("student-status").hidden = false;
 }
 
 function renderProgress() {
-  const learned = words.filter((w) => isLearned(w.word)).length;
+  const learned = learnedCount();
   renderStatus(learned);
   const upcoming = words.length - learned - practiceSet.size;
   $("progress").innerHTML =
@@ -145,7 +158,7 @@ function streakText(word) {
 
 // ---------- tabs ----------
 
-const views = ["study", "quiz", "review", "words"];
+const views = ["study", "quiz", "review", "words", "leaders"];
 let reviewStarted = false;
 
 function showView(name) {
@@ -157,6 +170,7 @@ function showView(name) {
   });
   try { sessionStorage.setItem("satvocab.view", name); } catch {}
   if (name === "words") renderWordList();
+  if (name === "leaders") renderLeaderboard();
   // Start a review quiz on first visit, or when there were no learned words before.
   if (name === "review" && (!reviewStarted || !$("review-empty").hidden)) {
     reviewStarted = true;
@@ -225,6 +239,7 @@ $("next-card").addEventListener("click", () => {
 
 // A new set counts toward the next review and must be passed in a quiz.
 function finishSet() {
+  recordSetFinished();
   if (!required) {
     studied = [...new Set([...studied, ...deck.map((w) => w.word)])];
     required = { mode: "set", words: deck.map((w) => w.word) };
@@ -536,6 +551,201 @@ function wireChips(containerId, key, onPick) {
 wireChips("chips", "filter", (value) => { filter = value; });
 wireChips("source-chips", "source", (value) => { sourceFilter = value; });
 
+// ---------- profile ----------
+
+function yesterday() {
+  const d = new Date();
+  d.setDate(d.getDate() - 1);
+  return localDay(d);
+}
+
+// A streak still counts if its last set was finished today or yesterday.
+function currentStreak(p) {
+  return p && (p.lastSetDay === localDay(new Date()) || p.lastSetDay === yesterday()) ? p.setStreak : 0;
+}
+
+function saveProfileChanges(changes) {
+  if (!profile) return;
+  Object.assign(profile, changes);
+  saveProfile(user.uid, changes).catch(() => {
+    $("status").textContent = "Couldn't save your progress. Check your connection; your answers will save when it's back.";
+    $("status").hidden = false;
+  });
+}
+
+// Finishing a set of flashcards adds a day to the streak, once a day.
+function recordSetFinished() {
+  if (!profile) return;
+  const today = localDay(new Date());
+  if (profile.lastSetDay === today) return;
+  saveProfileChanges({ setStreak: profile.lastSetDay === yesterday() ? profile.setStreak + 1 : 1, lastSetDay: today });
+  renderProgress();
+}
+
+function renderWho() {
+  $("who").innerHTML = profile
+    ? `${avatarHtml(profile, 28)}<span>${escapeHtml(profile.username)}</span>`
+    : escapeHtml(user.displayName || user.email);
+}
+
+// The profile dialog creates the profile the first time and changes the picture after that.
+let profileFirstTime = false;
+let profileCreated = null;
+let chosenPhoto = "";
+let uploadedPhoto = "";
+
+function showProfileError(message) {
+  $("profile-error").textContent = message;
+  $("profile-error").hidden = !message;
+}
+
+function renderAvatarGrid() {
+  const options = [
+    ...AVATARS.map(([id, label]) => ({ photo: `avatar:${id}`, label })),
+    ...(uploadedPhoto ? [{ photo: uploadedPhoto, label: "Your photo" }] : []),
+  ];
+  $("avatar-grid").innerHTML = options.map((o, i) =>
+    `<button type="button" class="avatar-option" data-index="${i}" aria-pressed="${o.photo === chosenPhoto}" aria-label="${escapeHtml(o.label)}">${avatarHtml(o, 56)}</button>`).join("")
+    + `<button type="button" class="avatar-option upload" id="profile-upload">Upload a photo</button>`;
+  $("avatar-grid").querySelectorAll("[data-index]").forEach((b) => b.addEventListener("click", () => {
+    chosenPhoto = options[b.dataset.index].photo;
+    renderAvatarGrid();
+  }));
+  $("profile-upload").addEventListener("click", () => $("profile-file").click());
+}
+
+function openProfileDialog(firstTime) {
+  profileFirstTime = firstTime;
+  $("profile-title").textContent = firstTime ? "Create your profile" : "Change your picture";
+  $("profile-intro").hidden = !firstTime;
+  $("profile-username").value = profile?.username || "";
+  $("profile-username").disabled = !firstTime;
+  $("profile-username-help").textContent = firstTime
+    ? "3 to 20 letters, numbers, or underscores (_). You can't change it later, but your teacher can."
+    : "To change your user name, ask your teacher.";
+  $("profile-cancel").textContent = firstTime ? "Sign out" : "Cancel";
+  chosenPhoto = profile?.photo || `avatar:${AVATARS[Math.floor(Math.random() * AVATARS.length)][0]}`;
+  uploadedPhoto = chosenPhoto.startsWith("data:") ? chosenPhoto : "";
+  showProfileError("");
+  renderAvatarGrid();
+  $("profile-dialog").showModal();
+}
+
+$("who").addEventListener("click", () => {
+  if (profile) openProfileDialog(false);
+});
+
+// The first time, the dialog stays open until the profile is saved.
+$("profile-dialog").addEventListener("cancel", (e) => {
+  if (profileFirstTime) e.preventDefault();
+});
+
+$("profile-cancel").addEventListener("click", () => {
+  $("profile-dialog").close();
+  if (profileFirstTime) signOutUser();
+});
+
+$("profile-file").addEventListener("change", async () => {
+  const file = $("profile-file").files[0];
+  $("profile-file").value = "";
+  if (!file) return;
+  showProfileError("");
+  try {
+    uploadedPhoto = chosenPhoto = await photoFromFile(file);
+    renderAvatarGrid();
+  } catch (err) {
+    showProfileError(err.message === "too-big"
+      ? "That picture is too large. Try a smaller one."
+      : "Couldn't open that picture. Try a JPEG or PNG photo.");
+  }
+});
+
+$("profile-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  showProfileError("");
+  const button = $("profile-save");
+  if (!profileFirstTime) {
+    button.disabled = true;
+    try {
+      await saveProfile(user.uid, { photo: chosenPhoto });
+      profile.photo = chosenPhoto;
+    } catch {
+      showProfileError("Couldn't save your picture. Please try again.");
+      return;
+    } finally {
+      button.disabled = false;
+    }
+    $("profile-dialog").close();
+    renderWho();
+    return;
+  }
+  const username = $("profile-username").value.trim();
+  if (!USERNAME_PATTERN.test(username)) {
+    showProfileError("Use 3 to 20 letters, numbers, or underscores (_), with no spaces.");
+    return;
+  }
+  const taken = `"${username}" is already taken. Try a different user name.`;
+  button.disabled = true;
+  try {
+    if (await isUsernameTaken(username)) {
+      showProfileError(taken);
+      return;
+    }
+    const created = { username, photo: chosenPhoto, setStreak: 0, lastSetDay: "", learned: learnedCount() };
+    await createProfile(user.uid, created);
+    profile = created;
+  } catch (err) {
+    // Someone may have taken the name since the check.
+    showProfileError(err?.code === "permission-denied" ? taken : "Couldn't save your profile. Please try again.");
+    return;
+  } finally {
+    button.disabled = false;
+  }
+  $("profile-dialog").close();
+  profileCreated?.();
+});
+
+// ---------- leaderboard ----------
+
+const BOARD_SIZE = 10;
+
+async function renderLeaderboard() {
+  $("leaders-status").textContent = "Loading the leaderboard…";
+  $("leaders-status").hidden = false;
+  let profiles;
+  try {
+    profiles = await listProfiles();
+  } catch {
+    $("leaders-status").textContent = "Couldn't load the leaderboard. Please try again later.";
+    return;
+  }
+  $("leaders-status").hidden = true;
+  // Show this student's latest numbers, even if a save hasn't reached the server yet.
+  const mine = profiles.find((p) => p.uid === user.uid);
+  if (mine && profile) Object.assign(mine, profile);
+  renderBoard("streak-board", profiles.map((p) => ({ ...p, value: currentStreak(p) })),
+    "day", "days", "No streaks yet. Finish a set of flashcards to start one.");
+  renderBoard("learned-board", profiles.map((p) => ({ ...p, value: p.learned })),
+    "word", "words", "No words learned yet.");
+}
+
+// The top students, plus this student's own place if they're further down.
+function renderBoard(id, rows, one, many, empty) {
+  const ranked = rows.filter((r) => r.value > 0)
+    .sort((a, b) => b.value - a.value || a.username.localeCompare(b.username));
+  // Tied students share a rank.
+  ranked.forEach((r, i) => { r.rank = i && r.value === ranked[i - 1].value ? ranked[i - 1].rank : i + 1; });
+  const top = ranked.slice(0, BOARD_SIZE);
+  const me = ranked.find((r) => r.uid === user.uid);
+  const rowHtml = (r) => `<li${r.uid === user.uid ? ' class="me"' : ""}>
+    <span class="rank">${r.rank}</span>${avatarHtml(r, 36)}
+    <span class="name">${escapeHtml(r.username)}${r.uid === user.uid ? ' <span class="muted">(you)</span>' : ""}</span>
+    <span class="value"><b>${r.value}</b> ${r.value === 1 ? one : many}</span></li>`;
+  $(id).innerHTML = top.length
+    ? top.map(rowHtml).join("") + (me && !top.includes(me) ? `<li class="gap" aria-hidden="true">⋯</li>${rowHtml(me)}` : "")
+    : `<li class="muted empty">${empty}</li>`;
+}
+
 // ---------- sign-in and start ----------
 
 function showSignedOut() {
@@ -544,7 +754,8 @@ function showSignedOut() {
   $("tabs").hidden = true;
   $("progress").innerHTML = "";
   $("student-status").hidden = true;
-  loginStreak = 0;
+  profile = null;
+  if ($("profile-dialog").open) $("profile-dialog").close();
   reviewStarted = false;
   views.forEach((v) => { $(`view-${v}`).hidden = true; });
   $("status").hidden = true;
@@ -565,15 +776,16 @@ async function showSignedIn(signedInUser) {
   const login = recordLogin(user).then((streak) => ({ streak }), (error) => ({ error }));
   try {
     // Without the teacher's changes the student still gets the full database.
-    const [saved, list, classWords, hidden, { streak, error }] = await Promise.all([
+    const [saved, list, classWords, hidden, savedProfile, { error }] = await Promise.all([
       loadProgress(user.uid),
       loadWordList(user.uid).catch(() => ({})),
       loadClassWords().catch(() => []),
       loadHiddenWords().catch(() => []),
+      loadProfile(user.uid),
       login,
     ]);
     if (error?.code === "permission-denied") throw error;
-    loginStreak = streak || 0;
+    profile = savedProfile;
     progress = saved.words;
     studied = saved.studied;
     required = saved.required;
@@ -585,6 +797,17 @@ async function showSignedIn(signedInUser) {
       : "Couldn't load your progress. Please refresh the page.";
     return;
   }
+  if (!profile) {
+    $("status").textContent = "Create your profile to start studying.";
+    await new Promise((resolve) => {
+      profileCreated = resolve;
+      openProfileDialog(true);
+    });
+  } else if (profile.learned !== learnedCount()) {
+    // A teacher may have added or removed words since the last visit.
+    saveProfileChanges({ learned: learnedCount() });
+  }
+  renderWho();
   showWordCount();
   $("source-teacher").hidden = !words.some(isTeacherWord);
   rebuildPracticeSet();

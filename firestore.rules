@@ -6,6 +6,9 @@ rules_version = '2';
 // teacher invites their email (/invites/{email}); students who signed in before
 // invites existed keep access. A teacher can take a student's access away
 // (/blocked/{email}), which shuts them out of their records until it's restored.
+// Each student has a public profile (/profiles/{uid}: user name, picture, and
+// leaderboard stats) that other students can read; /usernames/{name} keeps user
+// names unique. Students pick their user name once; teachers can change it.
 // Teachers can read everyone's records. The owner (listed in isAppOwner) is
 // always a teacher and is the only one who can add or remove other teachers,
 // who are stored in /teachers/{email}.
@@ -42,6 +45,26 @@ service cloud.firestore {
           && !exists(/databases/$(database)/documents/blocked/$(request.auth.token.email.lower())));
     }
 
+    // A profile as it will be after this write. Keep the user name pattern in sync
+    // with USERNAME_PATTERN in avatars.js. photo is "", "avatar:<name>", or a small JPEG.
+    function validProfile() {
+      let d = request.resource.data;
+      return d.keys().hasAll(['username', 'photo', 'setStreak', 'lastSetDay', 'learned'])
+        && d.keys().hasOnly(['username', 'photo', 'setStreak', 'lastSetDay', 'learned', 'updated'])
+        && d.username is string && d.username.matches('[A-Za-z0-9_]{3,20}')
+        && d.photo is string
+        && (d.photo == '' || d.photo.matches('avatar:[a-z]+')
+          || (d.photo.size() <= 40000 && d.photo.matches('data:image/jpeg;base64,[A-Za-z0-9+/=]+')))
+        && d.setStreak is int && d.setStreak >= 0 && d.setStreak <= 10000
+        && d.lastSetDay is string && d.lastSetDay.size() <= 10
+        && d.learned is int && d.learned >= 0 && d.learned <= 100000;
+    }
+
+    // Whether /usernames/{name} will belong to this uid after this write.
+    function ownsUsername(uid) {
+      return getAfter(/databases/$(database)/documents/usernames/$(request.resource.data.username.lower())).data.uid == uid;
+    }
+
     // A student's user record exists once they've signed in with access.
     function hasSignedIn(uid) {
       return exists(/databases/$(database)/documents/users/$(uid));
@@ -61,6 +84,28 @@ service cloud.firestore {
     match /progress/{uid} {
       allow read: if (isSelf(uid) && canStudy()) || isTeacher();
       allow create, update: if isSelf(uid) && canStudy() && hasSignedIn(uid);
+    }
+
+    // Public profiles, for the leaderboard. Students create theirs once, with a
+    // user name nobody else has, then can change everything but the user name.
+    match /profiles/{uid} {
+      allow read: if request.auth != null && canStudy();
+      allow create: if isSelf(uid) && canStudy() && hasSignedIn(uid) && validProfile() && ownsUsername(uid);
+      allow update: if validProfile() && (
+        (isSelf(uid) && canStudy() && request.resource.data.username == resource.data.username)
+        || (isTeacher() && (request.resource.data.username == resource.data.username || ownsUsername(uid))));
+      allow delete: if isTeacher();
+    }
+
+    // Taken user names. The document ID is the name, lowercased, holding { uid }.
+    // A name can only be claimed along with the profile that uses it.
+    match /usernames/{name} {
+      allow read: if request.auth != null;
+      allow create: if name.matches('[a-z0-9_]{3,20}')
+        && request.resource.data.keys().hasOnly(['uid'])
+        && ((request.resource.data.uid == request.auth.uid && canStudy()) || isTeacher())
+        && getAfter(/databases/$(database)/documents/profiles/$(request.resource.data.uid)).data.username.lower() == name;
+      allow delete: if isTeacher();
     }
 
     // Students a teacher invited. The document ID is the student's email, lowercased.
