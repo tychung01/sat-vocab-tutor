@@ -92,6 +92,21 @@ main.wrap { padding-top: 24px; padding-bottom: 32px; min-height: 60vh; }
 .examples { margin: 0; padding-left: 18px; }
 .examples li { font-style: italic; margin-bottom: 4px; }
 
+/* Short screens, like the iPhone SE: a smaller card and text so the card and the
+   Next card button fit without scrolling. */
+@media (max-height: 700px) {
+  main.wrap { padding-top: 14px; }
+  .flashcard { min-height: 220px; padding: 18px 18px; }
+  .face.front { min-height: 184px; }
+  .word { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+  .word.small { font-size: 1.25rem; margin-bottom: 4px; }
+  .hint { margin-top: 10px; }
+  .definition { font-size: 1.02rem; margin-bottom: 8px; }
+  .usage { font-size: 0.92rem; margin-bottom: 8px; }
+  .examples li { font-size: 0.92rem; margin-bottom: 2px; }
+  .actions { margin-top: 12px; }
+}
+
 .done { text-align: center; padding: 32px 0; }
 .done h2 { margin-top: 0; }
 .done .win { color: var(--good); font-size: 1.1rem; font-weight: 600; }
