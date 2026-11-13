@@ -158,12 +158,38 @@ to write each new word's content. Only teachers can call it. It needs:
 Each word costs well under a cent in Claude usage. If Claude declines a
 request, the function retries it on Anthropic's default fallback model.
 
+## Reminder emails (one-time setup)
+The `remindInactive` Cloud Function (`functions/reminders.js`) runs every
+evening at 8 pm Eastern. It emails each signed-in student who hasn't opened
+the app in more than 2 days, every evening until they're back. Teachers,
+students whose access was removed, and students a teacher turned reminders off
+for (their row on the dashboard) are skipped. Emails come from
+tychung01@gmail.com through Gmail, signed "SAT Word Master". Gmail allows about
+500 a day.
+
+It needs a Gmail **app password** (Gmail won't take the normal password):
+1. Turn on 2-Step Verification for the Google account, if it isn't on:
+   https://myaccount.google.com/signinoptions/twosv
+2. Create an app password at https://myaccount.google.com/apppasswords (name
+   it "SAT Word Study"). Google shows 16 letters once.
+3. Store it as a Firebase secret, in a normal terminal (it asks for the value;
+   paste the 16 letters, spaces don't matter):
+   `npx -y firebase-tools@13 functions:secrets:set GMAIL_APP_PASSWORD`
+4. Deploy: `npx -y firebase-tools@13 deploy --only functions,firestore:rules,hosting`
+5. On the dashboard's **Teachers** tab, click **Send me a test reminder** to
+   check it arrives.
+
+To stop all reminders, delete the function:
+`npx -y firebase-tools@13 functions:delete remindInactive`
+
 ## What's stored
 - `users/{uid}`: name, email, photo, first and last login, login count, and
   how many days in a row they've visited
 - `users/{uid}/logins`: one entry per visit (time and browser)
 - `teachers/{email}`: teachers the owner has added, with who added them and when
 - `invites/{email}`: students a teacher invited, with who invited them and when
+- `reminderoff/{uid}`: students a teacher turned reminder emails off for, with
+  who did it and when; `users/{uid}.lastReminder` is when the last one was sent
 - `classwords/{word}`: words a teacher added for all students (with definitions)
 - `hiddenwords/{word}`: database words a teacher removed for all students
 - `wordlists/{uid}`: words a teacher added for that student (with definitions)

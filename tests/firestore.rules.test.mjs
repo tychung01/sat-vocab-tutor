@@ -183,6 +183,13 @@ const cases = [
     await assertFails(b.commit());
   }],
   ["teacher removes a student's picture", () => assertSucceeds(setDoc(doc(teacher, "profiles/p2"), { photo: "" }, { merge: true }))],
+  ["teacher turns reminders off for a student", () => assertSucceeds(setDoc(doc(teacher, "reminderoff/s1"), { by: "teacher@example.com", at: serverTimestamp() }))],
+  ["teacher can't add other fields to a reminder switch", () => assertFails(setDoc(doc(teacher, "reminderoff/s2"), { by: "x", note: "y" }))],
+  ["teacher lists who has reminders off", () => assertSucceeds(getDocs(collection(teacher, "reminderoff")))],
+  ["student can't turn their own reminders off", () => assertFails(setDoc(doc(student, "reminderoff/s1"), { by: "student@example.com" }))],
+  ["student can't see who has reminders off", () => assertFails(getDocs(collection(student, "reminderoff")))],
+  ["student can't turn reminders back on", () => assertFails(deleteDoc(doc(student, "reminderoff/s1")))],
+  ["teacher turns reminders back on", () => assertSucceeds(deleteDoc(doc(teacher, "reminderoff/s1")))],
   ["restored student reads and saves progress again", () => assertSucceeds(setDoc(doc(gone, "progress/s4"), { learned: 2 }).then(() => getDoc(doc(gone, "progress/s4"))))],
 ];
 

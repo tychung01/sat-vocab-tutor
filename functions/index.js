@@ -5,6 +5,9 @@
 // the quiz answer choices) so the teacher only has to check it. Only teachers
 // can call it. The Anthropic API key is the ANTHROPIC_API_KEY secret
 // (see FIREBASE-SETUP.md).
+//
+// remindInactive and sendTestReminder (reminders.js): evening reminder emails
+// for students who haven't studied in more than 2 days.
 
 import Anthropic from "@anthropic-ai/sdk";
 import { betaZodOutputFormat } from "@anthropic-ai/sdk/helpers/beta/zod";
@@ -15,6 +18,8 @@ import { HttpsError, onCall } from "firebase-functions/v2/https";
 import { z } from "zod";
 
 initializeApp();
+
+export { remindInactive, sendTestReminder } from "./reminders.js";
 const anthropicKey = defineSecret("ANTHROPIC_API_KEY");
 
 // Keep in sync with OWNER_EMAILS in firebase-config.js and isAppOwner() in firestore.rules.

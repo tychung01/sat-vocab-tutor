@@ -7,7 +7,7 @@ import {
   configured, isOwner, isTeacher, watchUser, signIn, signOutUser, listStudents, recentLogins,
   listTeachers, addTeacher, removeTeacher, addStudentWord, removeStudentWord, restoreStudentWord,
   loadClassWords, addClassWord, removeClassWord, writeWordContent, listInvites, addInvite, removeInvite,
-  listBlocked, blockStudent, unblockStudent, loadHiddenWords, isUsernameTaken, renameStudent, saveProfile, hideWord, unhideWord,
+  listBlocked, blockStudent, unblockStudent, listRemindersOff, setReminders, sendTestReminder, loadHiddenWords, isUsernameTaken, renameStudent, saveProfile, hideWord, unhideWord,
   LEARNED_STREAK, PRACTICE_LIMIT,
 } from "./firebase.js";
 import { OWNER_EMAILS } from "./firebase-config.js";
@@ -26,6 +26,8 @@ let students = [];
 // Students whose access a teacher took away: { email, blockedBy, blockedAt }.
 let blocked = [];
 const blockFor = (student) => blocked.find((b) => b.email === (student.email || "").toLowerCase());
+// Uids of students a teacher turned reminder emails off for.
+let remindersOff = new Set();
 
 function escapeHtml(text) {
   return String(text).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -129,10 +131,39 @@ async function toggleDetail(row) {
     <div><h3>Learned (${learned.length})</h3><p>${list(learned, "None yet.")}</p></div>
     <div><h3>Closest to learning</h3><p>${list(close, "None in progress.")}</p>
       <h3>Recently missed</h3><p>${list(missed, "None.")}</p></div>
-  </div><div class="word-tools"></div><div class="word-tools profile-tools"></div><div class="word-tools access-tools"></div></td>`;
+  </div><div class="word-tools"></div><div class="word-tools profile-tools"></div><div class="word-tools reminder-tools"></div><div class="word-tools access-tools"></div></td>`;
   renderWordTools(detail.querySelector(".word-tools"), student, row);
   renderProfileTools(detail.querySelector(".profile-tools"), student, row);
+  renderReminderTools(detail.querySelector(".reminder-tools"), student);
   renderAccessTools(detail.querySelector(".access-tools"), student, row);
+}
+
+// Evening reminder emails (functions/reminders.js), on unless a teacher turns them off.
+function renderReminderTools(container, student) {
+  const on = !remindersOff.has(student.uid);
+  const last = student.lastReminder ? ` Last sent ${formatTime(student.lastReminder)}.` : "";
+  container.innerHTML = `<h3>Reminder emails</h3>
+    <p class="muted">${on
+      ? `On. If ${escapeHtml(student.name || student.email)} hasn't studied in more than 2 days, they get a reminder at 8 pm Eastern each evening until they're back.${last}`
+      : `Off. They won't get reminder emails.${last}`}</p>
+    <button class="btn" type="button">${on ? "Turn off reminders" : "Turn on reminders"}</button>
+    <p class="error" hidden></p>`;
+  const button = container.querySelector("button");
+  button.addEventListener("click", async () => {
+    button.disabled = true;
+    try {
+      await setReminders(student.uid, !on, currentUser.email);
+    } catch (err) {
+      console.error(err);
+      button.disabled = false;
+      container.querySelector(".error").textContent = "Couldn't change reminders. Please try again.";
+      container.querySelector(".error").hidden = false;
+      return;
+    }
+    if (on) remindersOff.add(student.uid);
+    else remindersOff.delete(student.uid);
+    renderReminderTools(container, student);
+  });
 }
 
 // The student's leaderboard profile. Teachers can change the user name or remove
@@ -1003,6 +1034,24 @@ $("add-teacher").addEventListener("submit", async (e) => {
   }
 });
 
+$("test-reminder").addEventListener("click", async () => {
+  const button = $("test-reminder");
+  const result = $("test-reminder-result");
+  button.disabled = true;
+  result.hidden = true;
+  try {
+    const { sentTo } = await sendTestReminder();
+    result.textContent = `Sent to ${sentTo}. Check your inbox (and spam folder).`;
+    result.className = "muted";
+  } catch (err) {
+    result.textContent = `Couldn't send it: ${err.message}`;
+    result.className = "error";
+  } finally {
+    button.disabled = false;
+    result.hidden = false;
+  }
+});
+
 // ---------- start ----------
 
 async function showDashboard(user) {
@@ -1019,15 +1068,17 @@ async function showDashboard(user) {
   $("status").textContent = "Loading students…";
   $("status").hidden = false;
   try {
-    const [wordsDb, list, shared, invited, hidden, removedAccess] = await Promise.all([
+    const [wordsDb, list, shared, invited, hidden, removedAccess, off] = await Promise.all([
       loadWords(),
       listStudents(),
       loadClassWords(),
       listInvites(),
       loadHiddenWords(),
       listBlocked(),
+      listRemindersOff(),
     ]);
     blocked = removedAccess;
+    remindersOff = new Set(off);
     dbWords = wordsDb.words;
     classWords = shared;
     invites = invited;

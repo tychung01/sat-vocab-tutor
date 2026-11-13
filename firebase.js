@@ -291,6 +291,21 @@ export function unhideWord(word) {
 
 // Claude writes a new word's part of speech, definition, example passage, and quiz
 // choices (the writeWord Cloud Function; only teachers can call it).
+// Students a teacher turned reminder emails off for, by uid (see functions/reminders.js).
+export async function listRemindersOff() {
+  const snap = await getDocs(collection(db, "reminderoff"));
+  return snap.docs.map((d) => d.id);
+}
+
+export function setReminders(uid, on, by) {
+  return on ? deleteDoc(doc(db, "reminderoff", uid)) : setDoc(doc(db, "reminderoff", uid), { by, at: serverTimestamp() });
+}
+
+// Sends the reminder email to the signed-in teacher, to check the Gmail setup.
+export async function sendTestReminder() {
+  return (await httpsCallable(getFunctions(app), "sendTestReminder")()).data;
+}
+
 export async function writeWordContent(word, definition = "") {
   const result = await httpsCallable(getFunctions(app), "writeWord")({ word, definition });
   return result.data;

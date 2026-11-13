@@ -117,6 +117,13 @@ service cloud.firestore {
         && request.resource.data.keys().hasOnly(['email', 'invitedBy', 'invitedAt']);
     }
 
+    // Students a teacher turned reminder emails off for. The document ID is the
+    // student's uid. The reminder function (Admin SDK) only reads it.
+    match /reminderoff/{uid} {
+      allow read, delete: if isTeacher();
+      allow create: if isTeacher() && request.resource.data.keys().hasOnly(['by', 'at']);
+    }
+
     // Students whose access a teacher took away. The document ID is the student's
     // email, lowercased. Deleting it gives their access back.
     match /blocked/{email} {
