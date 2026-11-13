@@ -52,8 +52,8 @@ button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); ou
 .top-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; flex-wrap: wrap; }
 .brand { font-size: 1.15rem; margin: 0; letter-spacing: -0.01em; }
 .status-row { display: flex; gap: 6px 18px; align-items: center; flex-wrap: wrap; padding-top: 8px; }
-/* The Quiz tab leaves out the streak, words learned, and practice bar to give the question more room. */
-body[data-view="quiz"] .status-row { display: none; }
+/* The quiz tabs leave out the streak, words learned, and practice bar to give the question more room. */
+body[data-view="quiz"] .status-row, body[data-view="review"] .status-row { display: none; }
 .student-status { display: flex; gap: 12px; flex-wrap: wrap; margin: 0; font-size: 0.85rem; color: var(--muted); }
 .student-status b { color: var(--text); font-variant-numeric: tabular-nums; }
 .progress { display: flex; gap: 14px; font-size: 0.85rem; color: var(--muted); }
