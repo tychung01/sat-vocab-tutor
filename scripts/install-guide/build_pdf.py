@@ -4,15 +4,16 @@ The screenshots come from a UI test that taps through Safari in the iOS Simulato
 (ShotsUITests/Tour.swift). To retake them:
 
     cd scripts/install-guide && xcodegen generate
-    TEST_RUNNER_OUT_DIR="$PWD/shots" xcodebuild test -project Shots.xcodeproj -scheme Shots \
+    TEST_RUNNER_OUT_DIR=<scratch folder> xcodebuild test -project Shots.xcodeproj -scheme Shots \
         -destination "id=<booted iPhone simulator>" -only-testing:ShotsUITests/Tour/testTour
     ... -only-testing:ShotsUITests/Tour/testOpen      # the app opened from the home screen
     ... -only-testing:ShotsUITests/Tour/testHome      # then retake the home screen without the runner:
+    xcrun simctl uninstall booted local.satwords.Shots
     xcrun simctl uninstall booted local.satwords.ShotsUITests.xctrunner
-    xcrun simctl io booted screenshot shots/06-home.png
+    xcrun simctl io booted screenshot <scratch folder>/06-home.png
 
 Use a scratch folder for TEST_RUNNER_OUT_DIR (the simulator can't write into the
-home folder) and copy the results into shots/. The test saves NN-*.png and
+home folder) and copy the PNGs and frames.json into screenshots/. The test saves NN-*.png and
 frames.json (the frame, in points, of the button tapped on each screenshot). This
 script circles those buttons, lays the steps out as HTML, and prints it to
 install.pdf at the repo root with headless Chrome.
@@ -30,7 +31,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw
 
 HERE = Path(__file__).resolve().parent
-SHOTS = HERE / "shots"
+SHOTS = HERE / "screenshots"
 OUT = HERE.parents[1] / "install.pdf"
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 SCALE = 3  # screenshot pixels per point

@@ -75,7 +75,8 @@ final class Tour: XCTestCase {
     func testHome() {
         XCUIDevice.shared.press(.home)
         sleep(2)
-        springboard.swipeLeft()
+        // SAT Words may be on the first page or the next one, depending on how many apps are installed.
+        if find("SAT Words", in: springboard, wait: 3) == nil { springboard.swipeLeft() }
         guard let el = find("SAT Words", in: springboard) else { return XCTFail("no SAT Words icon") }
         let url = URL(fileURLWithPath: "\(out)/frames.json")
         var all = (try? JSONSerialization.jsonObject(with: Data(contentsOf: url))) as? [String: [Double]] ?? [:]

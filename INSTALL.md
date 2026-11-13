@@ -41,7 +41,7 @@ Then tap the **Page Menu** button (☰) at the left of the address bar.
 
 > You don't need to sign in yet. You'll sign in inside the app in step 7.
 
-<img src="scripts/install-guide/shots/01-site.png" width="260" alt="The SAT Word Study sign-in page in Safari">
+<img src="scripts/install-guide/screenshots/01-site.png" width="260" alt="The SAT Word Study sign-in page in Safari">
 
 ## Step 2: Tap Share
 
@@ -50,13 +50,13 @@ In the menu that opens, tap **Share**.
 > On some iPhones, a Share button (a square with an arrow ⬆) is right in the
 > bottom bar. If you see one, tap it and go on to step 3.
 
-<img src="scripts/install-guide/shots/02-menu.png" width="260" alt="Safari's page menu with Share at the top">
+<img src="scripts/install-guide/screenshots/02-menu.png" width="260" alt="Safari's page menu with Share at the top">
 
 ## Step 3: Tap View More
 
 The share sheet slides up. Tap **View More** to see the full list of actions.
 
-<img src="scripts/install-guide/shots/03-share.png" width="260" alt="The share sheet with View More at the bottom right">
+<img src="scripts/install-guide/screenshots/03-share.png" width="260" alt="The share sheet with View More at the bottom right">
 
 ## Step 4: Tap Add to Home Screen
 
@@ -64,20 +64,20 @@ Tap **Add to Home Screen**.
 
 > **Not in the list?** Scroll to the bottom, tap **Edit Actions…**, and add it.
 
-<img src="scripts/install-guide/shots/04-more.png" width="260" alt="The full share sheet with Add to Home Screen">
+<img src="scripts/install-guide/screenshots/04-more.png" width="260" alt="The full share sheet with Add to Home Screen">
 
 ## Step 5: Tap Add
 
 You'll see the app's icon and its name, **SAT Words**. Leave **Open as Web App**
 turned on, then tap **Add** at the top right.
 
-<img src="scripts/install-guide/shots/05-add.png" width="260" alt="The Add to Home Screen screen with the SAT Words icon">
+<img src="scripts/install-guide/screenshots/05-add.png" width="260" alt="The Add to Home Screen screen with the SAT Words icon">
 
 ## Step 6: Open SAT Words
 
 The **SAT Words** icon is now on your home screen. Tap it to open the app.
 
-<img src="scripts/install-guide/shots/06-home.png" width="260" alt="The home screen with the SAT Words icon">
+<img src="scripts/install-guide/screenshots/06-home.png" width="260" alt="The home screen with the SAT Words icon">
 
 ## Step 7: Sign in
 
@@ -88,7 +88,7 @@ The app opens full-screen, without Safari's address bar. Tap
 > already signed in on the website, you'll sign in once more here. After that,
 > it remembers you.
 
-<img src="scripts/install-guide/shots/07-app.png" width="260" alt="SAT Words opened full-screen from the home screen">
+<img src="scripts/install-guide/screenshots/07-app.png" width="260" alt="SAT Words opened full-screen from the home screen">
 
 ```mermaid
 flowchart TD
