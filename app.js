@@ -162,6 +162,8 @@ const views = ["study", "quiz", "review", "words", "leaders", "about"];
 let reviewStarted = false;
 
 function showView(name) {
+  // Lets the stylesheet adjust the header for a tab (the Quiz tab hides the status row).
+  document.body.dataset.view = name;
   views.forEach((v) => {
     $(`view-${v}`).hidden = v !== name;
   });
