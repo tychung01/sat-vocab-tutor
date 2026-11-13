@@ -844,7 +844,8 @@ function confirmRemove(word) {
 let invites = [];
 
 // The study app's address, next to this dashboard.
-const APP_URL = new URL("./", location.href).href;
+// Invitations always send the short address, even from the older one.
+const APP_URL = "https://satwords.web.app/";
 const INSTALL_GUIDE_URL = new URL("install.pdf", APP_URL).href; // made from INSTALL.md
 
 function inviteMessage(email) {

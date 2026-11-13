@@ -3,13 +3,24 @@
 The study app uses Firebase for Google sign-in, to save each student's
 progress, and to host the site. The free "Spark" plan is enough for a class.
 
-**Live app:** https://sat-word-study-bfabd.firebaseapp.com
-(teacher dashboard: `/admin.html`). The old GitHub Pages address forwards
-here; its redirect pages live in `docs/`.
+**Live app:** https://satwords.web.app
+(teacher dashboard: `/admin.html`). The same files are also served at
+https://sat-word-study-bfabd.firebaseapp.com, the project's default address,
+because home-screen apps installed before 2026-11-13 open there. The
+`sat-word-study-bfabd.web.app` address and the old GitHub Pages address
+(redirect pages in `docs/`) forward to the short one.
 
-The app has to be served from the `firebaseapp.com` address. That's where
-Google sign-in finishes, and Chrome blocks sign-in when the app and the
-sign-in handler are on different sites. The `web.app` address forwards to it.
+Google sign-in finishes on the address the app is open on (`authDomain` in
+`firebase-config.js`), because Chrome blocks sign-in when the app and the
+sign-in handler are on different sites. So every address the app is served
+from needs to be:
+- in **Authentication → Settings → Authorized domains**, and
+- in the Google Cloud console under **APIs & Services → Credentials →
+  Web client (auto created by Google Service) → Authorized redirect URIs**,
+  as `https://<address>/__/auth/handler`.
+
+`satwords.web.app` is a second Hosting site in the same project
+(`firebase.json` lists both sites), so a deploy updates both addresses.
 
 ## Publishing changes
 Run from the project folder (after a one-time `npx -y firebase-tools@13.29.1 login`
@@ -37,7 +48,8 @@ The steps below were used to create the project the first time.
 2. Under **Sign-in method**, pick **Google**, switch it on, choose a support
    email, and click **Save**.
 3. Under **Settings → Authorized domains**, check that
-   `sat-word-study-bfabd.firebaseapp.com` is listed (it is by default).
+   `sat-word-study-bfabd.firebaseapp.com` is listed (it is by default), and add
+   `satwords.web.app`.
 
 ## 3. Create the database
 1. Open **Build → Firestore Database** and click **Create database**.

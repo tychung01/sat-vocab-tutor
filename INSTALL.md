@@ -5,7 +5,7 @@ full-screen with its own icon, and you don't need the App Store or a download.
 It takes about a minute.
 
 A printable version with the same screenshots is at
-[sat-word-study-bfabd.firebaseapp.com/install.pdf](https://sat-word-study-bfabd.firebaseapp.com/install.pdf)
+[satwords.web.app/install.pdf](https://satwords.web.app/install.pdf)
 (built by `scripts/install-guide/build_pdf.py`).
 
 **You'll need:**
@@ -34,7 +34,7 @@ The screenshots below are from Safari on iPhone. The orange outline marks what t
 Open **Safari** and go to:
 
 ```
-sat-word-study-bfabd.firebaseapp.com
+satwords.web.app
 ```
 
 Then tap the **Page Menu** button (☰) at the left of the address bar.

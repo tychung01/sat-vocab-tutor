@@ -36,7 +36,7 @@ OUT = HERE.parents[1] / "install.pdf"
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 SCALE = 3  # screenshot pixels per point
 RING = (247, 103, 7)  # orange, so it stands out from the app's blue
-SITE = "sat-word-study-bfabd.firebaseapp.com"
+SITE = "satwords.web.app"
 
 # (shot, title, instructions as HTML, optional crop height in points)
 STEPS = [

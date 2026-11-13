@@ -39,7 +39,7 @@ final class Tour: XCTestCase {
 
     func testTour() {
         safari.terminate()
-        safari.open(URL(string: "https://sat-word-study-bfabd.firebaseapp.com/")!)
+        safari.open(URL(string: "https://satwords.web.app/")!)
         _ = safari.buttons["Sign in with Google"].waitForExistence(timeout: 30)
         // The first share sheet on a fresh simulator is slow to load; open it once and close it.
         find("Page Menu", in: safari)?.tap()

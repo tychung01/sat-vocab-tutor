@@ -9,8 +9,8 @@
   <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="icons/favicon-32.png" type="image/png" sizes="32x32">
   <script>
-    // Google sign-in only works on the firebaseapp.com address (same site as the sign-in handler).
-    if (location.hostname.endsWith(".web.app")) location.replace(location.href.replace(".web.app", ".firebaseapp.com"));
+    // The project's default web.app address isn't set up for sign-in; send it to the short address.
+    if (location.hostname === "sat-word-study-bfabd.web.app") location.replace(location.href.replace("sat-word-study-bfabd.web.app", "satwords.web.app"));
   </script>
 </head>
 <body>

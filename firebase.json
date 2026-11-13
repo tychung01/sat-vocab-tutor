@@ -1,36 +1,72 @@
 {
-  "hosting": {
-    "public": ".",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      ".git/**",
-      ".firebase/**",
-      "**/node_modules/**",
-      ".venv/**",
-      "sources/**",
-      "entries/**",
-      "scripts/**",
-      "docs/**",
-      "lists/**",
-      "tests/**",
-      "functions/**",
-      "**/*.md",
-      "firestore.rules",
-      "requirements.txt",
-      "system_prompt.txt"
-    ],
-    "headers": [
-      {
-        "source": "data/words.json",
-        "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
-      },
-      {
-        "source": "**/*.@(html|js|css|webmanifest)",
-        "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
-      }
-    ]
-  },
+  "hosting": [
+    {
+      "site": "satwords",
+      "public": ".",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        ".git/**",
+        ".firebase/**",
+        "**/node_modules/**",
+        ".venv/**",
+        "sources/**",
+        "entries/**",
+        "scripts/**",
+        "docs/**",
+        "lists/**",
+        "tests/**",
+        "functions/**",
+        "**/*.md",
+        "firestore.rules",
+        "requirements.txt",
+        "system_prompt.txt"
+      ],
+      "headers": [
+        {
+          "source": "data/words.json",
+          "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+        },
+        {
+          "source": "**/*.@(html|js|css|webmanifest)",
+          "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+        }
+      ]
+    },
+    {
+      "site": "sat-word-study-bfabd",
+      "public": ".",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        ".git/**",
+        ".firebase/**",
+        "**/node_modules/**",
+        ".venv/**",
+        "sources/**",
+        "entries/**",
+        "scripts/**",
+        "docs/**",
+        "lists/**",
+        "tests/**",
+        "functions/**",
+        "**/*.md",
+        "firestore.rules",
+        "requirements.txt",
+        "system_prompt.txt"
+      ],
+      "headers": [
+        {
+          "source": "data/words.json",
+          "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+        },
+        {
+          "source": "**/*.@(html|js|css|webmanifest)",
+          "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+        }
+      ]
+    }
+  ],
   "firestore": {
     "rules": "firestore.rules"
   },
