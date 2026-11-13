@@ -555,18 +555,23 @@ function renderWordList() {
 
 $("search").addEventListener("input", renderWordList);
 
-function wireChips(containerId, key, onPick) {
-  document.querySelectorAll(`#${containerId} button`).forEach((b) => {
-    b.addEventListener("click", () => {
-      onPick(b.dataset[key]);
-      document.querySelectorAll(`#${containerId} button`).forEach((c) => c.setAttribute("aria-pressed", String(c === b)));
-      renderWordList();
-    });
-  });
-}
+$("status-filter").addEventListener("change", (e) => {
+  filter = e.target.value;
+  renderWordList();
+});
+$("source-filter").addEventListener("change", (e) => {
+  sourceFilter = e.target.value;
+  renderWordList();
+});
 
-wireChips("chips", "filter", (value) => { filter = value; });
-wireChips("source-chips", "source", (value) => { sourceFilter = value; });
+// "From your teacher" is offered only when the teacher added words. The option is
+// taken out of the menu rather than hidden, since iPhones show hidden options.
+const teacherOption = $("source-teacher");
+function offerTeacherSource(offer) {
+  if (offer) $("source-filter").append(teacherOption);
+  else teacherOption.remove();
+  if (!offer && sourceFilter === "teacher") sourceFilter = $("source-filter").value = "any";
+}
 
 // ---------- profile ----------
 
@@ -833,7 +838,7 @@ async function showSignedIn(signedInUser) {
   }
   renderWho();
   showWordCount();
-  $("source-teacher").hidden = !words.some(isTeacherWord);
+  offerTeacherSource(words.some(isTeacherWord));
   rebuildPracticeSet();
   $("status").hidden = true;
   $("tabs").hidden = false;

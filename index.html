@@ -138,18 +138,20 @@
     <section id="view-words" class="view" hidden>
       <div class="filters">
         <input type="search" id="search" placeholder="Search words or definitions" aria-label="Search words">
-        <div class="chips" id="chips">
-          <button data-filter="practice" aria-pressed="true">Practice</button>
-          <button data-filter="learned" aria-pressed="false">Learned</button>
-          <button data-filter="upcoming" aria-pressed="false">Coming later</button>
-          <button data-filter="all" aria-pressed="false">All</button>
-        </div>
-        <div class="chips" id="source-chips">
-          <button data-source="any" aria-pressed="true">Any source</button>
-          <button data-source="official" aria-pressed="false">From practice tests</button>
-          <button data-source="academic" aria-pressed="false">Academic word lists</button>
-          <button data-source="curated" aria-pressed="false">Common SAT words</button>
-          <button data-source="teacher" aria-pressed="false" id="source-teacher" hidden>From your teacher</button>
+        <div class="filter-menus">
+          <select id="status-filter" aria-label="Show words">
+            <option value="practice">Practice</option>
+            <option value="learned">Learned</option>
+            <option value="upcoming">Coming later</option>
+            <option value="all">All words</option>
+          </select>
+          <select id="source-filter" aria-label="Word source">
+            <option value="any">Any source</option>
+            <option value="official">From practice tests</option>
+            <option value="academic">Academic word lists</option>
+            <option value="curated">Common SAT words</option>
+            <option value="teacher" id="source-teacher">From your teacher</option>
+          </select>
         </div>
       </div>
       <p class="counter" id="words-count"></p>
