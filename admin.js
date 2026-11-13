@@ -849,10 +849,9 @@ const APP_URL = "https://satwords.web.app/";
 const INSTALL_GUIDE_URL = new URL("install.pdf", APP_URL).href; // made from INSTALL.md
 
 function inviteMessage(email) {
-  const teacher = currentUser.displayName || currentUser.email;
   return {
     subject: "You're invited to SAT Word Study",
-    body: `Hi,\n\nI've invited you to SAT Word Study, a vocabulary app for the SAT. You'll study flashcards and take short quizzes in the SAT's Words in Context format.\n\nTo start:\n1. Open ${APP_URL}\n2. Click "Sign in with Google" and sign in with this email address: ${email}\n\nOn an iPhone or iPad, you can put the app on your home screen. This guide shows how, step by step: ${INSTALL_GUIDE_URL}\n\n${teacher}`,
+    body: `Hi,\n\nI've invited you to SAT Word Study, a vocabulary app for the SAT. You'll study flashcards and take short quizzes in the SAT's Words in Context format.\n\nTo start:\n1. Open ${APP_URL}\n2. Click "Sign in with Google" and sign in with this email address: ${email}\n3. Pick a user name and a picture. Classmates will see them on the leaderboard, so choose something you're happy for them to see, and don't use your full name.\n\nThe leaderboard shows who has learned the most words and who has the longest study streak: days in a row finishing a set of flashcards. Try to keep your streak going!\n\nYou can put the app on your phone's home screen so it opens like any other app. This guide shows how on iPhone, iPad, and Android: ${INSTALL_GUIDE_URL}\n\nSAT Word Master`,
   };
 }
 
