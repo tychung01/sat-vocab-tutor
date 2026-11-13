@@ -602,16 +602,19 @@ $("class-word-form").addEventListener("submit", (e) => {
   const inClass = wordFinder(classWords.map((w) => w.word))(word);
   if (inClass) {
     showClassWordError(`${alreadyThere(word, inClass)} already added for all students.`);
+    $("class-word").value = "";
     return;
   }
   const hidden = wordFinder(hiddenNames())(word);
   if (hidden) {
     showClassWordError(`${alreadyThere(word, hidden)} in the word database but was removed for all students. Restore "${hidden}" under Removed for all students below.`);
+    $("class-word").value = "";
     return;
   }
   const inDatabase = wordFinder(dbWords.map((w) => w.word))(word);
   if (inDatabase) {
     showClassWordError(`${alreadyThere(word, inDatabase)} already in the word database, so every student has it.`);
+    $("class-word").value = "";
     return;
   }
   // Students who already have this word, in any form, added just for them. Their
