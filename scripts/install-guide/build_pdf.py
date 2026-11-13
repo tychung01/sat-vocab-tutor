@@ -35,7 +35,7 @@ SHOTS = HERE / "screenshots"
 OUT = HERE.parents[1] / "install.pdf"
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 SCALE = 3  # screenshot pixels per point
-RING = (247, 103, 7)  # orange, so it stands out from the app's blue
+RING = (247, 103, 7)  # orange, so it stands out from the app's green
 SITE = "satwords.web.app"
 
 # (shot, title, instructions as HTML, optional crop height in points)
@@ -99,13 +99,13 @@ CSS = """
 body { font: 11pt/1.45 -apple-system, "Helvetica Neue", Arial, sans-serif; color: #1d1f23; margin: 0; }
 h1 { font-size: 24pt; margin: 0 0 4pt; }
 .lead { font-size: 12pt; color: #4a4f57; margin: 0 0 10pt; }
-.need { background: #e6ecfb; border-radius: 8pt; padding: 8pt 12pt; margin-bottom: 14pt; }
+.need { background: #e3f3ea; border-radius: 8pt; padding: 8pt 12pt; margin-bottom: 14pt; }
 .need ul { margin: 2pt 0 0; padding-left: 16pt; }
 .page { display: grid; grid-template-columns: 1fr 1fr; gap: 22pt; break-after: page; }
 .page:last-of-type { break-after: auto; }
 .step { break-inside: avoid; }
 .head { display: flex; align-items: center; gap: 8pt; margin-bottom: 4pt; }
-.num { flex: none; width: 24pt; height: 24pt; border-radius: 50%; background: #2f5bd3; color: #fff;
+.num { flex: none; width: 24pt; height: 24pt; border-radius: 50%; background: #1f7a4d; color: #fff;
        display: grid; place-items: center; font-weight: 700; font-size: 12pt; }
 h2 { font-size: 14pt; margin: 0; }
 .body p { margin: 0 0 5pt; }
