@@ -4,7 +4,8 @@
 // PRACTICE_LIMIT words), or Upcoming (waiting for room in the practice list).
 // Progress is saved to Firestore so the teacher dashboard can see it.
 // Each finished flashcard set is followed by a required quiz on its words, and
-// every REVIEW_EVERY words studied by a required review quiz on all of them. The
+// every REVIEW_EVERY words studied by a required review quiz on all of them, plus
+// LEARNED_IN_REVIEW words learned earlier so learned words keep being checked. The
 // student needs a perfect score to move on to the next set.
 // Each student picks a unique user name and a picture the first time they sign
 // in. The leaderboard ranks students by study streak (days in a row finishing a
@@ -24,6 +25,7 @@ import { fireworks } from "./fireworks.js";
 const SET_SIZE = 10;
 const REVIEW_PER_QUIZ = 2;
 const REVIEW_EVERY = 50;
+const LEARNED_IN_REVIEW = 5;
 const LEARNED_REVIEW_SIZE = 20;
 // Scores above this percentage get a congratulation.
 const CHEER_PERCENT = 80;
@@ -252,7 +254,7 @@ function finishSet() {
   $("study-done").hidden = false;
   const count = requiredWords().length;
   $("study-done-text").textContent = required.mode === "review"
-    ? `Time for the ${REVIEW_EVERY}-word review quiz. You need ${count} out of ${count} to move on to the next set.`
+    ? `Time for ${reviewText()}`
     : `Now take a quiz on these ${count} words. You need ${count} out of ${count} to move on to the next set.`;
   $("study-quiz").textContent = required.mode === "review" ? "Take the review quiz" : "Take the quiz";
   $("study-quiz").focus();
@@ -288,7 +290,7 @@ function pickQuizWords() {
   return shuffle([...practice, ...learned]);
 }
 
-const QUIZ_TITLES = { practice: "", set: "Set quiz · ", review: `${REVIEW_EVERY}-word review · ` };
+const QUIZ_TITLES = { practice: "", set: "Set quiz · ", review: "Review quiz · " };
 
 // The studied words still on the student's list (a teacher may have removed some).
 function studiedWords() {
@@ -310,8 +312,21 @@ function requiredWords() {
 function requireReviewIfDue() {
   if (required && !requiredWords().length) required = null;
   if (!required && reviewReady()) {
-    required = { mode: "review", words: studiedWords().slice(0, REVIEW_EVERY).map((w) => w.word) };
+    const recent = studiedWords().slice(0, REVIEW_EVERY).map((w) => w.word);
+    // A few words learned earlier come back too; missing one moves it back to Practice.
+    const inRecent = new Set(recent);
+    const learned = shuffle(words.filter((w) => isLearned(w.word) && !inRecent.has(w.word)))
+      .slice(0, LEARNED_IN_REVIEW).map((w) => w.word);
+    required = { mode: "review", words: [...recent, ...learned] };
   }
+}
+
+// "a review quiz on the 50 words you studied and 5 you learned earlier. You need …"
+function reviewText() {
+  const all = requiredWords();
+  const earlier = all.filter((w) => !studied.includes(w.word)).length;
+  return `a review quiz on the ${all.length - earlier} words you studied${earlier ? ` and ${earlier} you learned earlier` : ""}. `
+    + `You need ${all.length} out of ${all.length} to move on.`;
 }
 
 function saveStudy() {
@@ -439,7 +454,7 @@ function startQuiz(targets = pickQuizWords(), mode = "practice") {
 function finishMainQuiz({ total, percent, perfect, targets, cheer }) {
   const mustPass = quizMode !== "practice";
   if (mustPass && !perfect) cheer.textContent = `🎉 Congratulations on ${percent}%! Get every answer right to move on.`;
-  else if (quizMode === "review") cheer.textContent = `🎉 Congratulations! You remembered all ${total} words you studied.`;
+  else if (quizMode === "review") cheer.textContent = `🎉 Congratulations! You remembered all ${total} words.`;
 
   let nextStep = "";
   if (mustPass && perfect) {
@@ -453,7 +468,7 @@ function finishMainQuiz({ total, percent, perfect, targets, cheer }) {
     saveStudy();
     startStudy();
     nextStep = required
-      ? `You passed! You've now studied ${REVIEW_EVERY} words, so next is a review quiz on all of them. You need ${REVIEW_EVERY} out of ${REVIEW_EVERY} to move on.`
+      ? `You passed! You've now studied ${REVIEW_EVERY} words, so next is ${reviewText()}`
       : "You passed! You're ready for the next set.";
   } else if (mustPass) {
     nextStep = `You need ${total} out of ${total} to move on. Go through the cards again or retake the quiz. You'll get new questions each time.`;
