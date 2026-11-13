@@ -37,8 +37,6 @@
     </div>
     <nav class="wrap tabs" role="tablist" id="tabs" hidden>
       <button role="tab" data-view="study" aria-selected="true">Flashcards</button>
-      <button role="tab" data-view="quiz" aria-selected="false">Quiz</button>
-      <button role="tab" data-view="review" aria-selected="false">Review words</button>
       <button role="tab" data-view="words" aria-selected="false">My words</button>
       <button role="tab" data-view="leaders" aria-selected="false">Leaderboard</button>
       <button role="tab" data-view="about" aria-selected="false">About</button>
@@ -160,13 +158,17 @@
 
     <section id="view-leaders" class="view" hidden>
       <p class="status" id="leaders-status" hidden></p>
+      <div class="board-switch" role="tablist" aria-label="Leaderboard">
+        <button role="tab" data-board="streak" aria-selected="true">🔥 Study streak</button>
+        <button role="tab" data-board="learned" aria-selected="false">⭐ Words learned</button>
+      </div>
       <div class="boards">
-        <section class="board" aria-labelledby="streak-board-heading">
+        <section class="board shown" id="board-streak" aria-labelledby="streak-board-heading">
           <h2 id="streak-board-heading">🔥 Study streak</h2>
           <p class="muted">Days in a row finishing a set of flashcards.</p>
           <ol class="board-list" id="streak-board"></ol>
         </section>
-        <section class="board" aria-labelledby="learned-board-heading">
+        <section class="board" id="board-learned" aria-labelledby="learned-board-heading">
           <h2 id="learned-board-heading">⭐ Words learned</h2>
           <p class="muted">Words answered correctly 3 times in a row.</p>
           <ol class="board-list" id="learned-board"></ol>

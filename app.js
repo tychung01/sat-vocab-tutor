@@ -741,12 +741,19 @@ function renderBoard(id, rows, one, many, empty) {
   const me = ranked.find((r) => r.uid === user.uid);
   const rowHtml = (r) => `<li${r.uid === user.uid ? ' class="me"' : ""}>
     <span class="rank">${r.rank}</span>${avatarHtml(r, 36)}
-    <span class="name">${escapeHtml(r.username)}${r.uid === user.uid ? ' <span class="muted">(you)</span>' : ""}</span>
+    <span class="name"><span class="username" title="${escapeHtml(r.username)}">${escapeHtml(r.username)}</span>${r.uid === user.uid ? '<span class="muted you">(you)</span>' : ""}</span>
     <span class="value"><b>${r.value}</b> ${r.value === 1 ? one : many}</span></li>`;
   $(id).innerHTML = top.length
     ? top.map(rowHtml).join("") + (me && !top.includes(me) ? `<li class="gap" aria-hidden="true">⋯</li>${rowHtml(me)}` : "")
     : `<li class="muted empty">${empty}</li>`;
 }
+
+// On phones the leaderboard shows one board at a time, picked with this switch.
+document.querySelectorAll(".board-switch button").forEach((b) => b.addEventListener("click", () => {
+  document.querySelectorAll(".board-switch button").forEach((c) => c.setAttribute("aria-selected", String(c === b)));
+  $("board-streak").classList.toggle("shown", b.dataset.board === "streak");
+  $("board-learned").classList.toggle("shown", b.dataset.board === "learned");
+}));
 
 // ---------- sign-in and start ----------
 
@@ -822,7 +829,10 @@ async function showSignedIn(signedInUser) {
   else startQuiz();
   let view = "study";
   try { view = sessionStorage.getItem("satvocab.view") || view; } catch {}
-  showView(views.includes(view) ? view : "study");
+  // The quiz has no tab of its own: students reach it from the flashcards, so
+  // only go back to it if a required quiz is waiting.
+  const reopen = ["study", "words", "leaders", "about", ...(required ? ["quiz"] : [])];
+  showView(reopen.includes(view) ? view : "study");
 }
 
 $("sign-in-button").addEventListener("click", () => {

@@ -52,8 +52,10 @@ button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); ou
 .top-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; flex-wrap: wrap; }
 .brand { font-size: 1.15rem; margin: 0; letter-spacing: -0.01em; }
 .status-row { display: flex; gap: 6px 18px; align-items: center; flex-wrap: wrap; padding-top: 8px; }
-/* The quiz tabs leave out the streak, words learned, and practice bar to give the question more room. */
-body[data-view="quiz"] .status-row, body[data-view="review"] .status-row { display: none; }
+/* The quiz tabs and the leaderboard leave out the streak, words learned, and practice bar to give
+   the page more room (the leaderboard shows those numbers itself). */
+body[data-view="quiz"] .status-row, body[data-view="review"] .status-row,
+body[data-view="leaders"] .status-row { display: none; }
 .student-status { display: flex; gap: 12px; flex-wrap: wrap; margin: 0; font-size: 0.85rem; color: var(--muted); }
 .student-status b { color: var(--text); font-variant-numeric: tabular-nums; }
 .progress { display: flex; gap: 14px; font-size: 0.85rem; color: var(--muted); }
@@ -191,8 +193,10 @@ main.wrap { padding-top: 24px; padding-bottom: 32px; min-height: 60vh; }
 .board-list li { display: flex; gap: 10px; align-items: center; padding: 8px; border-bottom: 1px solid var(--line); }
 .board-list li:last-child { border-bottom: 0; }
 .board-list .rank { width: 1.8em; text-align: right; font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; flex: none; }
-.board-list .name { flex: 1; min-width: 0; overflow-wrap: anywhere; font-weight: 600; }
-.board-list .name .muted { font-weight: 400; }
+.board-list .name { flex: 1; min-width: 0; display: flex; gap: 4px; font-weight: 600; }
+.board-list .username { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.board-list .you { flex: none; font-weight: 400; }
+.board-switch { display: none; }
 .board-list .value { white-space: nowrap; color: var(--muted); }
 .board-list .value b { color: var(--text); font-variant-numeric: tabular-nums; }
 .board-list li.me { background: var(--accent-soft); border-radius: 8px; }
@@ -319,6 +323,17 @@ table.students { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
   .choices { gap: 6px; }
   .choice { padding: 9px 12px; line-height: 1.35; }
   .feedback { margin-top: 10px; padding: 12px 14px; }
+
+  /* One leaderboard at a time, with slimmer rows. */
+  .board-switch { display: flex; gap: 4px; padding: 4px; margin-bottom: 10px; background: var(--line); border-radius: 10px; }
+  .board-switch button { flex: 1; border: 0; border-radius: 8px; padding: 7px 8px; background: none; font-weight: 600; font-size: 0.9rem; color: var(--muted); }
+  .board-switch button[aria-selected="true"] { background: var(--surface); color: var(--text); box-shadow: var(--shadow); }
+  .board:not(.shown) { display: none; }
+  .board { padding: 10px 12px; }
+  .board h2 { display: none; }
+  .board > p { margin: 0 0 4px; }
+  .board-list li { padding: 5px 6px; gap: 8px; }
+  .board-list .avatar { width: 28px !important; height: 28px !important; font-size: 13px !important; }
 }
 
 .btn.danger { background: var(--bad); border-color: var(--bad); color: var(--surface); }
