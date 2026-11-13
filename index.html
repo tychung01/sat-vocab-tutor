@@ -24,17 +24,17 @@
 <body>
   <header class="top">
     <div class="wrap top-inner">
-      <div class="top-left">
-        <h1 class="brand">SAT Word Study</h1>
-        <p class="student-status" id="student-status" aria-live="polite" hidden></p>
-      </div>
+      <h1 class="brand">SAT Word Study</h1>
       <div class="account" id="account" hidden>
         <button class="who" id="who" type="button" title="Change your picture"></button>
         <a class="link" id="admin-link" href="admin.html" hidden>Teacher dashboard</a>
         <button class="link" id="sign-out">Sign out</button>
       </div>
     </div>
-    <div class="wrap progress" id="progress" aria-live="polite"></div>
+    <div class="wrap status-row">
+      <p class="student-status" id="student-status" aria-live="polite" hidden></p>
+      <div class="progress" id="progress" aria-live="polite"></div>
+    </div>
     <nav class="wrap tabs" role="tablist" id="tabs" hidden>
       <button role="tab" data-view="study" aria-selected="true">Flashcards</button>
       <button role="tab" data-view="quiz" aria-selected="false">Quiz</button>
