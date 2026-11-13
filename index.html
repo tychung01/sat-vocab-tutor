@@ -41,6 +41,7 @@
       <button role="tab" data-view="review" aria-selected="false">Review words</button>
       <button role="tab" data-view="words" aria-selected="false">My words</button>
       <button role="tab" data-view="leaders" aria-selected="false">Leaderboard</button>
+      <button role="tab" data-view="about" aria-selected="false">About</button>
     </nav>
   </header>
 
@@ -52,6 +53,7 @@
       <p>Sign in with the Google account your teacher invited. Your progress is saved to your account, so you can pick up where you left off on any device.</p>
       <button class="btn primary" id="sign-in-button">Sign in with Google</button>
       <p class="error" id="sign-in-error" hidden></p>
+      <p class="note">Signing in saves your progress, profile, and visit history for your teacher. Classmates see only your leaderboard entry. The About tab has the details.</p>
     </section>
 
     <section id="view-study" class="view" hidden>
@@ -171,6 +173,17 @@
         </section>
       </div>
     </section>
+
+    <section id="view-about" class="view about" hidden>
+      <h2>About SAT Word Study</h2>
+      <p>A vocabulary app for the SAT: flashcards, quizzes in the SAT's Words in Context format, and a class leaderboard.</p>
+      <h3>Where the words come from</h3>
+      <p>Words come from the vocabulary questions in College Board's official SAT and PSAT practice tests and ACT's official practice tests, the <a href="https://www.newgeneralservicelist.com/new-academic-word-list">New Academic Word List</a> (Browne, Culligan &amp; Phillips, CC BY-SA 4.0), Coxhead's Academic Word List, and a list of common SAT words. Definitions, example passages, and quiz answers were written with the help of Claude, an AI model.</p>
+      <p>For words your teacher adds, a starting definition comes from the <a href="https://dictionaryapi.dev/">Free Dictionary API</a> (from Wiktionary, CC BY-SA), Claude writes the rest, and your teacher reviews it before it's added.</p>
+      <h3>What's saved</h3>
+      <p>When you sign in, the app saves your name and email, your user name and picture, your quiz progress, and when and on what device and browser you visit. Your teacher can see all of it. Other students see only your user name, picture, study streak, and number of words learned, on the leaderboard.</p>
+      <p class="muted" id="updated"></p>
+    </section>
   </main>
 
   <dialog class="word-dialog" id="profile-dialog" aria-labelledby="profile-title">
@@ -193,12 +206,6 @@
       </div>
     </form>
   </dialog>
-
-  <footer class="wrap foot">
-    <p>Words come from the vocabulary questions in College Board's official SAT and PSAT practice tests and ACT's official practice tests, the <a href="https://www.newgeneralservicelist.com/new-academic-word-list">New Academic Word List</a> (Browne, Culligan &amp; Phillips, CC BY-SA 4.0), Coxhead's Academic Word List, and a list of common SAT words. Definitions and examples are original, except for words your teacher adds, which are looked up in <a href="https://dictionaryapi.dev/">Free Dictionary API</a> (from Wiktionary, CC BY-SA).</p>
-    <p>When you sign in, your name, email, visit times, and quiz progress are saved so your teacher can follow your progress. Other students see only your user name, picture, study streak, and number of words learned, on the leaderboard.</p>
-    <p id="updated"></p>
-  </footer>
 
   <script type="module" src="app.js"></script>
 </body>

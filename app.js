@@ -158,7 +158,7 @@ function streakText(word) {
 
 // ---------- tabs ----------
 
-const views = ["study", "quiz", "review", "words", "leaders"];
+const views = ["study", "quiz", "review", "words", "leaders", "about"];
 let reviewStarted = false;
 
 function showView(name) {
@@ -839,7 +839,7 @@ $("sign-in-button").addEventListener("click", () => {
 $("sign-out").addEventListener("click", () => signOutUser());
 
 function showWordCount() {
-  $("updated").textContent = `${words.length} words · last updated ${dbUpdated}`;
+  $("updated").textContent = `${words.length} words · word list updated ${dbUpdated}`;
 }
 
 async function start() {
