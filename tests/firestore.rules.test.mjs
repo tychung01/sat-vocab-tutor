@@ -36,6 +36,12 @@ await env.withSecurityRulesDisabled(async (c) => {
   // Two signed-in students for the profile tests.
   await setDoc(doc(db, "users/p1"), { name: "P1" });
   await setDoc(doc(db, "users/p2"), { name: "P2" });
+  // SAT Transitions: an invited student who hasn't used the word app, and a
+  // transitions student whose access was removed.
+  await setDoc(doc(db, "invites/tr@example.com"), { email: "tr@example.com", invitedBy: "teacher@example.com" });
+  await setDoc(doc(db, "transitionusers/tb"), { name: "TB" });
+  await setDoc(doc(db, "transitionprogress/tb"), { answers: {} });
+  await setDoc(doc(db, "blocked/tb@example.com"), { email: "tb@example.com", blockedBy: "teacher@example.com" });
 });
 const p1 = as("p1", "p1@example.com");
 const p2 = as("p2", "p2@example.com");
@@ -52,6 +58,11 @@ const gone = as("s4", "gone@example.com");
 const goneMixedCase = as("s4", "Gone@Example.com");
 const block = (db, email, extra = {}) =>
   setDoc(doc(db, "blocked", email), { email, blockedBy: "teacher@example.com", blockedAt: serverTimestamp(), ...extra });
+
+const tr = as("tr", "tr@example.com");
+const tb = as("tb", "tb@example.com");
+const tProgress = () => ({ answers: { "TR-001": { right: 1, wrong: 0, last: "right", ts: 1 } }, cards: { "however,": { status: "known", ts: 1 } }, updated: serverTimestamp() });
+const tStats = () => ({ streak: 1, lastDay: "2026-11-16", mastered: 1, updated: serverTimestamp() });
 
 const add = (db, email, extra = {}) =>
   setDoc(doc(db, "teachers", email), { email, addedBy: "x", addedAt: serverTimestamp(), ...extra });
@@ -191,6 +202,36 @@ const cases = [
   ["student can't turn reminders back on", () => assertFails(deleteDoc(doc(student, "reminderoff/s1")))],
   ["teacher turns reminders back on", () => assertSucceeds(deleteDoc(doc(teacher, "reminderoff/s1")))],
   ["restored student reads and saves progress again", () => assertSucceeds(setDoc(doc(gone, "progress/s4"), { learned: 2 }).then(() => getDoc(doc(gone, "progress/s4"))))],
+  // SAT Transitions
+  ["transitions: student can't save progress before visiting", () => assertFails(setDoc(doc(tr, "transitionprogress/tr"), tProgress()))],
+  ["transitions: uninvited student can't record a visit", () => assertFails(setDoc(doc(stranger, "transitionusers/s3"), { name: "X" }))],
+  ["transitions: invited student records a visit", () => assertSucceeds(setDoc(doc(tr, "transitionusers/tr"), { name: "TR" }).then(() => setDoc(doc(tr, "transitionusers/tr/visits/x"), { at: 1 })))],
+  ["transitions: word-app student from before invites records a visit", () => assertSucceeds(setDoc(doc(as("s2", "other2@example.com"), "transitionusers/s2"), { name: "Other" }))],
+  ["transitions: teacher records a visit without an invite", () => assertSucceeds(setDoc(doc(teacher, "transitionusers/t1"), { name: "T" }))],
+  ["transitions: student saves and reads own progress", () => assertSucceeds(setDoc(doc(tr, "transitionprogress/tr"), tProgress()).then(() => getDoc(doc(tr, "transitionprogress/tr"))))],
+  ["transitions: student saves one answer", () => assertSucceeds(setDoc(doc(tr, "transitionprogress/tr"), { answers: { "TR-002": { right: 0, wrong: 1, last: "wrong", ts: 2 } }, updated: serverTimestamp() }, { merge: true }))],
+  ["transitions: student can't add other fields to progress", () => assertFails(setDoc(doc(tr, "transitionprogress/tr"), { note: "x" }, { merge: true }))],
+  ["transitions: student can't read another student's progress", () => assertFails(getDoc(doc(student, "transitionprogress/tr")))],
+  ["transitions: student can't write another student's progress", () => assertFails(setDoc(doc(student, "transitionprogress/tr"), tProgress()))],
+  ["transitions: teacher reads a student's progress and visits", () => assertSucceeds(getDoc(doc(teacher, "transitionprogress/tr")).then(() => getDocs(collection(teacher, "transitionusers/tr/visits"))))],
+  ["transitions: teacher can't write a student's progress", () => assertFails(setDoc(doc(teacher, "transitionprogress/tr"), tProgress()))],
+  ["transitions: student saves leaderboard stats", () => assertSucceeds(setDoc(doc(tr, "transitionstats/tr"), tStats()))],
+  ["transitions: student updates one stat", () => assertSucceeds(setDoc(doc(tr, "transitionstats/tr"), { mastered: 5 }, { merge: true }))],
+  ["transitions: student can't save a fractional stat", () => assertFails(setDoc(doc(tr, "transitionstats/tr"), { mastered: 1.5 }, { merge: true }))],
+  ["transitions: student can't add other fields to stats", () => assertFails(setDoc(doc(tr, "transitionstats/tr"), { email: "x" }, { merge: true }))],
+  ["transitions: stats can't be created without every field", () => assertFails(setDoc(doc(teacher, "transitionstats/t1"), { mastered: 1 }))],
+  ["transitions: student can't change another student's stats", () => assertFails(setDoc(doc(student, "transitionstats/tr"), tStats()))],
+  ["transitions: another student reads the leaderboard", () => assertSucceeds(getDocs(collection(p1, "transitionstats")))],
+  ["transitions: anonymous can't read the leaderboard", () => assertFails(getDocs(collection(anon, "transitionstats")))],
+  ["transitions: transitions-only student creates a profile", () => assertSucceeds(claim(tr, "tr", "Transition_Pro"))],
+  ["transitions: student who never opened either app can't create a profile", () => assertFails(claim(as("nv", "student@example.com"), "nv", "Nobody_Yet"))],
+  ["transitions: blocked student can't read own progress", () => assertFails(getDoc(doc(tb, "transitionprogress/tb")))],
+  ["transitions: blocked student can't save progress", () => assertFails(setDoc(doc(tb, "transitionprogress/tb"), tProgress()))],
+  ["transitions: blocked student can't record a visit", () => assertFails(setDoc(doc(tb, "transitionusers/tb"), { name: "TB" }, { merge: true }))],
+  ["transitions: blocked student can't read the leaderboard", () => assertFails(getDocs(collection(tb, "transitionstats")))],
+  ["transitions: teacher lists every student's records", () => assertSucceeds(Promise.all(["transitionusers", "transitionprogress", "transitionstats"].map((c) => getDocs(collection(teacher, c)))))],
+  ["transitions: teacher deletes a student's stats", () => assertSucceeds(deleteDoc(doc(teacher, "transitionstats/tr")))],
+  ["transitions: student can't delete own stats", () => assertFails(deleteDoc(doc(p1, "transitionstats/p1")))],
 ];
 
 let failed = 0;

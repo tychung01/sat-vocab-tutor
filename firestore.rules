@@ -12,6 +12,9 @@ rules_version = '2';
 // Teachers can read everyone's records. The owner (listed in isAppOwner) is
 // always a teacher and is the only one who can add or remove other teachers,
 // who are stored in /teachers/{email}.
+// SAT Transitions (sattransitions.web.app, its own repo) uses this project too. It
+// shares sign-in, invites, teachers, blocked students, and profiles, and keeps its
+// own records in /transitionusers, /transitionprogress, and /transitionstats.
 // Publish with: npx -y firebase-tools@13.29.1 deploy --only firestore:rules
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -70,6 +73,21 @@ service cloud.firestore {
       return exists(/databases/$(database)/documents/users/$(uid));
     }
 
+    // A student's SAT Transitions record exists once they've opened that app with access.
+    function hasVisitedTransitions(uid) {
+      return exists(/databases/$(database)/documents/transitionusers/$(uid));
+    }
+
+    // SAT Transitions leaderboard numbers as they will be after this write.
+    function validTransitionStats() {
+      let d = request.resource.data;
+      return d.keys().hasAll(['streak', 'lastDay', 'mastered'])
+        && d.keys().hasOnly(['streak', 'lastDay', 'mastered', 'updated'])
+        && d.streak is int && d.streak >= 0 && d.streak <= 10000
+        && d.lastDay is string && d.lastDay.size() <= 10
+        && d.mastered is int && d.mastered >= 0 && d.mastered <= 100000;
+    }
+
     match /users/{uid} {
       allow read: if (isSelf(uid) && canStudy()) || isTeacher();
       allow create: if isSelf(uid) && canStudy() && (isInvited() || isTeacher());
@@ -90,7 +108,8 @@ service cloud.firestore {
     // user name nobody else has, then can change everything but the user name.
     match /profiles/{uid} {
       allow read: if request.auth != null && canStudy();
-      allow create: if isSelf(uid) && canStudy() && hasSignedIn(uid) && validProfile() && ownsUsername(uid);
+      allow create: if isSelf(uid) && canStudy() && (hasSignedIn(uid) || hasVisitedTransitions(uid))
+        && validProfile() && ownsUsername(uid);
       allow update: if validProfile() && (
         (isSelf(uid) && canStudy() && request.resource.data.username == resource.data.username)
         || (isTeacher() && (request.resource.data.username == resource.data.username || ownsUsername(uid))));
@@ -165,6 +184,36 @@ service cloud.firestore {
         && request.resource.data.email == email
         && request.resource.data.keys().hasOnly(['email', 'addedBy', 'addedAt']);
       allow delete: if isAppOwner();
+    }
+
+    // ---------- SAT Transitions ----------
+    // Access works as in the word app: invited students, teachers, and students who
+    // signed in to the word app before invites existed.
+
+    // Visits, like /users: { name, email, photo, firstVisit, lastVisit, visitCount, ... }.
+    match /transitionusers/{uid} {
+      allow read: if (isSelf(uid) && canStudy()) || isTeacher();
+      allow create: if isSelf(uid) && canStudy() && (isInvited() || isTeacher() || hasSignedIn(uid));
+      allow update: if isSelf(uid) && canStudy();
+
+      match /visits/{visitId} {
+        allow read: if (isSelf(uid) && canStudy()) || isTeacher();
+        allow create: if isSelf(uid) && canStudy() && hasVisitedTransitions(uid);
+      }
+    }
+
+    // { answers: { [question id]: { right, wrong, last, ts } }, cards: { [transition]: { status, ts } } }.
+    match /transitionprogress/{uid} {
+      allow read: if (isSelf(uid) && canStudy()) || isTeacher();
+      allow create, update: if isSelf(uid) && canStudy() && hasVisitedTransitions(uid)
+        && request.resource.data.keys().hasOnly(['answers', 'cards', 'updated']);
+    }
+
+    // Leaderboard numbers, which other students can read with the profiles.
+    match /transitionstats/{uid} {
+      allow read: if request.auth != null && canStudy();
+      allow create, update: if isSelf(uid) && canStudy() && hasVisitedTransitions(uid) && validTransitionStats();
+      allow delete: if isTeacher();
     }
   }
 }
