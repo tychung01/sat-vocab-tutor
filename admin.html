@@ -31,6 +31,7 @@
     <section id="sign-in" class="sign-in" hidden>
       <h2>Teacher sign-in</h2>
       <button class="btn primary" id="sign-in-button">Sign in with Google</button>
+      <div id="code-sign-in"></div>
     </section>
 
     <section id="dashboard" hidden>
@@ -64,10 +65,10 @@
 
       <section class="teachers" aria-labelledby="invites-heading">
         <h2 id="invites-heading">Invite students</h2>
-        <p class="muted">Only invited students can use the study app. Enter the Google email the student will sign in with. Your email app opens with an invitation to send them.</p>
+        <p class="muted">Only invited students can use the study app. Enter the email the student will sign in with: a Google account, or any address (like iCloud or a school email) for sign-in with an emailed code. Your email app opens with an invitation to send them.</p>
         <form class="add-teacher" id="invite-form">
-          <label for="invite-email" class="visually-hidden">Student's Google email</label>
-          <input type="email" id="invite-email" placeholder="Student's Google email" required autocomplete="off">
+          <label for="invite-email" class="visually-hidden">Student's email</label>
+          <input type="email" id="invite-email" placeholder="Student's email" required autocomplete="off">
           <button class="btn primary" type="submit">Invite student</button>
         </form>
         <p class="error" id="invite-error" hidden></p>
@@ -144,8 +145,8 @@
           <h2 id="teachers-heading" class="visually-hidden">Teachers</h2>
           <p class="muted" id="teachers-help"></p>
           <form class="add-teacher" id="add-teacher" hidden>
-            <label for="teacher-email" class="visually-hidden">Teacher's Google email</label>
-            <input type="email" id="teacher-email" placeholder="Teacher's Google email" required autocomplete="off">
+            <label for="teacher-email" class="visually-hidden">Teacher's email</label>
+            <input type="email" id="teacher-email" placeholder="Teacher's email" required autocomplete="off">
             <button class="btn primary" type="submit">Add teacher</button>
           </form>
           <p class="error" id="teacher-error" hidden></p>

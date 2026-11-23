@@ -232,6 +232,10 @@ const cases = [
   ["transitions: teacher lists every student's records", () => assertSucceeds(Promise.all(["transitionusers", "transitionprogress", "transitionstats"].map((c) => getDocs(collection(teacher, c)))))],
   ["transitions: teacher deletes a student's stats", () => assertSucceeds(deleteDoc(doc(teacher, "transitionstats/tr")))],
   ["transitions: student can't delete own stats", () => assertFails(deleteDoc(doc(p1, "transitionstats/p1")))],
+  // Sign-in codes: only the Cloud Functions (Admin SDK) use them.
+  ["codes: student can't read their sign-in code", () => assertFails(getDoc(doc(student, "signincodes/student@example.com")))],
+  ["codes: teacher can't list sign-in codes", () => assertFails(getDocs(collection(owner, "signincodes")))],
+  ["codes: anonymous can't write a sign-in code", () => assertFails(setDoc(doc(anon, "signincodes/student@example.com"), { hash: "x" }))],
 ];
 
 let failed = 0;

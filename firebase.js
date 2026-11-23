@@ -2,7 +2,7 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import {
-  getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signInWithRedirect, signOut,
+  getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signInWithRedirect, signInWithCustomToken, signOut,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import {
   getFirestore, doc, getDoc, setDoc, addDoc, deleteDoc, collection, getDocs, query, orderBy, limit,
@@ -78,6 +78,17 @@ export function signIn() {
     if (homeScreenApp && popupFailed) return signInWithRedirect(auth, provider);
     throw err;
   });
+}
+
+// Sign-in with a code sent by email, for students whose email isn't a Google
+// account (functions/signin.js). Both reject with the server's message.
+export async function sendSignInCode(email) {
+  return (await httpsCallable(getFunctions(app), "sendSignInCode")({ email })).data;
+}
+
+export async function signInWithCode(email, code) {
+  const { token } = (await httpsCallable(getFunctions(app), "verifySignInCode")({ email, code })).data;
+  return signInWithCustomToken(auth, token);
 }
 
 // Sign out on this device; watchUser then reports null.

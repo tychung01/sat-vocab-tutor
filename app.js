@@ -11,8 +11,9 @@
 // in. The leaderboard ranks students by study streak (days in a row finishing a
 // flashcard set) and by words learned, showing only user names and pictures.
 
+import { mountCodeSignIn } from "./code-signin.js";
 import {
-  configured, isTeacher, watchUser, signIn, signOutUser, recordLogin,
+  configured, isTeacher, watchUser, signIn, signOutUser, recordLogin, sendSignInCode, signInWithCode,
   loadProgress, saveWordProgress, saveStudyState, loadWordList, loadClassWords, loadHiddenWords,
   loadProfile, isUsernameTaken, createProfile, saveProfile, listProfiles, localDay,
   LEARNED_STREAK, PRACTICE_LIMIT,
@@ -808,6 +809,7 @@ function showSignedOut() {
   reviewStarted = false;
   views.forEach((v) => { $(`view-${v}`).hidden = true; });
   $("status").hidden = true;
+  codeSignIn.reset();
   $("sign-in").hidden = false;
 }
 
@@ -889,6 +891,9 @@ $("sign-in-button").addEventListener("click", () => {
 });
 
 $("sign-out").addEventListener("click", () => signOutUser());
+
+// Sign-in with a code sent by email, for students whose email isn't a Google account.
+const codeSignIn = mountCodeSignIn($("code-sign-in"), { sendCode: sendSignInCode, signInWithCode });
 
 function showWordCount() {
   $("updated").textContent = `${words.length} words · word list updated ${dbUpdated}`;

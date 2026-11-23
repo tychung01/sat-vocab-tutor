@@ -182,6 +182,33 @@ It needs a Gmail **app password** (Gmail won't take the normal password):
 To stop all reminders, delete the function:
 `npx -y firebase-tools@13 functions:delete remindInactive`
 
+## Sign-in with an emailed code (one-time setup)
+Students whose email isn't a Google account (iCloud, a school address) can tap
+**Sign in with a code sent to your email**. The `sendSignInCode` Cloud Function
+(`functions/signin.js`) emails a 6-digit code, through the same Gmail account
+and `GMAIL_APP_PASSWORD` secret as the reminders, but only to addresses that may
+use the app: invited, a teacher, or a student who already signed in, and not
+blocked. `verifySignInCode` checks it and signs the student in to the Firebase
+account with that email (created on first sign-in, marked verified). A code
+works for 10 minutes and 5 tries; each address gets at most one code a minute
+and 5 an hour. Codes are stored only as hashes, in `signincodes/{email}`, which
+no browser can read.
+
+Signing students in this way needs one permission: the functions' service
+account must be allowed to make sign-in tokens. In a terminal with `gcloud`
+signed in as the owner:
+
+```
+gcloud services enable iamcredentials.googleapis.com --project sat-word-study-bfabd
+gcloud iam service-accounts add-iam-policy-binding 74196131281-compute@developer.gserviceaccount.com --member=serviceAccount:74196131281-compute@developer.gserviceaccount.com --role=roles/iam.serviceAccountTokenCreator --project sat-word-study-bfabd
+```
+
+Then deploy: `npx -y firebase-tools@13 deploy --only functions,firestore:rules,hosting`
+
+Progress belongs to one account per email address. A student who signs in with
+Google as name@gmail.com and with a code as name@icloud.com has two separate
+accounts, so invite the address each student will use.
+
 ## What's stored
 - `users/{uid}`: name, email, photo, first and last login, login count, and
   how many days in a row they've visited

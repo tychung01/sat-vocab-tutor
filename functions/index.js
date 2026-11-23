@@ -8,6 +8,9 @@
 //
 // remindInactive and sendTestReminder (reminders.js): evening reminder emails
 // for students who haven't studied in more than 2 days.
+//
+// sendSignInCode and verifySignInCode (signin.js): sign-in with a 6-digit code
+// sent by email, for students whose email isn't a Google account.
 
 import Anthropic from "@anthropic-ai/sdk";
 import { betaZodOutputFormat } from "@anthropic-ai/sdk/helpers/beta/zod";
@@ -20,6 +23,7 @@ import { z } from "zod";
 initializeApp();
 
 export { remindInactive, sendTestReminder } from "./reminders.js";
+export { sendSignInCode, verifySignInCode } from "./signin.js";
 const anthropicKey = defineSecret("ANTHROPIC_API_KEY");
 
 // Keep in sync with OWNER_EMAILS in firebase-config.js and isAppOwner() in firestore.rules.

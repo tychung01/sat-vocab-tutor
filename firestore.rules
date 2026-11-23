@@ -15,6 +15,8 @@ rules_version = '2';
 // SAT Transitions (sattransitions.web.app, its own repo) uses this project too. It
 // shares sign-in, invites, teachers, blocked students, and profiles, and keeps its
 // own records in /transitionusers, /transitionprogress, and /transitionstats.
+// /signincodes/{email} holds hashed email sign-in codes for functions/signin.js;
+// no rule matches it, so no browser can read or write it.
 // Publish with: npx -y firebase-tools@13.29.1 deploy --only firestore:rules
 service cloud.firestore {
   match /databases/{database}/documents {

@@ -3,8 +3,9 @@
 // or remove words for each student, and shows the list of teachers. Firestore rules only let teachers
 // read this, and only the owner can add or remove teachers.
 
+import { mountCodeSignIn } from "./code-signin.js";
 import {
-  configured, isOwner, isTeacher, watchUser, signIn, signOutUser, listStudents, recentLogins,
+  configured, isOwner, isTeacher, watchUser, signIn, signOutUser, sendSignInCode, signInWithCode, listStudents, recentLogins,
   listTeachers, addTeacher, removeTeacher, addStudentWord, removeStudentWord, restoreStudentWord,
   loadClassWords, addClassWord, removeClassWord, writeWordContent, listInvites, addInvite, removeInvite,
   listBlocked, blockStudent, unblockStudent, listRemindersOff, setReminders, sendTestReminder, loadHiddenWords, isUsernameTaken, renameStudent, saveProfile, hideWord, unhideWord,
@@ -882,7 +883,7 @@ const INSTALL_GUIDE_URL = new URL("install.pdf", APP_URL).href; // made from INS
 function inviteMessage(email) {
   return {
     subject: "You're invited to SAT Word Study",
-    body: `Hi,\n\nI've invited you to SAT Word Study, a vocabulary app for the SAT. You'll study flashcards and take short quizzes in the SAT's Words in Context format.\n\nTo start:\n1. Open ${APP_URL}\n2. Click "Sign in with Google" and sign in with this email address: ${email}\n3. Pick a user name and a picture. Classmates will see them on the leaderboard, so choose something you're happy for them to see, and don't use your full name.\n\nThe leaderboard shows who has learned the most words and who has the longest study streak: days in a row finishing a set of flashcards. Try to keep your streak going!\n\nYou can put the app on your phone's home screen so it opens like any other app. This guide shows how on iPhone, iPad, and Android: ${INSTALL_GUIDE_URL}\n\nSAT Word Master`,
+    body: `Hi,\n\nI've invited you to SAT Word Study, a vocabulary app for the SAT. You'll study flashcards and take short quizzes in the SAT's Words in Context format.\n\nTo start:\n1. Open ${APP_URL}\n2. Sign in with this email address: ${email}\n   If it's a Google account, click "Sign in with Google". Otherwise, click "Sign in with a code sent to your email" and type the code we email you.\n3. Pick a user name and a picture. Classmates will see them on the leaderboard, so choose something you're happy for them to see, and don't use your full name.\n\nThe leaderboard shows who has learned the most words and who has the longest study streak: days in a row finishing a set of flashcards. Try to keep your streak going!\n\nYou can put the app on your phone's home screen so it opens like any other app. This guide shows how on iPhone, iPad, and Android: ${INSTALL_GUIDE_URL}\n\nSAT Word Master`,
   };
 }
 
@@ -973,7 +974,7 @@ async function renderTeachers() {
   const owner = isOwner(currentUser);
   $("add-teacher").hidden = !owner;
   $("teachers-help").textContent = owner
-    ? "Teachers can open this dashboard and see every student's progress. Add the Google account they'll sign in with. Only you, as the owner, can add or remove teachers."
+    ? "Teachers can open this dashboard and see every student's progress. Add the email they'll sign in with, with Google or with an emailed code. Only you, as the owner, can add or remove teachers."
     : "Teachers can open this dashboard and see every student's progress. Only the owner can add or remove teachers.";
   let teachers = [];
   try {
@@ -1106,6 +1107,7 @@ $("sign-in-button").addEventListener("click", () => signIn().catch((err) => {
   $("status").hidden = false;
 }));
 $("sign-out").addEventListener("click", () => signOutUser());
+const codeSignIn = mountCodeSignIn($("code-sign-in"), { sendCode: sendSignInCode, signInWithCode });
 
 if (!configured) {
   $("status").textContent = "Firebase isn't set up yet. See FIREBASE-SETUP.md.";
@@ -1117,6 +1119,7 @@ if (!configured) {
       $("account").hidden = true;
       $("dashboard").hidden = true;
       $("status").hidden = true;
+      codeSignIn.reset();
       $("sign-in").hidden = false;
     }
   });

@@ -16,7 +16,7 @@ import { HttpsError, onCall } from "firebase-functions/v2/https";
 import { onSchedule } from "firebase-functions/v2/scheduler";
 import nodemailer from "nodemailer";
 
-const gmailPassword = defineSecret("GMAIL_APP_PASSWORD");
+export const gmailPassword = defineSecret("GMAIL_APP_PASSWORD");
 export const SENDER = "tychung01@gmail.com";
 // Keep in sync with OWNER_EMAILS in index.js.
 const OWNER_EMAILS = ["tychung01@gmail.com"];
@@ -49,11 +49,11 @@ export function reminderMessage({ name, days }) {
   };
 }
 
-function mailer() {
+export function mailer() {
   return nodemailer.createTransport({ service: "gmail", auth: { user: SENDER, pass: gmailPassword.value() } });
 }
 
-async function send(transport, to, message) {
+export async function send(transport, to, message) {
   await transport.sendMail({ from: `"SAT Word Master" <${SENDER}>`, to, ...message });
 }
 
