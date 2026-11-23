@@ -158,6 +158,13 @@ to write each new word's content. Only teachers can call it. It needs:
 Each word costs well under a cent in Claude usage. If Claude declines a
 request, the function retries it on Anthropic's default fallback model.
 
+The same key is used by `newTransitionQuestion` (`functions/transitions.js`),
+which writes a new SAT Transitions practice question each time a student answers
+a word's question correctly, until the word is mastered (3 correct answers): at
+most 2 per word per student, and at most 60 per student a day. It keeps its own
+copy of SAT Transitions' word list and question bank in
+`functions/transitions-data/`; copy them again after changing them there.
+
 ## Reminder emails (one-time setup)
 The `remindInactive` Cloud Function (`functions/reminders.js`) runs every
 evening at 8 pm Eastern. It emails each signed-in student who hasn't opened

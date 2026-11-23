@@ -204,11 +204,19 @@ service cloud.firestore {
       }
     }
 
-    // { answers: { [question id]: { right, wrong, last, ts } }, cards: { [transition]: { status, ts } } }.
+    // { words: { [transition]: { correct, wrong, last, ts, rightAt } },
+    //   cards: { [transition]: { status, ts } },
+    //   answers: { [question id]: { right, wrong, last, ts } } (from before words were tracked) }.
     match /transitionprogress/{uid} {
       allow read: if (isSelf(uid) && canStudy()) || isTeacher();
       allow create, update: if isSelf(uid) && canStudy() && hasVisitedTransitions(uid)
-        && request.resource.data.keys().hasOnly(['answers', 'cards', 'updated']);
+        && request.resource.data.keys().hasOnly(['answers', 'words', 'cards', 'updated']);
+    }
+
+    // Practice questions Claude wrote for the student (functions/transitions.js).
+    // Only that function writes them.
+    match /transitionquestions/{uid} {
+      allow read: if (isSelf(uid) && canStudy()) || isTeacher();
     }
 
     // Leaderboard numbers, which other students can read with the profiles.

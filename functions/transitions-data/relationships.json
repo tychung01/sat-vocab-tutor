@@ -1,0 +1,21 @@
+{
+"fields": ["relationship", "meaning"],
+"rows": [
+["Addition", "Adds another point that supports or extends the same idea."],
+["Similarity", "Shows that the next idea is like the one before it."],
+["Contrast", "Shows that the next idea differs from or goes against the one before it."],
+["Concession", "Admits a point, then says something that still holds in spite of it."],
+["Cause and effect", "Shows that one thing leads to, or explains, another."],
+["Example", "Gives a specific case of the general idea before it."],
+["Emphasis", "Stresses or strengthens the point just made."],
+["Restatement", "Says the same idea again in different, often clearer, words."],
+["Sequence", "Shows the order of events or steps in time."],
+["Summary", "Sums up the ideas that came before."],
+["Condition", "Shows what follows if something is, or isn't, the case."],
+["Generalization", "States what is usually or broadly true."],
+["Attitude", "Shows how the writer feels about the point that follows, such as good news or a surprise."],
+["Place", "Shows where something is compared with what was just described."],
+["Repetition", "Points back to something that already happened or was already said."],
+["Replacement", "Shows that one thing takes the place of another."]
+]
+}

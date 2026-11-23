@@ -41,6 +41,8 @@ await env.withSecurityRulesDisabled(async (c) => {
   await setDoc(doc(db, "invites/tr@example.com"), { email: "tr@example.com", invitedBy: "teacher@example.com" });
   await setDoc(doc(db, "transitionusers/tb"), { name: "TB" });
   await setDoc(doc(db, "transitionprogress/tb"), { answers: {} });
+  await setDoc(doc(db, "transitionquestions/tr"), { words: {}, day: "2026-11-23", today: 0 });
+  await setDoc(doc(db, "transitionquestions/tb"), { words: {}, day: "2026-11-23", today: 0 });
   await setDoc(doc(db, "blocked/tb@example.com"), { email: "tb@example.com", blockedBy: "teacher@example.com" });
 });
 const p1 = as("p1", "p1@example.com");
@@ -210,6 +212,13 @@ const cases = [
   ["transitions: teacher records a visit without an invite", () => assertSucceeds(setDoc(doc(teacher, "transitionusers/t1"), { name: "T" }))],
   ["transitions: student saves and reads own progress", () => assertSucceeds(setDoc(doc(tr, "transitionprogress/tr"), tProgress()).then(() => getDoc(doc(tr, "transitionprogress/tr"))))],
   ["transitions: student saves one answer", () => assertSucceeds(setDoc(doc(tr, "transitionprogress/tr"), { answers: { "TR-002": { right: 0, wrong: 1, last: "wrong", ts: 2 } }, updated: serverTimestamp() }, { merge: true }))],
+  ["transitions: student saves one word", () => assertSucceeds(setDoc(doc(tr, "transitionprogress/tr"), { words: { "however": { correct: 1, wrong: 0, last: "right", ts: 3, rightAt: 3 } }, updated: serverTimestamp() }, { merge: true }))],
+  ["transitions: student reads own Claude questions", () => assertSucceeds(getDoc(doc(tr, "transitionquestions/tr")))],
+  ["transitions: student can't write Claude questions", () => assertFails(setDoc(doc(tr, "transitionquestions/tr"), { today: 0 }))],
+  ["transitions: student can't read another student's Claude questions", () => assertFails(getDoc(doc(student, "transitionquestions/tr")))],
+  ["transitions: teacher reads a student's Claude questions", () => assertSucceeds(getDoc(doc(teacher, "transitionquestions/tr")))],
+  ["transitions: teacher can't write Claude questions", () => assertFails(setDoc(doc(teacher, "transitionquestions/tr"), { today: 0 }))],
+  ["transitions: blocked student can't read own Claude questions", () => assertFails(getDoc(doc(tb, "transitionquestions/tb")))],
   ["transitions: student can't add other fields to progress", () => assertFails(setDoc(doc(tr, "transitionprogress/tr"), { note: "x" }, { merge: true }))],
   ["transitions: student can't read another student's progress", () => assertFails(getDoc(doc(student, "transitionprogress/tr")))],
   ["transitions: student can't write another student's progress", () => assertFails(setDoc(doc(student, "transitionprogress/tr"), tProgress()))],

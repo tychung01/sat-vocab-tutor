@@ -11,20 +11,23 @@
 //
 // sendSignInCode and verifySignInCode (signin.js): sign-in with a 6-digit code
 // sent by email, for students whose email isn't a Google account.
+//
+// newTransitionQuestion (transitions.js): a new SAT Transitions practice question
+// for a word, written by Claude after the student answers its question correctly.
 
 import Anthropic from "@anthropic-ai/sdk";
 import { betaZodOutputFormat } from "@anthropic-ai/sdk/helpers/beta/zod";
 import { initializeApp } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
-import { defineSecret } from "firebase-functions/params";
 import { HttpsError, onCall } from "firebase-functions/v2/https";
 import { z } from "zod";
+import { anthropicKey } from "./secrets.js";
 
 initializeApp();
 
 export { remindInactive, sendTestReminder } from "./reminders.js";
 export { sendSignInCode, verifySignInCode } from "./signin.js";
-const anthropicKey = defineSecret("ANTHROPIC_API_KEY");
+export { newTransitionQuestion } from "./transitions.js";
 
 // Keep in sync with OWNER_EMAILS in firebase-config.js and isAppOwner() in firestore.rules.
 const OWNER_EMAILS = ["tychung01@gmail.com"];
