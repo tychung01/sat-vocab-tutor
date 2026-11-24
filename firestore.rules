@@ -15,6 +15,9 @@ rules_version = '2';
 // SAT Transitions (sattransitions.web.app, its own repo) uses this project too. It
 // shares sign-in, invites, teachers, blocked students, and profiles, and keeps its
 // own records in /transitionusers, /transitionprogress, and /transitionstats.
+// SAT Reading (satreading.web.app, its own repo) uses this project the same way,
+// with its records in /readingusers, /readingprogress, and /readingchoices, and the
+// shared question batches in /readingbatches (written by functions/reading.js).
 // /signincodes/{email} holds hashed email sign-in codes for functions/signin.js;
 // no rule matches it, so no browser can read or write it.
 // Publish with: npx -y firebase-tools@13.29.1 deploy --only firestore:rules
@@ -78,6 +81,11 @@ service cloud.firestore {
     // A student's SAT Transitions record exists once they've opened that app with access.
     function hasVisitedTransitions(uid) {
       return exists(/databases/$(database)/documents/transitionusers/$(uid));
+    }
+
+    // A student's SAT Reading record exists once they've opened that app with access.
+    function hasVisitedReading(uid) {
+      return exists(/databases/$(database)/documents/readingusers/$(uid));
     }
 
     // SAT Transitions leaderboard numbers as they will be after this write.
@@ -224,6 +232,56 @@ service cloud.firestore {
       allow read: if request.auth != null && canStudy();
       allow create, update: if isSelf(uid) && canStudy() && hasVisitedTransitions(uid) && validTransitionStats();
       allow delete: if isTeacher();
+    }
+
+    // ---------- SAT Reading ----------
+    // Access works as in SAT Transitions. Questions and their answer choices are
+    // written only by functions/reading.js.
+
+    // Visits: { name, email, photo, firstVisit, lastVisit, visitCount, ... }.
+    match /readingusers/{uid} {
+      allow read: if (isSelf(uid) && canStudy()) || isTeacher();
+      allow create: if isSelf(uid) && canStudy() && (isInvited() || isTeacher() || hasSignedIn(uid) || hasVisitedTransitions(uid));
+      allow update: if isSelf(uid) && canStudy();
+
+      match /visits/{visitId} {
+        allow read: if (isSelf(uid) && canStudy()) || isTeacher();
+        allow create: if isSelf(uid) && canStudy() && hasVisitedReading(uid);
+      }
+    }
+
+    // { batch, answers: { [question id]: { ok, t, sub, tries: [{ s, ok, at, p }] } },
+    //   round: { ids, results, started } or null, rounds: [{ at, n, right, avg }] }.
+    match /readingprogress/{uid} {
+      allow read: if (isSelf(uid) && canStudy()) || isTeacher();
+      allow create, update: if isSelf(uid) && canStudy() && hasVisitedReading(uid)
+        && request.resource.data.keys().hasOnly(['batch', 'answers', 'round', 'rounds', 'updated']);
+    }
+
+    // New answer choices the Reviewer wrote for questions the student missed.
+    match /readingchoices/{uid} {
+      allow read: if (isSelf(uid) && canStudy()) || isTeacher();
+    }
+
+    // The shared batches of 150 questions. Teachers can pull a question
+    // ({ pulled: { [question id]: { by, at } } }) so students skip it.
+    match /readingbatches/{number} {
+      allow read: if request.auth != null && canStudy() && (hasVisitedReading(request.auth.uid) || isTeacher());
+      allow update: if isTeacher() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['pulled']);
+    }
+
+    // The batch being written: students see its status; teachers also see its items.
+    match /readingjobs/{number} {
+      allow read: if request.auth != null && canStudy() && (hasVisitedReading(request.auth.uid) || isTeacher());
+
+      match /items/{itemId} {
+        allow read: if isTeacher();
+      }
+    }
+
+    // Which parts of which sources earlier batches used.
+    match /readingmeta/{docId} {
+      allow read: if isTeacher();
     }
   }
 }

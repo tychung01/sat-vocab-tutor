@@ -14,6 +14,11 @@
 //
 // newTransitionQuestion (transitions.js): a new SAT Transitions practice question
 // for a word, written by Claude after the student answers its question correctly.
+//
+// SAT Reading (reading.js): onReadingJobCreated, advanceReadingJobs,
+// prepareReadingBatch, and checkReadingBatches write and review the shared
+// batches of 150 reading questions; rewriteReadingChoices writes new answer
+// choices for a question a student missed.
 
 import Anthropic from "@anthropic-ai/sdk";
 import { betaZodOutputFormat } from "@anthropic-ai/sdk/helpers/beta/zod";
@@ -24,10 +29,15 @@ import { z } from "zod";
 import { anthropicKey } from "./secrets.js";
 
 initializeApp();
+// Some saved objects (SAT Reading's items) have fields that are sometimes undefined.
+getFirestore().settings({ ignoreUndefinedProperties: true });
 
 export { remindInactive, sendTestReminder } from "./reminders.js";
 export { sendSignInCode, verifySignInCode } from "./signin.js";
 export { newTransitionQuestion } from "./transitions.js";
+export {
+  onReadingJobCreated, advanceReadingJobs, prepareReadingBatch, checkReadingBatches, rewriteReadingChoices,
+} from "./reading.js";
 
 // Keep in sync with OWNER_EMAILS in firebase-config.js and isAppOwner() in firestore.rules.
 const OWNER_EMAILS = ["tychung01@gmail.com"];

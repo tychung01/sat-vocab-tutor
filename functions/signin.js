@@ -57,7 +57,7 @@ export function checkCode(stored, code, now) {
 }
 
 // The app the code is for, from the app's request; SAT Word Study if unknown.
-const APP_NAMES = { words: "SAT Word Study", transitions: "SAT Transitions" };
+const APP_NAMES = { words: "SAT Word Study", transitions: "SAT Transitions", reading: "SAT Reading" };
 export const appName = (app) => APP_NAMES[app] || APP_NAMES.words;
 
 export function codeMessage(code, app) {
@@ -85,8 +85,10 @@ async function mayStudy(db, email) {
   if (!user.empty) return true;
   try {
     const { uid } = await getAuth().getUserByEmail(email);
-    const [words, transitions] = await Promise.all([db.doc(`users/${uid}`).get(), db.doc(`transitionusers/${uid}`).get()]);
-    return words.exists || transitions.exists;
+    const [words, transitions, reading] = await Promise.all([
+      db.doc(`users/${uid}`).get(), db.doc(`transitionusers/${uid}`).get(), db.doc(`readingusers/${uid}`).get(),
+    ]);
+    return words.exists || transitions.exists || reading.exists;
   } catch {
     return false;
   }

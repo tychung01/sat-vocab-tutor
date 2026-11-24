@@ -44,6 +44,16 @@ await env.withSecurityRulesDisabled(async (c) => {
   await setDoc(doc(db, "transitionquestions/tr"), { words: {}, day: "2026-11-23", today: 0 });
   await setDoc(doc(db, "transitionquestions/tb"), { words: {}, day: "2026-11-23", today: 0 });
   await setDoc(doc(db, "blocked/tb@example.com"), { email: "tb@example.com", blockedBy: "teacher@example.com" });
+  // SAT Reading: an invited student, a reading student whose access was removed,
+  // a published batch, a batch being written, and new choices for a student.
+  await setDoc(doc(db, "invites/rd@example.com"), { email: "rd@example.com", invitedBy: "teacher@example.com" });
+  await setDoc(doc(db, "readingusers/rb"), { name: "RB" });
+  await setDoc(doc(db, "blocked/rb@example.com"), { email: "rb@example.com", blockedBy: "teacher@example.com" });
+  await setDoc(doc(db, "readingbatches/1"), { number: 1, questions: [{ id: "b1-001" }], sets: {}, pulled: {} });
+  await setDoc(doc(db, "readingjobs/2"), { number: 2, status: "active" });
+  await setDoc(doc(db, "readingjobs/2/items/s001"), { state: "write" });
+  await setDoc(doc(db, "readingchoices/rd"), { q: {}, day: "2026-11-24", today: 0 });
+  await setDoc(doc(db, "readingmeta/sources"), { used: {} });
 });
 const p1 = as("p1", "p1@example.com");
 const p2 = as("p2", "p2@example.com");
@@ -63,6 +73,9 @@ const block = (db, email, extra = {}) =>
 
 const tr = as("tr", "tr@example.com");
 const tb = as("tb", "tb@example.com");
+const rd = as("rd", "rd@example.com");
+const rb = as("rb", "rb@example.com");
+const rProgress = () => ({ batch: 1, answers: { "b1-001": { ok: true, t: "inference", sub: "Science", tries: [{ s: 41.2, ok: true, at: 1, p: 2 }] } }, round: null, rounds: [], updated: serverTimestamp() });
 const tProgress = () => ({ answers: { "TR-001": { right: 1, wrong: 0, last: "right", ts: 1 } }, cards: { "however,": { status: "known", ts: 1 } }, updated: serverTimestamp() });
 const tStats = () => ({ streak: 1, lastDay: "2026-11-16", mastered: 1, updated: serverTimestamp() });
 
@@ -241,6 +254,35 @@ const cases = [
   ["transitions: teacher lists every student's records", () => assertSucceeds(Promise.all(["transitionusers", "transitionprogress", "transitionstats"].map((c) => getDocs(collection(teacher, c)))))],
   ["transitions: teacher deletes a student's stats", () => assertSucceeds(deleteDoc(doc(teacher, "transitionstats/tr")))],
   ["transitions: student can't delete own stats", () => assertFails(deleteDoc(doc(p1, "transitionstats/p1")))],
+  // SAT Reading.
+  ["reading: student can't read batches before opening the app", () => assertFails(getDoc(doc(rd, "readingbatches/1")))],
+  ["reading: student can't save progress before opening the app", () => assertFails(setDoc(doc(rd, "readingprogress/rd"), rProgress()))],
+  ["reading: invited student records a visit", () => assertSucceeds(setDoc(doc(rd, "readingusers/rd"), { name: "RD", email: "rd@example.com" }))],
+  ["reading: student records a visit entry", () => assertSucceeds(setDoc(doc(rd, "readingusers/rd/visits/v1"), { at: serverTimestamp() }))],
+  ["reading: uninvited student can't record a visit", () => assertFails(setDoc(doc(stranger, "readingusers/s3"), { name: "S3" }))],
+  ["reading: transitions student can open SAT Reading", () => assertSucceeds(setDoc(doc(tr, "readingusers/tr"), { name: "TR" }))],
+  ["reading: student saves progress", () => assertSucceeds(setDoc(doc(rd, "readingprogress/rd"), rProgress()))],
+  ["reading: student saves one answer", () => assertSucceeds(setDoc(doc(rd, "readingprogress/rd"), { answers: { "b1-002": { ok: false, tries: [{ s: 70, ok: false, at: 2, p: 0 }] } }, updated: serverTimestamp() }, { merge: true }))],
+  ["reading: student can't add other fields to progress", () => assertFails(setDoc(doc(rd, "readingprogress/rd"), { score: 100 }, { merge: true }))],
+  ["reading: student can't save another student's progress", () => assertFails(setDoc(doc(student, "readingprogress/rd"), rProgress()))],
+  ["reading: student reads a batch", () => assertSucceeds(getDoc(doc(rd, "readingbatches/1")))],
+  ["reading: student can't write a batch", () => assertFails(setDoc(doc(rd, "readingbatches/1"), { pulled: { "b1-001": true } }, { merge: true }))],
+  ["reading: student can't create a batch", () => assertFails(setDoc(doc(rd, "readingbatches/9"), { number: 9, questions: [] }))],
+  ["reading: teacher pulls a question", () => assertSucceeds(setDoc(doc(teacher, "readingbatches/1"), { pulled: { "b1-001": { by: "teacher@example.com", at: 1 } } }, { merge: true }))],
+  ["reading: teacher can't change a batch's questions", () => assertFails(setDoc(doc(teacher, "readingbatches/1"), { questions: [] }, { merge: true }))],
+  ["reading: student sees the next batch's status", () => assertSucceeds(getDoc(doc(rd, "readingjobs/2")))],
+  ["reading: student can't read the next batch's items", () => assertFails(getDoc(doc(rd, "readingjobs/2/items/s001")))],
+  ["reading: teacher reads the next batch's items", () => assertSucceeds(getDocs(collection(teacher, "readingjobs/2/items")))],
+  ["reading: student can't start a batch", () => assertFails(setDoc(doc(rd, "readingjobs/3"), { number: 3, status: "active" }))],
+  ["reading: student reads own new choices", () => assertSucceeds(getDoc(doc(rd, "readingchoices/rd")))],
+  ["reading: student can't write new choices", () => assertFails(setDoc(doc(rd, "readingchoices/rd"), { q: {} }))],
+  ["reading: student can't read another student's new choices", () => assertFails(getDoc(doc(tr, "readingchoices/rd")))],
+  ["reading: teacher reads a student's new choices", () => assertSucceeds(getDoc(doc(teacher, "readingchoices/rd")))],
+  ["reading: student can't read source records", () => assertFails(getDoc(doc(rd, "readingmeta/sources")))],
+  ["reading: teacher lists every student's records", () => assertSucceeds(Promise.all(["readingusers", "readingprogress", "readingchoices"].map((c) => getDocs(collection(teacher, c)))))],
+  ["reading: blocked student can't read batches", () => assertFails(getDoc(doc(rb, "readingbatches/1")))],
+  ["reading: blocked student can't save progress", () => assertFails(setDoc(doc(rb, "readingprogress/rb"), rProgress()))],
+  ["reading: blocked student can't record a visit", () => assertFails(setDoc(doc(rb, "readingusers/rb"), { name: "RB" }, { merge: true }))],
   // Sign-in codes: only the Cloud Functions (Admin SDK) use them.
   ["codes: student can't read their sign-in code", () => assertFails(getDoc(doc(student, "signincodes/student@example.com")))],
   ["codes: teacher can't list sign-in codes", () => assertFails(getDocs(collection(owner, "signincodes")))],

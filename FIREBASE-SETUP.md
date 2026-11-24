@@ -165,6 +165,24 @@ most 2 per word per student, and at most 60 per student a day. It keeps its own
 copy of SAT Transitions' word list and question bank in
 `functions/transitions-data/`; copy them again after changing them there.
 
+SAT Reading's functions (`functions/reading.js`) use the key too:
+
+- `onReadingJobCreated`, `advanceReadingJobs` (every 5 minutes),
+  `prepareReadingBatch`, and `checkReadingBatches` write the shared batches of 150
+  reading questions. A batch starts when a student is within 20 questions of
+  finishing the newest one (or when the first student opens the app). It runs in
+  rounds through Claude's Message Batches API at half price: the writer writes
+  each question from a PLOS or Project Gutenberg passage (`reading-sources.js`),
+  code checks it (`reading-content.js`), and the Reviewer answers it without the
+  key and approves, fixes, or rejects it. The dashboard's Questions tab shows each
+  batch's progress, log, and cost.
+- `rewriteReadingChoices` writes new answer choices for a question a student
+  missed (at most 100 per student a day).
+
+Unit tests: `cd functions && node --test test/`. In the emulator a stand-in for
+Claude writes simple questions from the real sources at no cost; set
+`READING_REAL_CLAUDE=1` to use Claude there.
+
 ## Reminder emails (one-time setup)
 The `remindInactive` Cloud Function (`functions/reminders.js`) runs every
 evening at 8 pm Eastern. It emails each signed-in student who hasn't opened
