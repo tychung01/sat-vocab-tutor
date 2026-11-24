@@ -54,6 +54,13 @@ await env.withSecurityRulesDisabled(async (c) => {
   await setDoc(doc(db, "readingjobs/2/items/s001"), { state: "write" });
   await setDoc(doc(db, "readingchoices/rd"), { q: {}, day: "2026-11-24", today: 0 });
   await setDoc(doc(db, "readingmeta/sources"), { used: {} });
+  // SAT Math: an invited student, a published batch, a batch being written, a pool question.
+  await setDoc(doc(db, "invites/ma@example.com"), { email: "ma@example.com", invitedBy: "teacher@example.com" });
+  await setDoc(doc(db, "mathbatches/1"), { number: 1, questions: [{ id: "b1-q001" }], pulled: {} });
+  await setDoc(doc(db, "mathjobs/2"), { number: 2, status: "active" });
+  await setDoc(doc(db, "mathjobs/2/items/q001"), { state: "write" });
+  await setDoc(doc(db, "mathpool/b1-q001"), { id: "b1-q001", skill: "linear_systems", pulled: false, inBatch: 1 });
+  await setDoc(doc(db, "mathextra/ma"), { q: {} });
 });
 const p1 = as("p1", "p1@example.com");
 const p2 = as("p2", "p2@example.com");
@@ -74,6 +81,7 @@ const block = (db, email, extra = {}) =>
 const tr = as("tr", "tr@example.com");
 const tb = as("tb", "tb@example.com");
 const rd = as("rd", "rd@example.com");
+const ma = as("ma", "ma@example.com");
 const rb = as("rb", "rb@example.com");
 const rProgress = () => ({ batch: 1, answers: { "b1-001": { ok: true, t: "inference", sub: "Science", tries: [{ s: 41.2, ok: true, at: 1, p: 2 }] } }, round: null, rounds: [], updated: serverTimestamp() });
 const tProgress = () => ({ answers: { "TR-001": { right: 1, wrong: 0, last: "right", ts: 1 } }, cards: { "however,": { status: "known", ts: 1 } }, updated: serverTimestamp() });
@@ -297,6 +305,30 @@ const cases = [
   ["banks: teacher can't add other fields to the word bank", () => assertFails(setDoc(doc(teacher, "wordbank/laconic"), { note: "x" }, { merge: true }))],
   ["banks: student can't read the word bank", () => assertFails(getDoc(doc(student, "wordbank/laconic")))],
   ["banks: student can't write the word bank", () => assertFails(setDoc(doc(student, "wordbank/terse"), { word: "terse", versions: [] }))],
+  // SAT Math.
+  ["math: student can't read batches before opening the app", () => assertFails(getDoc(doc(ma, "mathbatches/1")))],
+  ["math: invited student records a visit", () => assertSucceeds(setDoc(doc(ma, "mathusers/ma"), { name: "MA" }))],
+  ["math: student records a visit entry", () => assertSucceeds(setDoc(doc(ma, "mathusers/ma/visits/v1"), { at: serverTimestamp() }))],
+  ["math: uninvited student can't record a visit", () => assertFails(setDoc(doc(stranger, "mathusers/s3"), { name: "S3" }))],
+  ["math: reading student can open SAT Math", () => assertSucceeds(setDoc(doc(rd, "mathusers/rd"), { name: "RD" }))],
+  ["math: student saves progress", () => assertSucceeds(setDoc(doc(ma, "mathprogress/ma"), { batch: 1, answers: { "b1-q001": { ok: true, sk: "linear_systems", b: 1, tries: [{ s: 40, ok: true, at: 1, p: 0 }] } }, round: null, rounds: [], sinceQuiz: ["b1-q001"], quiz: null, quizzes: [], updated: serverTimestamp() }))],
+  ["math: student can't add other fields to progress", () => assertFails(setDoc(doc(ma, "mathprogress/ma"), { score: 1 }, { merge: true }))],
+  ["math: student can't save another student's progress", () => assertFails(setDoc(doc(rd, "mathprogress/ma"), { batch: 1 }))],
+  ["math: student reads a batch", () => assertSucceeds(getDoc(doc(ma, "mathbatches/1")))],
+  ["math: student can't write a batch", () => assertFails(setDoc(doc(ma, "mathbatches/1"), { pulled: { x: 1 } }, { merge: true }))],
+  ["math: teacher pulls a batch question", () => assertSucceeds(setDoc(doc(teacher, "mathbatches/1"), { pulled: { "b1-q001": { by: "t", at: 1 } } }, { merge: true }))],
+  ["math: teacher can't change a batch's questions", () => assertFails(setDoc(doc(teacher, "mathbatches/1"), { questions: [] }, { merge: true }))],
+  ["math: student sees the next batch's status", () => assertSucceeds(getDoc(doc(ma, "mathjobs/2")))],
+  ["math: student can't read a job's items", () => assertFails(getDoc(doc(ma, "mathjobs/2/items/q001")))],
+  ["math: teacher reads a job's items", () => assertSucceeds(getDocs(collection(teacher, "mathjobs/2/items")))],
+  ["math: student reads own twin questions", () => assertSucceeds(getDoc(doc(ma, "mathextra/ma")))],
+  ["math: student can't write twin questions", () => assertFails(setDoc(doc(ma, "mathextra/ma"), { q: {} }))],
+  ["math: student can't read another student's twin questions", () => assertFails(getDoc(doc(rd, "mathextra/ma")))],
+  ["math: student can't read the pool", () => assertFails(getDoc(doc(ma, "mathpool/b1-q001")))],
+  ["math: teacher reads the pool", () => assertSucceeds(getDocs(collection(teacher, "mathpool")))],
+  ["math: teacher pulls a pool question", () => assertSucceeds(setDoc(doc(teacher, "mathpool/b1-q001"), { pulled: true }, { merge: true }))],
+  ["math: teacher can't rewrite a pool question", () => assertFails(setDoc(doc(teacher, "mathpool/b1-q001"), { skill: "x" }, { merge: true }))],
+  ["math: teacher lists every student's records", () => assertSucceeds(Promise.all(["mathusers", "mathprogress", "mathextra"].map((c) => getDocs(collection(teacher, c)))))],
   // Sign-in codes: only the Cloud Functions (Admin SDK) use them.
   ["codes: student can't read their sign-in code", () => assertFails(getDoc(doc(student, "signincodes/student@example.com")))],
   ["codes: teacher can't list sign-in codes", () => assertFails(getDocs(collection(owner, "signincodes")))],

@@ -179,7 +179,15 @@ SAT Reading's functions (`functions/reading.js`) use the key too:
 - `rewriteReadingChoices` writes new answer choices for a question a student
   missed (at most 100 per student a day).
 
-Unit tests: `cd functions && node --test test/reading.test.mjs`. In the emulator a stand-in for
+SAT Math's functions (`functions/math.js`) use the key too: the Math Tutor writes
+and checks the shared batches of 150 math questions (`onMathJobCreated`,
+`advanceMathJobs`, `prepareMathBatch`, `checkMathBatches`, through the Message
+Batches API, checking each question's arithmetic with Claude's code tool), a twin
+question for each missed one (`mathTwin`), and a fresh question for each skill a
+student missed in the batch before (`mathFresh`), at most 80 new ones per student
+a day. Every question goes into `/mathpool`, which new batches are built from first.
+
+Unit tests: `cd functions && node --test test/reading.test.mjs` and `node --test test/math.test.mjs`. In the emulator a stand-in for
 Claude writes simple questions from the real sources at no cost; set
 `READING_REAL_CLAUDE=1` to use Claude there.
 

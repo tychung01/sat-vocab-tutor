@@ -23,6 +23,12 @@
 //
 // backfillBanks (banks.js): a one-time copy of earlier content into the shared
 // banks (Transitions questions, Reading answer choices, Word Study words).
+//
+// SAT Math (math.js): the Math Tutor writes and checks the shared batches of 150
+// math questions (onMathJobCreated, advanceMathJobs, prepareMathBatch,
+// checkMathBatches), a twin question for each missed one (mathTwin), and a fresh
+// question for each skill missed in the batch before (mathFresh). Every question
+// it writes goes into the shared pool that batches are built from.
 
 import Anthropic from "@anthropic-ai/sdk";
 import { betaZodOutputFormat } from "@anthropic-ai/sdk/helpers/beta/zod";
@@ -43,6 +49,7 @@ export {
   onReadingJobCreated, advanceReadingJobs, prepareReadingBatch, checkReadingBatches, rewriteReadingChoices,
 } from "./reading.js";
 export { backfillBanks } from "./banks.js";
+export { onMathJobCreated, advanceMathJobs, prepareMathBatch, checkMathBatches, mathTwin, mathFresh } from "./math.js";
 
 // Keep in sync with OWNER_EMAILS in firebase-config.js and isAppOwner() in firestore.rules.
 const OWNER_EMAILS = ["tychung01@gmail.com"];

@@ -18,6 +18,9 @@ rules_version = '2';
 // SAT Reading (satreading.web.app, its own repo) uses this project the same way,
 // with its records in /readingusers, /readingprogress, and /readingchoices, and the
 // shared question batches in /readingbatches (written by functions/reading.js).
+// SAT Math (satmath.web.app, its own repo) works the same way, with /mathusers,
+// /mathprogress, and /mathextra per student, the shared batches in /mathbatches,
+// and every question the Math Tutor wrote in /mathpool (functions/math.js).
 // /signincodes/{email} holds hashed email sign-in codes for functions/signin.js;
 // no rule matches it, so no browser can read or write it.
 // Publish with: npx -y firebase-tools@13.29.1 deploy --only firestore:rules
@@ -86,6 +89,11 @@ service cloud.firestore {
     // A student's SAT Reading record exists once they've opened that app with access.
     function hasVisitedReading(uid) {
       return exists(/databases/$(database)/documents/readingusers/$(uid));
+    }
+
+    // A student's SAT Math record exists once they've opened that app with access.
+    function hasVisitedMath(uid) {
+      return exists(/databases/$(database)/documents/mathusers/$(uid));
     }
 
     // SAT Transitions leaderboard numbers as they will be after this write.
@@ -308,6 +316,55 @@ service cloud.firestore {
     // who miss it. Only the functions write them.
     match /readingchoicebank/{questionId} {
       allow read: if isTeacher();
+    }
+
+    // ---------- SAT Math ----------
+    // Access works as in the other apps. Questions are written only by functions/math.js.
+
+    match /mathusers/{uid} {
+      allow read: if (isSelf(uid) && canStudy()) || isTeacher();
+      allow create: if isSelf(uid) && canStudy()
+        && (isInvited() || isTeacher() || hasSignedIn(uid) || hasVisitedTransitions(uid) || hasVisitedReading(uid));
+      allow update: if isSelf(uid) && canStudy();
+
+      match /visits/{visitId} {
+        allow read: if (isSelf(uid) && canStudy()) || isTeacher();
+        allow create: if isSelf(uid) && canStudy() && hasVisitedMath(uid);
+      }
+    }
+
+    // { batch, answers: { [question id]: { ok, cleared, sk, ar, b, tries } }, round,
+    //   rounds, sinceQuiz, quiz, quizzes }.
+    match /mathprogress/{uid} {
+      allow read: if (isSelf(uid) && canStudy()) || isTeacher();
+      allow create, update: if isSelf(uid) && canStudy() && hasVisitedMath(uid)
+        && request.resource.data.keys().hasOnly(['batch', 'answers', 'round', 'rounds', 'sinceQuiz', 'quiz', 'quizzes', 'updated']);
+    }
+
+    // Twin and fresh questions given to the student (written by the functions).
+    match /mathextra/{uid} {
+      allow read: if (isSelf(uid) && canStudy()) || isTeacher();
+    }
+
+    // The shared batches. Teachers can pull a question ({ pulled: { [id]: { by, at } } }).
+    match /mathbatches/{number} {
+      allow read: if request.auth != null && canStudy() && (hasVisitedMath(request.auth.uid) || isTeacher());
+      allow update: if isTeacher() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['pulled']);
+    }
+
+    match /mathjobs/{number} {
+      allow read: if request.auth != null && canStudy() && (hasVisitedMath(request.auth.uid) || isTeacher());
+
+      match /items/{itemId} {
+        allow read: if isTeacher();
+      }
+    }
+
+    // Every question the Math Tutor wrote. Teachers can pull one so no batch,
+    // twin, or fresh question uses it.
+    match /mathpool/{questionId} {
+      allow read: if isTeacher();
+      allow update: if isTeacher() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['pulled']);
     }
   }
 }
