@@ -371,9 +371,10 @@ export function studentView(q, set) {
 
 // ---------- checks ----------
 
-// Fidelity to the source: excerpts from books keep the author's words; adapted
-// science passages may smooth more.
-const MIN_OVERLAP = { gutenberg: 0.75, plos: 0.45 };
+// Fidelity to the source: excerpts from books keep the author's words; science
+// passages are adapted from research abstracts into plain English, as the SAT
+// does, so they share less wording (the Reviewer checks them against the source).
+const MIN_OVERLAP = { gutenberg: 0.75, plos: 0.3 };
 
 function checkChoices(choices, answer) {
   if (!Array.isArray(choices) || choices.length !== 4) return "there must be exactly 4 choices";
@@ -397,16 +398,18 @@ export function checkShortDraft(item, d) {
   if (underlined && item.type !== "structure_purpose") return "only structure and purpose questions can underline a sentence";
   if (/underlined/i.test(d.question) && !underlined) return "the question mentions an underlined sentence, but none is marked with {{ }}";
 
+  // Notes paraphrase the source (the Reviewer checks them against it).
   if (item.type === "rhetorical_synthesis") {
     if (d.notes.length < 4 || d.notes.length > 7) return "rhetorical synthesis needs 4-6 notes";
-    const sourceNumbers = new Set(numbers(item.source.text));
-    if (numbers(d.notes.join(" ")).some((n) => !sourceNumbers.has(n))) return "a number in the notes isn't in the source";
     if (wordCount(d.notes.join(" ")) > 180) return "the notes are too long";
     return null;
   }
   const words = wordCount(d.passage);
   if (words < 25 || words > 150) return `the passage is ${words} words; it must be 25-150`;
-  if (overlap(d.passage, item.source.text) < minOverlap) return "the passage must be an excerpt of the source, keeping its wording";
+  // A quotation question's passage states a claim about the work; its choices are
+  // the quotations, checked below.
+  const quotation = item.type === "evidence_text" && /quotation/i.test(d.question);
+  if (!quotation && overlap(d.passage, item.source.text) < minOverlap) return "the passage must be an excerpt of the source, keeping its wording";
   if (item.type === "cross_text") {
     const words2 = wordCount(d.passage2);
     if (words2 < 25 || words2 > 150) return `Text 2 is ${words2} words; it must be 25-150`;
@@ -430,7 +433,7 @@ export function checkShortDraft(item, d) {
     const sourceNumbers = new Set(numbers(item.source.text));
     if (numbers(d.table_rows.map(rowCells).flat().join(" ")).some((n) => !sourceNumbers.has(n))) return "a number in the table isn't in the source";
   } else if (d.table_columns.length || d.table_rows.length) return "only data questions have a table";
-  if (item.type === "evidence_text" && /quotation/i.test(d.question)) {
+  if (quotation) {
     const missing = d.choices.filter((c) => !quoteFound(c, item.source.text));
     if (missing.length) return "each quotation choice must be quoted word for word from the source";
   }
@@ -564,7 +567,8 @@ export function shortQuestion(item) {
 
 // Puts approved items together into a batch: up to SETS_PER_BATCH sets, then
 // short questions up to BATCH_SIZE, in a random order (each set's questions stay
-// together, in order). `random` is for tests.
+// together, in order). Returns { batch, leftover } with the ids of approved items
+// it didn't use. `random` is for tests.
 export function assembleBatch(number, items, random = Math.random) {
   const shuffle = (list) => {
     const a = [...list];
@@ -584,7 +588,8 @@ export function assembleBatch(number, items, random = Math.random) {
     sets.push(approvedSets[sets.length]);
     room = Math.max(0, BATCH_SIZE - setQuestions());
   }
-  const units = shuffle([...sets.map((s) => ({ set: s })), ...shorts.slice(0, room).map((s) => ({ short: s }))]);
+  const usedShorts = shorts.slice(0, room);
+  const units = shuffle([...sets.map((s) => ({ set: s })), ...usedShorts.map((s) => ({ short: s }))]);
   const questions = [];
   const setDocs = {};
   const id = (k) => `b${number}-${String(k).padStart(3, "0")}`;
@@ -605,7 +610,28 @@ export function assembleBatch(number, items, random = Math.random) {
       });
     });
   }
-  return { number, questions, sets: setDocs };
+  // The approved items the batch didn't use are kept for the next batch.
+  const used = new Set([...sets, ...usedShorts].map((i) => i.id));
+  const leftover = items.filter((i) => i.state === "approved" && !used.has(i.id)).map((i) => i.id);
+  return { batch: { number, questions, sets: setDocs }, leftover };
+}
+
+// Fills a new batch's plan with approved items kept from earlier batches: each
+// takes the place of a planned item of the same kind (and, for SAT-style items,
+// the same type if one is left). Returns { items, usedReserve } with the ids of
+// the reserve items used.
+export function useReserve(planned, reserve) {
+  const items = planned.map((i) => ({ ...i }));
+  const usedReserve = [];
+  for (const r of reserve) {
+    const open = (i) => i.state === "source" && i.kind === r.kind;
+    const slot = items.find((i) => open(i) && (r.kind === "set" || i.type === r.type)) || (r.kind === "short" ? items.find(open) : null);
+    if (!slot) continue;
+    const { reserveId, ...kept } = r;
+    Object.assign(slot, { ...kept, id: slot.id, state: "approved", fromReserve: reserveId });
+    usedReserve.push(reserveId);
+  }
+  return { items, usedReserve };
 }
 
 // The plan for a batch: which items to write, with types, subjects, and difficulty.

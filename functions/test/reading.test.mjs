@@ -3,7 +3,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import {
-  planItems, checkShortDraft, checkSetDraft, applyShortReview, applySetReview, finishSet, assembleBatch,
+  planItems, checkShortDraft, checkSetDraft, applyShortReview, applySetReview, finishSet, assembleBatch, useReserve,
   overlap, numbers, quoteFound, BLANK, SET_TYPES, BATCH_SIZE, SHORT_PER_BATCH, SETS_PER_BATCH,
 } from "../reading-content.js";
 import { bookParagraphs, excerpt, cleanPlos } from "../reading-sources.js";
@@ -76,7 +76,7 @@ test("checks: rhetorical synthesis notes", () => {
   const it = item({ type: "rhetorical_synthesis" });
   const notes = ["Coral reefs cover less than one percent of the ocean floor.", "They support about 25 percent of marine species.", "Warming of 1.5 degrees can cause bleaching.", "Reefs with more grazing fish recovered faster."];
   assert.equal(checkShortDraft(it, draft({ passage: "", notes })), null);
-  assert.match(checkShortDraft(it, draft({ passage: "", notes: [...notes.slice(0, 3), "About 60 percent of reefs are at risk."] })), /number in the notes/);
+  assert.match(checkShortDraft(it, draft({ passage: "", notes: notes.slice(0, 3) })), /4-6 notes/);
 });
 
 test("helpers", () => {
@@ -144,7 +144,9 @@ test("review: a set with one rejected and one revised question", () => {
 test("assembling a batch of 150", () => {
   const shorts = Array.from({ length: 105 }, (_, k) => ({ ...item({ id: `s${k}`, state: "approved" }), explanation: "E", evidence: "" }));
   const sets = Array.from({ length: 7 }, (_, k) => ({ ...setItem({ id: `a${k}`, state: "approved" }), explanations: SET_TYPES.map(() => "E"), evidence: [] }));
-  const batch = assembleBatch(3, [...shorts, ...sets]);
+  const { batch, leftover } = assembleBatch(3, [...shorts, ...sets]);
+  // 9 short questions and 1 set weren't needed; they're kept for the next batch.
+  assert.equal(leftover.length, 10);
   assert.equal(batch.questions.length, 150);
   assert.equal(Object.keys(batch.sets).length, 6);
   assert.equal(batch.questions.filter((q) => q.style === "ACT").length, 54);
@@ -154,7 +156,7 @@ test("assembling a batch of 150", () => {
   const positions = batch.questions.map((q, i) => (q.set === firstSet ? i : -1)).filter((i) => i >= 0);
   assert.equal(positions.at(-1) - positions[0], 8);
   // Missing short questions are made up with the extra set.
-  const fewer = assembleBatch(4, [...shorts.slice(0, 80), ...sets]);
+  const { batch: fewer } = assembleBatch(4, [...shorts.slice(0, 80), ...sets]);
   assert.equal(Object.keys(fewer.sets).length, 7);
   assert.equal(fewer.questions.length, 80 + 63);
 });
@@ -196,4 +198,30 @@ test("sources: Gutenberg text and PLOS clean-up", () => {
   assert.equal(cleanPlos("Data remain scarce [1,2].Previous work [3–5] found (Fig 2) more."), "Data remain scarce.\n\nPrevious work found more.");
   assert.equal(cleanPlos("seen in acorn ants, [12]. Models exist [e. g. 17],."), "seen in acorn ants. Models exist.");
   assert.ok(costDollars({ input: 1e6, output: 1e6 }) === 12);
+});
+
+test("a new batch starts with questions kept from earlier ones", () => {
+  const planned = planItems();
+  const kept = [
+    { ...item({ id: "s050", type: "inference", state: "approved" }), explanation: "E", reserveId: "b1-s050" },
+    { ...setItem({ id: "a7", state: "approved" }), reserveId: "b1-a7" },
+  ];
+  const { items, usedReserve } = useReserve(planned, kept);
+  assert.deepEqual(usedReserve, ["b1-s050", "b1-a7"]);
+  const used = items.filter((i) => i.fromReserve);
+  assert.equal(used.length, 2);
+  assert.equal(used.find((i) => i.kind === "short").type, "inference");
+  assert.ok(used.every((i) => i.state === "approved"));
+  // Their ids are the plan's, so they don't collide.
+  assert.equal(new Set(items.map((i) => i.id)).size, items.length);
+  assert.equal(items.length, planned.length);
+});
+
+test("checks: a quotation question's passage is a claim, and its choices are quotations", () => {
+  const it = item({ type: "evidence_text" });
+  const claim = "In the study, the researchers suggest that local protection of grazing fish could help coral reefs recover from repeated bleaching events in the warming seas of today.";
+  const quotes = ["\u201CSome reefs recover within a decade\u201D", "\u201Ccorals expel the algae that feed them\u201D", "\u201Creefs with more fish grazing on seaweed recovered faster\u201D", "\u201Cthey support about 25 percent of marine species\u201D"];
+  const q = { passage: claim, question: "Which quotation from the study most effectively illustrates the claim?", choices: quotes };
+  assert.equal(checkShortDraft(it, draft(q)), null);
+  assert.match(checkShortDraft(it, draft({ ...q, choices: [...quotes.slice(0, 3), "\u201Cfish eat coral\u201D"] })), /word for word/);
 });

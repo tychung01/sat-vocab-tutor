@@ -179,7 +179,7 @@ SAT Reading's functions (`functions/reading.js`) use the key too:
 - `rewriteReadingChoices` writes new answer choices for a question a student
   missed (at most 100 per student a day).
 
-Unit tests: `cd functions && node --test test/`. In the emulator a stand-in for
+Unit tests: `cd functions && node --test test/reading.test.mjs`. In the emulator a stand-in for
 Claude writes simple questions from the real sources at no cost; set
 `READING_REAL_CLAUDE=1` to use Claude there.
 

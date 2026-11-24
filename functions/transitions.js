@@ -7,13 +7,21 @@
 // newTransitionQuestion in the background and the next time the word comes up
 // the student sees the new question. A wrong answer keeps the question.
 //
-// The question is saved in /transitionquestions/{uid}:
-//   { words: { [transition]: { question, made, forRight, at } }, day, today }
+// Every question Claude writes is kept in a shared bank, /transitionbank/{word}:
+//   { word, questions: [question, ...] }
+// After a correct answer, the student gets a banked question for the word they
+// haven't been given yet, picked at random; Claude writes a new one (and adds it
+// to the bank) only when they've seen them all. The daily limit counts only those.
+//
+// The student's current question is saved in /transitionquestions/{uid}:
+//   { words: { [transition]: { question, forRight, at, seen, made, reused } }, day, today }
 // question is { id, transition, relationship, passage, choices, correct,
 // explanation, difficulty, rarity }, the shape the app uses. forRight is the
-// student's rightAt (time of the latest correct answer) the question was made
-// for, so each correct answer gets at most one new question. The browser can
-// read the document but only this function writes it.
+// student's rightAt (time of the latest correct answer) the question was given
+// for, so each correct answer gets at most one new question. seen lists the bank
+// questions they've been given; made counts the ones Claude wrote for them and
+// reused the ones from the bank. The browser can read these documents but only
+// this function writes them.
 //
 // The word list and question bank are copies of SAT Transitions'
 // public/data/*.json, in transitions-data/. After changing them there, copy them
@@ -175,45 +183,73 @@ export const newTransitionQuestion = onCall({ secrets: [anthropicKey], timeoutSe
     throw new HttpsError("failed-precondition", "A new question comes after a correct answer, until the word is mastered.");
   }
 
-  // Reserve today's slot, once for each correct answer.
+  // A question for this correct answer was already given.
   const ref = db.doc(`transitionquestions/${uid}`);
+  const bankRef = db.doc(`transitionbank/${bankDocId(word)}`);
+  const [mine, bank] = await Promise.all([ref.get(), bankRef.get()]);
+  const stored = mine.get("words")?.[word];
+  if (stored?.forRight === record.rightAt) return { question: stored.question };
+
+  // A question from the bank this student hasn't seen: no need to ask Claude.
+  const seen = seenIds(stored);
+  const unseen = (bank.get("questions") || []).filter((q) => !seen.includes(q.id));
+  if (unseen.length) {
+    const question = unseen[Math.floor(Math.random() * unseen.length)];
+    await ref.set({
+      words: { [word]: { question, forRight: record.rightAt, at: FieldValue.serverTimestamp(), seen: [...seen, question.id], reused: (stored?.reused || 0) + 1 } },
+    }, { merge: true });
+    return { question };
+  }
+
+  // Claude writes a new one: reserve today's slot, once for each correct answer.
   const reserved = await db.runTransaction(async (tx) => {
     const snap = await tx.get(ref);
-    const stored = snap.get("words")?.[word];
-    if (stored?.forRight === record.rightAt) return null;
+    if (snap.get("words")?.[word]?.forRight === record.rightAt) return null;
     const today = utcDay(Date.now());
     const used = snap.get("day") === today ? snap.get("today") || 0 : 0;
     if (used >= DAILY_LIMIT) {
       throw new HttpsError("resource-exhausted", "That's enough new questions for today. Keep practicing with the ones you have.");
     }
     tx.set(ref, { day: today, today: used + 1 }, { merge: true });
-    return { made: (stored?.made || 0) + 1, earlier: stored?.earlier || [] };
+    return true;
   });
   if (!reserved) {
-    const stored = (await ref.get()).get("words")?.[word];
-    return { question: stored?.question || null };
+    const again = (await ref.get()).get("words")?.[word];
+    return { question: again?.question || null };
   }
 
-  let question;
+  let written;
+  const banked = bank.get("questions") || [];
   try {
-    question = emulator ? placeholderQuestion(word, reserved.made) : await writeQuestion(word, reserved.earlier);
+    // Recent passages for this word, so Claude picks a new topic.
+    const earlier = banked.slice(-5).map((q) => q.passage);
+    written = emulator ? placeholderQuestion(word, banked.length + 1) : await writeQuestion(word, earlier);
   } catch (err) {
     console.error("Couldn't write a question", word, err);
     throw new HttpsError("unavailable", "Couldn't write a new question right now.");
   }
-  const id = `${bankQuestion[word]?.id || word}-${reserved.made}`;
-  question = { id, ...question };
+  // Every question Claude writes is kept in the bank for other students.
+  const question = await db.runTransaction(async (tx) => {
+    const now = (await tx.get(bankRef)).get("questions") || [];
+    const q = { id: `${bankQuestion[word]?.id || word}-g${now.length + 1}`, ...written, at: Date.now() };
+    tx.set(bankRef, { word, questions: [...now, q], updated: FieldValue.serverTimestamp() }, { merge: true });
+    return q;
+  });
   await ref.set({
     words: {
       [word]: {
-        question,
-        made: reserved.made,
-        forRight: record.rightAt,
-        at: FieldValue.serverTimestamp(),
-        // Recent passages, so Claude picks a new topic each time.
-        earlier: [...reserved.earlier, question.passage].slice(-4),
+        question, made: (stored?.made || 0) + 1, forRight: record.rightAt,
+        at: FieldValue.serverTimestamp(), seen: [...seen, question.id],
       },
     },
   }, { merge: true });
   return { question };
 });
+
+// Firestore document IDs can't contain "/".
+export const bankDocId = (word) => word.replace(/\//g, "-");
+
+// The bank questions a student has been given for a word (their current one included).
+export function seenIds(stored) {
+  return [...new Set([...(stored?.seen || []), stored?.question?.id].filter(Boolean))];
+}

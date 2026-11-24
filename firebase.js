@@ -6,7 +6,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import {
   getFirestore, doc, getDoc, setDoc, addDoc, deleteDoc, collection, getDocs, query, orderBy, limit,
-  serverTimestamp, increment, deleteField, writeBatch,
+  serverTimestamp, increment, deleteField, writeBatch, arrayUnion,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 import { getFunctions, httpsCallable } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-functions.js";
 import { firebaseConfig, OWNER_EMAILS } from "./firebase-config.js";
@@ -317,9 +317,26 @@ export async function sendTestReminder() {
   return (await httpsCallable(getFunctions(app), "sendTestReminder")()).data;
 }
 
-export async function writeWordContent(word, definition = "") {
-  const result = await httpsCallable(getFunctions(app), "writeWord")({ word, definition });
+// Resolves Claude's content for a word. A word in the word bank comes back as the
+// latest version a teacher saved, with fromBank set, unless fresh asks Claude for a new one.
+export async function writeWordContent(word, definition = "", fresh = false) {
+  const result = await httpsCallable(getFunctions(app), "writeWord")({ word, definition, fresh });
   return result.data;
+}
+
+// Adds the version of a word a teacher just saved to the word bank (/wordbank/{word}),
+// in the shape writeWord returns, so the next teacher who adds the word starts from it.
+export function saveWordVersion(saved, by) {
+  const sat = saved.sat || {};
+  const content = {
+    part_of_speech: saved.part_of_speech || "", definition: saved.definition || "", passage: saved.examples?.[0] || "",
+    form: sat.form || "", wrong_words: sat.wrong_words || [], meaning: sat.meaning || "", wrong_meanings: sat.wrong_meanings || [],
+  };
+  return setDoc(doc(db, "wordbank", saved.word), {
+    word: saved.word,
+    versions: arrayUnion({ source: "teacher", content, at: Date.now(), by }),
+    updated: serverTimestamp(),
+  }, { merge: true });
 }
 
 // Teacher dashboard reads.

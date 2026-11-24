@@ -186,6 +186,15 @@ service cloud.firestore {
       allow delete: if isTeacher();
     }
 
+    // Every version of a word's content Claude wrote or a teacher saved
+    // ({ word, versions: [{ source, content, at, by }] }); the add-word dialog starts
+    // from the latest saved one. Teachers add versions; the writeWord function too.
+    match /wordbank/{word} {
+      allow read: if isTeacher();
+      allow create, update: if isTeacher() && request.resource.data.keys().hasOnly(['word', 'versions', 'updated'])
+        && request.resource.data.versions is list;
+    }
+
     match /teachers/{email} {
       allow read: if isTeacher();
       // The document ID must be the teacher's email, lowercased, matching the stored field.
@@ -225,6 +234,12 @@ service cloud.firestore {
     // Only that function writes them.
     match /transitionquestions/{uid} {
       allow read: if (isSelf(uid) && canStudy()) || isTeacher();
+    }
+
+    // Every question Claude has written for a word, shared by all students; the
+    // function gives each student ones they haven't seen. Only it writes them.
+    match /transitionbank/{word} {
+      allow read: if isTeacher();
     }
 
     // Leaderboard numbers, which other students can read with the profiles.
@@ -281,6 +296,17 @@ service cloud.firestore {
 
     // Which parts of which sources earlier batches used.
     match /readingmeta/{docId} {
+      allow read: if isTeacher();
+    }
+
+    // Approved questions a batch didn't use, kept for the next batch.
+    match /readingreserve/{itemId} {
+      allow read: if isTeacher();
+    }
+
+    // Every set of new answer choices written for a question, shared by students
+    // who miss it. Only the functions write them.
+    match /readingchoicebank/{questionId} {
       allow read: if isTeacher();
     }
   }

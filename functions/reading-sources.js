@@ -181,10 +181,14 @@ export function cleanPlos(text) {
     .trim();
 }
 
-function plosText(doc, length) {
+// Numbers a data question can use: not years or citation-like single digits.
+const dataNumbers = (text) => (text.match(/\b\d+(?:[.,]\d+)*%?/g) || []).filter((n) => !/^(1[89]|20)\d\d$/.test(n) && !/^\d$/.test(n));
+
+function plosText(doc, length, needs) {
   if (length === "short") {
     const abstract = cleanPlos([].concat(doc.abstract || []).join(" "));
     const words = abstract.split(/\s+/).length;
+    if (needs === "numbers" && dataNumbers(abstract).length < 4) return null;
     return words >= 120 && words <= 450 ? abstract : null;
   }
   const intro = cleanPlos([].concat(doc.introduction || []).join(" "));
@@ -199,7 +203,7 @@ function plosText(doc, length) {
   return words >= 750 ? picked.join("\n\n") : null;
 }
 
-export async function plosSource(subject, length, used, random = Math.random) {
+export async function plosSource(subject, length, used, random = Math.random, needs = "") {
   const topics = PLOS_TOPICS[subject];
   for (let tries = 0; tries < 5; tries++) {
     const topic = topics[Math.floor(random() * topics.length)];
@@ -221,8 +225,9 @@ export async function plosSource(subject, length, used, random = Math.random) {
     }
     for (const doc of docs) {
       const key = `plos:${doc.id}`;
-      if (used.has(key)) continue;
-      const text = plosText(doc, length);
+      // Retracted articles aren't sound sources.
+      if (used.has(key) || /retract/i.test(String(doc.title_display))) continue;
+      const text = plosText(doc, length, needs);
       if (!text) continue;
       used.add(key);
       const authors = doc.author_display || [];
@@ -244,9 +249,13 @@ export async function plosSource(subject, length, used, random = Math.random) {
 // science passages come mostly from PLOS, sometimes from classic science books;
 // ACT social science passages come from PLOS. History, literature, and humanities
 // come from Project Gutenberg.
+// Data questions need an abstract with numbers in it. Cross-text questions need two
+// views, which an article's introduction (reviewing earlier work) or a longer
+// stretch of a book has more often than an abstract, so they get a long source.
 export async function findSource(item, used, random = Math.random) {
-  const length = item.kind === "set" ? "long" : "short";
-  const fromPlos = item.subject === "Social science" || (item.subject === "Science" && (length === "short" || random() < 0.7));
-  if (fromPlos) return (await plosSource(item.subject, length, used, random)) || (item.subject === "Science" ? gutenbergSource("Science", length, used, random) : null);
+  const length = item.kind === "set" || item.type === "cross_text" ? "long" : "short";
+  const needs = item.type === "evidence_table" ? "numbers" : "";
+  const fromPlos = item.subject === "Social science" || (item.subject === "Science" && (item.kind === "short" || random() < 0.7));
+  if (fromPlos) return (await plosSource(item.subject, length, used, random, needs)) || (item.subject === "Science" && !needs ? gutenbergSource("Science", length, used, random) : null);
   return gutenbergSource(item.subject, length, used, random);
 }

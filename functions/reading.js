@@ -16,9 +16,15 @@
 // failed, the approved items become the batch. advanceReadingJobs moves jobs
 // along every 5 minutes; a new job starts right away (onReadingJobCreated).
 //
-// Missed questions. rewriteReadingChoices has the Reviewer write new choices for
-// a question the student just missed (the passage and question stay), then checks
-// them by answering cold. They're saved per student in /readingchoices/{uid}.
+// Approved questions a batch doesn't use go to /readingreserve and are used
+// first in the next batch.
+//
+// Missed questions. rewriteReadingChoices gives a student who just missed a
+// question a new set of answer choices (the passage and question stay). Every set
+// is kept in a shared pool, /readingchoicebank/{question id}; the student gets a
+// set they haven't seen, and only when none is left does the Reviewer write a new
+// one (checking it by answering cold) and add it to the pool. The student's
+// current set is in /readingchoices/{uid}.
 //
 // In the emulator a stand-in for Claude writes simple questions from the real
 // sources, so the whole pipeline runs without cost. Set READING_REAL_CLAUDE=1 to
@@ -35,7 +41,7 @@ import {
   WRITER_SYSTEM, REVIEWER_SYSTEM, ACT_KINDS, SET_SIZE, BATCH_SIZE,
   shortWriterPrompt, setWriterPrompt, setReplacementPrompt, shortReviewPrompt, setReviewPrompt,
   newChoicesPrompt, coldAnswerPrompt, checkShortDraft, checkSetDraft, checkSetQuestions,
-  applyShortReview, applySetReview, finishSet, assembleBatch, planItems, numbers, normalize, storeDraft, BLANK,
+  applyShortReview, applySetReview, finishSet, assembleBatch, useReserve, planItems, numbers, normalize, storeDraft, BLANK,
 } from "./reading-content.js";
 import { findSource } from "./reading-sources.js";
 import { anthropicKey } from "./secrets.js";
@@ -457,7 +463,7 @@ async function step(db, ref, job, claude) {
   const unfinished = all.filter((i) => !["approved", "failed"].includes(i.state));
   for (const item of unfinished) items[item.id] = item.kind === "set" && item.draft ? { ...item, ...finishSet(item) } : { ...item, state: "failed" };
   await save(unfinished.map((i) => i.id));
-  const batch = assembleBatch(job.number, Object.values(items));
+  const { batch, leftover } = assembleBatch(job.number, Object.values(items));
   const counts = countStates(items);
   if (batch.questions.length < MIN_PUBLISH) {
     await ref.update({ ...update, status: "failed", counts, log: log({ ...job, ...update }, `only ${batch.questions.length} questions passed; not published`) });
@@ -466,9 +472,17 @@ async function step(db, ref, job, claude) {
   const usedKeys = Object.fromEntries(Object.values(items).filter((i) => i.state === "approved" && i.source).map((i) => [i.source.key, job.number]));
   await db.doc(`readingbatches/${job.number}`).set({ ...batch, createdAt: FieldValue.serverTimestamp(), pulled: {} });
   await db.doc("readingmeta/sources").set({ used: usedKeys }, { merge: true });
+  // Approved questions this batch didn't need wait in the reserve for the next one.
+  if (leftover.length) {
+    const writes = db.batch();
+    for (const id of leftover) {
+      writes.set(db.doc(`readingreserve/b${job.number}-${id}`), { ...items[id], fromBatch: job.number, keptAt: Date.now() });
+    }
+    await writes.commit();
+  }
   await ref.update({
     ...update, status: "done", counts, finishedAt: FieldValue.serverTimestamp(),
-    log: log({ ...job, ...update }, `published ${batch.questions.length} questions (${Object.keys(batch.sets).length} ACT-style sets)`),
+    log: log({ ...job, ...update }, `published ${batch.questions.length} questions (${Object.keys(batch.sets).length} ACT-style sets); ${leftover.length} kept for the next batch`),
   });
 }
 
@@ -496,20 +510,24 @@ export async function advanceJob(number) {
 // Creates job `number` with its items, unless it exists. Returns whether it did.
 async function createJob(db, number, startedBy) {
   const ref = jobRef(db, number);
-  const items = planItems();
+  // Approved questions earlier batches didn't use come first.
+  const reserveSnap = await db.collection("readingreserve").get();
+  const { items, usedReserve } = useReserve(planItems(), reserveSnap.docs.map((d) => ({ ...d.data(), reserveId: d.id })));
   const created = await db.runTransaction(async (tx) => {
     if ((await tx.get(ref)).exists) return false;
     tx.set(ref, {
       number, status: "items", round: 0, claudeBatch: null, kinds: {}, usage: {},
       startedBy, createdAt: FieldValue.serverTimestamp(), busyUntil: 0, log: [{ at: Date.now(), message: "started" }],
-      counts: { source: items.length },
+      counts: countStates(Object.fromEntries(items.map((i) => [i.id, i]))),
     });
     return true;
   });
   if (!created) return false;
   const writes = db.batch();
   for (const item of items) writes.set(ref.collection("items").doc(item.id), item);
+  for (const id of usedReserve) writes.delete(db.doc(`readingreserve/${id}`));
   await writes.commit();
+  if (usedReserve.length) await ref.update({ log: [{ at: Date.now(), message: `started with ${usedReserve.length} questions kept from earlier batches` }] });
   // The trigger below starts it once every item is saved.
   await ref.update({ status: "active" });
   return true;
@@ -661,11 +679,26 @@ export const rewriteReadingChoices = onCall({ secrets: [anthropicKey], timeoutSe
   if (!tries.length || record.ok || tries.at(-1).ok) throw new HttpsError("failed-precondition", "New choices come after a missed question.");
 
   const ref = db.doc(`readingchoices/${uid}`);
+  const poolRef = db.doc(`readingchoicebank/${qid}`);
   const forTry = tries.length;
+  const [mine, pool] = await Promise.all([ref.get(), poolRef.get()]);
+  const shown = mine.get("q")?.[qid];
+  if (shown?.forTry === forTry) return { choices: shown };
+
+  // A set from the pool this student hasn't seen: no need to ask the Reviewer.
+  const seen = seenSets(shown);
+  const unseen = (pool.get("sets") || []).filter((set) => !seen.includes(set.id));
+  if (unseen.length) {
+    const pick = unseen[Math.floor(Math.random() * unseen.length)];
+    const saved = { choices: pick.choices, correct: pick.correct, explanation: pick.explanation, setId: pick.id, seen: [...seen, pick.id], forTry, at: Date.now(), reused: true };
+    await ref.set({ q: { [qid]: saved } }, { merge: true });
+    return { choices: saved };
+  }
+
+  // The Reviewer writes a new set: reserve today's slot, once for each missed try.
   const reserved = await db.runTransaction(async (tx) => {
     const snap = await tx.get(ref);
-    const stored = snap.get("q")?.[qid];
-    if (stored?.forTry === forTry) return false;
+    if (snap.get("q")?.[qid]?.forTry === forTry) return false;
     const today = utcDay(Date.now());
     const used = snap.get("day") === today ? snap.get("today") || 0 : 0;
     if (used >= DAILY_REWRITES) throw new HttpsError("resource-exhausted", "That's enough new choices for today.");
@@ -675,8 +708,7 @@ export const rewriteReadingChoices = onCall({ secrets: [anthropicKey], timeoutSe
   if (!reserved) return { choices: (await ref.get()).get("q")[qid] };
 
   const set = question.set ? batch.get("sets")[question.set] : null;
-  // The choice the student picked, as they saw it (from earlier new choices if any).
-  const shown = (await ref.get()).get("q")?.[qid];
+  // The choice the student picked, as they saw it.
   const picked = String(tries.at(-1).c ?? "") || (shown?.choices || question.choices)[tries.at(-1).p] || "";
   let made;
   try {
@@ -685,9 +717,21 @@ export const rewriteReadingChoices = onCall({ secrets: [anthropicKey], timeoutSe
     console.error("Couldn't write new choices", qid, err);
     throw new HttpsError("unavailable", "Couldn't write new choices right now.");
   }
-  const saved = { ...made, forTry, at: Date.now() };
+  // Kept in the pool for other students who miss this question.
+  const setId = await db.runTransaction(async (tx) => {
+    const sets = (await tx.get(poolRef)).get("sets") || [];
+    const id = `${qid}-c${sets.length + 1}`;
+    tx.set(poolRef, { qid, sets: [...sets, { id, ...made, at: Date.now() }], updated: FieldValue.serverTimestamp() }, { merge: true });
+    return id;
+  });
+  const saved = { ...made, setId, seen: [...seen, setId], forTry, at: Date.now() };
   await ref.set({ q: { [qid]: saved } }, { merge: true });
   return { choices: saved };
 });
+
+// The pool sets a student has been given for a question (their current one included).
+export function seenSets(shown) {
+  return [...new Set([...(shown?.seen || []), shown?.setId].filter(Boolean))];
+}
 
 export { BATCH_SIZE, SET_SIZE };

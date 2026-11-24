@@ -2,9 +2,10 @@
 //
 // writeWord: when a teacher adds a word, Claude writes everything the add-word
 // dialog needs (part of speech, definition, an SAT-style example passage, and
-// the quiz answer choices) so the teacher only has to check it. Only teachers
-// can call it. The Anthropic API key is the ANTHROPIC_API_KEY secret
-// (see FIREBASE-SETUP.md).
+// the quiz answer choices) so the teacher only has to check it. Only teachers can
+// call it. Every version is kept in /wordbank/{word}, and a word already there
+// reuses the latest version a teacher saved instead of asking Claude again. The
+// Anthropic API key is the ANTHROPIC_API_KEY secret (see FIREBASE-SETUP.md).
 //
 // remindInactive and sendTestReminder (reminders.js): evening reminder emails
 // for students who haven't studied in more than 2 days.
@@ -19,11 +20,14 @@
 // prepareReadingBatch, and checkReadingBatches write and review the shared
 // batches of 150 reading questions; rewriteReadingChoices writes new answer
 // choices for a question a student missed.
+//
+// backfillBanks (banks.js): a one-time copy of earlier content into the shared
+// banks (Transitions questions, Reading answer choices, Word Study words).
 
 import Anthropic from "@anthropic-ai/sdk";
 import { betaZodOutputFormat } from "@anthropic-ai/sdk/helpers/beta/zod";
 import { initializeApp } from "firebase-admin/app";
-import { getFirestore } from "firebase-admin/firestore";
+import { getFirestore, FieldValue } from "firebase-admin/firestore";
 import { HttpsError, onCall } from "firebase-functions/v2/https";
 import { z } from "zod";
 import { anthropicKey } from "./secrets.js";
@@ -38,6 +42,7 @@ export { newTransitionQuestion } from "./transitions.js";
 export {
   onReadingJobCreated, advanceReadingJobs, prepareReadingBatch, checkReadingBatches, rewriteReadingChoices,
 } from "./reading.js";
+export { backfillBanks } from "./banks.js";
 
 // Keep in sync with OWNER_EMAILS in firebase-config.js and isAppOwner() in firestore.rules.
 const OWNER_EMAILS = ["tychung01@gmail.com"];
@@ -85,6 +90,17 @@ export const writeWord = onCall({ secrets: [anthropicKey], timeoutSeconds: 120 }
   }
   const hint = String(request.data?.definition || "").slice(0, 500);
 
+  // The word bank keeps every version of a word's content. Unless the teacher asks
+  // for a new version, reuse the latest one a teacher saved (or else the latest one
+  // Claude wrote) instead of asking Claude again.
+  const bankRef = getFirestore().doc(`wordbank/${word}`);
+  if (!request.data?.fresh) {
+    const versions = (await bankRef.get()).get("versions") || [];
+    const latest = (source) => versions.filter((v) => v.source === source).at(-1);
+    const reuse = latest("teacher") || latest("claude");
+    if (reuse) return { ...reuse.content, fromBank: reuse.source };
+  }
+
   const client = new Anthropic({ apiKey: anthropicKey.value() });
   let response;
   try {
@@ -109,5 +125,19 @@ export const writeWord = onCall({ secrets: [anthropicKey], timeoutSeconds: 120 }
     console.error("No usable content", response.stop_reason, response._request_id);
     throw new HttpsError("internal", "Claude didn't write content for this word.");
   }
-  return response.parsed_output;
+  const content = response.parsed_output;
+  await bankRef.set({
+    word,
+    versions: FieldValue.arrayUnion({ source: "claude", content: bankContent(content), at: Date.now(), by: request.auth.token.email.toLowerCase() }),
+    updated: FieldValue.serverTimestamp(),
+  }, { merge: true });
+  return content;
 });
+
+// A word's content as the word bank keeps it: Claude's answer shape.
+function bankContent(c) {
+  return {
+    part_of_speech: c.part_of_speech || "", definition: c.definition || "", passage: c.passage || "", form: c.form || "",
+    wrong_words: c.wrong_words || [], meaning: c.meaning || "", wrong_meanings: c.wrong_meanings || [],
+  };
+}

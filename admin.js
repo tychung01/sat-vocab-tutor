@@ -7,7 +7,7 @@ import { mountCodeSignIn } from "./code-signin.js";
 import {
   configured, isOwner, isTeacher, watchUser, signIn, signOutUser, sendSignInCode, signInWithCode, listStudents, recentLogins,
   listTeachers, addTeacher, removeTeacher, addStudentWord, removeStudentWord, restoreStudentWord,
-  loadClassWords, addClassWord, removeClassWord, writeWordContent, listInvites, addInvite, removeInvite,
+  loadClassWords, addClassWord, removeClassWord, writeWordContent, saveWordVersion, listInvites, addInvite, removeInvite,
   listBlocked, blockStudent, unblockStudent, listRemindersOff, setReminders, sendTestReminder, loadHiddenWords, isUsernameTaken, renameStudent, saveProfile, hideWord, unhideWord,
   LEARNED_STREAK, PRACTICE_LIMIT,
 } from "./firebase.js";
@@ -333,8 +333,9 @@ function normalizeWord(text) {
 
 // Look a word up online and have Claude write the rest, then show it in the
 // add-word dialog for the teacher to check. If Claude can't, the dialog shows
-// what the dictionary has.
-async function lookUpAndPreview(word, button, options) {
+// what the dictionary has. A word in the word bank comes back as the version a
+// teacher saved before, and the dialog offers to write a new one (fresh).
+async function lookUpAndPreview(word, button, options, fresh = false) {
   const label = button.textContent;
   button.disabled = true;
   button.textContent = "Looking up…";
@@ -350,14 +351,20 @@ async function lookUpAndPreview(word, button, options) {
   button.textContent = "Writing an example…";
   let entry = found || { part_of_speech: "", definition: "", example: "" };
   try {
-    const written = await writeWordContent(word, found?.definition || "");
+    const written = await writeWordContent(word, found?.definition || "", fresh);
     entry = {
       part_of_speech: written.part_of_speech,
       definition: asSentence(written.definition),
       example: written.passage,
       choices: { wrongWords: written.wrong_words, meaning: written.meaning, wrongMeanings: written.wrong_meanings },
+      saved: Boolean(written.fromBank),
     };
-    note = "Written by Claude. Check it and edit anything before you add it.";
+    note = written.fromBank === "teacher"
+      ? "Saved version: what a teacher used the last time this word was added. Check it and edit anything before you add it, or write a new version."
+      : written.fromBank
+        ? "Saved version Claude wrote earlier. Check it and edit anything before you add it, or write a new version."
+        : "Written by Claude. Check it and edit anything before you add it.";
+    if (written.fromBank) options = { ...options, rewrite: () => lookUpAndPreview(word, button, options, true) };
   } catch (err) {
     console.error("Couldn't write the word with Claude", err);
     note += " (Claude couldn't write an example this time.)";
@@ -474,7 +481,7 @@ function renderWordTools(container, student, row) {
 // Show a looked-up word in a dialog where the teacher checks and edits it and its
 // quiz choices. Nothing is saved until they confirm; save(entry) stores it and
 // resolves to whether that worked.
-function showPreview(word, entry, note, { title, warning = "", save }) {
+function showPreview(word, entry, note, { title, warning = "", save, rewrite = null }) {
   const dialog = $("word-dialog");
   const preview = $("word-preview");
   preview.innerHTML = `<h2 id="word-dialog-title">${escapeHtml(title)}</h2>
@@ -508,8 +515,13 @@ function showPreview(word, entry, note, { title, warning = "", save }) {
     <div class="preview-actions">
       <button class="btn primary" type="submit">Confirm add</button>
       <button class="btn cancel" type="button">Cancel</button>
+      ${rewrite ? `<button class="btn rewrite" type="button">Write a new version</button>` : ""}
     </div>`;
   dialog.showModal();
+  preview.querySelector(".rewrite")?.addEventListener("click", () => {
+    dialog.close();
+    rewrite();
+  });
   (entry.definition ? preview.example : preview.definition).focus();
   preview.querySelector(".cancel").addEventListener("click", () => dialog.close());
 
@@ -562,7 +574,7 @@ function showPreview(word, entry, note, { title, warning = "", save }) {
     blankInputs.forEach((input, i) => { if (!input.disabled) input.value = wrongWords[i] || ""; });
     preview.meaning.value = meaning || "";
     meaningInputs.forEach((input, i) => { input.value = wrongMeanings[i] || ""; });
-    help.textContent = "Written by Claude for this passage. Edit any of them, click Suggest new choices, or clear a group to have the quiz pick new choices each time.";
+    help.textContent = `${entry.saved ? "From the saved version" : "Written by Claude for this passage"}. Edit any of them, click Suggest new choices, or clear a group to have the quiz pick new choices each time.`;
   }
 
   preview.onsubmit = (e) => {
@@ -620,6 +632,8 @@ function showPreview(word, entry, note, { title, warning = "", save }) {
     save(saved).then((ok) => {
       if (ok) {
         dialog.close();
+        // The next teacher who adds this word starts from this version.
+        saveWordVersion(saved, currentUser.email).catch((err) => console.warn("Couldn't add the word to the word bank", err));
         return;
       }
       buttons.forEach((b) => { b.disabled = false; });
